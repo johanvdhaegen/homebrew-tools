@@ -1,9 +1,9 @@
 class Bib2xhtml < Formula
   desc "Convert BibTeX Files into HTML"
   homepage "http://www.spinellis.gr/sw/textproc/bib2xhtml"
-  url "http://www.spinellis.gr/sw/textproc/bib2xhtml/bib2xhtml-v3.0-15-gf506.tar.gz"
-  version "3.0.15-gf506"
-  sha256 "e848bde6116ae86a3331961fd296ec20e4e856bf9ed98664b2db365aabfd2840"
+  url "http://www.spinellis.gr/sw/textproc/bib2xhtml/bib2xhtml-v3.0-54-g5c30.tar.gz"
+  version "3.0.54-g5c30"
+  sha256 "1025afe15daf7d6083d4f249c9d9289951611a8d3bc4c3be4c9a78f911b914c8"
 
   depends_on :tex
 

@@ -2,8 +2,8 @@ class Ycmd < Formula
   desc "A code-completion & code-comprehension server"
   homepage "https://github.com/Valloric/ycmd"
   url "https://github.com/Valloric/ycmd.git",
-      :revision => "480b1c716b961ff6728f9b144014f3ffffceaed4"
-  version "2017-07-28"
+      :revision => "927a5f261b63d4a62dcb478bb5a5690bbdd641e0"
+  version "2017-09-03"
 
   depends_on :python
   depends_on "cmake" => :build

@@ -1,5 +1,5 @@
 class Copybara < Formula
-  desc "A tool for transforming and moving code between repositories"
+  desc "Tool for transforming and moving code between repositories"
   homepage "https://github.com/google/copybara"
   url "https://github.com/google/copybara.git",
       :revision => "d3fb5a6fcc06b5b11deca339897d28d63e59bd14"

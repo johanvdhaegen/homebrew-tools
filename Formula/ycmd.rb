@@ -2,19 +2,19 @@ class Ycmd < Formula
   desc "A code-completion & code-comprehension server"
   homepage "https://github.com/Valloric/ycmd"
   url "https://github.com/Valloric/ycmd.git",
-      :revision => "927a5f261b63d4a62dcb478bb5a5690bbdd641e0"
-  version "2017-09-03"
+      :revision => "4fa81b5f9535c2a9fa37e96adec53abfc1cce133"
+  version "2017-12-23"
 
   depends_on :python
   depends_on "cmake" => :build
   option "with-clang-completer", "Build C-family semantic completion engine"
 
   resource "llvm" do
-    clang_version = "4.0.1"
+    clang_version = "5.0.1"
     clang_filename = format("clang+llvm-%s-x86_64-apple-darwin.tar.xz",
                             clang_version)
-    url format("http://llvm.org/releases/%s/%s", clang_version, clang_filename)
-    sha256 "5f697801a46239c04251730b7ccccd3ebbacb9043ad381a061ae6812409e9eae"
+    url format("http://releases.llvm.org/%s/%s", clang_version, clang_filename)
+    sha256 "c5b105c4960619feb32641ef051fa39ecb913cc0feb6bacebdfa71f8d3cae277"
   end
 
   include Language::Python::Virtualenv
@@ -24,8 +24,10 @@ class Ycmd < Formula
 
     if build.with? "clang-completer"
       mkdir buildpath/"clang_archives" do
-        cp resource("llvm").cached_download,
-           File.basename(URI.parse(resource("llvm").url).path)
+        [resource("llvm")].each do |r|
+          r.verify_download_integrity(r.fetch)
+          cp r.cached_download, File.basename(URI.parse(r.url).path)
+        end
       end
       args << "--clang-completer"
     end

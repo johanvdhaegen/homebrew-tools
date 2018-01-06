@@ -1,13 +1,15 @@
 class Ycmd < Formula
-  desc "A code-completion & code-comprehension server"
+  include Language::Python::Virtualenv
+
+  desc "Code-completion & code-comprehension server"
   homepage "https://github.com/Valloric/ycmd"
   url "https://github.com/Valloric/ycmd.git",
       :revision => "4fa81b5f9535c2a9fa37e96adec53abfc1cce133"
   version "2017-12-23"
 
+  option "with-clang-completer", "Build C-family semantic completion engine"
   depends_on :python
   depends_on "cmake" => :build
-  option "with-clang-completer", "Build C-family semantic completion engine"
 
   resource "llvm" do
     clang_version = "5.0.1"
@@ -16,8 +18,6 @@ class Ycmd < Formula
     url format("https://releases.llvm.org/%s/%s", clang_version, clang_filename)
     sha256 "c5b105c4960619feb32641ef051fa39ecb913cc0feb6bacebdfa71f8d3cae277"
   end
-
-  include Language::Python::Virtualenv
 
   def install
     args = []

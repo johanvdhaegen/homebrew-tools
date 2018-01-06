@@ -55,4 +55,8 @@ class Ycmd < Formula
       #{libexec}/bin/python #{libexec}/ycmd "$@"
     EOS
   end
+
+  test do
+    assert_match "usage: ycmd", shell_output("#{bin}/ycmd -h")
+  end
 end

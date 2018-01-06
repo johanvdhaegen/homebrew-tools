@@ -13,7 +13,7 @@ class Ycmd < Formula
     clang_version = "5.0.1"
     clang_filename = format("clang+llvm-%s-x86_64-apple-darwin.tar.xz",
                             clang_version)
-    url format("http://releases.llvm.org/%s/%s", clang_version, clang_filename)
+    url format("https://releases.llvm.org/%s/%s", clang_version, clang_filename)
     sha256 "c5b105c4960619feb32641ef051fa39ecb913cc0feb6bacebdfa71f8d3cae277"
   end
 

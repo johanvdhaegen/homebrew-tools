@@ -16,4 +16,8 @@ class Copybara < Formula
       CLASSPATH="#{libexec}/copybara_deploy.jar:." exec java -jar #{libexec}/copybara_deploy.jar "$@"
     EOS
   end
+
+  test do
+    assert_match(/Unknown version$/, pipe_output("#{bin}/copybara --version 2>&1"))
+  end
 end

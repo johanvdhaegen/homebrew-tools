@@ -10,13 +10,13 @@ class Bib2xhtml < Formula
   def install
     ENV.prepend_create_path "BSTINPUTS", libexec
 
-    #resources.each do |r|
-    #  r.stage do
-    #    system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
-    #    system "make"
-    #    system "make", "install"
-    #  end
-    #end
+    # resources.each do |r|
+    #   r.stage do
+    #     system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
+    #     system "make"
+    #     system "make", "install"
+    #   end
+    # end
 
     bin.install "bib2xhtml"
     libexec.install Dir["*.bst"]

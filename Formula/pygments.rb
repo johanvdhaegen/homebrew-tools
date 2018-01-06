@@ -1,7 +1,7 @@
 class Pygments < Formula
   include Language::Python::Virtualenv
 
-  desc "Syntax highlighting package written in Python."
+  desc "Syntax highlighting package written in Python"
   homepage "http://pygments.org/"
   url "https://files.pythonhosted.org/packages/71/2a/2e4e77803a8bd6408a2903340ac498cb0a2181811af7c9ec92cb70b0308a/Pygments-2.2.0.tar.gz"
   sha256 "dbae1046def0efb574852fab9e90209b23f556367b5a320c0bcb871c77c3e8cc"

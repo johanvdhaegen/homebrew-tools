@@ -9,12 +9,7 @@ class Pygments < Formula
   depends_on :python if MacOS.version <= :snow_leopard
 
   def install
-    # create isolated virtualenv and install pygments
-    virtualenv_create(libexec)
-    # build
-    system libexec/"bin/python", *Language::Python.setup_install_args(libexec)
-    # install symlink
-    bin.install_symlink libexec/"bin/pygmentize"
+    virtualenv_install_with_resources
   end
 
   test do

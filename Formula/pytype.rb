@@ -8,7 +8,7 @@ class Pytype < Formula
   version "2018-01-09"
   head "https://github.com/google/pytype.git"
 
-  depends_on :python if MacOS.version <= :snow_leopard
+  depends_on "python" if MacOS.version <= :snow_leopard
   # depends on "libyaml" => :recommend  # TODO(johan)
 
   resource "pyyaml" do

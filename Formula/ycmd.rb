@@ -8,7 +8,7 @@ class Ycmd < Formula
   version "2017-12-23"
 
   option "with-clang-completer", "Build C-family semantic completion engine"
-  depends_on :python
+  depends_on "python" if MacOS.version <= :snow_leopard
   depends_on "cmake" => :build
 
   resource "llvm" do

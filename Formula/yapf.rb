@@ -8,7 +8,7 @@ class Yapf < Formula
       :revision => "0b8364e5fd715261dcf520a5b292bc8fc515ae7e"
   head "https://github.com/google/yapf.git"
 
-  depends_on :python if MacOS.version <= :snow_leopard
+  depends_on "python" if MacOS.version <= :snow_leopard
 
   def install
     virtualenv_install_with_resources

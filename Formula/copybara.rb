@@ -11,7 +11,7 @@ class Copybara < Formula
   def install
     system "bazel", "build", "//java/com/google/copybara:copybara_deploy.jar"
     libexec.install "bazel-bin/java/com/google/copybara/copybara_deploy.jar"
-    (bin/"copybara").write <<-EOS.undent
+    (bin/"copybara").write <<~EOS
       #!/bin/bash
       CLASSPATH="#{libexec}/copybara_deploy.jar:." exec java -jar #{libexec}/copybara_deploy.jar "$@"
     EOS

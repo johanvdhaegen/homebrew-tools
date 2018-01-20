@@ -50,7 +50,7 @@ class Ycmd < Formula
     libexec.install "libclang.dylib" if build.with? "clang-completer"
 
     # create wrapper script using virtualenv python
-    (bin/"ycmd").write <<-EOS.undent
+    (bin/"ycmd").write <<~EOS
       #!/bin/bash
       #{libexec}/bin/python #{libexec}/ycmd "$@"
     EOS

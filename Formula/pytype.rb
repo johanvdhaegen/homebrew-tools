@@ -4,8 +4,8 @@ class Pytype < Formula
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
   url "https://github.com/google/pytype.git",
-      :revision => "f0e7aa70ffe6fd5a4e16d39795924afcdbac3555"
-  version "2018-01-09"
+      :revision => "a80578d2786a49bdeed2f64ff59b1292d2d9f111"
+  version "2018-02-06"
   head "https://github.com/google/pytype.git"
 
   depends_on "python" if MacOS.version <= :snow_leopard

@@ -6,7 +6,7 @@ class Copybara < Formula
   version "2018-01-25"
 
   depends_on "bazel" => :build
-  depends_on :java => "1.8+"
+  depends_on :java => "1.9+"
 
   def install
     system "bazel", "build", "//java/com/google/copybara:copybara_deploy.jar"

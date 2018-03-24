@@ -4,11 +4,11 @@ class Pytype < Formula
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
   url "https://github.com/google/pytype.git",
-      :revision => "a80578d2786a49bdeed2f64ff59b1292d2d9f111"
-  version "2018-02-06"
+      :revision => "17f50d71866bb14b54070e9c89ec5cd9406ba0c4"
+  version "2018-03-22"
   head "https://github.com/google/pytype.git"
 
-  depends_on "python" if MacOS.version <= :snow_leopard
+  depends_on "python@2" if MacOS.version <= :snow_leopard
   # depends on "libyaml" => :recommend  # TODO(johan)
 
   resource "pyyaml" do

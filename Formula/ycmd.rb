@@ -4,8 +4,8 @@ class Ycmd < Formula
   desc "Code-completion & code-comprehension server"
   homepage "https://github.com/Valloric/ycmd"
   url "https://github.com/Valloric/ycmd.git",
-      :revision => "41a1b74ee6509d6034c04b20d34beb04e4bcefa0"
-  version "2018-01-09"
+      :revision => "c94d84f5061f8c0e1e8a236fa4af8c47af8d9d94"
+  version "2018-02-27"
 
   option "with-clang-completer", "Build C-family semantic completion engine"
   depends_on "python" if MacOS.version <= :snow_leopard
@@ -43,8 +43,8 @@ class Ycmd < Formula
     libexec.install "ycmd", "ycm_core.so", "CORE_VERSION",
                     "PYTHON_USED_DURING_BUILDING"
     (libexec/"third_party").install [
-      "JediHTTP", "argparse", "bottle", "frozendict", "python-future",
-      "requests", "waitress"
+      "JediHTTP", "bottle", "frozendict", "python-future", "requests",
+      "waitress"
     ].map { |s| "third_party/" + s }
 
     libexec.install "libclang.dylib" if build.with? "clang-completer"

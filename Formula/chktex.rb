@@ -1,6 +1,6 @@
 class Chktex < Formula
   desc "LaTeX semantic checker"
-  homepage "http://www.nongnu.org/chktex/"
+  homepage "https://www.nongnu.org/chktex/"
   url "https://download.savannah.gnu.org/releases/chktex/chktex-1.7.6.tar.gz"
   mirror "https://mirrors.kernel.org/debian/pool/main/c/chktex/chktex_1.7.6.orig.tar.gz"
   sha256 "8ac0e5ca213b2012d44c28f9e4feb9783df44750eb0c30a237d81ff58ef34c8d"
@@ -10,8 +10,6 @@ class Chktex < Formula
     depends_on "automake" => :build
     depends_on "autoconf" => :build
   end
-
-  depends_on :tex
 
   def install
     system "./autogen.sh" if build.head?

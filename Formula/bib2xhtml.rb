@@ -5,8 +5,6 @@ class Bib2xhtml < Formula
   version "3.0.56-gd8f4"
   sha256 "7034b49ca14807196e4cf737e8b7a4624ae26d240877203ed2e4cde01008a949"
 
-  depends_on :tex
-
   def install
     ENV.prepend_create_path "BSTINPUTS", libexec
 

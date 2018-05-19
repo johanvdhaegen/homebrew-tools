@@ -13,4 +13,8 @@ class Yapf < Formula
   def install
     virtualenv_install_with_resources
   end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/yapf --version")
+  end
 end

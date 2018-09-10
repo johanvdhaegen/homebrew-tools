@@ -18,6 +18,6 @@ class Copybara < Formula
   end
 
   test do
-    assert_match(/Unknown version$/, pipe_output("#{bin}/copybara --version 2>&1"))
+    assert_match(/Unknown version$/, pipe_output("#{bin}/copybara version 2>&1"))
   end
 end

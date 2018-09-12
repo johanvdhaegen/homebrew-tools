@@ -43,8 +43,8 @@ class Ycmd < Formula
     libexec.install "ycmd", "ycm_core.so", "CORE_VERSION",
                     "PYTHON_USED_DURING_BUILDING"
     (libexec/"third_party").install [
-      "JediHTTP", "bottle", "frozendict", "python-future", "requests",
-      "waitress"
+      "parso", "jedi", "bottle", "frozendict", "python-future", "requests",
+      "waitress", "cregex"
     ].map { |s| "third_party/" + s }
 
     libexec.install "libclang.dylib" if build.with? "clang-completer"

@@ -4,8 +4,8 @@ class Ycmd < Formula
   desc "Code-completion & code-comprehension server"
   homepage "https://github.com/Valloric/ycmd"
   url "https://github.com/Valloric/ycmd.git",
-      :revision => "ea58cfcf502dad92258102a5dd1911d43e39bcda"
-  version "2018-07-25"
+      :revision => "f125da6253f9b6fe620832f7b11e458420ab602f"
+  version "2018-09-02"
 
   option "with-clang-completer", "Build C-family semantic completion engine"
   depends_on "python" if MacOS.version <= :snow_leopard

@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/2b/af/95a6f453824dbe9c321e65049b935c9819c3d9b83af3b60c3a168baf5fad/pytype-2018.9.19.tar.gz"
-  sha256 "3a828aeedc65b79e033e14a6dd0a29b33395dc9d73ec613503d8ea0591937fcf"
-  version "2018-09-19"
+  url "https://files.pythonhosted.org/packages/e6/f1/1e950c8b3122178c63259c458329500f4d889f0c320c2af27a2b220cf318/pytype-2018.10.30.tar.gz"
+  sha256 "fdbbb2ae1c739b4bad67bfdfeedbe21d5b41c9689e6370e441101f3149157d43"
+  version "2018-10-30"
   head "https://github.com/google/pytype.git"
 
   depends_on "python"
@@ -22,8 +22,8 @@ class Pytype < Formula
   end
 
   resource "importlab" do
-    url "https://files.pythonhosted.org/packages/5c/bd/5cc7b843eea5597dbe8a28a2176ac9200cd39e29dd3d3118728f96af0d80/importlab-0.3.0.tar.gz"
-    sha256 "e1f0534182b248c9cf791bb60132450a40bbc1ac49ffc7d0c7930dfc107d4a85"
+    url "https://files.pythonhosted.org/packages/89/f7/ef55882b6db6022ef476a4fbd8c843f3c25971d9d6e7766be9ae6f11146e/importlab-0.3.1.tar.gz"
+    sha256 "b5fdb0e32c43192aa13869c9b14a8141ec5f73c406581fa544e57a12cda2ae53"
   end
 
   resource "pyyaml" do

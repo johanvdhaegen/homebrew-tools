@@ -3,10 +3,10 @@ class Pygments < Formula
 
   desc "Syntax highlighting package written in Python"
   homepage "http://pygments.org/"
-  url "https://files.pythonhosted.org/packages/71/2a/2e4e77803a8bd6408a2903340ac498cb0a2181811af7c9ec92cb70b0308a/Pygments-2.2.0.tar.gz"
-  sha256 "dbae1046def0efb574852fab9e90209b23f556367b5a320c0bcb871c77c3e8cc"
+  url "https://files.pythonhosted.org/packages/63/a2/91c31c4831853dedca2a08a0f94d788fc26a48f7281c99a303769ad2721b/Pygments-2.3.0.tar.gz"
+  sha256 "82666aac15622bd7bb685a4ee7f6625dd716da3ef7473620c192c0168aae64fc"
 
-  depends_on "python" if MacOS.version <= :snow_leopard
+  depends_on "python"
 
   def install
     virtualenv_install_with_resources

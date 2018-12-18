@@ -8,7 +8,7 @@ class Ycmd < Formula
   version "2018-09-18"
 
   option "with-clang-completer", "Build C-family semantic completion engine"
-  depends_on "python" if MacOS.version <= :snow_leopard
+  depends_on "python"
   depends_on "cmake" => :build
 
   resource "llvm" do
@@ -33,13 +33,13 @@ class Ycmd < Formula
     end
 
     # build ycmd
-    system "python", "build.py", *args
+    system "python3", "build.py", *args
 
     # install docs
     doc.install "COPYING.txt", "README.md"
 
     # create isolated virtualenv and install ycmd
-    virtualenv_create(libexec)
+    virtualenv_create(libexec, "python3")
     libexec.install "ycmd", "ycm_core.so", "CORE_VERSION",
                     "PYTHON_USED_DURING_BUILDING"
     (libexec/"third_party").install [
@@ -52,7 +52,7 @@ class Ycmd < Formula
     # create wrapper script using virtualenv python
     (bin/"ycmd").write <<~EOS
       #!/bin/bash
-      #{libexec}/bin/python #{libexec}/ycmd "$@"
+      #{libexec}/bin/python3 #{libexec}/ycmd "$@"
     EOS
   end
 

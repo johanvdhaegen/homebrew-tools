@@ -33,6 +33,9 @@ class Ycmd < Formula
     end
 
     # build ycmd
+    pyver = Language::Python.major_minor_version "python3"
+    ENV.prepend_create_path "PYTHONPATH",
+                            libexec/"lib/python#{pyver}/site-packages"
     system "python3", "build.py", *args
 
     # install docs
@@ -52,7 +55,8 @@ class Ycmd < Formula
     # create wrapper script using virtualenv python
     (bin/"ycmd").write <<~EOS
       #!/bin/bash
-      #{libexec}/bin/python3 #{libexec}/ycmd "$@"
+      PYTHONPATH="#{ENV["PYTHONPATH"]}"
+      "#{libexec}/bin/python3" "#{libexec}/ycmd" "$@"
     EOS
   end
 

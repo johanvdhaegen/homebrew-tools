@@ -4,14 +4,14 @@ class Pytype < Formula
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
   url "https://files.pythonhosted.org/packages/27/ee/9d813f75dfdde769984572d4c5a400c95ccd66f2931eb67d7fb35c5726ba/pytype-2018.12.11.tar.gz"
-  sha256 "605336e0408de8e1150e21bec9cb441202f1e931b3e6c97c1ec47832c315c81c"
   version "2018-12-11"
+  sha256 "605336e0408de8e1150e21bec9cb441202f1e931b3e6c97c1ec47832c315c81c"
   head "https://github.com/google/pytype.git"
 
-  depends_on "python"
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "libyaml"
+  depends_on "python"
 
   resource "decorator" do
     url "https://files.pythonhosted.org/packages/6f/24/15a229626c775aae5806312f6bf1e2a73785be3402c0acdec5dbddd8c11e/decorator-4.3.0.tar.gz"
@@ -74,7 +74,7 @@ class Pytype < Formula
 
     # install all python resources, except ninja python bindings
     resources.each do |r|
-      if r.name == "ninja" or r.name =="ninja-src"
+      if r.name == "ninja" || r.name =="ninja-src"
         # do nothing: handle separately to ensure other resources are installed
       else
         venv.pip_install r

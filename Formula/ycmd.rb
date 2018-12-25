@@ -8,8 +8,8 @@ class Ycmd < Formula
   version "2018-12-16"
 
   option "with-clang-completer", "Build C-family semantic completion engine"
-  depends_on "python"
   depends_on "cmake" => :build
+  depends_on "python"
 
   resource "llvm" do
     clang_version = "7.0.0"

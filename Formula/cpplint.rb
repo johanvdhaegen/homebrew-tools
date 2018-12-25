@@ -20,4 +20,13 @@ class Cpplint < Formula
       "#{libexec}/bin/python" "#{libexec}/bin/cpplint.py" "$@"
     EOS
   end
+
+  test do
+    (testpath/"test.cc").write <<~EOS
+      void Func(){};
+    EOS
+    output = shell_output("#{bin}/cpplint test.cc 2>&1", 1)
+    assert_match "[legal/copyright]", output
+    assert_match "[readability/braces]", output
+  end
 end

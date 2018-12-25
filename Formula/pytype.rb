@@ -104,4 +104,16 @@ class Pytype < Formula
     chmod_R "ugo+r", libexec/"lib/python#{pyver}/site-packages/pytype/typeshed",
             :verbose => true
   end
+
+  test do
+    (testpath/"test.py").write <<~EOS
+      def make_greeting(user_id) -> str:
+          return 'hello, user' + user_id
+
+      def print_greeting() -> None:
+          print(make_greeting(0))
+    EOS
+    output = shell_output("#{bin}/pytype test.py 2>&1", 1)
+    assert_match "[unsupported-operands]", output
+  end
 end

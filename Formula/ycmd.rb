@@ -13,9 +13,10 @@ class Ycmd < Formula
 
   resource "llvm" do
     clang_version = "7.0.0"
-    clang_filename = format("libclang-%s-x86_64-apple-darwin.tar.bz2",
-                            clang_version)
-    url format("https://dl.bintray.com/micbou/libclang/%s", clang_filename)
+    clang_filename = format("libclang-%{version}-x86_64-apple-darwin.tar.bz2",
+                            :version => clang_version)
+    url format("https://dl.bintray.com/micbou/libclang/%{filename}",
+               :filename => clang_filename)
     sha256 "db84d5a622390300af76d73221ffba8c6923a477bce069e85763c046b207eb80"
   end
 

@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/27/ee/9d813f75dfdde769984572d4c5a400c95ccd66f2931eb67d7fb35c5726ba/pytype-2018.12.11.tar.gz"
-  version "2018-12-11"
-  sha256 "605336e0408de8e1150e21bec9cb441202f1e931b3e6c97c1ec47832c315c81c"
+  url "https://files.pythonhosted.org/packages/f3/67/8eb7790047f44218215d877d599b209c9660b3c1f82a7fe95f0e13c531ae/pytype-2019.1.18.tar.gz"
+  version "2019-01-18"
+  sha256 "35d015c365a098e28f975f4e323d0fb5490285ffc85e3b98ddf902cc96a06ea9"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
@@ -14,8 +14,8 @@ class Pytype < Formula
   depends_on "python"
 
   resource "decorator" do
-    url "https://files.pythonhosted.org/packages/6f/24/15a229626c775aae5806312f6bf1e2a73785be3402c0acdec5dbddd8c11e/decorator-4.3.0.tar.gz"
-    sha256 "c39efa13fbdeb4506c476c9b3babf6a718da943dab7811c206005a4a956c080c"
+    url "https://files.pythonhosted.org/packages/c4/26/b48aaa231644bc875bb348e162d156edb18b994da900a10f4493ea995a2f/decorator-4.3.2.tar.gz"
+    sha256 "33cd704aea07b4c28b3eb2c97d288a06918275dac0ecebdaf1bc8a48d98adb9e"
   end
 
   resource "networkx" do
@@ -29,13 +29,13 @@ class Pytype < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/d0/09/3e6a5eeb6e04467b737d55f8bba15247ac0876f98fae659e58cd744430c6/pyparsing-2.3.0.tar.gz"
-    sha256 "f353aab21fd474459d97b709e527b5571314ee5f067441dc9f88e33eecd96592"
+    url "https://files.pythonhosted.org/packages/b9/b8/6b32b3e84014148dcd60dd05795e35c2e7f4b72f918616c61fdce83d27fc/pyparsing-2.3.1.tar.gz"
+    sha256 "66c9268862641abcac4a96ba74506e594c884e3f57690a696d21ad8210ed667a"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/cf/50/1f10d2626df0aa97ce6b62cf6ebe14f605f4e101234f7748b8da4138a8ed/packaging-18.0.tar.gz"
-    sha256 "0886227f54515e592aaa2e5a553332c73962917f2831f1b0f9b9f4380a4b9807"
+    url "https://files.pythonhosted.org/packages/16/51/d72654dbbaa4a4ffbf7cb0ecd7d12222979e0a660bf3f42acc47550bf098/packaging-19.0.tar.gz"
+    sha256 "0c98a5d0be38ed775798ece1b9727178c4469d9c3b4ada66e8e6b7849f8732af"
   end
 
   resource "scikit-build" do
@@ -54,8 +54,8 @@ class Pytype < Formula
   end
 
   resource "importlab" do
-    url "https://files.pythonhosted.org/packages/eb/0b/d3473b5719888a5bb889e9559ddc040a6cf7036dfcbbf72db180716cafdc/importlab-0.4.tar.gz"
-    sha256 "de791a75fcf9f4b856e4bdb5c267c008f8cfb916543b34be78e331ed05ac6d36"
+    url "https://files.pythonhosted.org/packages/6c/14/9081386bafaa5673b7d75063afe084d2c15ce837921e3bfb32281569081f/importlab-0.5.tar.gz"
+    sha256 "ab3a0bf77a326de577e3c7f643ec304f83fed93cb1056638560d832413d6e736"
   end
 
   resource "pyyaml" do
@@ -102,6 +102,13 @@ class Pytype < Formula
 
     # fix typeshed permissions: not all typeshed files are world readable
     chmod_R "ugo+r", libexec/"lib/python#{pyver}/site-packages/pytype/typeshed",
+            :verbose => true
+    # fix other permission problems
+    chmod_R "ugo+r",
+            libexec/"lib/python#{pyver}/site-packages/pytype-2019.1.18-py#{pyver}.egg-info",
+            :verbose => true
+    chmod_R "ugo+r",
+            libexec/"lib/python#{pyver}/site-packages/importlab-0.5-py#{pyver}.egg-info",
             :verbose => true
   end
 

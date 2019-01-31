@@ -7,17 +7,24 @@ class Bib2xhtml < Formula
 
   def install
     ENV.prepend_create_path "BSTINPUTS", libexec
-
-    # resources.each do |r|
-    #   r.stage do
-    #     system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}"
-    #     system "make"
-    #     system "make", "install"
-    #   end
-    # end
-
     bin.install "bib2xhtml"
     libexec.install Dir["*.bst"]
     bin.env_script_all_files(libexec+"bin", :BSTINPUTS => ENV["BSTINPUTS"])
+  end
+
+  test do
+    (testpath/"test.bib").write <<~EOS
+      @Unpublished{ref,
+        author       = {Me and Myself and I},
+        title        = {Work 1},
+        note         = {Not published}
+      }
+    EOS
+    output = shell_output("#{bin}/bib2xhtml test.bib")
+    assert_match(
+      /<!-- BEGIN BIBLIOGRAPHY test -->(.|\\n)*<!-- END BIBLIOGRAPHY test -->/m,
+      output,
+    )
+    assert_match("<li><a name=\"ref\"></a>Me", output)
   end
 end

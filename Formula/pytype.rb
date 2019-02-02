@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/f3/67/8eb7790047f44218215d877d599b209c9660b3c1f82a7fe95f0e13c531ae/pytype-2019.1.18.tar.gz"
-  version "2019-01-18"
-  sha256 "35d015c365a098e28f975f4e323d0fb5490285ffc85e3b98ddf902cc96a06ea9"
+  url "https://files.pythonhosted.org/packages/39/ba/c86ec7209efb89ac0a0e1cd82773ea42c5e9be3eb7f839a86efdc9e3d658/pytype-2019.1.30.tar.gz"
+  version "2019-01-30"
+  sha256 "a19c2f145420fab82f8af9027201d583004e9fc9cb1adce0913d22b189e9810e"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
@@ -103,9 +103,11 @@ class Pytype < Formula
     # fix typeshed permissions: not all typeshed files are world readable
     chmod_R "ugo+r", libexec/"lib/python#{pyver}/site-packages/pytype/typeshed",
             :verbose => true
+    chmod_R "ugo+r", libexec/"lib/python#{pyver}/site-packages/pytype/pytd",
+            :verbose => true
     # fix other permission problems
     chmod_R "ugo+r",
-            libexec/"lib/python#{pyver}/site-packages/pytype-2019.1.18-py#{pyver}.egg-info",
+            libexec/"lib/python#{pyver}/site-packages/pytype-2019.1.30-py#{pyver}.egg-info",
             :verbose => true
     chmod_R "ugo+r",
             libexec/"lib/python#{pyver}/site-packages/importlab-0.5-py#{pyver}.egg-info",

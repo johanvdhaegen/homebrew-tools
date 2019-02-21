@@ -2,8 +2,8 @@ class Copybara < Formula
   desc "Tool for transforming and moving code between repositories"
   homepage "https://github.com/google/copybara"
   url "https://github.com/google/copybara.git",
-      :revision => "7a7e13b6cfe70b964fb3123944415a8a82561296"
-  version "2019-01-23"
+      :revision => "f3e4f0ae503fb46318bc1661c896f3d5867c4957"
+  version "2019-02-15"
 
   depends_on "bazel" => :build
   depends_on :java => "1.8"
@@ -15,6 +15,8 @@ class Copybara < Formula
     system "bazel", "build",
            "--host_java_toolchain=@bazel_tools//tools/jdk:toolchain_hostjdk8",
            "--java_toolchain=@bazel_tools//tools/jdk:toolchain_hostjdk8",
+           "--host_javabase=@bazel_tools//tools/jdk:jdk",
+           "--javabase=@bazel_tools//tools/jdk:jdk",
            "//java/com/google/copybara:copybara_deploy.jar"
     libexec.install "bazel-bin/java/com/google/copybara/copybara_deploy.jar"
     (bin/"copybara").write <<~EOS

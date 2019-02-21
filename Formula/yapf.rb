@@ -4,8 +4,8 @@ class Yapf < Formula
   desc "Formatter for Python files"
   homepage "https://github.com/google/yapf"
   url "https://github.com/google/yapf.git",
-      :tag      => "v0.25.0",
-      :revision => "868fa313af7ddc62c086394cf89a07c613edba2f"
+      :tag      => "v0.26.0",
+      :revision => "37f675d2baea555b94920251475fa968a454225b"
   head "https://github.com/google/yapf.git"
 
   depends_on "python"

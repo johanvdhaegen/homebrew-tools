@@ -28,6 +28,7 @@ class Copybara < Formula
 
   test do
     assert_match(/Unknown version$/,
-                 pipe_output("#{bin}/copybara version 2>&1"))
+                 pipe_output(
+                   "#{bin}/copybara --work-dir=#{testpath} version 2>&1"))
   end
 end

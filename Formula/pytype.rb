@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/39/ba/c86ec7209efb89ac0a0e1cd82773ea42c5e9be3eb7f839a86efdc9e3d658/pytype-2019.1.30.tar.gz"
-  version "2019-01-30"
-  sha256 "a19c2f145420fab82f8af9027201d583004e9fc9cb1adce0913d22b189e9810e"
+  url "https://files.pythonhosted.org/packages/06/e3/91c5d28943547bfe7dd818281d162746e32fdab47017eff34a1026b88e5a/pytype-2019.2.13.tar.gz"
+  version "2019-02-13"
+  sha256 "7213ed98a06c36cdf76bf22fd4db4806f6a76704bf9126521e43590ee1fc87e4"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
@@ -24,8 +24,8 @@ class Pytype < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/d8/55/221a530d66bf78e72996453d1e2dedef526063546e131d70bed548d80588/wheel-0.32.3.tar.gz"
-    sha256 "029703bf514e16c8271c3821806a1c171220cc5bdd325cbf4e7da1e056a01db6"
+    url "https://files.pythonhosted.org/packages/d9/7d/86df15e317027f6e87aa68ea854abf8437e796b4c0fadd3ae5ee67b77cb2/wheel-0.33.0.tar.gz"
+    sha256 "12363e6df5678ecf9daf8429f06f97e7106e701405898f24318ce7f0b79c611a"
   end
 
   resource "pyparsing" do
@@ -107,7 +107,7 @@ class Pytype < Formula
             :verbose => true
     # fix other permission problems
     chmod_R "ugo+r",
-            libexec/"lib/python#{pyver}/site-packages/pytype-2019.1.30-py#{pyver}.egg-info",
+            libexec/"lib/python#{pyver}/site-packages/pytype-2019.2.13-py#{pyver}.egg-info",
             :verbose => true
     chmod_R "ugo+r",
             libexec/"lib/python#{pyver}/site-packages/importlab-0.5-py#{pyver}.egg-info",

@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/06/e3/91c5d28943547bfe7dd818281d162746e32fdab47017eff34a1026b88e5a/pytype-2019.2.13.tar.gz"
-  version "2019-02-13"
-  sha256 "7213ed98a06c36cdf76bf22fd4db4806f6a76704bf9126521e43590ee1fc87e4"
+  url "https://files.pythonhosted.org/packages/a0/b0/21382835513c3cee5186139ea9eba7be1fb6940c00e2e07c3fac783fe85a/pytype-2019.3.8.tar.gz"
+  version "2019-03-08"
+  sha256 "eda83673b6263f14c75912ecd05ad105037e74f6aa4b2ec01500daddf58a4db7"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
@@ -24,8 +24,8 @@ class Pytype < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/d9/7d/86df15e317027f6e87aa68ea854abf8437e796b4c0fadd3ae5ee67b77cb2/wheel-0.33.0.tar.gz"
-    sha256 "12363e6df5678ecf9daf8429f06f97e7106e701405898f24318ce7f0b79c611a"
+    url "https://files.pythonhosted.org/packages/b7/cf/1ea0f5b3ce55cacde1e84cdde6cee1ebaff51bd9a3e6c7ba4082199af6f6/wheel-0.33.1.tar.gz"
+    sha256 "66a8fd76f28977bb664b098372daef2b27f60dc4d1688cfab7b37a09448f0e9d"
   end
 
   resource "pyparsing" do
@@ -39,18 +39,18 @@ class Pytype < Formula
   end
 
   resource "scikit-build" do
-    url "https://files.pythonhosted.org/packages/30/ee/1d6bc8c865b77d7c74487c63770582b72675c5f3260d687f1504996a5379/scikit-build-0.8.1.tar.gz"
-    sha256 "2aa4411a7de928d395eca240a6a794aa05c8d1c42ee53a4ae48fa324693902c2"
+    url "https://files.pythonhosted.org/packages/bb/48/412c5f3fb48364caa8e339d8e84dd2706c75b82d80df377353deecb5b2dc/scikit-build-0.9.0.tar.gz"
+    sha256 "81119231cd9c4eba7acc1aaf7351a33b69494c2ccf94a31c2902a80622f089a9"
   end
 
   resource "ninja-src" do
-    url "https://github.com/kitware/ninja/archive/v1.8.2.g3bbbe.kitware.dyndep-1.jobserver-1.tar.gz"
-    sha256 "121c432cec32c8aea730a71a256a81442ac8446c6f0e7652ea3121da9e0d482d"
+    url "https://github.com/ninja-build/ninja/archive/v1.9.0.tar.gz"
+    sha256 "5d7ec75828f8d3fd1a0c2f31b5b0cea780cdfe1031359228c428c1a48bfcd5b9"
   end
 
   resource "ninja" do
-    url "https://files.pythonhosted.org/packages/66/09/2a859888a29ca698c45c2e5a12b7f3dfdc58bd2896b33366dfffcba1a385/ninja-1.8.2.post2.tar.gz"
-    sha256 "17964e0260a9f1955d6da6d28d61b0ab2b77bec57aed285850bbd149219c70e2"
+    url "https://files.pythonhosted.org/packages/47/ff/e2ddb9b663fd387437f3aee7befc2376b98410c7375d1e3105c268274cd4/ninja-1.9.0.tar.gz"
+    sha256 "78c840ef1c94507956dac8810282cade2b139f0fda44c2f4706522415b990816"
   end
 
   resource "importlab" do
@@ -107,7 +107,7 @@ class Pytype < Formula
             :verbose => true
     # fix other permission problems
     chmod_R "ugo+r",
-            libexec/"lib/python#{pyver}/site-packages/pytype-2019.2.13-py#{pyver}.egg-info",
+            libexec/"lib/python#{pyver}/site-packages/pytype-2019.3.8-py#{pyver}.egg-info",
             :verbose => true
     chmod_R "ugo+r",
             libexec/"lib/python#{pyver}/site-packages/importlab-0.5-py#{pyver}.egg-info",

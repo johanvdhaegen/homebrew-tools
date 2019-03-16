@@ -106,11 +106,12 @@ class Pytype < Formula
     chmod_R "ugo+r", libexec/"lib/python#{pyver}/site-packages/pytype/pytd",
             :verbose => true
     # fix other permission problems
+    pytype_version = stable.url.slice(/\d+\.\d+\.\d+/)
     chmod_R "ugo+r",
-            libexec/"lib/python#{pyver}/site-packages/pytype-2019.3.8-py#{pyver}.egg-info",
+            libexec/"lib/python#{pyver}/site-packages/pytype-#{pytype_version}-py#{pyver}.egg-info",
             :verbose => true
     chmod_R "ugo+r",
-            libexec/"lib/python#{pyver}/site-packages/importlab-0.5-py#{pyver}.egg-info",
+            libexec/"lib/python#{pyver}/site-packages/importlab-#{resource("importlab").version}-py#{pyver}.egg-info",
             :verbose => true
   end
 

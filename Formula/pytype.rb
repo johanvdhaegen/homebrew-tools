@@ -44,8 +44,10 @@ class Pytype < Formula
   end
 
   resource "ninja-src" do
-    url "https://github.com/ninja-build/ninja/archive/v1.9.0.tar.gz"
-    sha256 "5d7ec75828f8d3fd1a0c2f31b5b0cea780cdfe1031359228c428c1a48bfcd5b9"
+    # unix_source_url from NinjaUrls.cmake in ninja python archive
+    # https://github.com/scikit-build/ninja-python-distributions/blob/master/NinjaUrls.cmake
+    url "https://github.com/kitware/ninja/archive/v1.9.0.g5b44b.kitware.dyndep-1.jobserver-1.tar.gz"
+    sha256 "449359a402c3adccd37f6fece19ce7d7cda586e837fdf50eb7d53597b7f1ce90"
   end
 
   resource "ninja" do
@@ -84,9 +86,10 @@ class Pytype < Formula
     # install ninja python bindings
     [resource("ninja")].each do |r|
       r.stage do
+        ninja_deployment_target = "10.6"  # scikit-build default
         dl = resource("ninja-src")
         dl.verify_download_integrity(dl.fetch)
-        dl_dir = "_skbuild/macosx-#{MacOS.version}-x86_64-#{pyver}/cmake-build"
+        dl_dir = "_skbuild/macosx-#{ninja_deployment_target}-x86_64-#{pyver}/cmake-build"
         mkdir_p dl_dir
         cp dl.cached_download,
            File.join(dl_dir, File.basename(URI.parse(dl.url).path)),

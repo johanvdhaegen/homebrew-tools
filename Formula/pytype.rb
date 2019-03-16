@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/a0/b0/21382835513c3cee5186139ea9eba7be1fb6940c00e2e07c3fac783fe85a/pytype-2019.3.8.tar.gz"
-  version "2019-03-08"
-  sha256 "eda83673b6263f14c75912ecd05ad105037e74f6aa4b2ec01500daddf58a4db7"
+  url "https://files.pythonhosted.org/packages/af/45/15a777f3f47598dbc831acf400449c9f86a1645a3320ddcdc0df6ea158f9/pytype-2019.3.15.tar.gz"
+  version "2019-03-15"
+  sha256 "b4abd0f19fef6684a195814887543c53f18a33ff80a4d8cffa302588f6dfc4f1"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
@@ -14,8 +14,8 @@ class Pytype < Formula
   depends_on "python"
 
   resource "decorator" do
-    url "https://files.pythonhosted.org/packages/c4/26/b48aaa231644bc875bb348e162d156edb18b994da900a10f4493ea995a2f/decorator-4.3.2.tar.gz"
-    sha256 "33cd704aea07b4c28b3eb2c97d288a06918275dac0ecebdaf1bc8a48d98adb9e"
+    url "https://files.pythonhosted.org/packages/ba/19/1119fe7b1e49b9c8a9f154c930060f37074ea2e8f9f6558efc2eeaa417a2/decorator-4.4.0.tar.gz"
+    sha256 "86156361c50488b84a3f148056ea716ca587df2f0de1d34750d35c21312725de"
   end
 
   resource "networkx" do
@@ -61,8 +61,8 @@ class Pytype < Formula
   end
 
   resource "pyyaml" do
-    url "https://pyyaml.org/download/pyyaml/PyYAML-3.13.tar.gz"
-    sha256 "3ef3092145e9b70e3ddd2c7ad59bdd0252a94dfe3949721633e41344de00a6bf"
+    url "https://files.pythonhosted.org/packages/9f/2c/9417b5c774792634834e730932745bc09a7d36754ca00acf1ccd1ac2594d/PyYAML-5.1.tar.gz"
+    sha256 "436bc774ecf7c103814098159fbb84c2715d25980175292c648f2da143909f95"
   end
 
   resource "six" do

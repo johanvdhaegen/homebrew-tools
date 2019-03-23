@@ -4,8 +4,8 @@ class Ycmd < Formula
   desc "Code-completion & code-comprehension server"
   homepage "https://github.com/Valloric/ycmd"
   url "https://github.com/Valloric/ycmd.git",
-      :revision => "eca62b77d1b2b34aaa50033425bd215263d8fee2"
-  version "2019-01-23"
+      :revision => "c618342c08d528d88fe38ff56a2aa80b1de4108f"
+  version "2019-03-09"
 
   option "with-clang-completer", "Build C-family semantic completion engine"
   depends_on "cmake" => :build
@@ -42,16 +42,26 @@ class Ycmd < Formula
     # install docs
     doc.install "COPYING.txt", "README.md"
 
-    # create isolated virtualenv and install ycmd
+    # create isolated virtualenv and install ycmd and third-party dependencies
     virtualenv_create(libexec, "python3")
     libexec.install "ycmd", "ycm_core.so", "CORE_VERSION",
                     "PYTHON_USED_DURING_BUILDING"
-    (libexec/"third_party").install [
-      "jedi_deps", "bottle", "frozendict", "python-future", "requests_deps",
-      "waitress", "cregex"
-    ].map { |s| "third_party/" + s }
+    third_party = [
+      "bottle", "cregex", "frozendict", "jedi", "jedi_deps", "parso",
+      "python-future", "requests", "requests_deps", "waitress"
+    ]
+    third_party << "clang" if build.with? "clang-completer"
+    (libexec/"third_party").install third_party.map { |s| "third_party/" + s }
 
-    libexec.install "libclang.dylib" if build.with? "clang-completer"
+    # fix shared library paths which are not fixed automatically
+    if build.with? "clang-completer"
+      ["#{libexec}/ycm_core.so"].each do |f|
+        macho = MachO.open(f)
+        macho.change_dylib("@rpath/libclang.dylib",
+                           "#{libexec}/third_party/clang/lib/libclang.dylib")
+        macho.write!
+      end
+    end
 
     # create wrapper script using virtualenv python
     (bin/"ycmd").write <<~EOS

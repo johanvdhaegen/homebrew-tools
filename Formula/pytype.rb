@@ -86,7 +86,7 @@ class Pytype < Formula
     # install ninja python bindings
     [resource("ninja")].each do |r|
       r.stage do
-        ninja_deployment_target = "10.6"  # scikit-build default
+        ninja_deployment_target = "10.6" # scikit-build default
         dl = resource("ninja-src")
         dl.verify_download_integrity(dl.fetch)
         dl_dir = "_skbuild/macosx-#{ninja_deployment_target}-x86_64-#{pyver}/cmake-build"

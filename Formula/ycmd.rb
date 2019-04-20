@@ -4,20 +4,20 @@ class Ycmd < Formula
   desc "Code-completion & code-comprehension server"
   homepage "https://github.com/Valloric/ycmd"
   url "https://github.com/Valloric/ycmd.git",
-      :revision => "c618342c08d528d88fe38ff56a2aa80b1de4108f"
-  version "2019-03-09"
+      :revision => "c7ffd1d0ef7fb57540bd5c0ceba6068ead80c53c"
+  version "2019-04-11"
 
   option "with-clang-completer", "Build C-family semantic completion engine"
   depends_on "cmake" => :build
   depends_on "python"
 
   resource "llvm" do
-    clang_version = "7.0.0"
+    clang_version = "8.0.0"
     clang_filename = format("libclang-%{version}-x86_64-apple-darwin.tar.bz2",
                             :version => clang_version)
     url format("https://dl.bintray.com/micbou/libclang/%{filename}",
                :filename => clang_filename)
-    sha256 "db84d5a622390300af76d73221ffba8c6923a477bce069e85763c046b207eb80"
+    sha256 "0900559a7aff8a1156949a53b811d6711f8493938e47f0587c2e5e6a5c4972e8"
   end
 
   def install

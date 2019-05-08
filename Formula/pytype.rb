@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/cf/b4/b4e4558f69a6552aba315c5b3e4a51464c4eb5a0d2ffc2c013910cc6e59d/pytype-2019.4.19.tar.gz"
-  version "2019-04-19"
-  sha256 "629665f29781fefee7086f779cbceb6a0b19e8860384adc5c92876b28c0d3c1c"
+  url "https://files.pythonhosted.org/packages/51/f9/0b9be14e4d88d34d46df68cc4541fb6520d85aaa59e7ca401f7a4ac1fb6e/pytype-2019.4.26.tar.gz"
+  version "2019-04-26"
+  sha256 "666d401facc4d771bd2ac894c0c69749f490991773e7de157b24013aea5c0e72"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
@@ -71,8 +71,8 @@ class Pytype < Formula
   end
 
   resource "typed_ast" do
-    url "https://files.pythonhosted.org/packages/a6/4e/ff9d7b7091e2308d2cdb04a1a317e13f293f4408990ee4a52b7028657917/typed-ast-1.3.4.tar.gz"
-    sha256 "68c362848d9fb71d3c3e5f43c09974a0ae319144634e7a47db62f0f2a54a7fa7"
+    url "https://files.pythonhosted.org/packages/d3/b1/959c3ed4a9cc100feba7ad1a7d6336d8888937ee89f4a577f7698e09decd/typed-ast-1.3.5.tar.gz"
+    sha256 "5315f4509c1476718a4825f45a203b82d7fdf2a6f5f0c8f166435975b1c9f7d4"
   end
 
   def install

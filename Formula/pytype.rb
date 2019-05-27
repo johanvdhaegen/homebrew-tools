@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/e5/d5/3513abc34323289e7b344e007c120c8e8e117303c68df4177d9092e2bb99/pytype-2019.5.15.tar.gz"
-  version "2019-05-15"
-  sha256 "f01764f0e5cb93c5e1b41acdb01450349e3e121c086c84cfd27f5c850cc076e6"
+  url "https://files.pythonhosted.org/packages/51/07/c80aaec6acec5287ef09b690eb2d1ab6ffc8a6d5d911f911e60722163a86/pytype-2019.5.24.tar.gz"
+  version "2019-05-24"
+  sha256 "ca9f387b818d5d397f0030d86aef9228a5c3f7e6319915f45bd34b9918be7b9a"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
@@ -56,8 +56,8 @@ class Pytype < Formula
   end
 
   resource "importlab" do
-    url "https://files.pythonhosted.org/packages/6c/14/9081386bafaa5673b7d75063afe084d2c15ce837921e3bfb32281569081f/importlab-0.5.tar.gz"
-    sha256 "ab3a0bf77a326de577e3c7f643ec304f83fed93cb1056638560d832413d6e736"
+    url "https://files.pythonhosted.org/packages/16/86/6b3e80e074272aa2968452c82390d8f6cb1bb7645e852437a1e696389c04/importlab-0.5.1.tar.gz"
+    sha256 "d855350d19dc10a17aabd2fe6f4b428ff1a936071f692fbf686a73694d26a51c"
   end
 
   resource "pyyaml" do

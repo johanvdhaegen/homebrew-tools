@@ -3,8 +3,8 @@ class Pygments < Formula
 
   desc "Syntax highlighting package written in Python"
   homepage "http://pygments.org/"
-  url "https://files.pythonhosted.org/packages/91/29/3131bac2b484a9f87aed53d84328307b91fb238effa44ade3f241de36e4a/Pygments-2.4.1.tar.gz"
-  sha256 "b437bc0d04dc36f1f5b3592985b3e0a3d0af46b7c39199231706d19a4ee63344"
+  url "https://files.pythonhosted.org/packages/7e/ae/26808275fc76bf2832deb10d3a3ed3107bc4de01b85dcccbe525f2cd6d1e/Pygments-2.4.2.tar.gz"
+  sha256 "881c4c157e45f30af185c1ffe8d549d48ac9127433f2c380c24b84572ad66297"
 
   depends_on "python"
 

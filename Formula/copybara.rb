@@ -2,8 +2,8 @@ class Copybara < Formula
   desc "Tool for transforming and moving code between repositories"
   homepage "https://github.com/google/copybara"
   url "https://github.com/google/copybara.git",
-      :revision => "f3fa671fe2ab526cbfb9b32307e0e58f3964688d"
-  version "2019-05-24"
+      :revision => "648e2904dcd60aae89227a9320d3c38d34e5eae0"
+  version "2019-06-20"
 
   depends_on "bazel" => :build
   depends_on :java => "1.8"

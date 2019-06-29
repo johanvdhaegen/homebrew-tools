@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/ad/f6/af149a0c0065d985199a80839f1e906f985eec549a5853cc872e795b6fce/pytype-2019.5.31.tar.gz"
-  version "2019-05-31"
-  sha256 "673f797ef799359d951a43c9f10c77ebaa81bf899b506e5d1d17528d77c50fec"
+  url "https://files.pythonhosted.org/packages/7b/cd/a7f2aae80bcbda65543e0e712e0dd4e837df03d67847386c0d9240335e42/pytype-2019.6.21.tar.gz"
+  version "2019-06-21"
+  sha256 "2d34e92f13131655725db71c16f8cc321f7c96676d28823c4439ae450377c4ee"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
@@ -39,8 +39,8 @@ class Pytype < Formula
   end
 
   resource "scikit-build" do
-    url "https://files.pythonhosted.org/packages/bb/48/412c5f3fb48364caa8e339d8e84dd2706c75b82d80df377353deecb5b2dc/scikit-build-0.9.0.tar.gz"
-    sha256 "81119231cd9c4eba7acc1aaf7351a33b69494c2ccf94a31c2902a80622f089a9"
+    url "https://files.pythonhosted.org/packages/9f/6b/9c193b2402969b2f3ef5e8105a434a9d4274df9b8315699225072217322a/scikit-build-0.10.0.tar.gz"
+    sha256 "7342017cc82dd6178e3b19377389b8a8d1f8b429d9cdb315cfb1094e34a0f526"
   end
 
   resource "ninja-src" do
@@ -61,8 +61,8 @@ class Pytype < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/9f/2c/9417b5c774792634834e730932745bc09a7d36754ca00acf1ccd1ac2594d/PyYAML-5.1.tar.gz"
-    sha256 "436bc774ecf7c103814098159fbb84c2715d25980175292c648f2da143909f95"
+    url "https://files.pythonhosted.org/packages/a3/65/837fefac7475963d1eccf4aa684c23b95aa6c1d033a2c5965ccb11e22623/PyYAML-5.1.1.tar.gz"
+    sha256 "b4bb4d3f5e232425e25dda21c070ce05168a786ac9eda43768ab7f3ac2770955"
   end
 
   resource "six" do
@@ -71,8 +71,8 @@ class Pytype < Formula
   end
 
   resource "typed_ast" do
-    url "https://files.pythonhosted.org/packages/d3/b1/959c3ed4a9cc100feba7ad1a7d6336d8888937ee89f4a577f7698e09decd/typed-ast-1.3.5.tar.gz"
-    sha256 "5315f4509c1476718a4825f45a203b82d7fdf2a6f5f0c8f166435975b1c9f7d4"
+    url "https://files.pythonhosted.org/packages/34/de/d0cfe2ea7ddfd8b2b8374ed2e04eeb08b6ee6e1e84081d151341bba596e5/typed_ast-1.4.0.tar.gz"
+    sha256 "66480f95b8167c9c5c5c87f32cf437d585937970f3fc24386f313a4c97b44e34"
   end
 
   def install

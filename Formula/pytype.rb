@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/79/09/54b39a2c0ab95d171a867f13bb2a55c46f584fbbc0b9cb972d2eb9e1e17b/pytype-2019.6.28.tar.gz"
-  version "2019-06-28"
-  sha256 "b8037a46079428ab10827fff1218b8d1eb87d09d0d7669411250ad2b2e737668"
+  url "https://files.pythonhosted.org/packages/0e/be/48c9854271ec9cf16f51a7b0a3820a07bea7ab8f49813b1178e94471e1ba/pytype-2019.7.11.tar.gz"
+  version "2019-07-11"
+  sha256 "a5a2592a163af4b277db704a87f7c5898166a0b72c4eb0bb62e9d44674c44aa9"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build

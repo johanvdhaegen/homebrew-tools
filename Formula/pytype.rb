@@ -3,15 +3,20 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/b1/8d/a052d31e7e1e61e3138cf3baedd5fab871e9ee544445ba3bd2db3f4e3e59/pytype-2019.8.9.tar.gz"
-  version "2019-08-09"
-  sha256 "e7a63081c7237cc7143ab3ef69699e8c69f79a51e4737b958117f538a9b32b5c"
+  url "https://files.pythonhosted.org/packages/61/e8/c8b64bd8459d5ee2b5dd2ad800c2b7d3f8471dd341abd407928f0182d9ba/pytype-2019.8.29.tar.gz"
+  version "2019-08-29"
+  sha256 "b36e0c9019fd757d9ba966aea43d3a716d0ace510e581c259c7eb4d78512ad56"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "libyaml"
   depends_on "python"
+
+  resource "attrs" do
+    url "https://files.pythonhosted.org/packages/cc/d9/931a24cc5394f19383fbbe3e1147a0291276afa43a0dc3ed0d6cd9fda813/attrs-19.1.0.tar.gz"
+    sha256 "f0b870f674851ecbfbbbd364d6b5cbdff9dcedbc7f3f5e18a6891057f21fe399"
+  end
 
   resource "decorator" do
     url "https://files.pythonhosted.org/packages/ba/19/1119fe7b1e49b9c8a9f154c930060f37074ea2e8f9f6558efc2eeaa417a2/decorator-4.4.0.tar.gz"

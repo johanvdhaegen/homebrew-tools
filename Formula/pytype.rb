@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/10/7a/e74cbe45c9a96c19b68c68a87d3de3b281a7e5aadd38bd7ce7a23bbacdae/pytype-2019.7.26.tar.gz"
-  version "2019-07-26"
-  sha256 "3aa66fc40e4e2f74ffc2092acf5409517d124a58d8aff976dee699f5cfe56d6a"
+  url "https://files.pythonhosted.org/packages/71/ca/04c8767fcf2a6f622da37b8a3233ed74ad9e87c9c14072a1832a348ba01b/pytype-2019.7.30.tar.gz"
+  version "2019-07-30"
+  sha256 "304d03032db100f9bc16bcbc63c46b2f5ead00ad30fab859383d339e1fd53c53"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
@@ -29,13 +29,13 @@ class Pytype < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/5d/3a/24d275393f493004aeb15a1beae2b4a3043526e8b692b65b4a9341450ebe/pyparsing-2.4.0.tar.gz"
-    sha256 "1873c03321fc118f4e9746baf201ff990ceb915f433f23b395f5580d1840cb2a"
+    url "https://files.pythonhosted.org/packages/7e/24/eaa8d7003aee23eda270099eeec754d7bf4399f75c6a011ef948304f66a2/pyparsing-2.4.2.tar.gz"
+    sha256 "6f98a7b9397e206d78cc01df10131398f1c8b8510a2f4d97d9abd82e1aacdd80"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/16/51/d72654dbbaa4a4ffbf7cb0ecd7d12222979e0a660bf3f42acc47550bf098/packaging-19.0.tar.gz"
-    sha256 "0c98a5d0be38ed775798ece1b9727178c4469d9c3b4ada66e8e6b7849f8732af"
+    url "https://files.pythonhosted.org/packages/8b/3a/5bfe64c319be5775ed7ea3bc1a8e5667e0d57a740cc0498ce03e032eaf93/packaging-19.1.tar.gz"
+    sha256 "c491ca87294da7cc01902edbe30a5bc6c4c28172b5138ab4e4aa1b9d7bfaeafe"
   end
 
   resource "scikit-build" do

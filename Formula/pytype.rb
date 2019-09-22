@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/4a/86/b24b8361fe498a898863389135bf28cadcc8c8b36ec207af0995c91dd32a/pytype-2019.9.6.tar.gz"
-  version "2019-09-06"
-  sha256 "1fcada9cf165228ac9481d564237a38c15ce9a55db7ae14ec0b4bfce0c90dbf4"
+  url "https://files.pythonhosted.org/packages/5a/dd/3519e6c837ca869dc4052d683ed706916b6ad94b01e4343b9882e11c427c/pytype-2019.9.17.tar.gz"
+  version "2019-09-17"
+  sha256 "bd50026874659b4e3bc611673efef4aeb604694d285ea177932bda7ab4f2b9de"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
@@ -39,8 +39,8 @@ class Pytype < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/8b/3a/5bfe64c319be5775ed7ea3bc1a8e5667e0d57a740cc0498ce03e032eaf93/packaging-19.1.tar.gz"
-    sha256 "c491ca87294da7cc01902edbe30a5bc6c4c28172b5138ab4e4aa1b9d7bfaeafe"
+    url "https://files.pythonhosted.org/packages/5a/2f/449ded84226d0e2fda8da9252e5ee7731bdf14cd338f622dfcd9934e0377/packaging-19.2.tar.gz"
+    sha256 "28b924174df7a2fa32c1953825ff29c61e2f5e082343165438812f00d3a7fc47"
   end
 
   resource "scikit-build" do

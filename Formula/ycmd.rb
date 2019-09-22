@@ -4,8 +4,8 @@ class Ycmd < Formula
   desc "Code-completion & code-comprehension server"
   homepage "https://github.com/Valloric/ycmd"
   url "https://github.com/Valloric/ycmd.git",
-      :revision => "3b5d0bc9a0228765d9a99a693cf9c0301bee3224"
-  version "2019-05-11"
+      :revision => "c6d360775b0c5c82e2513dce7b625f8bf3812702"
+  version "2019-09-19"
 
   option "with-clang-completer", "Build C-family semantic completion engine"
   depends_on "cmake" => :build
@@ -47,8 +47,8 @@ class Ycmd < Formula
     libexec.install "ycmd", "ycm_core.so", "CORE_VERSION",
                     "PYTHON_USED_DURING_BUILDING"
     third_party = [
-      "bottle", "cregex", "frozendict", "jedi", "jedi_deps", "parso",
-      "python-future", "requests", "requests_deps", "waitress"
+      "bottle", "cregex", "frozendict", "generic_server", "jedi_deps",
+      "python-future", "requests_deps", "waitress"
     ]
     third_party << "clang" if build.with? "clang-completer"
     (libexec/"third_party").install third_party.map { |s| "third_party/" + s }

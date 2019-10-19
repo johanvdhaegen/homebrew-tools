@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/5a/dd/3519e6c837ca869dc4052d683ed706916b6ad94b01e4343b9882e11c427c/pytype-2019.9.17.tar.gz"
-  version "2019-09-17"
-  sha256 "bd50026874659b4e3bc611673efef4aeb604694d285ea177932bda7ab4f2b9de"
+  url "https://files.pythonhosted.org/packages/c5/0d/1ad58ab73a190f4d7db16a1af1e19363afec81cf14fa76a22972e94fc7e6/pytype-2019.10.17.tar.gz"
+  version "2019-10-17"
+  sha256 "ff43dd0abc144ddf4d895ea52918b5d4bbd0f96b690af205e477cb1074b6ef4e"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
@@ -14,8 +14,8 @@ class Pytype < Formula
   depends_on "python"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/cc/d9/931a24cc5394f19383fbbe3e1147a0291276afa43a0dc3ed0d6cd9fda813/attrs-19.1.0.tar.gz"
-    sha256 "f0b870f674851ecbfbbbd364d6b5cbdff9dcedbc7f3f5e18a6891057f21fe399"
+    url "https://files.pythonhosted.org/packages/98/c3/2c227e66b5e896e15ccdae2e00bbc69aa46e9a8ce8869cc5fa96310bf612/attrs-19.3.0.tar.gz"
+    sha256 "f7b7ce16570fe9965acd6d30101a28f62fb4a7f9e926b3bbc9b61f8b04247e72"
   end
 
   resource "decorator" do
@@ -24,8 +24,8 @@ class Pytype < Formula
   end
 
   resource "networkx" do
-    url "https://files.pythonhosted.org/packages/85/08/f20aef11d4c343b557e5de6b9548761811eb16e438cee3d32b1c66c8566b/networkx-2.3.zip"
-    sha256 "8311ddef63cf5c5c5e7c1d0212dd141d9a1fe3f474915281b73597ed5f1d4e3d"
+    url "https://files.pythonhosted.org/packages/bf/63/7b579dd3b1c49ce6b7fd8f6f864038f255201410905dd183cf7f4a3845cf/networkx-2.4.tar.gz"
+    sha256 "f8f4ff0b6f96e4f9b16af6b84622597b5334bf9cae8cf9b2e42e7985d5c95c64"
   end
 
   resource "wheel" do

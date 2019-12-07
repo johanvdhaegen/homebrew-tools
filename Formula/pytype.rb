@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/e3/cc/0fdbb2872cc7e9fb7dc3af52155773ce089fbee912a6e71c1d6609f8c5e7/pytype-2019.11.27.tar.gz"
-  version "2019-11-27"
-  sha256 "e6c7d3c01c70ea717709ad2a18bb7b2535504f88d06a965a04971d35c71d33b7"
+  url "https://files.pythonhosted.org/packages/66/07/a596e12ea6ef7e53d4e5c5604246fd8d40603dd54202794631d1eeefa361/pytype-2019.12.6.tar.gz"
+  version "2019-12-06"
+  sha256 "1d36a19bc82d43580ce575867dcc7bcb6f835992711f05490da750ca7a773dda"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
@@ -66,8 +66,8 @@ class Pytype < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/e3/e8/b3212641ee2718d556df0f23f78de8303f068fe29cdaa7a91018849582fe/PyYAML-5.1.2.tar.gz"
-    sha256 "01adf0b6c6f61bd11af6e10ca52b7d4057dd0be0343eb9283c878cf3af56aee4"
+    url "https://files.pythonhosted.org/packages/8d/c9/e5be955a117a1ac548cdd31e37e8fd7b02ce987f9655f5c7563c656d5dcb/PyYAML-5.2.tar.gz"
+    sha256 "c0ee8eca2c582d29c3c2ec6e2c4f703d1b7f1fb10bc72317355a746057e7346c"
   end
 
   resource "six" do

@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/66/07/a596e12ea6ef7e53d4e5c5604246fd8d40603dd54202794631d1eeefa361/pytype-2019.12.6.tar.gz"
-  version "2019-12-06"
-  sha256 "1d36a19bc82d43580ce575867dcc7bcb6f835992711f05490da750ca7a773dda"
+  url "https://files.pythonhosted.org/packages/34/fb/c5c6c562c044b8e8bfdfe4e09eaaca45b06ed8f7b1d49f2552e3a756b65b/pytype-2019.12.17.tar.gz"
+  version "2019-12-17"
+  sha256 "0f62eb869af655b111e848109bcfc90a12da98574b107d74cf8ead16bf82802e"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
@@ -34,8 +34,8 @@ class Pytype < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/00/32/8076fa13e832bb4dcff379f18f228e5a53412be0631808b9ca2610c0f566/pyparsing-2.4.5.tar.gz"
-    sha256 "4ca62001be367f01bd3e92ecbb79070272a9d4964dce6a48a82ff0b8bc7e683a"
+    url "https://files.pythonhosted.org/packages/a2/56/0404c03c83cfcca229071d3c921d7d79ed385060bbe969fde3fd8f774ebd/pyparsing-2.4.6.tar.gz"
+    sha256 "4c830582a84fb022400b85429791bc551f1f4871c33f23e44f353119e92f969f"
   end
 
   resource "packaging" do
@@ -56,8 +56,8 @@ class Pytype < Formula
   end
 
   resource "ninja" do
-    url "https://files.pythonhosted.org/packages/47/ff/e2ddb9b663fd387437f3aee7befc2376b98410c7375d1e3105c268274cd4/ninja-1.9.0.tar.gz"
-    sha256 "78c840ef1c94507956dac8810282cade2b139f0fda44c2f4706522415b990816"
+    url "https://files.pythonhosted.org/packages/dd/96/e2ec4acccb8dee33b4987f553d531d61e3081c8d4cfbce249655dfe23906/ninja-1.9.0.post1.tar.gz"
+    sha256 "6ef795816ef3cd3a2def4c4b8e5f1fb7e470bb913c0bae7bb38afe498d0075aa"
   end
 
   resource "importlab" do

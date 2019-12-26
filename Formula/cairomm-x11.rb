@@ -9,7 +9,7 @@ class CairommX11 < Formula
   depends_on "pkg-config" => :build
   depends_on "cairo-x11"
   depends_on "libpng"
-  depends_on "libsigc++"
+  depends_on "libsigc++@2"
   depends_on :x11 => :recommended
 
   def install
@@ -36,7 +36,7 @@ class CairommX11 < Formula
     gettext = Formula["gettext"]
     glib = Formula["glib"]
     libpng = Formula["libpng"]
-    libsigcxx = Formula["libsigc++"]
+    libsigcxx = Formula["libsigc++@2"]
     pixman = Formula["pixman"]
     flags = %W[
       -I#{cairo.opt_include}/cairo

@@ -18,6 +18,7 @@ class CairoX11 < Formula
   depends_on "freetype"
   depends_on "glib"
   depends_on "libpng"
+  depends_on "lzo"
   depends_on "pixman"
   depends_on :x11 => :recommended
 

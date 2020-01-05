@@ -18,11 +18,12 @@ class Xcircuit < Formula
       "--prefix=#{prefix}",
       "--with-tcl=#{Formula["tcl-tk-x11"].opt_prefix}",
       "--with-tk=#{Formula["tcl-tk-x11"].opt_prefix}",
+      "--with-ngspice=ngspice",
     ]
     if build.with? "ghostscript"
       args << "--with-gs=#{Formula["ghostscript"].opt_prefix}"
     end
-    args << "--with-cairo=#{Formula["cairo"].opt_prefix}"
+    args << "--with-cairo=#{Formula["cairo-x11"].opt_prefix}"
     ENV.append "CFLAGS", "-Wno-error=return-type"
 
     system "aclocal"

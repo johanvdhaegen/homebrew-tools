@@ -1,8 +1,8 @@
 class Xcircuit < Formula
   desc "Program for drawing electrical circuit schematic diagrams"
   homepage "http://opencircuitdesign.com/xcircuit"
-  url "http://opencircuitdesign.com/xcircuit/archive/xcircuit-3.10.12.tgz"
-  sha256 "b60a1db002b80d14af6c0b13eaa11530966dedfb22c6062ddff49e5c07e33ec0"
+  url "http://opencircuitdesign.com/xcircuit/archive/xcircuit-3.10.14.tgz"
+  sha256 "d786db26055d09748148510b0a81b56af256c2f23dced764ed9e24ef0369cf74"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

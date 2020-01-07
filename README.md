@@ -24,11 +24,13 @@ brew install https://raw.githubusercontent.com/johanvdhaegen/homebrew-tools/mast
 -  [Copybara](https://github.com/google/copybara): A tool for transforming and moving code between repositories
 -  [cpplint](https://github.com/google/styleguide/tree/gh-pages/cpplint):
    Google's C++ style guide checker
+-  Emacs: emacs with options (forked and updated from original homebrew formula)
+-  [Inkscape](https://inkscape.org/): vector graphics editor
 -  [Pygments](https://pygments.org/): A syntax highlighting package written in Python
 -  [pytype](https://github.com/google/pytype/): A static analyzer for Python
    code
 -  [tclk-tk-x11](https://www.tcl.tk/): TCL/TK with X11 support
--  [YAPF](https://github.com/google/yapf): A formatter for Python files
+-  Unison 2.48.4: Unison file synchronizer version 2.48.4.
 -  [ycmd](https://github.com/ycm-core/ycmd): A code-completion &
    code-comprehension server
 -  [XCircuit](http://opencircuitdesign.com/xcircuit): A program for drawing

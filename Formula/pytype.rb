@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/7b/ac/7d165ea6fa724769b6ef2d1dd3bac83f300dc36ac7f8b4156dc9cca1d0ba/pytype-2020.1.8.tar.gz"
-  version "2020-01-08"
-  sha256 "9312283c9db829f9abaa12bb8cb20a5a3cef6911feb11e837f7d6d996206015f"
+  url "https://files.pythonhosted.org/packages/a7/2d/dbead443eafb6c3f876210f7ab85c4c90d25fa1b0190597a11e28753ed48/pytype-2020.1.24.tar.gz"
+  version "2020-01-24"
+  sha256 "bbce5420a59dfe003b471349a372870456f97efc053a00a5a504203ef90ccdf6"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
@@ -29,8 +29,8 @@ class Pytype < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/59/b0/11710a598e1e148fb7cbf9220fd2a0b82c98e94efbdecb299cb25e7f0b39/wheel-0.33.6.tar.gz"
-    sha256 "10c9da68765315ed98850f8e048347c3eb06dd81822dc2ab1d4fde9dc9702646"
+    url "https://files.pythonhosted.org/packages/75/28/521c6dc7fef23a68368efefdcd682f5b3d1d58c2b90b06dc1d0b805b51ae/wheel-0.34.2.tar.gz"
+    sha256 "8788e9155fe14f54164c1b9eb0a319d98ef02c160725587ad60f14ddc57b6f96"
   end
 
   resource "pyparsing" do
@@ -39,8 +39,8 @@ class Pytype < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/c7/cf/d84b72480a556d9bd4a191a91b0a8ea71cb48e6f6132f12d9d365c51bdb6/packaging-20.0.tar.gz"
-    sha256 "fe1d8331dfa7cc0a883b49d75fc76380b2ab2734b220fbb87d774e4fd4b851f8"
+    url "https://files.pythonhosted.org/packages/7b/d5/199f982ae38231995276421377b72f4a25d8251f4fa56f6be7cfcd9bb022/packaging-20.1.tar.gz"
+    sha256 "e665345f9eef0c621aa0bf2f8d78cf6d21904eef16a93f020240b704a57f1334"
   end
 
   resource "scikit-build" do

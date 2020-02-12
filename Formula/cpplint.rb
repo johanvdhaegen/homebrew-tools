@@ -3,10 +3,11 @@ class Cpplint < Formula
 
   desc "Google's C++ style guide checker"
   homepage "https://github.com/google/styleguide/tree/gh-pages/cpplint"
-  url "https://raw.githubusercontent.com/google/styleguide/43d512ba13014d31f96053c0cdf299775681bc73/cpplint/cpplint.py"
-  version "2018-04-15"
+  url "https://raw.githubusercontent.com/google/styleguide/26470f9ccb354ff2f6d098f831271a1833701b28/cpplint/cpplint.py"
+  version "2019-11-19"
+  sha256 "1cab0b908f059bf767f2bca296c67c6383d3e4971833b155b991649a9b492775"
 
-  depends_on "python@2"
+  uses_from_macos "python@2"
 
   def install
     pyver = Language::Python.major_minor_version "python"

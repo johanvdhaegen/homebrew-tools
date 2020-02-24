@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/de/aa/79b98055f6b4f3b4bd1ae534f7e9c583988df6a456b5a6af0016c5ae907d/pytype-2020.2.6.tar.gz"
-  version "2020-02-06"
-  sha256 "53803f0f1fadf4923efc88a0bd0cfa4c242d2fa3f04421b6f8ab4d658ffd2b90"
+  url "https://files.pythonhosted.org/packages/75/7c/eeca09a23b347b2fd12f0965714e62c1ff900f7e7436fb488972f1133389/pytype-2020.2.20.tar.gz"
+  version "2020-02-20"
+  sha256 "b22aaf5dd125134cad2cb3f45231c2fd4aa158b129bff81f880a0c6d6bb3c2a8"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
@@ -112,20 +112,6 @@ class Pytype < Formula
 
     # install pytype
     venv.pip_install_and_link buildpath
-
-    # fix typeshed permissions: not all typeshed files are world readable
-    chmod_R "ugo+r", libexec/"lib/python#{pyver}/site-packages/pytype/typeshed",
-            :verbose => true
-    chmod_R "ugo+r", libexec/"lib/python#{pyver}/site-packages/pytype/pytd",
-            :verbose => true
-    # fix other permission problems
-    pytype_version = stable.url.slice(/\d+\.\d+\.\d+/)
-    chmod_R "ugo+r",
-            libexec/"lib/python#{pyver}/site-packages/pytype-#{pytype_version}-py#{pyver}.egg-info",
-            :verbose => true
-    chmod_R "ugo+r",
-            libexec/"lib/python#{pyver}/site-packages/importlab-#{resource("importlab").version}-py#{pyver}.egg-info",
-            :verbose => true
   end
 
   test do

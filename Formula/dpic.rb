@@ -1,8 +1,8 @@
 class Dpic < Formula
   desc "Implementation of the pic language"
   homepage "https://ece.uwaterloo.ca/~aplevich/dpic"
-  url "https://ece.uwaterloo.ca/~aplevich/dpic/dpic-2019.11.30.tar.gz"
-  sha256 "af0d47f29fc08d4fa3eac158d6a52ab6087b82160725f273aa0babd56a18ed65"
+  url "https://ece.uwaterloo.ca/~aplevich/dpic/dpic-2020.03.01.tar.gz"
+  sha256 "b21a0414e125f3f7cdc5f7670d1b93d97e50de78c57e069ccfbe71942a5a41f1"
 
   def install
     ENV.append_path "PATH", "/Library/TeX/texbin"

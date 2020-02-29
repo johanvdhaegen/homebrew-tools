@@ -1,8 +1,8 @@
 class Magic < Formula
   desc "VLSI layout tool"
   homepage "http://opencircuitdesign.com/magic"
-  url "http://opencircuitdesign.com/magic/archive/magic-8.2.182.tgz"
-  sha256 "ba94b6006dcce550d29852c0591a7427437a2bb188ca90ea5ccdf11f3d98afc5"
+  url "http://opencircuitdesign.com/magic/archive/magic-8.2.190.tgz"
+  sha256 "056cb6ecb469eb40cf211ebdefa4b6975f2a74678b371d2c2f6e99276afa0317"
 
   depends_on "pkg-config" => :build
   depends_on "cairo-x11"

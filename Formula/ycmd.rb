@@ -7,8 +7,10 @@ class Ycmd < Formula
       :revision => "9a6b86e3a156066335b678c328f226229746bae5"
   version "2020-02-22"
 
-  option "with-clang-completer", "Build C-family semantic completion engine"
+  option "with-clang-completer", "Enable C-family semantic completion engine"
+  option "with-go-completer", "Enable Go semantic completion engine"
   depends_on "cmake" => :build
+  depends_on "go" => :build if build.with? "go-completer"
   depends_on "python"
 
   resource "llvm" do
@@ -32,6 +34,7 @@ class Ycmd < Formula
       end
       args << "--clang-completer"
     end
+    args << "--go-completer" if build.with? "go-completer"
 
     # build ycmd
     pyver = Language::Python.major_minor_version "python3"
@@ -51,6 +54,7 @@ class Ycmd < Formula
       waitress
     ]
     third_party << "clang" if build.with? "clang-completer"
+    third_party << "go" if build.with? "go-completer"
     (libexec/"third_party").install third_party.map { |s| "third_party/" + s }
 
     # fix shared library paths which are not fixed automatically

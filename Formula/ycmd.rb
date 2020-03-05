@@ -13,9 +13,9 @@ class Ycmd < Formula
 
   resource "llvm" do
     clang_version = "9.0.0"
-    clang_filename = format("libclang-%{version}-x86_64-apple-darwin.tar.bz2",
+    clang_filename = format("libclang-%<version>s-x86_64-apple-darwin.tar.bz2",
                             :version => clang_version)
-    url format("https://dl.bintray.com/ycm-core/libclang/%{filename}",
+    url format("https://dl.bintray.com/ycm-core/libclang/%<filename>s",
                :filename => clang_filename)
     sha256 "7474ab23181bf0e6c36d34e7b36931012af7080f7fa56db13f09c138f27e3b7f"
   end
@@ -46,9 +46,9 @@ class Ycmd < Formula
     virtualenv_create(libexec, "python3")
     libexec.install "ycmd", "ycm_core.so", "CORE_VERSION",
                     "PYTHON_USED_DURING_BUILDING"
-    third_party = [
-      "bottle", "cregex", "generic_server", "jedi_deps", "python-future",
-      "requests_deps", "waitress"
+    third_party = %w[
+      bottle cregex generic_server jedi_deps python-future requests_deps
+      waitress
     ]
     third_party << "clang" if build.with? "clang-completer"
     (libexec/"third_party").install third_party.map { |s| "third_party/" + s }

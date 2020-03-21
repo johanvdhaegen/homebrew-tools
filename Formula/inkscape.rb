@@ -90,10 +90,6 @@ class Inkscape < Formula
     bin.install Dir[libexec/"bin/*"]
     bin.env_script_all_files(libexec/"bin", :PATH => "#{libexec}/bin:$PATH")
 
-    # #
-    # doc.install Dir[libexec/"share/doc/inkscape/*"]
-    # man.install Dir[libexec/"share/man/*"]
-
     # set up python virtualenv for inkscape extensions
     pyver = Language::Python.major_minor_version("python3")
     ENV.prepend_create_path "PYTHONPATH",

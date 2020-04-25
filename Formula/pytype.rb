@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/ab/e8/e1e3532c2f0a74832930782e8e696148a98b0b6c30370f075bbed78379c2/pytype-2020.4.1.tar.gz"
-  version "2020-04-01"
-  sha256 "d160eebdc43dade6f8ef699b91e4aa18a3f094fb87f272aeaffa73b0aed03459"
+  url "https://files.pythonhosted.org/packages/57/7b/c5359ecb23c52a9fdf07040d1e655d942bb75fd7745bc127a3cea862535b/pytype-2020.4.22.tar.gz"
+  version "2020-04-22"
+  sha256 "5dbb2f551e94f09b996c71fd15158f1ba2a0d941841803a8e2a0cbcf587e478a"
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build
@@ -34,8 +34,8 @@ class Pytype < Formula
   end
 
   resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/a2/56/0404c03c83cfcca229071d3c921d7d79ed385060bbe969fde3fd8f774ebd/pyparsing-2.4.6.tar.gz"
-    sha256 "4c830582a84fb022400b85429791bc551f1f4871c33f23e44f353119e92f969f"
+    url "https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz"
+    sha256 "c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1"
   end
 
   resource "packaging" do

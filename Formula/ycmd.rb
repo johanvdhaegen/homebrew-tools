@@ -4,8 +4,8 @@ class Ycmd < Formula
   desc "Code-completion & code-comprehension server"
   homepage "https://github.com/Valloric/ycmd"
   url "https://github.com/Valloric/ycmd.git",
-      :revision => "9a6b86e3a156066335b678c328f226229746bae5"
-  version "2020-02-22"
+      :revision => "418ee565a31c51f1a56f5fc6f1827f27d113454e"
+  version "2020-04-20"
 
   option "with-clang-completer", "Enable C-family semantic completion engine"
   option "with-go-completer", "Enable Go semantic completion engine"
@@ -14,12 +14,12 @@ class Ycmd < Formula
   depends_on "python"
 
   resource "llvm" do
-    clang_version = "9.0.0"
+    clang_version = "10.0.0"
     clang_filename = format("libclang-%<version>s-x86_64-apple-darwin.tar.bz2",
                             :version => clang_version)
     url format("https://dl.bintray.com/ycm-core/libclang/%<filename>s",
                :filename => clang_filename)
-    sha256 "7474ab23181bf0e6c36d34e7b36931012af7080f7fa56db13f09c138f27e3b7f"
+    sha256 "157c755c0d208414203b56057fd4f9b81dba93fd968e4435217ba1e4026136a8"
   end
 
   def install

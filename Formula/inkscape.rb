@@ -4,8 +4,9 @@ class Inkscape < Formula
   desc "Professional vector graphics editor"
   homepage "https://inkscape.org/"
   url "https://gitlab.com/inkscape/inkscape.git",
-      :tag => "INKSCAPE_1_0_BETA2"
-  version "1.0b2"
+      :tag      => "INKSCAPE_1_0_RC1",
+      :revision => "09960d6f055ec2a386f10f9ba7177ee2ccc10f5d"
+  version "1.0rc1"
   head "https://gitlab.com/inkscape/inkscape.git", :branch => "master"
 
   depends_on "automake" => :build
@@ -43,6 +44,7 @@ class Inkscape < Formula
   depends_on "pango"
   depends_on "poppler"
   depends_on "potrace"
+  depends_on "python@3.8"
   depends_on "jemalloc" => :optional
   depends_on "libcdr" => :optional
   depends_on "libomp" => :optional
@@ -50,8 +52,8 @@ class Inkscape < Formula
   depends_on "libwpg" => :optional
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/e4/19/8dfeef50623892577dc05245093e090bb2bab4c8aed5cad5b03208959563/lxml-4.4.2.tar.gz"
-    sha256 "eff69ddbf3ad86375c344339371168640951c302450c5d3e9936e98d6459db06"
+    url "https://files.pythonhosted.org/packages/39/2b/0a66d5436f237aff76b91e68b4d8c041d145ad0a2cdeefe2c42f76ba2857/lxml-4.5.0.tar.gz"
+    sha256 "8620ce80f50d023d414183bf90cc2576c2837b88e00bea3f33ad2630133bbb60"
   end
 
   patch :DATA

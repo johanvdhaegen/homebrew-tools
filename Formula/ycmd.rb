@@ -4,8 +4,8 @@ class Ycmd < Formula
   desc "Code-completion & code-comprehension server"
   homepage "https://github.com/Valloric/ycmd"
   url "https://github.com/Valloric/ycmd.git",
-      :revision => "9893b4659cf6c0428fb1950ce7d82004d2425cb6"
-  version "2020-05-16"
+      :revision => "079e9f0fdaafd81b3784cadcea472fb78eece37e"
+  version "2020-07-10"
 
   option "with-clang-completer", "Enable C-family semantic completion engine"
   option "with-go-completer", "Enable Go semantic completion engine"

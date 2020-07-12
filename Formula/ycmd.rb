@@ -6,6 +6,7 @@ class Ycmd < Formula
   url "https://github.com/Valloric/ycmd.git",
       :revision => "079e9f0fdaafd81b3784cadcea472fb78eece37e"
   version "2020-07-10"
+  license "GPL-3.0"
 
   option "with-clang-completer", "Enable C-family semantic completion engine"
   option "with-go-completer", "Enable Go semantic completion engine"

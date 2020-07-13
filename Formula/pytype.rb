@@ -46,20 +46,20 @@ class Pytype < Formula
   end
 
   resource "scikit-build" do
-    url "https://files.pythonhosted.org/packages/9f/6b/9c193b2402969b2f3ef5e8105a434a9d4274df9b8315699225072217322a/scikit-build-0.10.0.tar.gz"
-    sha256 "7342017cc82dd6178e3b19377389b8a8d1f8b429d9cdb315cfb1094e34a0f526"
+    url "https://files.pythonhosted.org/packages/71/02/1e94506b7bee5739317f2d141cebab7dab5bb5731b377e718fddd3b3e7e7/scikit-build-0.11.1.tar.gz"
+    sha256 "da40dfd69b2456fad1349a894b90180b43712152b8a85d2a00f4ae2ce8ac9a5c"
   end
 
   resource "ninja-src" do
     # unix_source_url from NinjaUrls.cmake in ninja python archive
     # https://github.com/scikit-build/ninja-python-distributions/blob/master/NinjaUrls.cmake
-    url "https://github.com/kitware/ninja/archive/v1.9.0.g5b44b.kitware.dyndep-1.jobserver-1.tar.gz"
-    sha256 "449359a402c3adccd37f6fece19ce7d7cda586e837fdf50eb7d53597b7f1ce90"
+    url "https://github.com/kitware/ninja/archive/v1.10.0.gfb670.kitware.jobserver-1.tar.gz"
+    sha256 "d00033813993116a4e14f835df813daee9916b107333d88dbb798a22f8671b1f"
   end
 
   resource "ninja" do
-    url "https://files.pythonhosted.org/packages/dd/96/e2ec4acccb8dee33b4987f553d531d61e3081c8d4cfbce249655dfe23906/ninja-1.9.0.post1.tar.gz"
-    sha256 "6ef795816ef3cd3a2def4c4b8e5f1fb7e470bb913c0bae7bb38afe498d0075aa"
+    url "https://files.pythonhosted.org/packages/f3/05/f5f9f7accf3e2824d2546151dd68692a184113dc21e7785f2b230f7ee4f5/ninja-1.10.0.post1.tar.gz"
+    sha256 "ddfac074ae408e42c617cd44f90a95bf6db94f0c846c95ef2a3a9a03438027a1"
   end
 
   resource "importlab" do
@@ -98,7 +98,7 @@ class Pytype < Formula
     # install ninja python bindings
     [resource("ninja")].each do |r|
       r.stage do
-        ninja_deployment_target = "10.6" # scikit-build default
+        ninja_deployment_target = MacOS.version.to_s
         dl = resource("ninja-src")
         dl.verify_download_integrity(dl.fetch)
         dl_dir = "_skbuild/macosx-#{ninja_deployment_target}-x86_64-#{pyver}/cmake-build"
@@ -113,6 +113,7 @@ class Pytype < Formula
     end
 
     # install pytype
+    # TODO: add --no-build-isolation pip flag
     venv.pip_install_and_link buildpath
 
     bin.each_child do |f|

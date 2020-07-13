@@ -13,7 +13,7 @@ class Pytype < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "libyaml"
-  depends_on "python"
+  depends_on "python@3.7"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/98/c3/2c227e66b5e896e15ccdae2e00bbc69aa46e9a8ce8869cc5fa96310bf612/attrs-19.3.0.tar.gz"
@@ -114,6 +114,20 @@ class Pytype < Formula
 
     # install pytype
     venv.pip_install_and_link buildpath
+
+    bin.each_child do |f|
+      next unless f.symlink?
+
+      # replace symlinks from bin to libexec/bin by copies
+      # (otherwise env_script_all_files does not produce the correct result)
+      symlink = f.realpath
+      rm f, :verbose => true
+      cp symlink, f, :verbose => true
+    end
+
+    # pytype needs to find the python interpreter used to run pytype on PATH
+    bin.env_script_all_files(libexec/"bin",
+                             :PATH => "#{Formula["python@3.7"].opt_bin}:$PATH}")
   end
 
   test do

@@ -6,6 +6,8 @@ class Pytype < Formula
   url "https://files.pythonhosted.org/packages/4b/63/a12219e75fce6ed3bb88a035439380c957d4065a7d38e670edbb438edca7/pytype-2020.6.26.tar.gz"
   version "2020-06-26"
   sha256 "1252c97c16c6bfcbb380b3c26c18982d86a6a75e06b1381120f110e57fdf6feb"
+  license "Apache-2.0"
+
   head "https://github.com/google/pytype.git"
 
   depends_on "cmake" => :build

@@ -4,6 +4,7 @@ class Bib2xhtml < Formula
   url "https://www.spinellis.gr/sw/textproc/bib2xhtml/bib2xhtml-v3.0-79-ge935.tar.gz"
   version "3.0-79-ge935"
   sha256 "4a2d2d89dd2f3fed1c735055b806809b5cc1cde32dee1aa5987097ec5bf2181f"
+  license "GPL-2.0"
 
   def install
     ENV.prepend_create_path "BSTINPUTS", libexec

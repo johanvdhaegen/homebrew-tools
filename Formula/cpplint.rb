@@ -6,6 +6,7 @@ class Cpplint < Formula
   url "https://raw.githubusercontent.com/google/styleguide/08268efb062ca77eb623e5745a2b11424f5951e0/cpplint/cpplint.py"
   version "2020-06-19"
   sha256 "b8a3504be3873675f37c6a98b84e86f67dcb103a14ef7c46cd5fbc4891e43db6"
+  license "BSD-3-Clause"
 
   uses_from_macos "python@2"
 

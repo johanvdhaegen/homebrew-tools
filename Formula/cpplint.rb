@@ -3,9 +3,9 @@ class Cpplint < Formula
 
   desc "Google's C++ style guide checker"
   homepage "https://github.com/google/styleguide/tree/gh-pages/cpplint"
-  url "https://raw.githubusercontent.com/google/styleguide/26470f9ccb354ff2f6d098f831271a1833701b28/cpplint/cpplint.py"
-  version "2019-11-19"
-  sha256 "1cab0b908f059bf767f2bca296c67c6383d3e4971833b155b991649a9b492775"
+  url "https://raw.githubusercontent.com/google/styleguide/08268efb062ca77eb623e5745a2b11424f5951e0/cpplint/cpplint.py"
+  version "2020-06-19"
+  sha256 "b8a3504be3873675f37c6a98b84e86f67dcb103a14ef7c46cd5fbc4891e43db6"
 
   uses_from_macos "python@2"
 

@@ -3,6 +3,7 @@ class Chktex < Formula
   homepage "https://www.nongnu.org/chktex/"
   url "https://download.savannah.gnu.org/releases/chktex/chktex-1.7.6.tar.gz"
   sha256 "8ac0e5ca213b2012d44c28f9e4feb9783df44750eb0c30a237d81ff58ef34c8d"
+  license "GPL-2.0"
 
   head do
     url "https://git.savannah.nongnu.org/git/chktex.git"

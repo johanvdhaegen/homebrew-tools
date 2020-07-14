@@ -3,6 +3,7 @@ class Dpic < Formula
   homepage "https://ece.uwaterloo.ca/~aplevich/dpic"
   url "https://ece.uwaterloo.ca/~aplevich/dpic/dpic-2020.06.01.tar.gz"
   sha256 "08616178b3d4116b5f9356a3640825d8fa76c84ab52ae45c775129c9e5ba73bd"
+  license "BSD-2-Clause"
 
   def install
     ENV.append_path "PATH", "/Library/TeX/texbin"

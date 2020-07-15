@@ -3,9 +3,10 @@ class CairoX11 < Formula
   homepage "https://cairographics.org/"
   url "https://cairographics.org/releases/cairo-1.16.0.tar.xz"
   sha256 "5e7b29b3f113ef870d1e3ecf8adf21f923396401604bda16d44be45e66052331"
+  license "LGPL-2.1"
 
   head do
-    url "https://anongit.freedesktop.org/git/cairo", :using => :git
+    url "https://anongit.freedesktop.org/git/cairo.git"
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
@@ -21,6 +22,8 @@ class CairoX11 < Formula
   depends_on "lzo"
   depends_on "pixman"
   depends_on :x11 => :recommended
+
+  uses_from_macos "zlib"
 
   def install
     args = %W[

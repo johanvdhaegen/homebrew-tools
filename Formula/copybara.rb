@@ -2,15 +2,18 @@ class Copybara < Formula
   desc "Tool for transforming and moving code between repositories"
   homepage "https://github.com/google/copybara"
   url "https://github.com/google/copybara.git",
-      :revision => "292d209f9a16f600e915f0648d625524d5bb9fcc"
-  version "2020-04-24"
+      :revision => "4f1c3f9e3b7cd1fdbd4ececd6d502bc68b736961"
+  version "2020-07-15"
 
   depends_on "bazel" => :build
   depends_on :java => "1.8"
 
   def install
     cmd = Language::Java.java_home_cmd("1.8")
-    ENV["JAVA_HOME"] = Utils.popen_read(cmd).chomp
+    ENV["JAVA_HOME"] = Utils.safe_popen_read(cmd).chomp
+
+    # Force Bazel ./compile.sh to put its temporary files in the buildpath
+    ENV["BAZEL_WRKDIR"] = buildpath/"work"
 
     system "bazel", "build",
            "--host_java_toolchain=@bazel_tools//tools/jdk:toolchain_hostjdk8",

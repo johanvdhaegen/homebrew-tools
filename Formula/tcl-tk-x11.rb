@@ -3,11 +3,9 @@ class TclTkX11 < Formula
   homepage "https://www.tcl-lang.org"
   url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.10/tcl8.6.10-src.tar.gz"
   mirror "https://ftp.osuosl.org/pub/blfs/conglomeration/tcl/tcl8.6.10-src.tar.gz"
-  version "8.6.10"
   sha256 "5196dbf6638e3df8d5c87b5815c8c2b758496eb6f0e41446596c9a4e638d87ed"
 
-  keg_only :provided_by_macos,
-    "tk installs some X11 headers and macOS provides an (older) Tcl/Tk"
+  keg_only :provided_by_macos
 
   option "without-x11", "Build Aqua-based Tk instead of X11-based Tk"
 
@@ -33,17 +31,7 @@ class TclTkX11 < Formula
   resource "tk" do
     url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.10/tk8.6.10-src.tar.gz"
     mirror "https://fossies.org/linux/misc/tk8.6.10-src.tar.gz"
-    version "8.6.10"
     sha256 "63df418a859d0a463347f95ded5cd88a3dd3aaa1ceecaeee362194bc30f3e386"
-
-    # Upstream issue 7 Jan 2018 "Build failure with Aqua support on OS X 10.8 and 10.9"
-    # See https://core.tcl-lang.org/tcl/tktview/95a8293a2936e34cc8d0658c21e5214f1ca9b435
-    if MacOS.version == :mavericks
-      patch :p0 do
-        url "https://raw.githubusercontent.com/macports/macports-ports/0a883ad388b/x11/tk/files/patch-macosx-tkMacOSXXStubs.c.diff"
-        sha256 "2cdba6bbf2503307fe4f4d7200ad57c9926ebf0ff6ed3e65bf551067a30a04a9"
-      end
-    end
   end
 
   def install

@@ -3,6 +3,7 @@ class Magic < Formula
   homepage "http://opencircuitdesign.com/magic"
   url "http://opencircuitdesign.com/magic/archive/magic-8.3.32.tgz"
   sha256 "4aff163ce617a235e2985fab5a0db6d7ec325bb7fc9f817af25a981ec1e34fa9"
+  license "ISC"
 
   depends_on "pkg-config" => :build
   depends_on "cairo-x11"

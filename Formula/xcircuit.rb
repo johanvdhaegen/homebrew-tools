@@ -1,8 +1,8 @@
 class Xcircuit < Formula
   desc "Program for drawing electrical circuit schematic diagrams"
   homepage "http://opencircuitdesign.com/xcircuit"
-  url "http://opencircuitdesign.com/xcircuit/archive/xcircuit-3.10.26.tgz"
-  sha256 "7ae9567c8affdf0178cec35d0e99044aa244737f9ed6a710caf9df175eae8970"
+  url "http://opencircuitdesign.com/xcircuit/archive/xcircuit-3.10.28.tgz"
+  sha256 "402fc70b4b22bb4204313356886d193ead672123fe30c17c128c86ba18dfd157"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
@@ -20,9 +20,7 @@ class Xcircuit < Formula
       "--with-tk=#{Formula["tcl-tk-x11"].opt_prefix}",
       "--with-ngspice=ngspice",
     ]
-    if build.with? "ghostscript"
-      args << "--with-gs=#{Formula["ghostscript"].opt_prefix}"
-    end
+    args << "--with-gs=#{Formula["ghostscript"].opt_prefix}" if build.with? "ghostscript"
     args << "--with-cairo=#{Formula["cairo-x11"].opt_prefix}"
     ENV.append "CFLAGS", "-Wno-error=return-type"
 

@@ -4,6 +4,7 @@ class Copybara < Formula
   url "https://github.com/google/copybara.git",
       :revision => "4f1c3f9e3b7cd1fdbd4ececd6d502bc68b736961"
   version "2020-07-15"
+  license "Apache-2.0"
 
   depends_on "bazel" => :build
   depends_on :java => "1.8"

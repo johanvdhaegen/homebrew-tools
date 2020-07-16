@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/4b/63/a12219e75fce6ed3bb88a035439380c957d4065a7d38e670edbb438edca7/pytype-2020.6.26.tar.gz"
-  version "2020-06-26"
-  sha256 "1252c97c16c6bfcbb380b3c26c18982d86a6a75e06b1381120f110e57fdf6feb"
+  url "https://files.pythonhosted.org/packages/17/c5/33614e3bec171df72115651c6443b701377ac1c814e43773d80e9d85ffb2/pytype-2020.7.14.tar.gz"
+  version "2020-07-14"
+  sha256 "31b8cc522d844971543845b2683a34ddefa83e3b6895dc970e9a8d9254219d97"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git"
@@ -113,7 +113,9 @@ class Pytype < Formula
     end
 
     # install pytype
-    # TODO: add --no-build-isolation pip flag
+    # remove pyproject.toml to prevent creation of build environment
+    # (all requirements have been installed at this point)
+    rm "pyproject.toml"
     venv.pip_install_and_link buildpath
 
     bin.each_child do |f|

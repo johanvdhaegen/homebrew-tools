@@ -3,6 +3,7 @@ class Xcircuit < Formula
   homepage "http://opencircuitdesign.com/xcircuit"
   url "http://opencircuitdesign.com/xcircuit/archive/xcircuit-3.10.28.tgz"
   sha256 "402fc70b4b22bb4204313356886d193ead672123fe30c17c128c86ba18dfd157"
+  license "GPL-2.0"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build

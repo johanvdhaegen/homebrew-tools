@@ -10,8 +10,7 @@ class Copybara < Formula
   depends_on :java => "1.8"
 
   def install
-    cmd = Language::Java.java_home_cmd("1.8")
-    ENV["JAVA_HOME"] = Utils.safe_popen_read(cmd).chomp
+    ENV["JAVA_HOME"] = Language::Java.java_home("1.8")
 
     # Force Bazel ./compile.sh to put its temporary files in the buildpath
     ENV["BAZEL_WRKDIR"] = buildpath/"work"
@@ -25,7 +24,7 @@ class Copybara < Formula
     libexec.install "bazel-bin/java/com/google/copybara/copybara_deploy.jar"
     (bin/"copybara").write <<~EOS
       #!/bin/bash
-      export JAVA_HOME="$(#{cmd})"
+      export JAVA_HOME="#{ENV["JAVA_HOME"]}"
       CLASSPATH="#{libexec}/copybara_deploy.jar:." exec java -jar #{libexec}/copybara_deploy.jar "$@"
     EOS
   end

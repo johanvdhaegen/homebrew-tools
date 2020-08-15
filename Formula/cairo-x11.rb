@@ -21,7 +21,7 @@ class CairoX11 < Formula
   depends_on "libpng"
   depends_on "lzo"
   depends_on "pixman"
-  depends_on :x11 => :recommended
+  depends_on x11: :recommended
 
   uses_from_macos "zlib"
 

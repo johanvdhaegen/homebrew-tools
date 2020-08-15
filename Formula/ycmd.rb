@@ -68,6 +68,15 @@ class Ycmd < Formula
       end
     end
 
+    # fix third-party go modules permissions
+    if build.with? "go-completer"
+      chmod "u+w", Dir["#{libexec}/third_party/go/pkg/mod/*"]
+      chmod "u+w", Dir.glob("#{libexec}/third_party/go/pkg/mod/**",
+                            File::FNM_DOTMATCH)
+      chmod "u+w", Dir.glob("#{libexec}/third_party/go/pkg/mod/**/*",
+                            File::FNM_DOTMATCH)
+    end
+
     # create wrapper script using virtualenv python
     (bin/"ycmd").write <<~EOS
       #!/bin/bash

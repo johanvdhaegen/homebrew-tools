@@ -10,7 +10,7 @@ class Bib2xhtml < Formula
     ENV.prepend_create_path "BSTINPUTS", libexec
     bin.install "bib2xhtml"
     libexec.install Dir["*.bst"]
-    bin.env_script_all_files(libexec+"bin", :BSTINPUTS => ENV["BSTINPUTS"])
+    bin.env_script_all_files(libexec+"bin", BSTINPUTS: ENV["BSTINPUTS"])
   end
 
   test do

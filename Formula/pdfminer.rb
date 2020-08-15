@@ -36,7 +36,7 @@ class Pdfminer < Formula
     venv.pip_install resources
     venv.pip_install buildpath
 
-    env = { :PYTHONPATH => ENV["PYTHONPATH"] }
+    env = { PYTHONPATH: ENV["PYTHONPATH"] }
     (bin/"dumppdf").write_env_script(libexec/"bin/dumppdf.py", env)
     (bin/"pdf2txt").write_env_script(libexec/"bin/pdf2txt.py", env)
   end

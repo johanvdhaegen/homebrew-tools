@@ -11,7 +11,7 @@ class TclTkX11 < Formula
   option "without-x11", "Build Aqua-based Tk instead of X11-based Tk"
 
   depends_on "openssl@1.1"
-  depends_on :x11 => :recommended
+  depends_on x11: :recommended
   depends_on "pkg-config" => :build if build.with? "x11"
 
   resource "critcl" do

@@ -3,7 +3,7 @@ class CairommX11 < Formula
   homepage "https://cairographics.org/cairomm/"
   url "https://cairographics.org/releases/cairomm-1.12.2.tar.gz"
   sha256 "45c47fd4d0aa77464a75cdca011143fea3ef795c4753f6e860057da5fb8bd599"
-  license "LGPL-2.1"
+  license "LGPL-2.0"
 
   keg_only "conflicts with cairomm"
 
@@ -11,7 +11,6 @@ class CairommX11 < Formula
   depends_on "cairo-x11"
   depends_on "libpng"
   depends_on "libsigc++@2"
-  depends_on :x11 => :recommended
 
   def install
     ENV.cxx11

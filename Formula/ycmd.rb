@@ -4,7 +4,7 @@ class Ycmd < Formula
   desc "Code-completion & code-comprehension server"
   homepage "https://github.com/Valloric/ycmd"
   url "https://github.com/Valloric/ycmd.git",
-      :revision => "079e9f0fdaafd81b3784cadcea472fb78eece37e"
+      revision: "079e9f0fdaafd81b3784cadcea472fb78eece37e"
   version "2020-07-10"
   license "GPL-3.0"
 
@@ -17,9 +17,9 @@ class Ycmd < Formula
   resource "llvm" do
     clang_version = "10.0.0"
     clang_filename = format("libclang-%<version>s-x86_64-apple-darwin.tar.bz2",
-                            :version => clang_version)
+                            version: clang_version)
     url format("https://dl.bintray.com/ycm-core/libclang/%<filename>s",
-               :filename => clang_filename)
+               filename: clang_filename)
     sha256 "157c755c0d208414203b56057fd4f9b81dba93fd968e4435217ba1e4026136a8"
   end
 

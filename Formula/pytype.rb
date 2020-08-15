@@ -105,7 +105,7 @@ class Pytype < Formula
         mkdir_p dl_dir
         cp dl.cached_download,
            File.join(dl_dir, File.basename(URI.parse(dl.url).path)),
-           :verbose => true
+           verbose: true
         system libexec/"bin/python3",
                *Language::Python.setup_install_args(libexec),
                "--", "-DBUILD_FROM_SOURCE=ON"
@@ -124,13 +124,13 @@ class Pytype < Formula
       # replace symlinks from bin to libexec/bin by copies
       # (otherwise env_script_all_files does not produce the correct result)
       symlink = f.realpath
-      rm f, :verbose => true
-      cp symlink, f, :verbose => true
+      rm f, verbose: true
+      cp symlink, f, verbose: true
     end
 
     # pytype needs to find the python interpreter used to run pytype on PATH
     bin.env_script_all_files(libexec/"bin",
-                             :PATH => "#{Formula["python@3.7"].opt_bin}:$PATH}")
+                             PATH: "#{Formula["python@3.7"].opt_bin}:$PATH}")
   end
 
   test do

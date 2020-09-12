@@ -6,7 +6,7 @@ class Dpic < Formula
   license "BSD-2-Clause"
 
   livecheck do
-    url "https://ece.uwaterloo.ca/~aplevich/dpic/"
+    url :homepage
     regex(/href=.*dpic[._-]v?(\d+(?:\.\d+)+)\.tar\.gz/i)
   end
 

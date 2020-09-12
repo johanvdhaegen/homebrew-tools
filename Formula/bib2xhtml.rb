@@ -7,7 +7,7 @@ class Bib2xhtml < Formula
   license "GPL-2.0"
 
   livecheck do
-    url "https://www.spinellis.gr/sw/textproc/bib2xhtml/"
+    url :homepage
     regex(/href=.*bib2xhtml[._-]v?([0-9A-Za-z.\-_]+)\.tar\.gz/i)
   end
 

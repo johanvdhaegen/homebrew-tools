@@ -5,6 +5,11 @@ class Dpic < Formula
   sha256 "180a1759d6f6fc6e710d671eda6564f7c4f79a48111bfb71b201d39dc8712429"
   license "BSD-2-Clause"
 
+  livecheck do
+    url "https://ece.uwaterloo.ca/~aplevich/dpic/"
+    regex(/href=.*dpic[._-]v?(\d+(?:\.\d+)+)\.tar\.gz/i)
+  end
+
   def install
     ENV.append_path "PATH", "/Library/TeX/texbin"
     system "make", "DESTDIR=/", "PREFIX=#{prefix}", "MANDIR=#{man1}", "DOCDIR=#{doc}", "install"

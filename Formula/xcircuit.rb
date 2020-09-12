@@ -5,6 +5,11 @@ class Xcircuit < Formula
   sha256 "402fc70b4b22bb4204313356886d193ead672123fe30c17c128c86ba18dfd157"
   license "GPL-2.0"
 
+  livecheck do
+    url "http://opencircuitdesign.com/xcircuit/archive/"
+    regex(/href=.*xcircuit[._-]v?(\d+(?:\.\d+)+)\.tgz"/i)
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "pkg-config" => :build

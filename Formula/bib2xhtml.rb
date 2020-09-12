@@ -6,11 +6,16 @@ class Bib2xhtml < Formula
   sha256 "4a2d2d89dd2f3fed1c735055b806809b5cc1cde32dee1aa5987097ec5bf2181f"
   license "GPL-2.0"
 
+  livecheck do
+    url "https://www.spinellis.gr/sw/textproc/bib2xhtml/"
+    regex(/href=.*bib2xhtml[._-]v?([0-9A-Za-z.\-_]+)\.tar\.gz/i)
+  end
+
   def install
     ENV.prepend_create_path "BSTINPUTS", libexec
     bin.install "bib2xhtml"
     libexec.install Dir["*.bst"]
-    bin.env_script_all_files(libexec+"bin", BSTINPUTS: ENV["BSTINPUTS"])
+    bin.env_script_all_files(libexec/"bin", BSTINPUTS: ENV["BSTINPUTS"])
   end
 
   test do

@@ -5,6 +5,11 @@ class Magic < Formula
   sha256 "4aff163ce617a235e2985fab5a0db6d7ec325bb7fc9f817af25a981ec1e34fa9"
   license "ISC"
 
+  livecheck do
+    url "http://opencircuitdesign.com/magic/archive/"
+    regex(/href=.*magic[._-]v?(\d+(?:\.\d+)+)\.tgz"/i)
+  end
+
   depends_on "pkg-config" => :build
   depends_on "cairo-x11"
   depends_on "readline"

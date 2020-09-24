@@ -3,9 +3,9 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/e4/07/0b91f15ab6b5c5ea4336f61f04ffd6b43736fcde573c4b44f983591f1d2f/pytype-2020.8.28.tar.gz"
-  version "2020-08-28"
-  sha256 "8ac53aef4453631dfb81980a7b7313d2835f602953f4a92aec1f97b5be6b7e10"
+  url "https://files.pythonhosted.org/packages/24/14/5c3614090cde7041feade968b86d8870852a1d6795ef893b0495e84119fc/pytype-2020.9.16.tar.gz"
+  version "2020-09-16"
+  sha256 "5306288b9e30a6ff11f93eb3d53355ed0bd47125231913627cac06de5457f673"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git"
@@ -16,8 +16,8 @@ class Pytype < Formula
   depends_on "python@3.7"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/c4/d4/c2b5232ecfc0783c697a81c13efc53a4fe285d4e2c00e0d8aed90495fade/attrs-20.1.0.tar.gz"
-    sha256 "0ef97238856430dcf9228e07f316aefc17e8939fc8507e18c6501b761ef1a42a"
+    url "https://files.pythonhosted.org/packages/81/d0/641b698d05f0eaea4df4f9cebaff573d7a5276228ef6b7541240fe02f3ad/attrs-20.2.0.tar.gz"
+    sha256 "26b54ddbbb9ee1d34d5d3668dd37d6cf74990ab23c828c2888dccdceee395594"
   end
 
   resource "decorator" do
@@ -58,8 +58,8 @@ class Pytype < Formula
   end
 
   resource "ninja" do
-    url "https://files.pythonhosted.org/packages/f3/05/f5f9f7accf3e2824d2546151dd68692a184113dc21e7785f2b230f7ee4f5/ninja-1.10.0.post1.tar.gz"
-    sha256 "ddfac074ae408e42c617cd44f90a95bf6db94f0c846c95ef2a3a9a03438027a1"
+    url "https://files.pythonhosted.org/packages/55/a3/56376f09d6be4be5b7ebfc492d3e89cb05206a61f8c5f695a5d1e8cc49b7/ninja-1.10.0.post2.tar.gz"
+    sha256 "621fd73513a9bef0cb82e8c531a29ef96580b4d6e797f833cce167054ad812f8"
   end
 
   resource "importlab" do

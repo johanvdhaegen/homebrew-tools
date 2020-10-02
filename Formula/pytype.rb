@@ -118,6 +118,17 @@ class Pytype < Formula
     rm "pyproject.toml"
     venv.pip_install_and_link buildpath
 
+    # fix typeshed permissions: not all typeshed files are world readable
+    chmod_R "ugo+r", libexec/"lib/python#{pyver}/site-packages/pytype/typeshed",
+            :verbose => true
+    chmod_R "ugo+r", libexec/"lib/python#{pyver}/site-packages/pytype/pytd",
+            :verbose => true
+    # fix other permission problems
+    pytype_version = stable.url.slice(/\d+\.\d+\.\d+/)
+    chmod_R "ugo+r",
+            libexec/"lib/python#{pyver}/site-packages/pytype-#{pytype_version}-py#{pyver}.egg-info",
+            :verbose => true
+
     bin.each_child do |f|
       next unless f.symlink?
 

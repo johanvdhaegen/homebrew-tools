@@ -13,7 +13,7 @@ class Pytype < Formula
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "libyaml"
-  depends_on "python@3.7"
+  depends_on "python@3.8"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/81/d0/641b698d05f0eaea4df4f9cebaff573d7a5276228ef6b7541240fe02f3ad/attrs-20.2.0.tar.gz"

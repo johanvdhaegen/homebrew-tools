@@ -5,6 +5,11 @@ class CairoX11 < Formula
   sha256 "5e7b29b3f113ef870d1e3ecf8adf21f923396401604bda16d44be45e66052331"
   license "LGPL-2.1"
 
+  livecheck do
+    url "https://cairographics.org/releases/?C=M&O=D"
+    regex(%r{href=(?:["']?|.*?/)cairo[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.t}i)
+  end
+
   head do
     url "https://anongit.freedesktop.org/git/cairo.git"
     depends_on "autoconf" => :build

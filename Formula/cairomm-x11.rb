@@ -5,6 +5,11 @@ class CairommX11 < Formula
   sha256 "45c47fd4d0aa77464a75cdca011143fea3ef795c4753f6e860057da5fb8bd599"
   license "LGPL-2.0"
 
+  livecheck do
+    url "https://cairographics.org/releases/?C=M&O=D"
+    regex(/href=.*?cairomm[._-]v?(\d+\.\d*[02468](?:\.\d+)*)\.t/i)
+  end
+
   keg_only "conflicts with cairomm"
 
   depends_on "pkg-config" => :build

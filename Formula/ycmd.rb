@@ -13,7 +13,7 @@ class Ycmd < Formula
   option "with-go-completer", "Enable Go semantic completion engine"
   depends_on "cmake" => :build
   depends_on "go" => :build if build.with? "go-completer"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "llvm" do
     clang_version = "10.0.0"

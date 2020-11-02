@@ -32,7 +32,7 @@ class EmacsCocoaAT27 < Formula
 
   uses_from_macos "libxml2"
 
-  conflicts_with "emacs", because: "both install emacs"
+  keg_only :versioned_formula
 
   def install
     args = %W[

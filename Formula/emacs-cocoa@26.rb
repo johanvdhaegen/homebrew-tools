@@ -1,4 +1,4 @@
-class Emacs < Formula
+class EmacsCocoaAT26 < Formula
   desc "GNU Emacs text editor"
   homepage "https://www.gnu.org/software/emacs/"
   url "https://ftp.gnu.org/gnu/emacs/emacs-26.3.tar.xz"
@@ -39,6 +39,8 @@ class Emacs < Formula
   stable do
     patch :DATA
   end
+
+  keg_only :versioned_formula
 
   def install
     args = %W[

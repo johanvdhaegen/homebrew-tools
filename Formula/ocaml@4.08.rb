@@ -8,7 +8,6 @@ class OcamlAT408 < Formula
   url "https://caml.inria.fr/pub/distrib/ocaml-4.08/ocaml-4.08.1.tar.xz"
   sha256 "cd4f180453ffd7cc6028bb18954b3d7c3f715af13157df2f7c68bdfa07655ea3"
   license "LGPL-2.1"
-  head "https://github.com/ocaml/ocaml.git", :branch => "trunk"
 
   pour_bottle? do
     # The ocaml compilers embed prefix information in weird ways that the default

@@ -16,12 +16,12 @@ class Ycmd < Formula
   depends_on "python@3.9"
 
   resource "llvm" do
-    clang_version = "10.0.0"
+    clang_version = "11.0.0"
     clang_filename = format("libclang-%<version>s-x86_64-apple-darwin.tar.bz2",
                             version: clang_version)
     url format("https://dl.bintray.com/ycm-core/libclang/%<filename>s",
                filename: clang_filename)
-    sha256 "157c755c0d208414203b56057fd4f9b81dba93fd968e4435217ba1e4026136a8"
+    sha256 "6ac0caea93177c2d260c5e31d2e4ddaf734bfe68d0f002b2eecc61de081b116f"
   end
 
   def install

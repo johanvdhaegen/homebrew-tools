@@ -139,8 +139,10 @@ class Pytype < Formula
     end
 
     # pytype needs to find the python interpreter used to run pytype on PATH
-    bin.env_script_all_files(libexec/"bin",
-                             PATH: "#{Formula["python@3.7"].opt_bin}:$PATH}")
+    bin.env_script_all_files(
+      libexec/"bin",
+      PATH: "#{Formula["python@#{pyver}"].opt_bin}:$PATH}",
+    )
   end
 
   test do

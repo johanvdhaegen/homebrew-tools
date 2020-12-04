@@ -89,6 +89,8 @@ class Pytype < Formula
   def install
     pyver = Language::Python.major_minor_version("python3")
     venv = virtualenv_create(libexec, "python3")
+    ENV.prepend_create_path "PYTHONPATH",
+                            libexec/"lib/python#{pyver}/site-packages"
 
     # install all python resources, except ninja python bindings
     resources.each do |r|
@@ -147,6 +149,7 @@ class Pytype < Formula
     bin.env_script_all_files(
       libexec/"bin",
       PATH: "#{Formula["python@#{pyver}"].opt_bin}:$PATH}",
+      PYTHONPATH: ENV["PYTHONPATH"],
     )
   end
 

@@ -18,6 +18,8 @@ class EmacsCocoaAT27 < Formula
     depends_on "texinfo" => :build
   end
 
+  keg_only :versioned_formula
+
   option "with-ctags", "Don't remove the ctags executable that emacs provides"
   option "without-modules", "Build without dynamic modules support"
 
@@ -31,8 +33,6 @@ class EmacsCocoaAT27 < Formula
   depends_on "mailutils" => :optional
 
   uses_from_macos "libxml2"
-
-  keg_only :versioned_formula
 
   def install
     args = %W[

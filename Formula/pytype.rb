@@ -3,8 +3,8 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/1f/cf/53cfa7ef418efeef03c3b8a72ae1d6b23c2c4b6df5b93b7ecb21e3e67748/pytype-2020.12.2.tar.gz"
-  sha256 "79e7f3711a598ab8467495b5bc8c9e7d5e70c830eeed22e3b7baf9d56a540e77"
+  url "https://files.pythonhosted.org/packages/80/a4/e7e3ee6a9d03278023a8cd0ff58a9f707286f40e41402a9fa5a803135874/pytype-2020.12.16.tar.gz"
+  sha256 "8d6210aa5631b6c276a4dbec459d71078fa44c49036796631b76e65e1024ef47"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git"
@@ -30,8 +30,8 @@ class Pytype < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/57/73/1911bfa69482de2a6327db4ca5eda87ae7599160018910007d6d6a1d3ada/wheel-0.36.0.tar.gz"
-    sha256 "e17f05e14282d0e666327f800ef43123b40f3dbc13a86193b604f2ebfae0dabc"
+    url "https://files.pythonhosted.org/packages/ed/46/e298a50dde405e1c202e316fa6a3015ff9288423661d7ea5e8f22f589071/wheel-0.36.2.tar.gz"
+    sha256 "e11eefd162658ea59a60a0f6c7d493a7190ea4b9a85e335b33489d9f17e0245e"
   end
 
   resource "pyparsing" do
@@ -40,8 +40,8 @@ class Pytype < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/16/7c/33ae3aa02eb10ca726b21aa88d338e3f619c674e4fb8544eb352330d880a/packaging-20.7.tar.gz"
-    sha256 "05af3bb85d320377db281cf254ab050e1a7ebcbf5410685a9a407e18a1f81236"
+    url "https://files.pythonhosted.org/packages/d7/c5/e81b9fb8033fe78a2355ea7b1774338e1dca2c9cbd2ee140211a9e6291ab/packaging-20.8.tar.gz"
+    sha256 "78598185a7008a470d64526a8059de9aaa449238f280fc9eb6b13ba6c4109093"
   end
 
   resource "scikit-build" do
@@ -124,12 +124,9 @@ class Pytype < Formula
     rm "pyproject.toml"
     venv.pip_install_and_link buildpath
 
-    # fix typeshed permissions: not all typeshed files are world readable
-    chmod_R "ugo+r", libexec/"lib/python#{pyver}/site-packages/pytype/typeshed",
+    # fix pytype permissions: not all pytype files are world readable
+    chmod_R "ugo+r", libexec/"lib/python#{pyver}/site-packages/pytype",
             verbose: true
-    chmod_R "ugo+r", libexec/"lib/python#{pyver}/site-packages/pytype/pytd",
-            verbose: true
-    # fix other permission problems
     pytype_version = stable.url.slice(/\d+\.\d+\.\d+/)
     chmod_R "ugo+r",
             libexec/"lib/python#{pyver}/site-packages/pytype-#{pytype_version}-py#{pyver}.egg-info",

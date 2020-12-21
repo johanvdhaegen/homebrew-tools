@@ -52,8 +52,8 @@ class Ycmd < Formula
     libexec.install "ycmd", "ycm_core.so", "CORE_VERSION",
                     "PYTHON_USED_DURING_BUILDING"
     third_party = %w[
-      bottle generic_server jedi_deps mrab-regex regex-build requests_deps
-      waitress watchdog_deps
+      bottle generic_server jedi_deps mrab-regex regex-build waitress
+      watchdog_deps
     ]
     third_party << "clang" if build.with? "clang-completer"
     third_party << "go" if build.with? "go-completer"

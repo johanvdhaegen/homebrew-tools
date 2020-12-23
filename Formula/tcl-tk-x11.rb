@@ -6,6 +6,11 @@ class TclTkX11 < Formula
   sha256 "5196dbf6638e3df8d5c87b5815c8c2b758496eb6f0e41446596c9a4e638d87ed"
   license "ISC"
 
+  livecheck do
+    url :stable
+    regex(%r{url=.*?/(?:tcl|tk).?v?(\d+(?:\.\d+)+)[._-]src\.t}i)
+  end
+
   keg_only :provided_by_macos
 
   option "without-x11", "Build Aqua-based Tk instead of X11-based Tk"

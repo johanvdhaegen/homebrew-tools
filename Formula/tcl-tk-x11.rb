@@ -13,11 +13,9 @@ class TclTkX11 < Formula
 
   keg_only :provided_by_macos
 
-  option "without-x11", "Build Aqua-based Tk instead of X11-based Tk"
-
+  depends_on "pkg-config" => :build
+  depends_on "libx11"
   depends_on "openssl@1.1"
-  depends_on x11: :recommended
-  depends_on "pkg-config" => :build if build.with? "x11"
 
   resource "critcl" do
     url "https://github.com/andreas-kupries/critcl/archive/3.1.18.tar.gz"
@@ -60,12 +58,7 @@ class TclTkX11 < Formula
     ENV.prepend_path "PATH", bin
 
     resource("tk").stage do
-      if build.with? "x11"
-        args << "--with-x"
-      else
-        args << "--enable-aqua=yes"
-        args << "--without-x"
-      end
+      args << "--with-x"
       cd "unix" do
         system "./configure", *args, "--with-tcl=#{lib}"
         system "make"

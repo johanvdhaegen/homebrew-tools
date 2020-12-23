@@ -1,9 +1,9 @@
 class Xcircuit < Formula
   desc "Program for drawing electrical circuit schematic diagrams"
   homepage "http://opencircuitdesign.com/xcircuit"
-  url "http://opencircuitdesign.com/xcircuit/archive/xcircuit-3.10.28.tgz"
-  sha256 "402fc70b4b22bb4204313356886d193ead672123fe30c17c128c86ba18dfd157"
-  license "GPL-2.0"
+  url "http://opencircuitdesign.com/xcircuit/archive/xcircuit-3.10.29.tgz"
+  sha256 "d42263392ef60a1a3c1505392ea80408e56a4a8c519b196f092780803ffa475d"
+  license "GPL-2.0-only"
 
   livecheck do
     url "http://opencircuitdesign.com/xcircuit/archive/"
@@ -14,8 +14,9 @@ class Xcircuit < Formula
   depends_on "automake" => :build
   depends_on "pkg-config" => :build
   depends_on "cairo-x11"
+  depends_on "libx11"
+  depends_on "libxt"
   depends_on "tcl-tk-x11"
-  depends_on :x11
   depends_on "ghostscript" => :recommended
 
   def install

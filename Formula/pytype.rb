@@ -3,8 +3,8 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/80/a4/e7e3ee6a9d03278023a8cd0ff58a9f707286f40e41402a9fa5a803135874/pytype-2020.12.16.tar.gz"
-  sha256 "8d6210aa5631b6c276a4dbec459d71078fa44c49036796631b76e65e1024ef47"
+  url "https://files.pythonhosted.org/packages/a9/ab/c425c8a570337a48ed863fb5b568101f9179db1a4a465a9f9d96309d9e4b/pytype-2020.12.23.tar.gz"
+  sha256 "0ac0719df93cb873f2ff3d7dc01c595650caed4ec737e0629eeae9b172a87fe9"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git"
@@ -77,8 +77,8 @@ class Pytype < Formula
   end
 
   resource "typed_ast" do
-    url "https://files.pythonhosted.org/packages/18/09/b6a6b14bb8c5ec4a24fe0cf0160aa0b784fd55a6fd7f8da602197c5c461e/typed_ast-1.4.1.tar.gz"
-    sha256 "8c8aaad94455178e3187ab22c8b01a3837f8ee50e09cf31f1ba129eb293ec30b"
+    url "https://files.pythonhosted.org/packages/36/8c/efd8ffe7d242cd389632a11cbc6ce596de49b46ece22760a67b742534368/typed_ast-1.4.2.tar.gz"
+    sha256 "9fc0b3cb5d1720e7141d103cf4819aea239f7d136acf9ee4a69b047b7986175a"
   end
 
   resource "pybind11" do

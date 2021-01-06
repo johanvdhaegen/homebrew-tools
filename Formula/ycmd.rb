@@ -49,7 +49,7 @@ class Ycmd < Formula
 
     # create isolated virtualenv and install ycmd and third-party dependencies
     virtualenv_create(libexec, "python3")
-    libexec.install "ycmd", "ycm_core.so", "CORE_VERSION",
+    libexec.install "ycmd", Dir["ycm_core*.so"], "CORE_VERSION",
                     "PYTHON_USED_DURING_BUILDING"
     third_party = %w[
       bottle generic_server jedi_deps mrab-regex regex-build waitress
@@ -61,7 +61,7 @@ class Ycmd < Formula
 
     # fix shared library paths which are not fixed automatically
     if build.with? "clang-completer"
-      ["#{libexec}/ycm_core.so"].each do |f|
+      Dir["#{libexec}/ycm_core*.so"].each do |f|
         macho = MachO.open(f)
         macho.change_dylib("@rpath/libclang.dylib",
                            "#{libexec}/third_party/clang/lib/libclang.dylib")

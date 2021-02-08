@@ -3,8 +3,8 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/89/03/a05461a051d33a5d167201d5e631cb950c6b8e98065a47ab95bc2a5bbe7a/pytype-2021.1.21.tar.gz"
-  sha256 "b79c7c0c9a9df767887bc50c96c1391c9ff3ceacf2a5f3b49ecf57b1d3d86a64"
+  url "https://files.pythonhosted.org/packages/24/30/229e849981776fcb6894c3c69bafa8b8625894dc4853dd33a3e8f2c8aa37/pytype-2021.1.28.tar.gz"
+  sha256 "69ffaf8ffdb29cfa69aec8c1bbdc6052a8ab87f24278635884f61253a21c7a90"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git"
@@ -82,8 +82,13 @@ class Pytype < Formula
   end
 
   resource "pybind11" do
-    url "https://files.pythonhosted.org/packages/d8/47/2eb4be23fa8cc1a08c855c012c1aa4348d06ab1a5527f876515bbf689644/pybind11-2.6.1.tar.gz"
-    sha256 "ab7e60a520fe6ae25eca939191bb2ac416cd58478ce754740238a8bf1af18934"
+    url "https://files.pythonhosted.org/packages/46/0e/3131a9ae6e6cd1d718cfdd3e2c25f681f2db29be30763aa54b9310de5fea/pybind11-2.6.2.tar.gz"
+    sha256 "d0e0aed9279656f21501243b707eb6e3b951e89e10c3271dedf3ae41c365e5ed"
+  end
+
+  resource "toml" do
+    url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
+    sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
   end
 
   def install

@@ -3,8 +3,8 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/24/30/229e849981776fcb6894c3c69bafa8b8625894dc4853dd33a3e8f2c8aa37/pytype-2021.1.28.tar.gz"
-  sha256 "69ffaf8ffdb29cfa69aec8c1bbdc6052a8ab87f24278635884f61253a21c7a90"
+  url "https://files.pythonhosted.org/packages/e3/53/4bacaafd1cf728a923b7f793a39ba86f69a48694b53e41c23f6b69091d78/pytype-2021.2.9.tar.gz"
+  sha256 "e248ed107a4ec6e3b04d1bfdffab8d4d5c7c7aceed92e8b6c5240de0e2fa6dac"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git"
@@ -40,8 +40,8 @@ class Pytype < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d7/c5/e81b9fb8033fe78a2355ea7b1774338e1dca2c9cbd2ee140211a9e6291ab/packaging-20.8.tar.gz"
-    sha256 "78598185a7008a470d64526a8059de9aaa449238f280fc9eb6b13ba6c4109093"
+    url "https://files.pythonhosted.org/packages/86/3c/bcd09ec5df7123abcf695009221a52f90438d877a2f1499453c6938f5728/packaging-20.9.tar.gz"
+    sha256 "5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5"
   end
 
   resource "scikit-build" do

@@ -1,9 +1,9 @@
 class TclTkX11 < Formula
   desc "Tool Command Language"
   homepage "https://www.tcl-lang.org"
-  url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.10/tcl8.6.10-src.tar.gz"
-  mirror "https://ftp.osuosl.org/pub/blfs/conglomeration/tcl/tcl8.6.10-src.tar.gz"
-  sha256 "5196dbf6638e3df8d5c87b5815c8c2b758496eb6f0e41446596c9a4e638d87ed"
+  url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.11/tcl8.6.11-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/tcl8.6.11-src.tar.gz"
+  sha256 "8c0486668586672c5693d7d95817cb05a18c5ecca2f40e2836b9578064088258"
   license "ISC"
 
   livecheck do
@@ -13,13 +13,17 @@ class TclTkX11 < Formula
 
   keg_only :provided_by_macos
 
+  depends_on "freetype" => :build
   depends_on "pkg-config" => :build
   depends_on "libx11"
+  depends_on "libxext"
   depends_on "openssl@1.1"
 
+  uses_from_macos "zlib"
+
   resource "critcl" do
-    url "https://github.com/andreas-kupries/critcl/archive/3.1.18.tar.gz"
-    sha256 "6fb0263cc8dfb787ab162ae130570c19f665a03229b8a046ec1c11809c2ff70e"
+    url "https://github.com/andreas-kupries/critcl/archive/3.1.18.1.tar.gz"
+    sha256 "51bc4b099ecf59ba3bada874fc8e1611279dfd30ad4d4074257084763c49fd86"
   end
 
   resource "tcllib" do
@@ -28,14 +32,14 @@ class TclTkX11 < Formula
   end
 
   resource "tcltls" do
-    url "https://core.tcl-lang.org/tcltls/uv/tcltls-1.7.20.tar.gz"
-    sha256 "397a4e7cd4ea7a6dbf8a1a664e73945b91828c7c76d02474875261d22fb4e4ca"
+    url "https://core.tcl-lang.org/tcltls/uv/tcltls-1.7.22.tar.gz"
+    sha256 "e84e2b7a275ec82c4aaa9d1b1f9786dbe4358c815e917539ffe7f667ff4bc3b4"
   end
 
   resource "tk" do
-    url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.10/tk8.6.10-src.tar.gz"
-    mirror "https://fossies.org/linux/misc/tk8.6.10-src.tar.gz"
-    sha256 "63df418a859d0a463347f95ded5cd88a3dd3aaa1ceecaeee362194bc30f3e386"
+    url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.11/tk8.6.11.1-src.tar.gz"
+    mirror "https://fossies.org/linux/misc/tk8.6.11.1-src.tar.gz"
+    sha256 "006cab171beeca6a968b6d617588538176f27be232a2b334a0e96173e89909be"
   end
 
   def install
@@ -75,10 +79,14 @@ class TclTkX11 < Formula
     resource("tcllib").stage do
       system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
       system "make", "install"
-      ENV["SDKROOT"] = MacOS.sdk_path
+      on_macos do
+        ENV["SDKROOT"] = MacOS.sdk_path
+      end
       system "make", "critcl"
       cp_r "modules/tcllibc", "#{lib}/"
-      ln_s "#{lib}/tcllibc/macosx-x86_64-clang", "#{lib}/tcllibc/macosx-x86_64"
+      on_macos do
+        ln_s "#{lib}/tcllibc/macosx-x86_64-clang", "#{lib}/tcllibc/macosx-x86_64"
+      end
     end
 
     resource("tcltls").stage do

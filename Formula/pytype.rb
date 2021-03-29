@@ -3,8 +3,8 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/4a/67/6ed3cf3df81903836154a93c518ed221a7ed6af53ed171f1399ea7d2c94a/pytype-2021.3.3.tar.gz"
-  sha256 "d8f7808c8bba99e5eda02d1ffb7c4dcf679467d01d0510b9884141e9edb57c30"
+  url "https://files.pythonhosted.org/packages/0d/47/bd4f6aaa927c96fb67489b0a28f0541827d2f2125b3b7bce82a21d802572/pytype-2021.3.10.tar.gz"
+  sha256 "d59e2ba25f53431c3396f019519532e7c3c2a29149494f62d67f2078574ec5e3"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git"

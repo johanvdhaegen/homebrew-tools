@@ -1,8 +1,8 @@
 class Xcircuit < Formula
   desc "Program for drawing electrical circuit schematic diagrams"
   homepage "http://opencircuitdesign.com/xcircuit"
-  url "http://opencircuitdesign.com/xcircuit/archive/xcircuit-3.10.29.tgz"
-  sha256 "d42263392ef60a1a3c1505392ea80408e56a4a8c519b196f092780803ffa475d"
+  url "http://opencircuitdesign.com/xcircuit/archive/xcircuit-3.10.30.tgz"
+  sha256 "b2f63cba605e79cc2a08714bf3888f7be7174384ed724db3c70f8bf25c36f554"
   license "GPL-2.0-only"
 
   livecheck do

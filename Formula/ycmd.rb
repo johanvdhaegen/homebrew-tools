@@ -19,8 +19,9 @@ class Ycmd < Formula
     clang_version = "11.0.0"
     clang_filename = format("libclang-%<version>s-x86_64-apple-darwin.tar.bz2",
                             version: clang_version)
-    url format("https://dl.bintray.com/ycm-core/libclang/%<filename>s",
-               filename: clang_filename)
+    url format("https://github.com/ycm-core/llvm/releases/download/%<version>s" \
+               "/%<filename>s",
+               version: clang_version, filename: clang_filename)
     sha256 "6ac0caea93177c2d260c5e31d2e4ddaf734bfe68d0f002b2eecc61de081b116f"
   end
 

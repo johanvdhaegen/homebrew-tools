@@ -1,9 +1,9 @@
 class EmacsCocoaAT27 < Formula
   desc "GNU Emacs text editor"
   homepage "https://www.gnu.org/software/emacs/"
-  url "https://ftp.gnu.org/gnu/emacs/emacs-27.1.tar.xz"
-  mirror "https://ftpmirror.gnu.org/emacs/emacs-27.1.tar.xz"
-  sha256 "4a4c128f915fc937d61edfc273c98106711b540c9be3cd5d2e2b9b5b2f172e41"
+  url "https://ftp.gnu.org/gnu/emacs/emacs-27.2.tar.xz"
+  mirror "https://ftpmirror.gnu.org/emacs/emacs-27.2.tar.xz"
+  sha256 "b4a7cc4e78e63f378624e0919215b910af5bb2a0afc819fad298272e9f40c1b9"
   license "GPL-3.0-or-later"
 
   livecheck do

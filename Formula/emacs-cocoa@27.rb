@@ -6,10 +6,6 @@ class EmacsCocoaAT27 < Formula
   sha256 "b4a7cc4e78e63f378624e0919215b910af5bb2a0afc819fad298272e9f40c1b9"
   license "GPL-3.0-or-later"
 
-  livecheck do
-    url :stable
-  end
-
   head do
     url "https://github.com/emacs-mirror/emacs.git", branch: "emacs-27"
 

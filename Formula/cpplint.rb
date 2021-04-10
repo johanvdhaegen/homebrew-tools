@@ -14,12 +14,12 @@ class Cpplint < Formula
     pyver = Language::Python.major_minor_version "python"
     ENV.prepend_create_path "PYTHONPATH",
                             libexec/"lib/python#{pyver}/site-packages"
-    virtualenv_create(libexec, "python")
+    virtualenv_create(libexec, "python#{pyver}")
     (libexec/"bin").install "cpplint.py"
     (bin/"cpplint").write <<~EOS
       #!/bin/bash
       PYTHONPATH="#{ENV["PYTHONPATH"]}"
-      "#{libexec}/bin/python" "#{libexec}/bin/cpplint.py" "$@"
+      "#{libexec}/bin/python#{pyver}" "#{libexec}/bin/cpplint.py" "$@"
     EOS
   end
 

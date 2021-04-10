@@ -64,6 +64,14 @@ class EmacsCocoaAT27 < Formula
       system "./autogen.sh"
     end
 
+    File.write "lisp/site-load.el", <<~EOS
+      (setq exec-path (delete nil
+        (mapcar
+          (lambda (elt)
+            (unless (string-match-p "Homebrew/shims" elt) elt))
+          exec-path)))
+    EOS
+
     system "./configure", *args
     system "make"
     system "make", "install"

@@ -3,8 +3,8 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/b2/45/7486803a8e0b0ac739233919a78e855b90a4ae54cd5c61de25e154e6c92b/pytype-2021.4.1.tar.gz"
-  sha256 "26b54e6d3ccc9af5786846635cf538acd55318a84dafdc0ae112a534d2ae6c08"
+  url "https://files.pythonhosted.org/packages/52/c4/8dfd0f583f54cdf00581216d0a00aa2c3dae2f2cd9090313024bb8ff23c3/pytype-2021.4.9.tar.gz"
+  sha256 "3e2dac06387325e25dd014c07203b826009714048ac9953121d34860df1103d2"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git"
@@ -25,8 +25,8 @@ class Pytype < Formula
   end
 
   resource "networkx" do
-    url "https://files.pythonhosted.org/packages/ef/d0/f706a9e5814a42c544fa1b2876fc33e5d17e1f2c92a5361776632c4f41ab/networkx-2.5.tar.gz"
-    sha256 "7978955423fbc9639c10498878be59caf99b44dc304c2286162fd24b458c1602"
+    url "https://files.pythonhosted.org/packages/b0/21/adfbf6168631e28577e4af9eb9f26d75fe72b2bb1d33762a5f2c425e6c2a/networkx-2.5.1.tar.gz"
+    sha256 "109cd585cac41297f71103c3c42ac6ef7379f29788eb54cb751be5a663bb235a"
   end
 
   resource "wheel" do

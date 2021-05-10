@@ -22,11 +22,13 @@ class Magic < Formula
       "--prefix=#{prefix}",
       "--with-tcl=#{Formula["tcl-tk-x11"].opt_prefix}",
       "--with-tk=#{Formula["tcl-tk-x11"].opt_prefix}",
+      "--with-cairo=#{Formula["cairo-x11"].opt_prefix}",
     ]
-    args << "--with-cairo=#{Formula["cairo-x11"].opt_prefix}"
     ENV.append "CFLAGS", "-Wno-error=return-type"
 
-    system "./configure", *args
+    cd "scripts" do
+      system "./configure", *args
+    end
     system "make"
     system "make", "install"
   end

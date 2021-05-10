@@ -3,8 +3,8 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/c7/fc/3c69ecc4e83c2d31ec85d6fd6eced6cdb8f85f984241a7dc7492e5b7be84/pytype-2021.5.4.tar.gz"
-  sha256 "fdfdef2dfb5390ced4da510812cb5f16ce388237c8c57425ce313bdaacac6dea"
+  url "https://files.pythonhosted.org/packages/a6/9d/a225610455e6cf4885032878c4325a0be26b7d84cf1deb9969cc89a66e28/pytype-2021.5.6.tar.gz"
+  sha256 "7de174d9f55eee21e18ffb171bb70ecbb45dd7170412ef676679f1436c136e41"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git"
@@ -72,8 +72,8 @@ class Pytype < Formula
   end
 
   resource "six" do
-    url "https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz"
-    sha256 "30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"
+    url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "typed_ast" do

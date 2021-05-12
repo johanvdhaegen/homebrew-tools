@@ -3,8 +3,8 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/a6/9d/a225610455e6cf4885032878c4325a0be26b7d84cf1deb9969cc89a66e28/pytype-2021.5.6.tar.gz"
-  sha256 "7de174d9f55eee21e18ffb171bb70ecbb45dd7170412ef676679f1436c136e41"
+  url "https://files.pythonhosted.org/packages/ea/5e/21b6713e1c29c9bd3f98d552c11621539a6cafb318f977530175cad5cc35/pytype-2021.5.11.tar.gz"
+  sha256 "a03e9cce92adbef82d0587c9fd63c07d3b0b68194dc759f8aefd3c489286dbd9"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git"
@@ -15,8 +15,8 @@ class Pytype < Formula
   depends_on "python@3.8"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/f0/cb/80a4a274df7da7b8baf083249b0890a0579374c3d74b5ac0ee9291f912dc/attrs-20.3.0.tar.gz"
-    sha256 "832aa3cde19744e49938b91fea06d69ecb9e649c93ba974535d08ad92164f700"
+    url "https://files.pythonhosted.org/packages/ed/d6/3ebca4ca65157c12bd08a63e20ac0bdc21ac7f3694040711f9fd073c0ffb/attrs-21.2.0.tar.gz"
+    sha256 "ef6aaac3ca6cd92904cdd0d83f629a15f18053ec84e6432106f7a4d04ae4f5fb"
   end
 
   resource "decorator" do

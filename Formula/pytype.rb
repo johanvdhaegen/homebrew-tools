@@ -3,8 +3,8 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/1d/6d/42e88d2203832851a08ce8bb4381d8c67f5e3f82ff57598f511de6baac31/pytype-2021.6.17.tar.gz"
-  sha256 "8f11a4b93fb807ff849a0cbff926c17ef6147f5f5bb8a28875e8fbea91b853f5"
+  url "https://files.pythonhosted.org/packages/a1/24/6bd0c87d220ac071dff871cffd512b3dfe7123a4053e469ad3a8abd074c9/pytype-2021.7.19.tar.gz"
+  sha256 "8dba4e42defd145cd6a933f3673304a2e8aaa319ce9842fbf0eea670e4f3e89f"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git"
@@ -40,8 +40,8 @@ class Pytype < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/86/3c/bcd09ec5df7123abcf695009221a52f90438d877a2f1499453c6938f5728/packaging-20.9.tar.gz"
-    sha256 "5b327ac1320dc863dca72f4514ecc086f31186744b84a230374cc1fd776feae5"
+    url "https://files.pythonhosted.org/packages/df/86/aef78bab3afd461faecf9955a6501c4999933a48394e90f03cd512aad844/packaging-21.0.tar.gz"
+    sha256 "7dc96269f53a4ccec5c0670940a4281106dd0bb343f47b7471f779df49c2fbe7"
   end
 
   resource "scikit-build" do
@@ -57,8 +57,8 @@ class Pytype < Formula
   end
 
   resource "ninja" do
-    url "https://files.pythonhosted.org/packages/55/a3/56376f09d6be4be5b7ebfc492d3e89cb05206a61f8c5f695a5d1e8cc49b7/ninja-1.10.0.post2.tar.gz"
-    sha256 "621fd73513a9bef0cb82e8c531a29ef96580b4d6e797f833cce167054ad812f8"
+    url "https://files.pythonhosted.org/packages/94/37/5e491fb9433ccac71e13d88edf58d8795434477e93fc1334d1e221553af5/ninja-1.10.0.post3.tar.gz"
+    sha256 "8d328888b5bff8a4adc88c4f84e074e31d0b4195459395f8f3c47b07e5d3c0f9"
   end
 
   resource "importlab" do

@@ -1,8 +1,8 @@
 class Dpic < Formula
   desc "Implementation of the pic language"
   homepage "https://ece.uwaterloo.ca/~aplevich/dpic"
-  url "https://ece.uwaterloo.ca/~aplevich/dpic/dpic-2021.05.15.tar.gz"
-  sha256 "4540cd16892c61dd498eb649fc456e4229c48404bc0d5248b0c93f8e745704b2"
+  url "https://ece.uwaterloo.ca/~aplevich/dpic/dpic-2021.08.01.tar.gz"
+  sha256 "6d97f420de6ee639837e3a541073bd56bb8896decd6b9f532e3b1f429f0f0bef"
   license "BSD-2-Clause"
 
   livecheck do

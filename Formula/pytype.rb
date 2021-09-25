@@ -3,8 +3,8 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/1e/95/8daaadd94e07579aa0d00b474460bc54199c666edf60c814cff2147fa1fb/pytype-2021.8.3.tar.gz"
-  sha256 "be384d68f432a3156c933a2e3410e58f6c04820cb1bc6cdce23699582d359053"
+  url "https://files.pythonhosted.org/packages/af/c6/3ab1966f22f82f3279fbb728825244ba035b9842df9d66fd92b37cd72454/pytype-2021.8.11.tar.gz"
+  sha256 "ccd8beb2ee8e80f627e568900fa2995b07b09256fc2be65b99dc4e078b86aa21"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git"
@@ -52,8 +52,8 @@ class Pytype < Formula
   resource "ninja-src" do
     # unix_source_url from NinjaUrls.cmake in ninja python archive
     # https://github.com/scikit-build/ninja-python-distributions/blob/master/NinjaUrls.cmake
-    url "https://github.com/kitware/ninja/archive/v1.10.0.gfb670.kitware.jobserver-1.tar.gz"
-    sha256 "d00033813993116a4e14f835df813daee9916b107333d88dbb798a22f8671b1f"
+    url "https://github.com/Kitware/ninja/archive/v1.10.2.g51db2.kitware.jobserver-1.tar.gz"
+    sha256 "549c31ee596566b952c600e23eb9b8d39a4112cd5fdeb2e5a83370669176da40"
   end
 
   resource "ninja" do
@@ -79,6 +79,21 @@ class Pytype < Formula
   resource "typed_ast" do
     url "https://files.pythonhosted.org/packages/6e/08/c04a49ee26a94c1ec211e7b1e5f2971d692e04818ea67ef70f1e879cf525/typed_ast-1.4.3.tar.gz"
     sha256 "fb1bbeac803adea29cedd70781399c99138358c26d05fcbd23c13016b7f5ec65"
+  end
+
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/aa/55/62e2d4934c282a60b4243a950c9dbfa01ae7cac0e8d6c0b5315b87432c81/typing_extensions-3.10.0.0.tar.gz"
+    sha256 "50b6f157849174217d0656f99dc82fe932884fb250826c18350e159ec6cdf342"
+  end
+
+  resource "typing-inspect" do
+    url "https://files.pythonhosted.org/packages/c3/da/864ce66818e308b38209d4b1ef0585921d28eb07621ba7d905a0e96bcc80/typing_inspect-0.7.1.tar.gz"
+    sha256 "047d4097d9b17f46531bf6f014356111a1b6fb821a24fe7ac909853ca2a782aa"
+  end
+
+  resource "libcst" do
+    url "https://files.pythonhosted.org/packages/76/86/ff8b8dea37db946f939c65fea222b597e0513af00a8eaa68ca72c66c5844/libcst-0.3.20.tar.gz"
+    sha256 "9d50d4eab28b570e254cc63287ce3009b945be4114c7a29662b67204cfc18060"
   end
 
   resource "pybind11" do

@@ -3,8 +3,8 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/af/c6/3ab1966f22f82f3279fbb728825244ba035b9842df9d66fd92b37cd72454/pytype-2021.8.11.tar.gz"
-  sha256 "ccd8beb2ee8e80f627e568900fa2995b07b09256fc2be65b99dc4e078b86aa21"
+  url "https://files.pythonhosted.org/packages/60/88/37aa68cf258c830434168d1790e767f1405cd9e37f6ef9cdd7ea5943b6a7/pytype-2021.8.24.tar.gz"
+  sha256 "0fa007ab0f2c856b5a60fb0c611a59868e0c075b9c8ae7463b2ec36feb34e9a3"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git"
@@ -25,8 +25,8 @@ class Pytype < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/ed/46/e298a50dde405e1c202e316fa6a3015ff9288423661d7ea5e8f22f589071/wheel-0.36.2.tar.gz"
-    sha256 "e11eefd162658ea59a60a0f6c7d493a7190ea4b9a85e335b33489d9f17e0245e"
+    url "https://files.pythonhosted.org/packages/4e/be/8139f127b4db2f79c8b117c80af56a3078cc4824b5b94250c7f81a70e03b/wheel-0.37.0.tar.gz"
+    sha256 "e2ef7239991699e3355d54f8e968a21bb940a1dbf34a4d226741e64462516fad"
   end
 
   resource "pyparsing" do
@@ -45,8 +45,8 @@ class Pytype < Formula
   end
 
   resource "scikit-build" do
-    url "https://files.pythonhosted.org/packages/71/02/1e94506b7bee5739317f2d141cebab7dab5bb5731b377e718fddd3b3e7e7/scikit-build-0.11.1.tar.gz"
-    sha256 "da40dfd69b2456fad1349a894b90180b43712152b8a85d2a00f4ae2ce8ac9a5c"
+    url "https://files.pythonhosted.org/packages/ab/8d/fc770eb732553ae0af68d276865524cc17efd667f9e71da6c5a2ac876817/scikit-build-0.12.0.tar.gz"
+    sha256 "f851382c469bcd9a8c98b1878bcfdd13b68556279d2fd9a329be41956ae5a7fe"
   end
 
   resource "ninja-src" do
@@ -84,6 +84,11 @@ class Pytype < Formula
   resource "typing-extensions" do
     url "https://files.pythonhosted.org/packages/aa/55/62e2d4934c282a60b4243a950c9dbfa01ae7cac0e8d6c0b5315b87432c81/typing_extensions-3.10.0.0.tar.gz"
     sha256 "50b6f157849174217d0656f99dc82fe932884fb250826c18350e159ec6cdf342"
+  end
+
+  resource "mypy-extensions" do
+    url "https://files.pythonhosted.org/packages/63/60/0582ce2eaced55f65a4406fc97beba256de4b7a95a0034c6576458c6519f/mypy_extensions-0.4.3.tar.gz"
+    sha256 "2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"
   end
 
   resource "typing-inspect" do
@@ -170,7 +175,7 @@ class Pytype < Formula
     # pytype needs to find the python interpreter used to run pytype on PATH
     bin.env_script_all_files(
       libexec/"bin",
-      PATH: "#{Formula["python@#{pyver}"].opt_bin}:$PATH}",
+      PATH: "#{Formula["python@#{pyver}"].opt_bin}:$PATH",
       PYTHONPATH: ENV["PYTHONPATH"],
     )
   end

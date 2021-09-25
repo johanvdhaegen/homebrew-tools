@@ -3,8 +3,8 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/60/88/37aa68cf258c830434168d1790e767f1405cd9e37f6ef9cdd7ea5943b6a7/pytype-2021.8.24.tar.gz"
-  sha256 "0fa007ab0f2c856b5a60fb0c611a59868e0c075b9c8ae7463b2ec36feb34e9a3"
+  url "https://files.pythonhosted.org/packages/f3/7d/3979e7d10b9b736c45592294c1d6944800f26f62dea96ad96b52541c3596/pytype-2021.9.9.tar.gz"
+  sha256 "4d63d3e84d9a0a979025724aa948a4309981389e4cefd6234578470708558d74"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git"
@@ -20,8 +20,8 @@ class Pytype < Formula
   end
 
   resource "networkx" do
-    url "https://files.pythonhosted.org/packages/4b/3b/4378599026b81d1987a6e0d6d3d677e8f26308a039491a6b8a1914e58a4c/networkx-2.6.2.tar.gz"
-    sha256 "2306f1950ce772c5a59a57f5486d59bb9cab98497c45fc49cbc45ac0dec119bb"
+    url "https://files.pythonhosted.org/packages/97/ae/7497bc5e1c84af95e585e3f98585c9f06c627fac6340984c4243053e8f44/networkx-2.6.3.tar.gz"
+    sha256 "c0946ed31d71f1b732b5aaa6da5a0388a345019af232ce2f49c766e2d6795c51"
   end
 
   resource "wheel" do
@@ -82,8 +82,8 @@ class Pytype < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/aa/55/62e2d4934c282a60b4243a950c9dbfa01ae7cac0e8d6c0b5315b87432c81/typing_extensions-3.10.0.0.tar.gz"
-    sha256 "50b6f157849174217d0656f99dc82fe932884fb250826c18350e159ec6cdf342"
+    url "https://files.pythonhosted.org/packages/ed/12/c5079a15cf5c01d7f4252b473b00f7e68ee711be605b9f001528f0298b98/typing_extensions-3.10.0.2.tar.gz"
+    sha256 "49f75d16ff11f1cd258e1b988ccff82a3ca5570217d7ad8c5f48205dd99a677e"
   end
 
   resource "mypy-extensions" do
@@ -102,8 +102,8 @@ class Pytype < Formula
   end
 
   resource "pybind11" do
-    url "https://files.pythonhosted.org/packages/46/0e/3131a9ae6e6cd1d718cfdd3e2c25f681f2db29be30763aa54b9310de5fea/pybind11-2.6.2.tar.gz"
-    sha256 "d0e0aed9279656f21501243b707eb6e3b951e89e10c3271dedf3ae41c365e5ed"
+    url "https://files.pythonhosted.org/packages/66/99/fc60e2287bb2309b8db4d0f080770ecc8d37dc64911e37b86698ec4b6a51/pybind11-2.7.1.tar.gz"
+    sha256 "8950aac5e5f4d505f7a0f067c5cb3893dcf098ff29cedfcb4ccf1e9e44d0bd9a"
   end
 
   resource "tabulate" do

@@ -1,22 +1,21 @@
 class Chktex < Formula
   desc "LaTeX semantic checker"
   homepage "https://www.nongnu.org/chktex/"
-  url "https://download.savannah.gnu.org/releases/chktex/chktex-1.7.6.tar.gz"
-  sha256 "8ac0e5ca213b2012d44c28f9e4feb9783df44750eb0c30a237d81ff58ef34c8d"
   license "GPL-2.0"
+
+  stable do
+    url "https://download.savannah.gnu.org/releases/chktex/chktex-1.7.6.tar.gz"
+    sha256 "8ac0e5ca213b2012d44c28f9e4feb9783df44750eb0c30a237d81ff58ef34c8d"
+    patch :p2, :DATA
+  end
 
   head do
     url "https://git.savannah.nongnu.org/git/chktex.git"
+    patch :DATA
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-
-  if build.head?
-    patch :DATA
-  else
-    patch :p2, :DATA
-  end
 
   def install
     ENV.prepend_path "PATH", "/Library/TeX/texbin"

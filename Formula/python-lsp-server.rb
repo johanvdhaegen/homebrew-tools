@@ -3,8 +3,8 @@ class PythonLspServer < Formula
 
   desc "Implementation of Language Server Protocol for Python"
   homepage "https://github.com/python-lsp/python-lsp-server/"
-  url "https://files.pythonhosted.org/packages/09/b5/e8657cf68fed77eedfc7c32f05d9a53ab53c3d21a3536d7ff00b6fd8c3ea/python-lsp-server-1.2.1.tar.gz"
-  sha256 "fe10b8f1ef7cd4f5b4aafcb5e29a2bbd454459442d434bbe1af97d2f3a94f55c"
+  url "https://files.pythonhosted.org/packages/6e/13/1035621807f43f3339ed3535e4dcf52286fd3e96fefecb53797213b42839/python-lsp-server-1.2.2.tar.gz"
+  sha256 "8c3e8ff5ff076f1aed8db5f14041e76d19ebd09ba1867e3f5f2f6740423ce0e3"
   license "MIT"
 
   depends_on "python@3.9"
@@ -25,8 +25,8 @@ class PythonLspServer < Formula
   end
 
   resource "ujson" do
-    url "https://files.pythonhosted.org/packages/86/0a/80d87aa4ee79980bddabef13cb7d95de330f85355cf08dfdaf874889b02b/ujson-4.0.2.tar.gz"
-    sha256 "c615a9e9e378a7383b756b7e7a73c38b22aeb8967a8bfbffd4741f7ffd043c4d"
+    url "https://files.pythonhosted.org/packages/2c/8d/63b4afe82d646a606cef838855a6110c7a3a012622e656bd29fb2d15f1d1/ujson-4.1.0.tar.gz"
+    sha256 "22b63ec4409f0d2f2c4c9d5aa331997e02470b7a15a3233f3cc32f2f9b92d58c"
   end
 
   resource "python-lsp-jsonrpc" do
@@ -70,8 +70,8 @@ class PythonLspServer < Formula
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/f8/04/7a8542bed4b16a65c2714bf76cf5a0b026157da7f75e87cc88774aa10b14/pluggy-0.13.1.tar.gz"
-    sha256 "15b2acde666561e1298d71b523007ed7364de07029219b604cf808bfa1c765b0"
+    url "https://files.pythonhosted.org/packages/a1/16/db2d7de3474b6e37cbb9c008965ee63835bba517e22cdb8c35b5116b5ce1/pluggy-1.0.0.tar.gz"
+    sha256 "4224373bacce55f955a878bf9cfa763c1e360858e330072059e10bad68531159"
   end
 
   def install

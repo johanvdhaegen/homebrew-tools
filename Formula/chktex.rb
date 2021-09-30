@@ -10,7 +10,7 @@ class Chktex < Formula
   end
 
   head do
-    url "https://git.savannah.nongnu.org/git/chktex.git"
+    url "https://git.savannah.nongnu.org/git/chktex.git", branch: "master"
     patch :DATA
   end
 

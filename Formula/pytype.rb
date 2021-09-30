@@ -7,7 +7,7 @@ class Pytype < Formula
   sha256 "1b1b62c6f4fc195b4e9f714ff49fe60d6a1ec2e86b6ec5d699b905460748842c"
   license "Apache-2.0"
 
-  head "https://github.com/google/pytype.git"
+  head "https://github.com/google/pytype.git", branch: "master"
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build

@@ -7,7 +7,7 @@ class Pdfminer < Formula
   sha256 "b9aac0ebeafb21c08bf65f2039f4b2c5f78a3449d0a41df711d72445649e952a"
   license "MIT"
 
-  head "https://github.com/pdfminer/pdfminer.six.git"
+  head "https://github.com/pdfminer/pdfminer.six.git", branch: "develop"
 
   depends_on "libffi"
   depends_on "openssl@1.1"

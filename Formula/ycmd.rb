@@ -6,7 +6,7 @@ class Ycmd < Formula
   license "GPL-3.0"
 
   head do
-    url "https://github.com/Valloric/ycmd.git"
+    url "https://github.com/Valloric/ycmd.git", branch: "master"
   end
 
   option "with-clang-completer", "Enable C-family semantic completion engine"

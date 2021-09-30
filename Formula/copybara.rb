@@ -4,7 +4,7 @@ class Copybara < Formula
   license "Apache-2.0"
 
   head do
-    url "https://github.com/google/copybara.git"
+    url "https://github.com/google/copybara.git", branch: "master"
   end
 
   depends_on "bazel" => :build

@@ -7,14 +7,11 @@ class OcamlAT407 < Formula
   homepage "https://ocaml.org/"
   url "https://caml.inria.fr/pub/distrib/ocaml-4.07/ocaml-4.07.1.tar.xz"
   sha256 "dfe48b1da31da9c82d77612582fae74c80e8d1ac650e1c24f5ac9059e48307b8"
-  license "LGPL-2.1"
+  license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
 
-  pour_bottle? do
-    # The ocaml compilers embed prefix information in weird ways that the default
-    # brew detection doesn't find, and so needs to be explicitly blacklisted.
-    reason "The bottle needs to be installed into /usr/local."
-    satisfy { HOMEBREW_PREFIX.to_s == "/usr/local" }
-  end
+  # The ocaml compilers embed prefix information in weird ways that the default
+  # brew detection doesn't find, and so needs to be explicitly blocked.
+  pour_bottle? only_if: :default_prefix
 
   keg_only :versioned_formula
 

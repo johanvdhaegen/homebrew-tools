@@ -13,7 +13,7 @@ class Xcircuit < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "pkg-config" => :build
-  depends_on "cairo-x11"
+  depends_on "cairo"
   depends_on "libx11"
   depends_on "libxt"
   depends_on "tcl-tk-x11"
@@ -28,7 +28,7 @@ class Xcircuit < Formula
       "--with-ngspice=ngspice",
     ]
     args << "--with-gs=#{Formula["ghostscript"].opt_prefix}" if build.with? "ghostscript"
-    args << "--with-cairo=#{Formula["cairo-x11"].opt_prefix}"
+    args << "--with-cairo=#{Formula["cairo"].opt_prefix}"
     ENV.append "CFLAGS", "-Wno-error=return-type"
 
     system "aclocal"

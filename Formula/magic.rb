@@ -11,7 +11,7 @@ class Magic < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "cairo-x11"
+  depends_on "cairo"
   depends_on "libx11"
   depends_on "readline"
   depends_on "tcl-tk-x11"
@@ -22,7 +22,7 @@ class Magic < Formula
       "--prefix=#{prefix}",
       "--with-tcl=#{Formula["tcl-tk-x11"].opt_prefix}",
       "--with-tk=#{Formula["tcl-tk-x11"].opt_prefix}",
-      "--with-cairo=#{Formula["cairo-x11"].opt_prefix}",
+      "--with-cairo=#{Formula["cairo"].opt_prefix}",
     ]
     ENV.append "CFLAGS", "-Wno-error=return-type"
 

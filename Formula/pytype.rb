@@ -3,8 +3,8 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/63/b8/8608ddfaecf8532ec38d724840e51e27f33baef05f76d3b4443e522e0333/pytype-2021.9.27.tar.gz"
-  sha256 "1b1b62c6f4fc195b4e9f714ff49fe60d6a1ec2e86b6ec5d699b905460748842c"
+  url "https://files.pythonhosted.org/packages/61/f4/9ef56fb133683d7196a08191edb16b0099590c9f5e03973f251d091484cc/pytype-2021.10.4.tar.gz"
+  sha256 "3cd68768f65df8077469e249af3e23489be4e75da16915f26ac516c4efca175a"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git", branch: "master"
@@ -57,8 +57,8 @@ class Pytype < Formula
   end
 
   resource "ninja" do
-    url "https://files.pythonhosted.org/packages/52/fd/6a82411fbc23b62bf5ddf511b09cb3d6059d1b84ec6833589aa064cea207/ninja-1.10.2.tar.gz"
-    sha256 "bb5e54b9a7343b3a8fc6532ae2c169af387a45b0d4dd5b72c2803e21658c5791"
+    url "https://files.pythonhosted.org/packages/85/d4/d3797ed3f18bf6bf2ffe784b68f30d07948202d732322b94e77991612ea6/ninja-1.10.2.2.tar.gz"
+    sha256 "3f8a75acd929abb9f003d3aa5bc299cea30b9db0dfa18669877e9c02ddcf530d"
   end
 
   resource "importlab" do

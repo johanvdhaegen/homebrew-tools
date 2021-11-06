@@ -11,7 +11,7 @@ class TclTkX11 < Formula
     regex(%r{url=.*?/(?:tcl|tk).?v?(\d+(?:\.\d+)+)[._-]src\.t}i)
   end
 
-  keg_only :provided_by_macos
+  keg_only "it conflicts with tcl-tk"
 
   depends_on "freetype" => :build
   depends_on "pkg-config" => :build
@@ -79,14 +79,10 @@ class TclTkX11 < Formula
     resource("tcllib").stage do
       system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
       system "make", "install"
-      on_macos do
-        ENV["SDKROOT"] = MacOS.sdk_path
-      end
+      ENV["SDKROOT"] = MacOS.sdk_path if OS.mac?
       system "make", "critcl"
       cp_r "modules/tcllibc", "#{lib}/"
-      on_macos do
-        ln_s "#{lib}/tcllibc/macosx-x86_64-clang", "#{lib}/tcllibc/macosx-x86_64"
-      end
+      ln_s "#{lib}/tcllibc/macosx-x86_64-clang", "#{lib}/tcllibc/macosx-x86_64" if OS.mac?
     end
 
     resource("tcltls").stage do

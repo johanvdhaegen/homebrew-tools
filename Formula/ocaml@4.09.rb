@@ -9,7 +9,6 @@ class OcamlAT409 < Formula
   sha256 "f2fb91dfe86bae00a33fc5ba51685e95a68564274f5277f787c31931b22a7fec"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
 
-
   # The ocaml compilers embed prefix information in weird ways that the default
   # brew detection doesn't find, and so needs to be explicitly blocked.
   pour_bottle? only_if: :default_prefix

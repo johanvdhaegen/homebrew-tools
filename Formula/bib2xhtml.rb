@@ -8,7 +8,7 @@ class Bib2xhtml < Formula
 
   livecheck do
     url :homepage
-    regex(/href=.*bib2xhtml[._-]v?([0-9A-Za-z.\-_]+)\.tar\.gz/i)
+    regex(/href=.*bib2xhtml[._-]v?([0-9A-Za-z.\-_]+)\.t/i)
   end
 
   def install

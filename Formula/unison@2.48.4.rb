@@ -29,9 +29,8 @@ class UnisonAT2484 < Formula
   end
 
   test do
-    if build.with?("gtk+")
-      assert_match version.to_s, shell_output("#{bin}/unison_gtk -version")
-    end
+    assert_match version.to_s, shell_output("#{bin}/unison_gtk -version") if
+      build.with?("gtk+")
     assert_match version.to_s, shell_output("#{bin}/unison -version")
   end
 end

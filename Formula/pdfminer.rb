@@ -55,80 +55,27 @@ class Pdfminer < Formula
   end
 
   test do
-    (testpath/"test.pdf").write <<~EOS
-      %PDF-1.4
-      1 0 obj
-        << /Type /Catalog
-           /Outlines 2 0 R
-           /Pages 3 0 R
-        >>
-      endobj
-
-      2 0 obj
-        << /Type /Outlines
-           /Count 0
-        >>
-      endobj
-
-      3 0 obj
-        << /Type /Pages
-           /Kids [4 0 R]
-           /Count 1
-        >>
-      endobj
-
-      4 0 obj
-        << /Type /Page
-           /Parent 3 0 R
-           /MediaBox [0 0 612 792]
-           /Contents 5 0 R
-           /Resources <<  /ProcSet 6 0 R
-                          /Font << /F1 7 0 R >>
-                      >>
-        >>
-      endobj
-
-      5 0 obj
-        << /Length 60 >>
-      stream
-        BT
-          /F1 24 Tf
-          100 100 Td
-          (Hello World) Tj
-        ET
-      endstream
-      endobj
-
-      6 0 obj
-        [/PDF /Text]
-      endobj
-
-      7 0 obj
-        << /Type /Font
-           /Subtype /Type1
-           /Name /F1
-           /BaseFont /Helvetica
-        >>
-      endobj
-
-      xref
-      0 8
-      0000000000 65536 f 
-      0000000009 00000 n 
-      0000000089 00000 n 
-      0000000145 00000 n 
-      0000000217 00000 n 
-      0000000420 00000 n 
-      0000000532 00000 n 
-      0000000563 00000 n 
-
-      trailer
-        << /Size 8
-           /Root 1 0 R
-        >>
-      startxref
-      663
-      %%EOF
+    require "base64"
+    (testpath/"test.pdf").write ::Base64.decode64 <<~EOS
+      JVBERi0xLjQKMSAwIG9iagogIDw8IC9UeXBlIC9DYXRhbG9nCiAgICAgL091dGxp
+      bmVzIDIgMCBSCiAgICAgL1BhZ2VzIDMgMCBSCiAgPj4KZW5kb2JqCgoyIDAgb2Jq
+      CiAgPDwgL1R5cGUgL091dGxpbmVzCiAgICAgL0NvdW50IDAKICA+PgplbmRvYmoK
+      CjMgMCBvYmoKICA8PCAvVHlwZSAvUGFnZXMKICAgICAvS2lkcyBbNCAwIFJdCiAg
+      ICAgL0NvdW50IDEKICA+PgplbmRvYmoKCjQgMCBvYmoKICA8PCAvVHlwZSAvUGFn
+      ZQogICAgIC9QYXJlbnQgMyAwIFIKICAgICAvTWVkaWFCb3ggWzAgMCA2MTIgNzky
+      XQogICAgIC9Db250ZW50cyA1IDAgUgogICAgIC9SZXNvdXJjZXMgPDwgIC9Qcm9j
+      U2V0IDYgMCBSCiAgICAgICAgICAgICAgICAgICAgL0ZvbnQgPDwgL0YxIDcgMCBS
+      ID4+CiAgICAgICAgICAgICAgICA+PgogID4+CmVuZG9iagoKNSAwIG9iagogIDw8
+      IC9MZW5ndGggNjAgPj4Kc3RyZWFtCiAgQlQKICAgIC9GMSAyNCBUZgogICAgMTAw
+      IDEwMCBUZAogICAgKEhlbGxvIFdvcmxkKSBUagogIEVUCmVuZHN0cmVhbQplbmRv
+      YmoKCjYgMCBvYmoKICBbL1BERiAvVGV4dF0KZW5kb2JqCgo3IDAgb2JqCiAgPDwg
+      L1R5cGUgL0ZvbnQKICAgICAvU3VidHlwZSAvVHlwZTEKICAgICAvTmFtZSAvRjEK
+      ICAgICAvQmFzZUZvbnQgL0hlbHZldGljYQogID4+CmVuZG9iagoKeHJlZgowIDgK
+      MDAwMDAwMDAwMCA2NTUzNiBmIAowMDAwMDAwMDA5IDAwMDAwIG4gCjAwMDAwMDAw
+      ODkgMDAwMDAgbiAKMDAwMDAwMDE0NSAwMDAwMCBuIAowMDAwMDAwMjE3IDAwMDAw
+      IG4gCjAwMDAwMDA0MjAgMDAwMDAgbiAKMDAwMDAwMDUzMiAwMDAwMCBuIAowMDAw
+      MDAwNTYzIDAwMDAwIG4gCgp0cmFpbGVyCiAgPDwgL1NpemUgOAogICAgIC9Sb290
+      IDEgMCBSCiAgPj4Kc3RhcnR4cmVmCjY2MwolJUVPRgo=
     EOS
 
     assert_match(/Hello World/, shell_output("#{bin}/pdf2txt test.pdf"))

@@ -7,7 +7,7 @@ class Dpic < Formula
 
   livecheck do
     url :homepage
-    regex(/href=.*dpic[._-]v?(\d+(?:\.\d+)+)\.tar\.gz/i)
+    regex(/href=.*dpic[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   def install

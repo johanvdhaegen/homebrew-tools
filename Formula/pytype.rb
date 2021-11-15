@@ -3,18 +3,11 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/89/ea/14c0db4c4fe8d567a6134f8a8bf2a291dfa87b8d2b59deaee01526e72c08/pytype-2021.10.18.tar.gz"
-  sha256 "f29ff009acfd14cb2ee53134acf233834f9e51d090afd09e9dc7ed16323613b8"
+  url "https://files.pythonhosted.org/packages/94/e6/22c7f0ec64f430962b33a3be182dc4b6a41ee3cba09152bff30f209dd1c7/pytype-2021.11.2.tar.gz"
+  sha256 "54304b312b0737fa9a66dc6a064e89db82429beb5de641a0acd5c8d5d71644eb"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git", branch: "master"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pytype-2021.10.18"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, catalina:     "15b00163ed51e8f4d2abdeaf44f9321495828e087e6e13c8550a3cdb05565fbc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "df39a1f9ef7ccc5988e9ff602f11c0392996cec1cc6254e199ca940aa86df137"
-  end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
@@ -99,8 +92,8 @@ class Pytype < Formula
   end
 
   resource "pybind11" do
-    url "https://files.pythonhosted.org/packages/66/99/fc60e2287bb2309b8db4d0f080770ecc8d37dc64911e37b86698ec4b6a51/pybind11-2.7.1.tar.gz"
-    sha256 "8950aac5e5f4d505f7a0f067c5cb3893dcf098ff29cedfcb4ccf1e9e44d0bd9a"
+    url "https://files.pythonhosted.org/packages/9e/d2/752727ad5225520cb285ae1060b86777bc70180aa3b09904fd21a0e40207/pybind11-2.8.1.tar.gz"
+    sha256 "2ff4e50f171e3ae12b11c69e6ad49b05aa5e4b7eaa17b8148bee3cb3f0e4284b"
   end
 
   resource "tabulate" do

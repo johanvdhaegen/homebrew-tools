@@ -7,7 +7,7 @@ class Inkscape < Formula
       :tag      => "INKSCAPE_1_0_RC1",
       :revision => "09960d6f055ec2a386f10f9ba7177ee2ccc10f5d"
   version "1.0rc1"
-  head "https://gitlab.com/inkscape/inkscape.git", :branch => "master"
+  head "https://gitlab.com/inkscape/inkscape.git", branch: "master"
 
   depends_on "automake" => :build
   depends_on "boost" => :build
@@ -74,7 +74,7 @@ class Inkscape < Formula
       args << "-DWITH_OPENMP=OFF"
     end
     args << "-DWITH_DBUS=OFF"
-    args << "-DWITH_JEMALLOC=" + (build.with?("jemalloc") ? "ON" : "OFF")
+    args << ("-DWITH_JEMALLOC=" + (build.with?("jemalloc") ? "ON" : "OFF"))
     args << "-DWITH_LIBWPG=OFF" if build.without? "libwpg"
     args << "-DWITH_LIBVISIO=OFF" if build.without? "libvisio"
     args << "-DWITH_LIBCDR=OFF" if build.without? "libcdr"
@@ -90,7 +90,7 @@ class Inkscape < Formula
 
     # create wrapper scripts for inkscape binaries
     bin.install Dir[libexec/"bin/*"]
-    bin.env_script_all_files(libexec/"bin", :PATH => "#{libexec}/bin:$PATH")
+    bin.env_script_all_files(libexec/"bin", PATH: "#{libexec}/bin:$PATH")
 
     # set up python virtualenv for inkscape extensions
     pyver = Language::Python.major_minor_version("python3")

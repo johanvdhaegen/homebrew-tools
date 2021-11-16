@@ -4,9 +4,8 @@ class Inkscape < Formula
   desc "Professional vector graphics editor"
   homepage "https://inkscape.org/"
   url "https://gitlab.com/inkscape/inkscape.git",
-      :tag      => "INKSCAPE_1_0_RC1",
-      :revision => "09960d6f055ec2a386f10f9ba7177ee2ccc10f5d"
-  version "1.0rc1"
+      tag:      "INKSCAPE_1_1_1",
+      revision: "3bf5ae0d25c673abe152dedf4789a2d6f0cc60ff"
   head "https://gitlab.com/inkscape/inkscape.git", branch: "master"
 
   depends_on "automake" => :build

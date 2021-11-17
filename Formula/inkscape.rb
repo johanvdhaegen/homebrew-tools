@@ -9,7 +9,6 @@ class Inkscape < Formula
   head "https://gitlab.com/inkscape/inkscape.git", branch: "master"
 
   depends_on "automake" => :build
-  depends_on "boost" => :build
   depends_on "boost-build" => :build
   depends_on "cmake" => :build
   depends_on "double-conversion" => :build
@@ -19,10 +18,10 @@ class Inkscape < Formula
   depends_on "adwaita-icon-theme"
   depends_on "aspell"
   depends_on "bdw-gc"
+  depends_on "boost"
   depends_on "cairomm"
   depends_on "fontconfig"
   depends_on "gdk-pixbuf"
-  depends_on "gdl"
   depends_on "gettext"
   depends_on "glibmm"
   depends_on "graphicsmagick"
@@ -35,6 +34,7 @@ class Inkscape < Formula
   depends_on "hicolor-icon-theme"
   depends_on "jpeg"
   depends_on "libpng"
+  depends_on "libsigc++@2"
   depends_on "libsoup"
   depends_on "libxml2"
   depends_on "libxslt"
@@ -43,7 +43,8 @@ class Inkscape < Formula
   depends_on "pango"
   depends_on "poppler"
   depends_on "potrace"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
+  depends_on "readline"
   depends_on "jemalloc" => :optional
   depends_on "libcdr" => :optional
   depends_on "libomp" => :optional
@@ -97,7 +98,6 @@ class Inkscape < Formula
                             libexec/"lib/python#{pyver}/site-packages"
     venv = virtualenv_create(libexec, "python3")
     venv.pip_install resources
-    rm libexec/"lib/python#{pyver}/no-global-site-packages.txt"
   end
 
   test do

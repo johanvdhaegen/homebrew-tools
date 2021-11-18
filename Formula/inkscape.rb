@@ -178,7 +178,7 @@ class Inkscape < Formula
   end
 
   test do
-    system "#{bin}/inkscape", "-x"
+    system "#{bin}/inkscape", "--debug-info"
   end
 end
 

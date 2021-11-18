@@ -4,7 +4,7 @@ class TclTkX11 < Formula
   url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.11/tcl8.6.11-src.tar.gz"
   mirror "https://fossies.org/linux/misc/tcl8.6.11-src.tar.gz"
   sha256 "8c0486668586672c5693d7d95817cb05a18c5ecca2f40e2836b9578064088258"
-  license "ISC"
+  license "TCL"
 
   livecheck do
     url :stable

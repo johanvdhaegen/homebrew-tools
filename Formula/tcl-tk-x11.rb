@@ -86,6 +86,12 @@ class TclTkX11 < Formula
     end
 
     resource("tcltls").stage do
+      inreplace "configure" do |s|
+        s.gsub! " -flat_namespace -undefined suppress ",
+                " -undefined dynamic_lookup "
+        s.gsub! " -Wl,-flat_namespace -Wl,-undefined,suppress ",
+                " -Wl,-undefined,dynamic_lookup "
+      end
       system "./configure", "--with-ssl=openssl",
                             "--with-openssl-dir=#{Formula["openssl@1.1"].opt_prefix}",
                             "--prefix=#{prefix}",

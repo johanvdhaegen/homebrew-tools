@@ -3,30 +3,25 @@ class PythonLspServer < Formula
 
   desc "Implementation of Language Server Protocol for Python"
   homepage "https://github.com/python-lsp/python-lsp-server/"
-  url "https://files.pythonhosted.org/packages/6e/13/1035621807f43f3339ed3535e4dcf52286fd3e96fefecb53797213b42839/python-lsp-server-1.2.2.tar.gz"
-  sha256 "8c3e8ff5ff076f1aed8db5f14041e76d19ebd09ba1867e3f5f2f6740423ce0e3"
+  url "https://files.pythonhosted.org/packages/7a/67/5789a8280ffa9e29c38e1456effa4af9e3d85058c9aba93a2c4222f52557/python-lsp-server-1.3.3.tar.gz"
+  sha256 "1b48ccd8b70103522e8a8b9cb9ae1be2b27a5db0dfd661e7e44e6253ebefdc40"
   license "MIT"
 
   depends_on "python@3.9"
 
-  resource "setuptools_scm" do
-    url "https://files.pythonhosted.org/packages/57/38/930b1241372a9f266a7df2b184fb9d4f497c2cef2e016b014f82f541fe7c/setuptools_scm-6.0.1.tar.gz"
-    sha256 "d1925a69cb07e9b29416a275b9fadb009a23c148ace905b2fb220649a6c18e92"
-  end
-
   resource "parso" do
-    url "https://files.pythonhosted.org/packages/5e/61/d119e2683138a934550e47fc8ec023eb7f11b194883e9085dca3af5d4951/parso-0.8.2.tar.gz"
-    sha256 "12b83492c6239ce32ff5eed6d3639d6a536170723c6f3f1506869f1ace413398"
+    url "https://files.pythonhosted.org/packages/a2/0e/41f0cca4b85a6ea74d66d2226a7cda8e41206a624f5b330b958ef48e2e52/parso-0.8.3.tar.gz"
+    sha256 "8c07be290bb59f03588915921e29e8a50002acaf2cdc5fa0e0114f91709fafa0"
   end
 
   resource "jedi" do
-    url "https://files.pythonhosted.org/packages/ac/11/5c542bf206efbae974294a61febc61e09d74cb5d90d8488793909db92537/jedi-0.18.0.tar.gz"
-    sha256 "92550a404bad8afed881a137ec9a461fed49eca661414be45059329614ed0707"
+    url "https://files.pythonhosted.org/packages/c2/25/273288df952e07e3190446efbbb30b0e4871a0d63b4246475f3019d4f55e/jedi-0.18.1.tar.gz"
+    sha256 "74137626a64a99c8eb6ae5832d99b3bdd7d29a3850fe2aa80a4126b2a7d949ab"
   end
 
   resource "ujson" do
-    url "https://files.pythonhosted.org/packages/2c/8d/63b4afe82d646a606cef838855a6110c7a3a012622e656bd29fb2d15f1d1/ujson-4.1.0.tar.gz"
-    sha256 "22b63ec4409f0d2f2c4c9d5aa331997e02470b7a15a3233f3cc32f2f9b92d58c"
+    url "https://files.pythonhosted.org/packages/92/4a/2676677f59709517560b2b7eeb027453e86643d54d04687602e76cca4380/ujson-5.1.0.tar.gz"
+    sha256 "a88944d2f99db71a3ca0c63d81f37e55b660edde0b07216fb65a3e46403ef004"
   end
 
   resource "python-lsp-jsonrpc" do
@@ -40,13 +35,13 @@ class PythonLspServer < Formula
   end
 
   resource "pycodestyle" do
-    url "https://files.pythonhosted.org/packages/02/b3/c832123f2699892c715fcdfebb1a8fdeffa11bb7b2350e46ecdd76b45a20/pycodestyle-2.7.0.tar.gz"
-    sha256 "c389c1d06bf7904078ca03399a4816f974a1d590090fecea0c63ec26ebaf1cef"
+    url "https://files.pythonhosted.org/packages/08/dc/b29daf0a202b03f57c19e7295b60d1d5e1281c45a6f5f573e41830819918/pycodestyle-2.8.0.tar.gz"
+    sha256 "eddd5847ef438ea1c7870ca7eb78a9d47ce0cdb4851a5523949f2601d0cbbe7f"
   end
 
   resource "snowballstemmer" do
-    url "https://files.pythonhosted.org/packages/a3/3d/d305c9112f35df6efb51e5acd0db7009b74d86f35580e033451b5994a0a9/snowballstemmer-2.1.0.tar.gz"
-    sha256 "e997baa4f2e9139951b6f4c631bad912dfd3c792467e2f03d7239464af90e914"
+    url "https://files.pythonhosted.org/packages/44/7b/af302bebf22c749c56c9c3e8ae13190b5b5db37a33d9068652e8f73b7089/snowballstemmer-2.2.0.tar.gz"
+    sha256 "09b16deb8547d3412ad7b590689584cd0fe25ec8db3be37788be3810cbf19cb1"
   end
 
   resource "pydocstyle" do
@@ -55,18 +50,18 @@ class PythonLspServer < Formula
   end
 
   resource "pyflakes" do
-    url "https://files.pythonhosted.org/packages/a8/0f/0dc480da9162749bf629dca76570972dd9cce5bedc60196a3c912875c87d/pyflakes-2.3.1.tar.gz"
-    sha256 "f5bc8ecabc05bb9d291eb5203d6810b49040f6ff446a756326104746cc00c1db"
+    url "https://files.pythonhosted.org/packages/15/60/c577e54518086e98470e9088278247f4af1d39cb43bcbd731e2c307acd6a/pyflakes-2.4.0.tar.gz"
+    sha256 "05a85c2872edf37a4ed30b0cce2f6093e1d0581f8c19d7393122da7e25b2b24c"
   end
 
   resource "rope" do
-    url "https://files.pythonhosted.org/packages/49/b9/f53c6d375a79ce12e0dd710b832a1e7660ab24d37d922f1963253449ee5a/rope-0.19.0.tar.gz"
-    sha256 "64e6d747532e1f5c8009ec5aae3e5523a5bcedf516f39a750d57d8ed749d90da"
+    url "https://files.pythonhosted.org/packages/eb/65/15a6a3730c015eaf572fbab98aa7c36d86f93b5ed15ebf224c4a52e7a1b7/rope-0.22.0.tar.gz"
+    sha256 "b00fbc064a26fc62d7220578a27fd639b2fad57213663cc396c137e92d73f10f"
   end
 
   resource "yapf" do
-    url "https://files.pythonhosted.org/packages/85/60/8532f7ca17cea13de00e80e2fe1e6bd59a9379856706a027536b19daf0d3/yapf-0.31.0.tar.gz"
-    sha256 "408fb9a2b254c302f49db83c59f9aa0b4b0fd0ec25be3a5c51181327922ff63d"
+    url "https://files.pythonhosted.org/packages/c2/cd/d0d1e95b8d78b8097d90ca97af92f4af7fb2e867262a2b6e37d6f48e612a/yapf-0.32.0.tar.gz"
+    sha256 "a3f5085d37ef7e3e004c4ba9f9b3e40c54ff1901cd111f05145ae313a7c67d1b"
   end
 
   resource "pluggy" do

@@ -6,6 +6,12 @@ class Copybara < Formula
   version "2021-12-23"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/copybara-2021-12-23"
+    sha256 cellar: :any_skip_relocation, big_sur:      "6c35e82eccf903b03f31d00cadf4d810613a25f0a4850259a7080da923fce98c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "60b72e410f6858e7ba0fbc9c1d6e1fa99d4cc977d968ea3ad20b29abb51a479d"
+  end
+
   head do
     url "https://github.com/google/copybara.git", branch: "master"
   end

@@ -8,6 +8,12 @@ class Inkscape < Formula
       revision: "3bf5ae0d25c673abe152dedf4789a2d6f0cc60ff"
   head "https://gitlab.com/inkscape/inkscape.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/inkscape-1.1.1"
+    rebuild 1
+    sha256 big_sur: "bdeda8ab27340284d110da62d2c9b1f6900f0bec3e050e94fc8a914fe0ac0c6a"
+  end
+
   depends_on "automake" => :build
   depends_on "boost-build" => :build
   depends_on "cmake" => :build

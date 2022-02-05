@@ -5,15 +5,9 @@
 class OcamlAT412 < Formula
   desc "General purpose programming language in the ML family"
   homepage "https://ocaml.org/"
-  url "https://caml.inria.fr/pub/distrib/ocaml-4.12/ocaml-4.12.0.tar.xz"
-  sha256 "39ee9db8dc1e3eb65473dd81a71fabab7cc253dbd7b85e9f9b5b28271319bec3"
+  url "https://caml.inria.fr/pub/distrib/ocaml-4.12/ocaml-4.12.1.tar.xz"
+  sha256 "6e4aab9e182c1587c3439adff0b32c9ffc658a8808851e90d7d51b8cab9572c9"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/ocaml@4.12-4.12.0"
-    sha256 big_sur:      "bd424dbcc0c2fa70b9a17322b8e2cfdd3a7ce1cb595bbe86a6ddcc563392bd74"
-    sha256 x86_64_linux: "6d8924b1fbd9e59f44e2764def9b663f3ddeed74448ef620bfa2ac17470b086d"
-  end
 
   # The ocaml compilers embed prefix information in weird ways that the default
   # brew detection doesn't find, and so needs to be explicitly blocked.
@@ -46,10 +40,10 @@ class OcamlAT412 < Formula
 end
 
 __END__
-diff -ur ocaml-4.12.0_orig/configure ocaml-4.12.0/configure
---- ocaml-4.12.0_orig/configure	2021-02-24 03:15:39.000000000 -0800
-+++ ocaml-4.12.0/configure	2022-02-05 09:38:01.374574007 -0800
-@@ -7627,16 +7627,11 @@
+diff -ur ocaml-4.12.1_orig/configure ocaml-4.12.1/configure
+--- ocaml-4.12.1_orig/configure	2021-09-23 06:35:08.000000000 -0700
++++ ocaml-4.12.1/configure	2022-02-05 10:16:21.386478344 -0800
+@@ -7634,16 +7634,11 @@
        _lt_dar_allow_undefined='$wl-undefined ${wl}suppress' ;;
      darwin1.*)
        _lt_dar_allow_undefined='$wl-flat_namespace $wl-undefined ${wl}suppress' ;;
@@ -70,7 +64,7 @@ diff -ur ocaml-4.12.0_orig/configure ocaml-4.12.0/configure
  	  _lt_dar_allow_undefined='$wl-undefined ${wl}dynamic_lookup' ;;
        esac
      ;;
-@@ -13644,7 +13639,7 @@
+@@ -13651,7 +13646,7 @@
  if test x"$enable_shared" != "xno"; then :
    case $host in #(
    *-apple-darwin*) :

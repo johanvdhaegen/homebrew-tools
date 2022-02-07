@@ -13,6 +13,12 @@ class UnisonOcaml413 < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/unison-ocaml-4-13-2.51.5"
+    sha256 cellar: :any_skip_relocation, big_sur:      "4a37b21486c482ad6cb91dca34d49317da3f559f68263dca29e71c9b6b4e5f4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "21beb4a4bd891be39177e398f58018c55c2edd604de5265167890649f0641d36"
+  end
+
   keg_only :versioned_formula
 
   depends_on "ocaml@4.13" => :build

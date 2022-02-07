@@ -10,6 +10,11 @@ class LablgtkOcaml411 < Formula
     strategy :github_latest
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/lablgtk-ocaml-4-11-2.18.12"
+    sha256 cellar: :any, big_sur: "82999617622fa0892ee7dd6b6ff694dfe78d5a15e0806631fe88d25b3d3f8d17"
+  end
+
   keg_only "conflicts with lablgtk"
 
   depends_on "pkg-config" => :build

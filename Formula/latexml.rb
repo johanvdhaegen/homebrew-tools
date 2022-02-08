@@ -11,6 +11,12 @@ class Latexml < Formula
     regex(/href=.*?LaTeXML[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/latexml-0.8.6"
+    sha256 cellar: :any_skip_relocation, big_sur:      "a5a81e7d36b548a7a4d6dc897ffa70277377f33ebfb4dae41fd73084bd23358c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dda7491c4b59d08356923b21a1dc459674978c6f56a75797c21480e9f7d62606"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "perl"
 

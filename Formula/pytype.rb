@@ -3,17 +3,11 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/94/e6/22c7f0ec64f430962b33a3be182dc4b6a41ee3cba09152bff30f209dd1c7/pytype-2021.11.2.tar.gz"
-  sha256 "54304b312b0737fa9a66dc6a064e89db82429beb5de641a0acd5c8d5d71644eb"
+  url "https://files.pythonhosted.org/packages/e4/19/028ba0ff8742183e16c20f7e2bb1f1a55b51006716708d62b1bf1388f81b/pytype-2022.2.8.tar.gz"
+  sha256 "14b864a6a08565db8e90476a8e05ae18c61121c8064a623e27c713c272faae54"
   license "Apache-2.0"
 
-  head "https://github.com/google/pytype.git", branch: "master"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pytype-2021.11.2"
-    sha256 cellar: :any_skip_relocation, big_sur:      "684fef1ac71918ea026a65f02aa9f8130d5528c9d5cd52a8f2f91bd407be4f08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c3b608a47c755ffb22ea0994d6294da9f4b044c10b3b6c317e9023258b99229d"
-  end
+  head "https://github.com/google/pytype.git", branch: "main"
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
@@ -21,8 +15,8 @@ class Pytype < Formula
   depends_on "python@3.8"
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/ed/d6/3ebca4ca65157c12bd08a63e20ac0bdc21ac7f3694040711f9fd073c0ffb/attrs-21.2.0.tar.gz"
-    sha256 "ef6aaac3ca6cd92904cdd0d83f629a15f18053ec84e6432106f7a4d04ae4f5fb"
+    url "https://files.pythonhosted.org/packages/d7/77/ebb15fc26d0f815839ecd897b919ed6d85c050feeb83e100e020df9153d2/attrs-21.4.0.tar.gz"
+    sha256 "626ba8234211db98e869df76230a137c4c40a12d72445c45d5f5b716f076e2fd"
   end
 
   resource "networkx" do
@@ -31,8 +25,8 @@ class Pytype < Formula
   end
 
   resource "wheel" do
-    url "https://files.pythonhosted.org/packages/4e/be/8139f127b4db2f79c8b117c80af56a3078cc4824b5b94250c7f81a70e03b/wheel-0.37.0.tar.gz"
-    sha256 "e2ef7239991699e3355d54f8e968a21bb940a1dbf34a4d226741e64462516fad"
+    url "https://files.pythonhosted.org/packages/c0/6c/9f840c2e55b67b90745af06a540964b73589256cb10cc10057c87ac78fc2/wheel-0.37.1.tar.gz"
+    sha256 "e9a504e793efbca1b8e0e9cb979a249cf4a0a7b5b8c9e8b65a5e39d49529c1c4"
   end
 
   resource "pyparsing" do
@@ -41,8 +35,8 @@ class Pytype < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/df/86/aef78bab3afd461faecf9955a6501c4999933a48394e90f03cd512aad844/packaging-21.0.tar.gz"
-    sha256 "7dc96269f53a4ccec5c0670940a4281106dd0bb343f47b7471f779df49c2fbe7"
+    url "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz"
+    sha256 "dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"
   end
 
   resource "distro" do
@@ -51,8 +45,8 @@ class Pytype < Formula
   end
 
   resource "scikit-build" do
-    url "https://files.pythonhosted.org/packages/ab/8d/fc770eb732553ae0af68d276865524cc17efd667f9e71da6c5a2ac876817/scikit-build-0.12.0.tar.gz"
-    sha256 "f851382c469bcd9a8c98b1878bcfdd13b68556279d2fd9a329be41956ae5a7fe"
+    url "https://files.pythonhosted.org/packages/a5/e6/2d32573ff027be7b9e9aec560afe2a20ffc4f9d631e69c5cce252695f33b/scikit-build-0.13.1.tar.gz"
+    sha256 "5d1774a2eb15988e081c582c254ab4a9752096e6a34f235411cb79bd61660c37"
   end
 
   resource "ninja-src" do
@@ -63,23 +57,18 @@ class Pytype < Formula
   end
 
   resource "ninja" do
-    url "https://files.pythonhosted.org/packages/85/d4/d3797ed3f18bf6bf2ffe784b68f30d07948202d732322b94e77991612ea6/ninja-1.10.2.2.tar.gz"
-    sha256 "3f8a75acd929abb9f003d3aa5bc299cea30b9db0dfa18669877e9c02ddcf530d"
+    url "https://files.pythonhosted.org/packages/00/99/5beedbf09e3ec6b617606df42d04c4251959caddbd98397cce21da4c52d1/ninja-1.10.2.3.tar.gz"
+    sha256 "e1b86ad50d4e681a7dbdff05fc23bb52cb773edb90bc428efba33fa027738408"
   end
 
   resource "importlab" do
-    url "https://files.pythonhosted.org/packages/3a/68/97775a75cb03949ecfda7ac61182e11ad22d4e9ae9d2f61c3417de9b2aac/importlab-0.6.1.tar.gz"
-    sha256 "056503329df1ba8f6291a4b548042aa18620ad91d39388ba58044f0fd44ff83e"
-  end
-
-  resource "typed_ast" do
-    url "https://files.pythonhosted.org/packages/6e/08/c04a49ee26a94c1ec211e7b1e5f2971d692e04818ea67ef70f1e879cf525/typed_ast-1.4.3.tar.gz"
-    sha256 "fb1bbeac803adea29cedd70781399c99138358c26d05fcbd23c13016b7f5ec65"
+    url "https://files.pythonhosted.org/packages/4b/d1/06a615a1363f80301ac23091f321b7420acd870a10d5a8b2ff833a101f1c/importlab-0.7.tar.gz"
+    sha256 "744bd75d4410744962d203bd1eb71a950b19e8fb8eb5f0b805461dc0a2da329b"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/ed/12/c5079a15cf5c01d7f4252b473b00f7e68ee711be605b9f001528f0298b98/typing_extensions-3.10.0.2.tar.gz"
-    sha256 "49f75d16ff11f1cd258e1b988ccff82a3ca5570217d7ad8c5f48205dd99a677e"
+    url "https://files.pythonhosted.org/packages/0d/4a/60ba3706797b878016f16edc5fbaf1e222109e38d0fa4d7d9312cb53f8dd/typing_extensions-4.0.1.tar.gz"
+    sha256 "4ca091dea149f945ec56afb48dae714f21e8692ef22a395223bcd328961b6a0e"
   end
 
   resource "mypy-extensions" do
@@ -93,13 +82,13 @@ class Pytype < Formula
   end
 
   resource "libcst" do
-    url "https://files.pythonhosted.org/packages/54/9c/0b58d9e905f80090394af8e84ae8d9e0fda90e5ebbccbf44263b8b1d4b5f/libcst-0.3.21.tar.gz"
-    sha256 "4302a8f09cd9e5ab5962f8e126d032bba98541893dd38cce6b4770969fed059d"
+    url "https://files.pythonhosted.org/packages/9a/b7/20e61cebfb1ddc1b145c3f24361cd3fd5fb3310c2ba667e05cd4b4871d36/libcst-0.3.23.tar.gz"
+    sha256 "330f9082a309bad808e283e80845a843200303bb256690185b98ca458a62c4f8"
   end
 
   resource "pybind11" do
-    url "https://files.pythonhosted.org/packages/9e/d2/752727ad5225520cb285ae1060b86777bc70180aa3b09904fd21a0e40207/pybind11-2.8.1.tar.gz"
-    sha256 "2ff4e50f171e3ae12b11c69e6ad49b05aa5e4b7eaa17b8148bee3cb3f0e4284b"
+    url "https://files.pythonhosted.org/packages/37/1b/99768c816003062fcdc85572ff3a06915997be5f000e3e83f0187c4ab4c3/pybind11-2.9.1.tar.gz"
+    sha256 "40f8e57af6fcaa7eb5d727707125f90f8daa0993f28a9981a232d40c85dbbcb0"
   end
 
   resource "tabulate" do

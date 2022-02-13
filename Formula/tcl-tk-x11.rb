@@ -1,21 +1,14 @@
 class TclTkX11 < Formula
   desc "Tool Command Language"
   homepage "https://www.tcl-lang.org"
-  url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.11/tcl8.6.11-src.tar.gz"
-  mirror "https://fossies.org/linux/misc/tcl8.6.11-src.tar.gz"
-  sha256 "8c0486668586672c5693d7d95817cb05a18c5ecca2f40e2836b9578064088258"
+  url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.12/tcl8.6.12-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/tcl8.6.12-src.tar.gz"
+  sha256 "26c995dd0f167e48b11961d891ee555f680c175f7173ff8cb829f4ebcde4c1a6"
   license "TCL"
 
   livecheck do
     url :stable
     regex(%r{url=.*?/(?:tcl|tk).?v?(\d+(?:\.\d+)+)[._-]src\.t}i)
-  end
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/tcl-tk-x11-8.6.11"
-    rebuild 1
-    sha256 catalina:     "e43ba65e822efa17ea86054764b184f06792f6b4b551eb9e74e83bb3040c15ca"
-    sha256 x86_64_linux: "157105ae5662af3670ef15b7358c78f9764615611fb5a7e90551e433c4d9042a"
   end
 
   keg_only "it conflicts with tcl-tk"
@@ -44,9 +37,9 @@ class TclTkX11 < Formula
   end
 
   resource "tk" do
-    url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.11/tk8.6.11.1-src.tar.gz"
-    mirror "https://fossies.org/linux/misc/tk8.6.11.1-src.tar.gz"
-    sha256 "006cab171beeca6a968b6d617588538176f27be232a2b334a0e96173e89909be"
+    url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.12/tk8.6.12-src.tar.gz"
+    mirror "https://fossies.org/linux/misc/tk8.6.12-src.tar.gz"
+    sha256 "12395c1f3fcb6bed2938689f797ea3cdf41ed5cb6c4766eec8ac949560310630"
   end
 
   def install
@@ -86,7 +79,6 @@ class TclTkX11 < Formula
     resource("tcllib").stage do
       system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
       system "make", "install"
-      ENV["SDKROOT"] = MacOS.sdk_path if OS.mac?
       system "make", "critcl"
       cp_r "modules/tcllibc", "#{lib}/"
       ln_s "#{lib}/tcllibc/macosx-x86_64-clang", "#{lib}/tcllibc/macosx-x86_64" if OS.mac?
@@ -105,6 +97,13 @@ class TclTkX11 < Formula
                             "--mandir=#{man}"
       system "make", "install"
     end
+
+    # Conflicts with perl
+    mv man/"man3/Thread.3", man/"man3/ThreadTclTk.3"
+
+    # Use the sqlite-analyzer formula instead
+    # https://github.com/Homebrew/homebrew-core/pull/82698
+    rm bin/"sqlite3_analyzer"
   end
 
   test do

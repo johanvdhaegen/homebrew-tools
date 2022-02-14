@@ -9,16 +9,10 @@ class Pytype < Formula
 
   head "https://github.com/google/pytype.git", branch: "main"
 
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pytype-2022.2.8"
-    sha256 cellar: :any_skip_relocation, big_sur:      "52ce690f38d0c70439ab24f7dd043e5b4097504bb9e5dd1dc03dc5f31fcf6849"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "12fd74a33f464171d761d1d7f135e90478414832b02e4352f87dffc6a3af835f"
-  end
-
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "libyaml"
-  depends_on "python@3.8"
+  depends_on "python@3.9"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/d7/77/ebb15fc26d0f815839ecd897b919ed6d85c050feeb83e100e020df9153d2/attrs-21.4.0.tar.gz"

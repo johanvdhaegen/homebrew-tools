@@ -9,13 +9,6 @@ class Pytype < Formula
 
   head "https://github.com/google/pytype.git", branch: "main"
 
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pytype-2022.2.8"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, big_sur:      "6f5bb9fc850f52c860f26e8ca8f41c2187c2de33c7d7000ee98813a1ca1b4e9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1a2c55e2fdb93c71b9519c6657d14908d0d4ada5efc0dce0047a7e3237ac3bc4"
-  end
-
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "libyaml"
@@ -29,31 +22,6 @@ class Pytype < Formula
   resource "networkx" do
     url "https://files.pythonhosted.org/packages/97/ae/7497bc5e1c84af95e585e3f98585c9f06c627fac6340984c4243053e8f44/networkx-2.6.3.tar.gz"
     sha256 "c0946ed31d71f1b732b5aaa6da5a0388a345019af232ce2f49c766e2d6795c51"
-  end
-
-  resource "wheel" do
-    url "https://files.pythonhosted.org/packages/c0/6c/9f840c2e55b67b90745af06a540964b73589256cb10cc10057c87ac78fc2/wheel-0.37.1.tar.gz"
-    sha256 "e9a504e793efbca1b8e0e9cb979a249cf4a0a7b5b8c9e8b65a5e39d49529c1c4"
-  end
-
-  resource "pyparsing" do
-    url "https://files.pythonhosted.org/packages/c1/47/dfc9c342c9842bbe0036c7f763d2d6686bcf5eb1808ba3e170afdb282210/pyparsing-2.4.7.tar.gz"
-    sha256 "c203ec8783bf771a155b207279b9bccb8dea02d8f0c9e5f8ead507bc3246ecc1"
-  end
-
-  resource "packaging" do
-    url "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz"
-    sha256 "dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"
-  end
-
-  resource "distro" do
-    url "https://files.pythonhosted.org/packages/a5/26/256fa167fe1bf8b97130b4609464be20331af8a3af190fb636a8a7efd7a2/distro-1.6.0.tar.gz"
-    sha256 "83f5e5a09f9c5f68f60173de572930effbcc0287bb84fdc4426cb4168c088424"
-  end
-
-  resource "scikit-build" do
-    url "https://files.pythonhosted.org/packages/a5/e6/2d32573ff027be7b9e9aec560afe2a20ffc4f9d631e69c5cce252695f33b/scikit-build-0.13.1.tar.gz"
-    sha256 "5d1774a2eb15988e081c582c254ab4a9752096e6a34f235411cb79bd61660c37"
   end
 
   resource "ninja-src" do
@@ -116,10 +84,11 @@ class Pytype < Formula
 
     # install all python resources, except ninja python bindings
     resources.each do |r|
-      if r.name == "ninja" || r.name =="ninja-src"
-        # do nothing: handle separately to ensure other resources are installed
-      else
-        venv.pip_install r
+      next if r.name == "ninja" || r.name =="ninja-src"
+
+      r.stage do
+        system libexec/"bin/python", "-m", "pip", "wheel", "-w", "dist", "."
+        venv.pip_install Dir["dist/#{r.name.tr("-", "_")}*.whl"].first
       end
     end
 
@@ -134,9 +103,8 @@ class Pytype < Formula
         cp dl.cached_download,
            File.join(dl_dir, File.basename(URI.parse(dl.url).path)),
            verbose: true
-        system libexec/"bin/python3",
-               *Language::Python.setup_install_args(libexec),
-               "--", "-DBUILD_FROM_SOURCE=ON"
+        system libexec/"bin/python", "-m", "pip", "wheel", "-w", "dist", "."
+        venv.pip_install Dir["dist/#{r.name.tr("-", "_")}*.whl"].first
       end
     end
 

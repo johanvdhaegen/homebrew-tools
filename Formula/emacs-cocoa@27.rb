@@ -21,11 +21,11 @@ class EmacsCocoaAT27 < Formula
 
   depends_on "pkg-config" => :build
   depends_on "gnutls"
-  depends_on "imagemagick" => :recommended
   depends_on "jansson" => :recommended
   depends_on "librsvg" => :recommended
   depends_on "little-cms2" => :recommended
   depends_on "dbus" => :optional
+  depends_on "imagemagick" => :optional
   depends_on "mailutils" => :optional
 
   uses_from_macos "libxml2"
@@ -33,6 +33,9 @@ class EmacsCocoaAT27 < Formula
   patch :DATA
 
   def install
+    # Mojave uses the Catalina SDK which causes issues
+    ENV["ac_cv_func_aligned_alloc"] = "no" if MacOS.version == :mojave
+
     args = %W[
       --disable-silent-rules
       --enable-locallisppath=#{HOMEBREW_PREFIX}/share/emacs/site-lisp
@@ -81,12 +84,25 @@ class EmacsCocoaAT27 < Formula
       exec #{prefix}/Emacs.app/Contents/MacOS/Emacs "$@"
     EOS
 
+    # Remove default site-lisp subdirs.el file to prevent brew audit errors.
+    (share/"emacs/site-lisp/subdirs.el").unlink
+
     # Follow MacPorts and don't install ctags from Emacs. This allows Vim
     # and Emacs and ctags to play together without violence.
     return if build.with? "ctags"
 
     (bin/"ctags").unlink
     (man1/"ctags.1.gz").unlink
+  end
+
+  def caveats
+    <<~EOS
+      Emacs.app has been installed in:
+        #{prefix}
+      To link the application to the default App location:
+        ln -s #{prefix}/Emacs.app /Applications
+
+    EOS
   end
 
   plist_options manual: "emacs"

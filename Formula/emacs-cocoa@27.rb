@@ -6,6 +6,12 @@ class EmacsCocoaAT27 < Formula
   sha256 "b4a7cc4e78e63f378624e0919215b910af5bb2a0afc819fad298272e9f40c1b9"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@27-27.2"
+    rebuild 1
+    sha256 big_sur: "6d4ecfbee35b355b7d8c73456b3814a0d095a37e94297a4414f60ed9d709a3d3"
+  end
+
   head do
     url "https://github.com/emacs-mirror/emacs.git", branch: "emacs-27"
 

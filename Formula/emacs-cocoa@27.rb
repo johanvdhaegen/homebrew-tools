@@ -1,31 +1,21 @@
 class EmacsCocoaAT27 < Formula
   desc "GNU Emacs text editor"
   homepage "https://www.gnu.org/software/emacs/"
-  url "https://ftp.gnu.org/gnu/emacs/emacs-27.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/emacs/emacs-27.2.tar.xz"
-  sha256 "b4a7cc4e78e63f378624e0919215b910af5bb2a0afc819fad298272e9f40c1b9"
+  url "https://github.com/emacs-mirror/emacs.git",
+      revision: "d7f4cc0974645cc6a295740afe85c6e21d956119"
+  version "27.2.20210911"
   license "GPL-3.0-or-later"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@27-27.2"
-    rebuild 1
-    sha256 big_sur: "6d4ecfbee35b355b7d8c73456b3814a0d095a37e94297a4414f60ed9d709a3d3"
-  end
-
-  head do
-    url "https://github.com/emacs-mirror/emacs.git", branch: "emacs-27"
-
-    depends_on "autoconf" => :build
-    depends_on "gnu-sed" => :build
-    depends_on "texinfo" => :build
-  end
+  head "https://github.com/emacs-mirror/emacs.git", branch: "emacs-27"
 
   keg_only :versioned_formula
 
   option "with-ctags", "Don't remove the ctags executable that emacs provides"
   option "without-modules", "Build without dynamic modules support"
 
+  depends_on "autoconf" => :build
+  depends_on "gnu-sed" => :build
   depends_on "pkg-config" => :build
+  depends_on "texinfo" => :build
   depends_on "gnutls"
   depends_on "jansson" => :recommended
   depends_on "librsvg" => :recommended
@@ -64,10 +54,8 @@ class EmacsCocoaAT27 < Formula
     args << "--with-dbus#{build.with?("dbus") ? "" : "=no"}"
     args << "--with-modules#{build.with?("modules") ? "" : "=no"}"
 
-    if build.head?
-      ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
-      system "./autogen.sh"
-    end
+    ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
+    system "./autogen.sh"
 
     File.write "lisp/site-load.el", <<~EOS
       (setq exec-path (delete nil
@@ -142,6 +130,7 @@ end
 
 # patch: https://github.com/emacs-mirror/emacs/commit/3b3274a85c2f5df21d76d82e0d7740005aa84fdf#diff-f808b0589744f83f41d9f581e8b07001145598d2a2aa07fd40c1d20ee35df762
 # patch: https://github.com/emacs-mirror/emacs/commit/ae3c510696f02f01d03052f070e5ce65b4018a45#diff-a4e552f81dc7ab801e372bf878a3a7a31457bfc9fd07ded924853ea71a472e90
+# patch: https://github.com/emacs-mirror/emacs/commit/fe903c5ab7354b97f80ecf1b01ca3ff1027be446.patch
 __END__
 From 3b3274a85c2f5df21d76d82e0d7740005aa84fdf Mon Sep 17 00:00:00 2001
 From: Stefan Monnier <monnier@iro.umontreal.ca>
@@ -344,3 +333,42 @@ index ad7a52b40d9..64d52a952b6 100644
                "#include <string.h>")))))
  
  (ert-deftest c-mode-macro-comment ()
+
+From fe903c5ab7354b97f80ecf1b01ca3ff1027be446 Mon Sep 17 00:00:00 2001
+From: Eli Zaretskii <eliz@gnu.org>
+Date: Sat, 8 Feb 2020 15:41:36 +0200
+Subject: [PATCH] Allow composition of pure-ASCII strings in the mode line
+
+* src/composite.c (Fcomposition_get_gstring): Allow unibyte
+strings if they are pure ASCII, by copying text into a
+multibyte string.
+---
+ src/composite.c | 13 ++++++++++++-
+ 1 file changed, 12 insertions(+), 1 deletion(-)
+
+diff --git a/src/composite.c b/src/composite.c
+index 53e6930b5f..05365cfb65 100644
+--- a/src/composite.c
++++ b/src/composite.c
+@@ -1746,7 +1746,18 @@ Otherwise (for terminal display), FONT-OBJECT must be a terminal ID, a
+       CHECK_STRING (string);
+       validate_subarray (string, from, to, SCHARS (string), &frompos, &topos);
+       if (! STRING_MULTIBYTE (string))
+-	error ("Attempt to shape unibyte text");
++	{
++	  ptrdiff_t i;
++
++	  for (i = SBYTES (string) - 1; i >= 0; i--)
++	    if (!ASCII_CHAR_P (SREF (string, i)))
++	      error ("Attempt to shape unibyte text");
++	  /* STRING is a pure-ASCII string, so we can convert it (or,
++	     rather, its copy) to multibyte and use that thereafter.  */
++	  Lisp_Object string_copy = Fconcat (1, &string);
++	  STRING_SET_MULTIBYTE (string_copy);
++	  string = string_copy;
++	}
+       frombyte = string_char_to_byte (string, frompos);
+     }
+ 
+-- 
+2.28.0

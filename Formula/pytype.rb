@@ -3,21 +3,15 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/e4/19/028ba0ff8742183e16c20f7e2bb1f1a55b51006716708d62b1bf1388f81b/pytype-2022.2.8.tar.gz"
-  sha256 "14b864a6a08565db8e90476a8e05ae18c61121c8064a623e27c713c272faae54"
+  url "https://files.pythonhosted.org/packages/bd/39/7ba787849e1c8243b4d202645c8f32623631ebbaf1c85487b8cdcf47c7e4/pytype-2022.3.8.tar.gz"
+  sha256 "0f319c275b7109b5afc8ddf54b8e7be6672f33a779e615994211ded971779a17"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git", branch: "main"
 
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pytype-2022.2.8"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, big_sur:      "cd42c24d6d3dd86f48336933eb054f414fa227c148e5a868d6d2b6898ec6a9c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2f0dbf6dfce1d613be43ac8ded913aade359b52044b272e578b90d85ce1d17e0"
-  end
-
   depends_on "cmake" => :build
   depends_on "ninja" => :build
+  depends_on "rust" => :build
   depends_on "libyaml"
   depends_on "python@3.9"
 
@@ -27,8 +21,8 @@ class Pytype < Formula
   end
 
   resource "networkx" do
-    url "https://files.pythonhosted.org/packages/97/ae/7497bc5e1c84af95e585e3f98585c9f06c627fac6340984c4243053e8f44/networkx-2.6.3.tar.gz"
-    sha256 "c0946ed31d71f1b732b5aaa6da5a0388a345019af232ce2f49c766e2d6795c51"
+    url "https://files.pythonhosted.org/packages/9e/9e/3d67df5d543ffd743f4ccb12c9c90929e4f48136e3062e15a6d971d91202/networkx-2.7.1.tar.gz"
+    sha256 "d1194ba753e5eed07cdecd1d23c5cd7a3c772099bd8dbd2fea366788cf4de7ba"
   end
 
   resource "ninja-src" do
@@ -49,8 +43,8 @@ class Pytype < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/0d/4a/60ba3706797b878016f16edc5fbaf1e222109e38d0fa4d7d9312cb53f8dd/typing_extensions-4.0.1.tar.gz"
-    sha256 "4ca091dea149f945ec56afb48dae714f21e8692ef22a395223bcd328961b6a0e"
+    url "https://files.pythonhosted.org/packages/b1/5a/8b5fbb891ef3f81fc923bf3cb4a578c0abf9471eb50ce0f51c74212182ab/typing_extensions-4.1.1.tar.gz"
+    sha256 "1a9462dcc3347a79b1f1c0271fbe79e844580bb598bafa1ed208b94da3cdcd42"
   end
 
   resource "mypy-extensions" do
@@ -64,8 +58,8 @@ class Pytype < Formula
   end
 
   resource "libcst" do
-    url "https://files.pythonhosted.org/packages/9a/b7/20e61cebfb1ddc1b145c3f24361cd3fd5fb3310c2ba667e05cd4b4871d36/libcst-0.3.23.tar.gz"
-    sha256 "330f9082a309bad808e283e80845a843200303bb256690185b98ca458a62c4f8"
+    url "https://files.pythonhosted.org/packages/a4/6e/6fd5f3fc74a1401fa74f04afcd01e10f96e577ceb1ef3516c2e8d4d69736/libcst-0.4.1.tar.gz"
+    sha256 "961ab38c0ef318c384a287f1e4f877bb61ce93945f352b14b5dbbe7a317882b1"
   end
 
   resource "pybind11" do

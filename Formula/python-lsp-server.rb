@@ -3,15 +3,9 @@ class PythonLspServer < Formula
 
   desc "Implementation of Language Server Protocol for Python"
   homepage "https://github.com/python-lsp/python-lsp-server/"
-  url "https://files.pythonhosted.org/packages/7a/67/5789a8280ffa9e29c38e1456effa4af9e3d85058c9aba93a2c4222f52557/python-lsp-server-1.3.3.tar.gz"
-  sha256 "1b48ccd8b70103522e8a8b9cb9ae1be2b27a5db0dfd661e7e44e6253ebefdc40"
+  url "https://files.pythonhosted.org/packages/0c/8f/cf2bb0cb3081dac811ce5c66ba0ad15634bdc3635b5de10c5e3b918feb68/python-lsp-server-1.4.0.tar.gz"
+  sha256 "769142c07573f6b66e930cbd7c588b826082550bef6267bb0aec63e7b6260009"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.3.3"
-    sha256 cellar: :any_skip_relocation, big_sur:      "fa5a6f00902f71e56d4a484cd1845f39135d7d301559af867ca2f9416c81870b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1ebdd6e80bfaaae78692ee23e097703b6ed5f5925248a1d0d1fb64b03c508b63"
-  end
 
   depends_on "python@3.9"
 
@@ -61,8 +55,8 @@ class PythonLspServer < Formula
   end
 
   resource "rope" do
-    url "https://files.pythonhosted.org/packages/eb/65/15a6a3730c015eaf572fbab98aa7c36d86f93b5ed15ebf224c4a52e7a1b7/rope-0.22.0.tar.gz"
-    sha256 "b00fbc064a26fc62d7220578a27fd639b2fad57213663cc396c137e92d73f10f"
+    url "https://files.pythonhosted.org/packages/7d/d7/f9ccefaf56089a7aa0a1d2b4082389d7855fdeaece2dd85fcecdce95aafc/rope-0.23.0.tar.gz"
+    sha256 "f87662c565086d660fc855cc07f37820267876634c3e9e51bddb32ff51547268"
   end
 
   resource "yapf" do

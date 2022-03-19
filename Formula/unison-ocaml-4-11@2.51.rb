@@ -10,7 +10,7 @@ class UnisonOcaml411AT251 < Formula
   # release candidates), so we check the Git tags instead.
   livecheck do
     url :stable
-    regex(/^v?(2\.51\.\d+)$/i)
+    regex(/^v?(2\.51\.[0-5]\d*)$/i)
   end
 
   bottle do

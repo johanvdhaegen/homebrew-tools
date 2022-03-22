@@ -9,6 +9,12 @@ class Pdfminer < Formula
 
   head "https://github.com/pdfminer/pdfminer.six.git", branch: "develop"
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pdfminer-20220319"
+    sha256 cellar: :any,                 big_sur:      "ad51155534c978584b3f2bcb7eb890ae4bbdf8a920c4e28e14f712d71968bad4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "45a837ca8a1ecbdf6ff94f86466b2d177729f4f7624a928be9d0e929a413cf00"
+  end
+
   depends_on "rust" => :build # for cryptography
   depends_on "libffi"
   depends_on "openssl@1.1"

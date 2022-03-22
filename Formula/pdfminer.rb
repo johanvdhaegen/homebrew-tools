@@ -3,18 +3,11 @@ class Pdfminer < Formula
 
   desc "Tool for extracting information from PDF documents"
   homepage "https://github.com/pdfminer/pdfminer.six"
-  url "https://files.pythonhosted.org/packages/ac/0a/b01677bb31bd79756f05ff3e052ad369ac0ebb2e64b47fc6d6bad290d981/pdfminer.six-20211012.tar.gz"
-  sha256 "0351f17d362ee2d48b158be52bcde6576d96460efd038a3e89a043fba6d634d7"
+  url "https://files.pythonhosted.org/packages/a0/e2/cf4782c86fbe487da3c9aed105878a4af7fbd64c7e3f85403722e6a82dae/pdfminer.six-20220319.tar.gz"
+  sha256 "eff2ce0abeaa4df94dc3461f70eab104487c7b4a2b3c7e9fd0aeec6c5f44d6a6"
   license "MIT"
 
   head "https://github.com/pdfminer/pdfminer.six.git", branch: "develop"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pdfminer-20211012"
-    rebuild 1
-    sha256 cellar: :any,                 catalina:     "1933c3f1cc72d43e02a5512e814775c71892eacbb908ead50a1cba173743e5b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "335f6e9add40713e49c3d9368355476feb7493d4ea5d30ca6f8767bcfe0186ee"
-  end
 
   depends_on "rust" => :build # for cryptography
   depends_on "libffi"
@@ -36,14 +29,9 @@ class Pdfminer < Formula
     sha256 "c9a875ce9d7fe32887784274dd533c57909b7b1dcadcc128a2ac21331a9765dd"
   end
 
-  resource "setuptools-rust" do
-    url "https://files.pythonhosted.org/packages/12/22/6ba3031e7cbd6eb002e13ffc7397e136df95813b6a2bd71ece52a8f89613/setuptools-rust-0.12.1.tar.gz"
-    sha256 "647009e924f0ae439c7f3e0141a184a69ad247ecb9044c511dabde232d3d570e"
-  end
-
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/10/91/90b8d4cd611ac2aa526290ae4b4285aa5ea57ee191c63c2f3d04170d7683/cryptography-35.0.0.tar.gz"
-    sha256 "9933f28f70d0517686bd7de36166dda42094eac49415459d9bdf5e7df3e0086d"
+    url "https://files.pythonhosted.org/packages/10/a7/51953e73828deef2b58ba1604de9167843ee9cd4185d8aaffcb45dd1932d/cryptography-36.0.2.tar.gz"
+    sha256 "70f8f4f7bb2ac9f340655cbac89d68c527af5bb4387522a8413e841e3e6628c9"
   end
 
   def install
@@ -53,7 +41,12 @@ class Pdfminer < Formula
                             libexec/"lib/python#{pyver}/site-packages"
     venv = virtualenv_create(libexec, "python3")
 
-    venv.pip_install resources
+    resources.each do |r|
+      r.stage do
+        system libexec/"bin/python", "-m", "pip", "wheel", "-w", "dist", "."
+        venv.pip_install Dir["dist/#{r.name.tr("-", "_")}*.whl"].first
+      end
+    end
     venv.pip_install buildpath
 
     env = { PYTHONPATH: ENV["PYTHONPATH"] }

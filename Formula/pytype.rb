@@ -3,17 +3,11 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/5c/71/dbe42b837273ba4af3b0361435cff8afd8cd812268a85d343fbf9accbb8a/pytype-2022.3.21.tar.gz"
-  sha256 "b50073ed9aefc00cee3fcb3ce9a6c4ef9ccd61d52dd29b06c6fa93608d6af539"
+  url "https://files.pythonhosted.org/packages/68/7d/da8866f7d03736070f898a359b3595f5f4e4fd70a03273324d8eccd5a472/pytype-2022.4.6.tar.gz"
+  sha256 "00dd7be3b67a6e04b99189c2f32d0e2eb24549f7b5ab251003b4e9f0a56a5725"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git", branch: "main"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pytype-2022.3.21"
-    sha256 cellar: :any,                 big_sur:      "a298833854012071b981b64faef70d62f4a639594d510bd1c4604fbcba299007"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "062c06f89f88a6b55052aa92e4ecc2f59d5b7d2ff1ce2b1f19dd9acaa03c4fd7"
-  end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build

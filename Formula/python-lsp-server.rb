@@ -3,15 +3,9 @@ class PythonLspServer < Formula
 
   desc "Implementation of Language Server Protocol for Python"
   homepage "https://github.com/python-lsp/python-lsp-server/"
-  url "https://files.pythonhosted.org/packages/0c/8f/cf2bb0cb3081dac811ce5c66ba0ad15634bdc3635b5de10c5e3b918feb68/python-lsp-server-1.4.0.tar.gz"
-  sha256 "769142c07573f6b66e930cbd7c588b826082550bef6267bb0aec63e7b6260009"
+  url "https://files.pythonhosted.org/packages/ca/cb/4bca89bd01cd841a65b547b273f53aa2c336438ace9e887f518f6ea79749/python-lsp-server-1.4.1.tar.gz"
+  sha256 "be7f83298af9f0951a93972cafc9db04fd7cf5c05f20812515275f0ba70e342f"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.4.0"
-    sha256 cellar: :any_skip_relocation, big_sur:      "c1014f237c151ba830d5d2339f280014f95d444a7c4adeec30ed51a2eb4c0228"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e9e482dad2cf48e04c944afaa1af10f1311c27f557770b75b8439c7230d56eca"
-  end
 
   depends_on "python@3.9"
 

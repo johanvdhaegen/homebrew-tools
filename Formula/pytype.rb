@@ -3,17 +3,11 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/68/7d/da8866f7d03736070f898a359b3595f5f4e4fd70a03273324d8eccd5a472/pytype-2022.4.6.tar.gz"
-  sha256 "00dd7be3b67a6e04b99189c2f32d0e2eb24549f7b5ab251003b4e9f0a56a5725"
+  url "https://files.pythonhosted.org/packages/9e/b8/02b4833bbcb18cc63506a412835d92f836942895fba3ed60ddf53680c21d/pytype-2022.5.5.tar.gz"
+  sha256 "849e0e52dac56de4b4bd188966daafe8795a4425e3e6ac9217a82cfea65337cb"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git", branch: "main"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pytype-2022.4.6"
-    sha256 cellar: :any,                 big_sur:      "d59d14a5932a8cd65ef00afbd1e9e0e44c2c828d03949072f46c85ebe8f79f49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "63353b60b6a21fa974056f9de0b4dacf95c4a8b22a734cc99ca2d69a61d52dbf"
-  end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
@@ -49,8 +43,8 @@ class Pytype < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/b1/5a/8b5fbb891ef3f81fc923bf3cb4a578c0abf9471eb50ce0f51c74212182ab/typing_extensions-4.1.1.tar.gz"
-    sha256 "1a9462dcc3347a79b1f1c0271fbe79e844580bb598bafa1ed208b94da3cdcd42"
+    url "https://files.pythonhosted.org/packages/fe/71/1df93bd59163c8084d812d166c907639646e8aac72886d563851b966bf18/typing_extensions-4.2.0.tar.gz"
+    sha256 "f1c24655a0da0d1b67f07e17a5e6b2a105894e6824b92096378bb3668ef02376"
   end
 
   resource "mypy-extensions" do
@@ -64,13 +58,13 @@ class Pytype < Formula
   end
 
   resource "libcst" do
-    url "https://files.pythonhosted.org/packages/a4/6e/6fd5f3fc74a1401fa74f04afcd01e10f96e577ceb1ef3516c2e8d4d69736/libcst-0.4.1.tar.gz"
-    sha256 "961ab38c0ef318c384a287f1e4f877bb61ce93945f352b14b5dbbe7a317882b1"
+    url "https://files.pythonhosted.org/packages/30/8e/720040c28c2ccb557094d8ddf7947fd61810a60c312be562feb2727b6558/libcst-0.4.2.tar.gz"
+    sha256 "e5aa2d2e0bfe03438aa8ad95f6e87a6be8f88350a2f775f1174945f06f1971b5"
   end
 
   resource "pybind11" do
-    url "https://files.pythonhosted.org/packages/37/1b/99768c816003062fcdc85572ff3a06915997be5f000e3e83f0187c4ab4c3/pybind11-2.9.1.tar.gz"
-    sha256 "40f8e57af6fcaa7eb5d727707125f90f8daa0993f28a9981a232d40c85dbbcb0"
+    url "https://files.pythonhosted.org/packages/cf/6a/a7f2c40fdb43fcf59bc1eebb0a4c4206a99ccddee6391a1168fa6efebce9/pybind11-2.9.2.tar.gz"
+    sha256 "e5541f8bccf9111d1a94f7897593b55c4cf1a28d5e8cfc8225a855651f011071"
   end
 
   resource "tabulate" do

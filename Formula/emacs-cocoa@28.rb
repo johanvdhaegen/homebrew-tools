@@ -7,6 +7,11 @@ class EmacsCocoaAT28 < Formula
   version "28.1.20220521"
   license "GPL-3.0-or-later"
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@28-28.1.20220521"
+    sha256 big_sur: "2af35e55b54d9e3b06d08a0a4c2328d0db93c16f104ba4d7da5630b433fe963e"
+  end
+
   keg_only :versioned_formula
 
   option "with-ctags", "Don't remove the ctags executable that emacs provides"

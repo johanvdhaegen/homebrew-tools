@@ -3,17 +3,11 @@ class Pdfminer < Formula
 
   desc "Tool for extracting information from PDF documents"
   homepage "https://github.com/pdfminer/pdfminer.six"
-  url "https://files.pythonhosted.org/packages/d8/df/b2af9773a03f813adb3b17bf82c5195a4894a7416b35a75959408822e076/pdfminer.six-20220506.tar.gz"
-  sha256 "3d65c1a0f4a0465c709e191550ec77a684ebe0bcb562337ccbfb7aa228c52076"
+  url "https://files.pythonhosted.org/packages/73/42/b6b37b4d70c68dcf8f33a9858a02685f8ca5b42312e276fab56c1299967e/pdfminer.six-20220524.tar.gz"
+  sha256 "5a64c924410ac48501d6060b21638bf401db69f5b1bd57207df7fbc070ac8ae2"
   license "MIT"
 
   head "https://github.com/pdfminer/pdfminer.six.git", branch: "develop"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pdfminer-20220506"
-    sha256 cellar: :any,                 big_sur:      "04ebd7dac48b801a4ae36b5e9b6bf58cb28bc3c6bb848cc6fb1ca94d3d6b9f75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fb0fd69b2c02a854c59774a74fa418f4fbcb7d4197ccebb3e1c1035251b4ee6c"
-  end
 
   depends_on "rust" => :build # for cryptography
   depends_on "libffi"
@@ -26,8 +20,8 @@ class Pdfminer < Formula
   end
 
   resource "pycparser" do
-    url "https://files.pythonhosted.org/packages/0f/86/e19659527668d70be91d0369aeaa055b4eb396b0f387a4f92293a20035bd/pycparser-2.20.tar.gz"
-    sha256 "2d475327684562c3a96cc71adf7dc8c4f0565175cf86b6d7a404ff4c771f15f0"
+    url "https://files.pythonhosted.org/packages/5e/0b/95d387f5f4433cb0f53ff7ad859bd2c6051051cebbb564f139a999ab46de/pycparser-2.21.tar.gz"
+    sha256 "e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206"
   end
 
   resource "cffi" do

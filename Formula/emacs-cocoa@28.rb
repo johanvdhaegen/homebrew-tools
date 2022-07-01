@@ -3,14 +3,9 @@ class EmacsCocoaAT28 < Formula
   homepage "https://www.gnu.org/software/emacs/"
   url "https://github.com/emacs-mirror/emacs.git",
       branch:   "emacs-28",
-      revision: "5ddd0f1a3573ce3155b06850398dbc656539c669"
-  version "28.1.20220616"
+      revision: "6908309827c573288a029b74aa999adc057958be"
+  version "28.1.20220630"
   license "GPL-3.0-or-later"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@28-28.1.20220616"
-    sha256 big_sur: "ea759f0180f5375368857a49033ee8b2a8615e92928ef5b5a2a58f7e37948cd1"
-  end
 
   keg_only :versioned_formula
 

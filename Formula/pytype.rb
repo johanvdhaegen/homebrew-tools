@@ -3,17 +3,11 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/f0/97/da1ed235c66913c02de50653583a6aa6d8490a730f8e1bc314b58df64ed6/pytype-2022.5.10.tar.gz"
-  sha256 "fb57c329f7da0b1e621c33e67f876677bfab387a2bfebed567c1e6f70a508f26"
+  url "https://files.pythonhosted.org/packages/38/19/2f0f2b26b7c94f67d5e3ec06510374b9bbdfff188dc20e39dc514c4bd01b/pytype-2022.6.30.tar.gz"
+  sha256 "1c8c425e8bb40117322be06476080d132466fab72e7d199af2de5c55285b6d4f"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git", branch: "main"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pytype-2022.5.10"
-    sha256 cellar: :any,                 big_sur:      "76849d29a5780024f9976224b941d9be1d6c842c578b6d8026615ff13d84384a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c0e8516158043e25cfa34da3cc9d5147921f23bba6b1a3f5c2b3f95e42238e29"
-  end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
@@ -64,18 +58,13 @@ class Pytype < Formula
   end
 
   resource "libcst" do
-    url "https://files.pythonhosted.org/packages/30/8e/720040c28c2ccb557094d8ddf7947fd61810a60c312be562feb2727b6558/libcst-0.4.2.tar.gz"
-    sha256 "e5aa2d2e0bfe03438aa8ad95f6e87a6be8f88350a2f775f1174945f06f1971b5"
-  end
-
-  resource "pybind11" do
-    url "https://files.pythonhosted.org/packages/cf/6a/a7f2c40fdb43fcf59bc1eebb0a4c4206a99ccddee6391a1168fa6efebce9/pybind11-2.9.2.tar.gz"
-    sha256 "e5541f8bccf9111d1a94f7897593b55c4cf1a28d5e8cfc8225a855651f011071"
+    url "https://files.pythonhosted.org/packages/12/87/453d2d6f24050d3734be02b4bec1e18e9d059ffdb7c5ff89096d8b26781c/libcst-0.4.5.tar.gz"
+    sha256 "a17442b62a22bef6ce0734ff33801378575ab8a9f9a33dbafe236270cdbcdb3c"
   end
 
   resource "tabulate" do
-    url "https://files.pythonhosted.org/packages/ae/3d/9d7576d94007eaf3bb685acbaaec66ff4cdeb0b18f1bf1f17edbeebffb0a/tabulate-0.8.9.tar.gz"
-    sha256 "eb1d13f25760052e8931f2ef80aaf6045a6cceb47514db8beab24cded16f13a7"
+    url "https://files.pythonhosted.org/packages/7a/53/afac341569b3fd558bf2b5428e925e2eb8753ad9627c1f9188104c6e0c4a/tabulate-0.8.10.tar.gz"
+    sha256 "6c57f3f3dd7ac2782770155f3adb2db0b1a269637e42f27599925e64b114f519"
   end
 
   resource "toml" do

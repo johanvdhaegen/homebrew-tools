@@ -3,15 +3,9 @@ class PythonLspServer < Formula
 
   desc "Implementation of Language Server Protocol for Python"
   homepage "https://github.com/python-lsp/python-lsp-server/"
-  url "https://files.pythonhosted.org/packages/ca/cb/4bca89bd01cd841a65b547b273f53aa2c336438ace9e887f518f6ea79749/python-lsp-server-1.4.1.tar.gz"
-  sha256 "be7f83298af9f0951a93972cafc9db04fd7cf5c05f20812515275f0ba70e342f"
+  url "https://files.pythonhosted.org/packages/86/ea/d838df070b8d18664070a5ed78f750256645959664b5755e605a186f6625/python-lsp-server-1.5.0.tar.gz"
+  sha256 "e5c094c19925022a27c4068f414b2bb653243f8fb0d768e39735289d7a89380d"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.4.1"
-    sha256 cellar: :any_skip_relocation, big_sur:      "e51cf5a110bfd329f151f59e661613475d7b064dfa8b485bfaab6a7f36e5423b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0bbe3fca46a16878dca040f4a7ea8414e20ec404c4cd39e03cc6edcdd3907af1"
-  end
 
   depends_on "python@3.9"
 
@@ -36,8 +30,8 @@ class PythonLspServer < Formula
   end
 
   resource "mccabe" do
-    url "https://files.pythonhosted.org/packages/06/18/fa675aa501e11d6d6ca0ae73a101b2f3571a565e0f7d38e062eec18a91ee/mccabe-0.6.1.tar.gz"
-    sha256 "dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"
+    url "https://files.pythonhosted.org/packages/e7/ff/0ffefdcac38932a54d2b5eed4e0ba8a408f215002cd178ad1df0f2806ff8/mccabe-0.7.0.tar.gz"
+    sha256 "348e0240c33b60bbdf4e523192ef919f28cb2c3d7d5c7794f74009290f236325"
   end
 
   resource "pycodestyle" do
@@ -68,6 +62,11 @@ class PythonLspServer < Formula
   resource "yapf" do
     url "https://files.pythonhosted.org/packages/c2/cd/d0d1e95b8d78b8097d90ca97af92f4af7fb2e867262a2b6e37d6f48e612a/yapf-0.32.0.tar.gz"
     sha256 "a3f5085d37ef7e3e004c4ba9f9b3e40c54ff1901cd111f05145ae313a7c67d1b"
+  end
+
+  resource "whatthepatch" do
+    url "https://files.pythonhosted.org/packages/cf/88/2a5f8a0ec3ff8c76ed340b73558747736018ad9821e45439d63f989e1fbd/whatthepatch-1.0.2.tar.gz"
+    sha256 "c540ea59173e0a291e19c742dd8b406c56e2be039a600edb7c6fc3ae4bbdfa9f"
   end
 
   resource "pluggy" do

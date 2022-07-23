@@ -6,12 +6,7 @@ class PythonLspServer < Formula
   url "https://files.pythonhosted.org/packages/86/ea/d838df070b8d18664070a5ed78f750256645959664b5755e605a186f6625/python-lsp-server-1.5.0.tar.gz"
   sha256 "e5c094c19925022a27c4068f414b2bb653243f8fb0d768e39735289d7a89380d"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.5.0"
-    sha256 cellar: :any_skip_relocation, big_sur:      "b4c0ed2b4f12090682b0c2795692a23ea6bac949fb33a6ec014ad7fe5e50f2f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4bb10e95f0662f5c5ed442f2a8bd887e28d8e9f8c849499bedc1d96c45e063ec"
-  end
+  revision 1
 
   depends_on "python@3.9"
 
@@ -60,9 +55,24 @@ class PythonLspServer < Formula
     sha256 "05a85c2872edf37a4ed30b0cce2f6093e1d0581f8c19d7393122da7e25b2b24c"
   end
 
+  resource "tomli" do
+    url "https://files.pythonhosted.org/packages/c0/3f/d7af728f075fb08564c5949a9c95e44352e23dee646869fa104a3b2060a3/tomli-2.0.1.tar.gz"
+    sha256 "de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz"
+    sha256 "dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"
+  end
+
+  resource "pytoolconfig" do
+    url "https://files.pythonhosted.org/packages/6e/c1/6156c684e2879c4873ef470048710ec00b08e639c9142c9263cf443f6f2b/pytoolconfig-1.2.1.tar.gz"
+    sha256 "5ac82f78d731531f9f82e5cc7f5ebae9473b1404c0e75aa5ac0b8b41cd99b510"
+  end
+
   resource "rope" do
-    url "https://files.pythonhosted.org/packages/7d/d7/f9ccefaf56089a7aa0a1d2b4082389d7855fdeaece2dd85fcecdce95aafc/rope-0.23.0.tar.gz"
-    sha256 "f87662c565086d660fc855cc07f37820267876634c3e9e51bddb32ff51547268"
+    url "https://files.pythonhosted.org/packages/7a/46/412e491b73bb5e906178677917395b6437b7914576a85468fad22d575e32/rope-1.2.0.tar.gz"
+    sha256 "f762542c9cfe52124aa55d33822a269fc4b0da70fe3170c6086de2733ed52f22"
   end
 
   resource "yapf" do

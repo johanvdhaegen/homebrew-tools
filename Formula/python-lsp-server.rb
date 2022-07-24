@@ -8,6 +8,12 @@ class PythonLspServer < Formula
   license "MIT"
   revision 2
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.5.0_2"
+    sha256 cellar: :any_skip_relocation, big_sur:      "c1a324488dca20af7bd877805636c2f00c0724783c8ba10fe27b647f71a3179c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5b6869928edaf417a9255d773b60e5892f52a82041cc1e336840b64d04c8b80b"
+  end
+
   depends_on "python@3.9"
 
   resource "parso" do

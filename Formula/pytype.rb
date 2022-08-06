@@ -3,8 +3,8 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/38/19/2f0f2b26b7c94f67d5e3ec06510374b9bbdfff188dc20e39dc514c4bd01b/pytype-2022.6.30.tar.gz"
-  sha256 "1c8c425e8bb40117322be06476080d132466fab72e7d199af2de5c55285b6d4f"
+  url "https://files.pythonhosted.org/packages/c0/ee/6a849ca837805044eed84b4cac7951b6562fdcb5ac39e7f4fb144b47b98c/pytype-2022.8.3.tar.gz"
+  sha256 "4746f39aa25063990d207a159e5143adffd3be112ee057116180b9dc4ad7f4fc"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git", branch: "main"
@@ -16,6 +16,8 @@ class Pytype < Formula
   depends_on "python@3.10"
 
   resource "attrs" do
+    url "https://files.pythonhosted.org/packages/1a/cb/c4ffeb41e7137b23755a45e1bfec9cbb76ecf51874c6f1d113984ecaa32c/attrs-22.1.0.tar.gz"
+    sha256 "29adc2665447e5191d0e7c568fde78b21f9672d344281d0c6e1ab085429b22b6"
     url "https://files.pythonhosted.org/packages/d7/77/ebb15fc26d0f815839ecd897b919ed6d85c050feeb83e100e020df9153d2/attrs-21.4.0.tar.gz"
     sha256 "626ba8234211db98e869df76230a137c4c40a12d72445c45d5f5b716f076e2fd"
   end
@@ -26,8 +28,8 @@ class Pytype < Formula
   end
 
   resource "libcst" do
-    url "https://files.pythonhosted.org/packages/12/87/453d2d6f24050d3734be02b4bec1e18e9d059ffdb7c5ff89096d8b26781c/libcst-0.4.5.tar.gz"
-    sha256 "a17442b62a22bef6ce0734ff33801378575ab8a9f9a33dbafe236270cdbcdb3c"
+    url "https://files.pythonhosted.org/packages/90/6b/ef2d7c86a61c6b6ae4eb48b832ba96897d4ba9743e9ece40f66625b11d60/libcst-0.4.7.tar.gz"
+    sha256 "95c52c2130531f6e726a3b077442cfd486975435fecf3db8224d43fba7b85099"
   end
 
   resource "mypy-extensions" do
@@ -50,6 +52,11 @@ class Pytype < Formula
     # https://github.com/scikit-build/ninja-python-distributions/blob/master/NinjaUrls.cmake
     url "https://github.com/Kitware/ninja/archive/v1.10.2.g51db2.kitware.jobserver-1.tar.gz"
     sha256 "549c31ee596566b952c600e23eb9b8d39a4112cd5fdeb2e5a83370669176da40"
+  end
+
+  resource "pyyaml" do
+    url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
+    sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
   end
 
   resource "tabulate" do

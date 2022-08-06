@@ -20,31 +20,14 @@ class Pytype < Formula
     sha256 "626ba8234211db98e869df76230a137c4c40a12d72445c45d5f5b716f076e2fd"
   end
 
-  resource "networkx" do
-    url "https://files.pythonhosted.org/packages/9e/9e/3d67df5d543ffd743f4ccb12c9c90929e4f48136e3062e15a6d971d91202/networkx-2.7.1.tar.gz"
-    sha256 "d1194ba753e5eed07cdecd1d23c5cd7a3c772099bd8dbd2fea366788cf4de7ba"
-  end
-
-  resource "ninja-src" do
-    # unix_source_url from NinjaUrls.cmake in ninja python archive
-    # https://github.com/scikit-build/ninja-python-distributions/blob/master/NinjaUrls.cmake
-    url "https://github.com/Kitware/ninja/archive/v1.10.2.g51db2.kitware.jobserver-1.tar.gz"
-    sha256 "549c31ee596566b952c600e23eb9b8d39a4112cd5fdeb2e5a83370669176da40"
-  end
-
-  resource "ninja" do
-    url "https://files.pythonhosted.org/packages/00/99/5beedbf09e3ec6b617606df42d04c4251959caddbd98397cce21da4c52d1/ninja-1.10.2.3.tar.gz"
-    sha256 "e1b86ad50d4e681a7dbdff05fc23bb52cb773edb90bc428efba33fa027738408"
-  end
-
   resource "importlab" do
     url "https://files.pythonhosted.org/packages/4b/d1/06a615a1363f80301ac23091f321b7420acd870a10d5a8b2ff833a101f1c/importlab-0.7.tar.gz"
     sha256 "744bd75d4410744962d203bd1eb71a950b19e8fb8eb5f0b805461dc0a2da329b"
   end
 
-  resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/fe/71/1df93bd59163c8084d812d166c907639646e8aac72886d563851b966bf18/typing_extensions-4.2.0.tar.gz"
-    sha256 "f1c24655a0da0d1b67f07e17a5e6b2a105894e6824b92096378bb3668ef02376"
+  resource "libcst" do
+    url "https://files.pythonhosted.org/packages/12/87/453d2d6f24050d3734be02b4bec1e18e9d059ffdb7c5ff89096d8b26781c/libcst-0.4.5.tar.gz"
+    sha256 "a17442b62a22bef6ce0734ff33801378575ab8a9f9a33dbafe236270cdbcdb3c"
   end
 
   resource "mypy-extensions" do
@@ -52,14 +35,21 @@ class Pytype < Formula
     sha256 "2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"
   end
 
-  resource "typing-inspect" do
-    url "https://files.pythonhosted.org/packages/c3/da/864ce66818e308b38209d4b1ef0585921d28eb07621ba7d905a0e96bcc80/typing_inspect-0.7.1.tar.gz"
-    sha256 "047d4097d9b17f46531bf6f014356111a1b6fb821a24fe7ac909853ca2a782aa"
+  resource "networkx" do
+    url "https://files.pythonhosted.org/packages/9e/9e/3d67df5d543ffd743f4ccb12c9c90929e4f48136e3062e15a6d971d91202/networkx-2.7.1.tar.gz"
+    sha256 "d1194ba753e5eed07cdecd1d23c5cd7a3c772099bd8dbd2fea366788cf4de7ba"
   end
 
-  resource "libcst" do
-    url "https://files.pythonhosted.org/packages/12/87/453d2d6f24050d3734be02b4bec1e18e9d059ffdb7c5ff89096d8b26781c/libcst-0.4.5.tar.gz"
-    sha256 "a17442b62a22bef6ce0734ff33801378575ab8a9f9a33dbafe236270cdbcdb3c"
+  resource "ninja" do
+    url "https://files.pythonhosted.org/packages/00/99/5beedbf09e3ec6b617606df42d04c4251959caddbd98397cce21da4c52d1/ninja-1.10.2.3.tar.gz"
+    sha256 "e1b86ad50d4e681a7dbdff05fc23bb52cb773edb90bc428efba33fa027738408"
+  end
+
+  resource "ninja-src" do
+    # unix_source_url from NinjaUrls.cmake in ninja python archive
+    # https://github.com/scikit-build/ninja-python-distributions/blob/master/NinjaUrls.cmake
+    url "https://github.com/Kitware/ninja/archive/v1.10.2.g51db2.kitware.jobserver-1.tar.gz"
+    sha256 "549c31ee596566b952c600e23eb9b8d39a4112cd5fdeb2e5a83370669176da40"
   end
 
   resource "tabulate" do
@@ -70,6 +60,16 @@ class Pytype < Formula
   resource "toml" do
     url "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz"
     sha256 "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"
+  end
+
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/9e/1d/d128169ff58c501059330f1ad96ed62b79114a2eb30b8238af63a2e27f70/typing_extensions-4.3.0.tar.gz"
+    sha256 "e6d2677a32f47fc7eb2795db1dd15c1f34eff616bcaf2cfb5e997f854fa1c4a6"
+  end
+
+  resource "typing-inspect" do
+    url "https://files.pythonhosted.org/packages/c3/da/864ce66818e308b38209d4b1ef0585921d28eb07621ba7d905a0e96bcc80/typing_inspect-0.7.1.tar.gz"
+    sha256 "047d4097d9b17f46531bf6f014356111a1b6fb821a24fe7ac909853ca2a782aa"
   end
 
   def install

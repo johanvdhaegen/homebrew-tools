@@ -12,19 +12,31 @@ class EmacsCocoaAT28 < Formula
   option "with-ctags", "Don't remove the ctags executable that emacs provides"
   option "without-modules", "Build without dynamic modules support"
   option "without-xwidgets", "Build without Xwidgets support"
+  option "without-native-compilation", "Build without native compilation"
 
   depends_on "autoconf" => :build
   depends_on "gnu-sed" => :build
   depends_on "pkg-config" => :build
   depends_on "texinfo" => :build
+  depends_on "giflib"
+  depends_on "gmp"
   depends_on "gnutls"
+  depends_on "jpeg-turbo"
+  depends_on "libpng"
+  depends_on "libtiff"
   depends_on :macos
+  depends_on "zlib"
   depends_on "jansson" => :recommended
   depends_on "librsvg" => :recommended
   depends_on "little-cms2" => :recommended
   depends_on "dbus" => :optional
   depends_on "imagemagick" => :optional
   depends_on "mailutils" => :optional
+
+  if build.with? "native-compilation"
+    depends_on "libgccjit"
+    depends_on "gcc" => :build
+  end
 
   uses_from_macos "libxml2"
 
@@ -51,8 +63,14 @@ class EmacsCocoaAT28 < Formula
     args << "--with-dbus#{build.with?("dbus") ? "" : "=no"}"
     args << "--with-modules#{build.with?("modules") ? "" : "=no"}"
     args << "--with-xwidgets#{build.with?("xwidgets") ? "" : "=no"}"
+    args << "--with-native-compilation" \
+            "#{build.with?("native-compilation")?"":"=no"}"
 
     ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
+    if build.with?("native-compilation")
+      ENV.append_path "CFLAGS", "-I#{Formula["libgccjit"].opt_include}"
+      ENV.append "LIBS", "-L#{Formula["libgccjit"].opt_lib}/gcc/#{Formula["libgccjit"].version.major}"
+    end
     system "./autogen.sh"
 
     File.write "lisp/site-load.el", <<~EOS
@@ -68,6 +86,14 @@ class EmacsCocoaAT28 < Formula
     system "make", "install"
 
     prefix.install "nextstep/Emacs.app"
+    if build.with?("native-compilation")
+      # add link to `native-lisp` directory Emacs.app seems to expect
+      emacs_config = File.read("src/config.h")
+      emacs_version = emacs_config.match(/#define PACKAGE_VERSION "(.*)"/)[1]
+      Dir.chdir("#{prefix}/Emacs.app/Contents") do
+        ln_s "../../lib/emacs/#{emacs_version}/native-lisp", "native-lisp"
+      end
+    end
 
     # Replace the symlink with one that avoids starting Cocoa.
     (bin/"emacs").unlink # Kill the existing symlink

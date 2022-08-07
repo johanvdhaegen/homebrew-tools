@@ -6,6 +6,7 @@ class Pytype < Formula
   url "https://files.pythonhosted.org/packages/c0/ee/6a849ca837805044eed84b4cac7951b6562fdcb5ac39e7f4fb144b47b98c/pytype-2022.8.3.tar.gz"
   sha256 "4746f39aa25063990d207a159e5143adffd3be112ee057116180b9dc4ad7f4fc"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/google/pytype.git", branch: "main"
 
@@ -52,6 +53,11 @@ class Pytype < Formula
     # https://github.com/scikit-build/ninja-python-distributions/blob/master/NinjaUrls.cmake
     url "https://github.com/Kitware/ninja/archive/v1.10.2.g51db2.kitware.jobserver-1.tar.gz"
     sha256 "549c31ee596566b952c600e23eb9b8d39a4112cd5fdeb2e5a83370669176da40"
+  end
+
+  resource "pybind11" do
+    url "https://files.pythonhosted.org/packages/59/f6/aafe0b7e798f25632b199523cce98552fde53e8c552b9d96765426532d5f/pybind11-2.10.0.tar.gz"
+    sha256 "18977589c10f595f65ec1be90b0a0763b43e458d25d97be9db75b958eb1f43fe"
   end
 
   resource "pyyaml" do

@@ -1,8 +1,8 @@
 class Magic < Formula
   desc "VLSI layout tool"
   homepage "http://opencircuitdesign.com/magic"
-  url "http://opencircuitdesign.com/magic/archive/magic-8.3.162.tgz"
-  sha256 "ad3aac09349009ff0a1bf1fb52d312103b1931cbb6e66f3e73a36d6fbfe745f2"
+  url "http://opencircuitdesign.com/magic/archive/magic-8.3.323.tgz"
+  sha256 "f6ce100708324bdbde20e504100425839e9d0eef634233f5018dffa61961c719"
   license "ISC"
 
   livecheck do

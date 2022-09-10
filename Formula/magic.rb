@@ -10,6 +10,11 @@ class Magic < Formula
     regex(/href=.*magic[._-]v?(\d+(?:\.\d+)+)\.tgz"/i)
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/magic-8.3.323"
+    sha256 big_sur: "5a83b5b77b85c712b729be35c2f02217bfff58991ce2b7a0c0c66c5f2a3f4ced"
+  end
+
   depends_on "pkg-config" => :build
   depends_on "cairo"
   depends_on "libx11"

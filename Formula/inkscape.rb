@@ -4,14 +4,9 @@ class Inkscape < Formula
   desc "Professional vector graphics editor"
   homepage "https://inkscape.org/"
   url "https://gitlab.com/inkscape/inkscape.git",
-      tag:      "INKSCAPE_1_1_2",
-      revision: "0a00cf5339ab09436cbe123d22e98fb791619733"
+      tag:      "INKSCAPE_1_2_1",
+      revision: "9c6d41e4102d2e2e21a6d53ddba38ce202271001"
   head "https://gitlab.com/inkscape/inkscape.git", branch: "master"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/inkscape-1.1.2"
-    sha256 big_sur: "4ab24e6c0c269970de11154cf16e048d06582268ed1f97776ee8c54f09069188"
-  end
 
   depends_on "automake" => :build
   depends_on "boost-build" => :build
@@ -44,6 +39,7 @@ class Inkscape < Formula
   depends_on "libxml2"
   depends_on "libxslt"
   depends_on "little-cms"
+  depends_on :macos
   depends_on "numpy"
   depends_on "pango"
   depends_on "poppler"
@@ -127,12 +123,10 @@ class Inkscape < Formula
     sha256 "6881ec26660c130c5ecd996ac6f6b03939dd574198f50773f2508b81a68e0daf"
   end
 
-  resource "inkscape-extension-manager" do
+  resource "inkscape-extensions-manager" do
     url "https://files.pythonhosted.org/packages/ed/d1/c6048bc503bfd0e2df7881493eeeeb5eab340db4419a99923d8cb6d7866e/inkscape-extensions-manager-0.9.9.tar.gz"
     sha256 "1f42e66d8c245b4e6a6706e03ab541c7a6b72509dc37751a045da46dd1370fc8"
   end
-
-  patch :DATA
 
   def install
     ENV.cxx11
@@ -140,6 +134,7 @@ class Inkscape < Formula
 
     libomp = Formula["libomp"]
     args = []
+    args << "-DWITH_X11=OFF"
     if build.with?("openmp")
       args << "-DOpenMP_C_FLAGS=\"-Xpreprocessor -fopenmp -I#{libomp.opt_include}\""
       args << "-DOpenMP_C_LIB_NAMES=omp"
@@ -186,25 +181,3 @@ class Inkscape < Formula
     system "#{bin}/inkscape", "--debug-info"
   end
 end
-
-__END__
-diff --git a/CMakeScripts/DefineDependsandFlags.cmake b/CMakeScripts/DefineDependsandFlags.cmake
---- a/CMakeScripts/DefineDependsandFlags.cmake
-+++ b/CMakeScripts/DefineDependsandFlags.cmake
-@@ -369,11 +369,11 @@ list(APPEND INKSCAPE_LIBS ${SIGC++_LDFLAGS})
- list(APPEND INKSCAPE_CXX_FLAGS ${SIGC++_CFLAGS_OTHER})
- 
- # Some linkers, like gold, don't find symbols recursively. So we have to link against X11 explicitly
--find_package(X11)
--if(X11_FOUND)
--    list(APPEND INKSCAPE_INCS_SYS ${X11_INCLUDE_DIRS})
--    list(APPEND INKSCAPE_LIBS ${X11_LIBRARIES})
--endif(X11_FOUND)
-+#find_package(X11)
-+#if(X11_FOUND)
-+#    list(APPEND INKSCAPE_INCS_SYS ${X11_INCLUDE_DIRS})
-+#    list(APPEND INKSCAPE_LIBS ${X11_LIBRARIES})
-+#endif(X11_FOUND)
- 
- # end Dependencies
- 

@@ -4,19 +4,13 @@ class Inkscape < Formula
   desc "Professional vector graphics editor"
   homepage "https://inkscape.org/"
   url "https://gitlab.com/inkscape/inkscape.git",
-      tag:      "INKSCAPE_1_1_2",
-      revision: "0a00cf5339ab09436cbe123d22e98fb791619733"
+      tag:      "INKSCAPE_1_2_2",
+      revision: "b0a8486541ac36327488da641d58a86bee2f07ad"
   head "https://gitlab.com/inkscape/inkscape.git", branch: "master"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/inkscape-1.1.2"
-    sha256 big_sur: "4ab24e6c0c269970de11154cf16e048d06582268ed1f97776ee8c54f09069188"
-  end
 
   depends_on "automake" => :build
   depends_on "boost-build" => :build
   depends_on "cmake" => :build
-  depends_on "double-conversion" => :build
   depends_on "intltool" => :build
   depends_on "libtool" => :build
   depends_on "pkg-config" => :build
@@ -25,6 +19,7 @@ class Inkscape < Formula
   depends_on "bdw-gc"
   depends_on "boost"
   depends_on "cairomm"
+  depends_on "double-conversion"
   depends_on "fontconfig"
   depends_on "gdk-pixbuf"
   depends_on "gettext"
@@ -44,12 +39,13 @@ class Inkscape < Formula
   depends_on "libxml2"
   depends_on "libxslt"
   depends_on "little-cms"
+  depends_on :macos
   depends_on "numpy"
   depends_on "pango"
   depends_on "poppler"
   depends_on "potrace"
   depends_on "pygobject3"
-  depends_on "python@3.9"
+  depends_on "python@3.10"
   depends_on "readline"
   depends_on "jemalloc" => :optional
   depends_on "libcdr" => :optional
@@ -58,8 +54,8 @@ class Inkscape < Formula
   depends_on "libwpg" => :optional
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/84/74/4a97db45381316cd6e7d4b1eb707d7f60d38cb2985b5dfd7251a340404da/lxml-4.7.1.tar.gz"
-    sha256 "a1613838aa6b89af4ba10a0f3a972836128801ed008078f8c1244e65958f1b24"
+    url "https://files.pythonhosted.org/packages/06/5a/e11cad7b79f2cf3dd2ff8f81fa8ca667e7591d3d8451768589996b65dec1/lxml-4.9.2.tar.gz"
+    sha256 "2455cfaeb7ac70338b3257f41e21f0724f4b5b0c0e7702da67ee6c3640835b67"
   end
 
   resource "appdirs" do
@@ -68,13 +64,13 @@ class Inkscape < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https://files.pythonhosted.org/packages/a1/69/daeee6d8f22c997e522cdbeb59641c4d31ab120aba0f2c799500f7456b7e/beautifulsoup4-4.10.0.tar.gz"
-    sha256 "c23ad23c521d818955a4151a67d81580319d4bf548d3d49f4223ae041ff98891"
+    url "https://files.pythonhosted.org/packages/e8/b0/cd2b968000577ec5ce6c741a54d846dfa402372369b8b6861720aa9ecea7/beautifulsoup4-4.11.1.tar.gz"
+    sha256 "ad9aa55b65ef2808eb405f46cf74df7fcb7044d5cbc26487f96eb2ef2e436693"
   end
 
   resource "cachecontrol" do
-    url "https://files.pythonhosted.org/packages/d0/74/3748ee1144234a525d84c4905002a5f39795d265bcdecca74142a8df5206/CacheControl-0.12.10.tar.gz"
-    sha256 "d8aca75b82eec92d84b5d6eb8c8f66ea16f09d2adb09dbca27fe2d5fc8d3732d"
+    url "https://files.pythonhosted.org/packages/46/9b/34215200b0c2b2229d7be45c1436ca0e8cad3b10de42cfea96983bd70248/CacheControl-0.12.11.tar.gz"
+    sha256 "a5b9fcc986b184db101aa280b42ecdcdfc524892596f606858e0b7a8b4d9e144"
   end
 
   resource "lockfile" do
@@ -83,8 +79,8 @@ class Inkscape < Formula
   end
 
   resource "cssselect" do
-    url "https://files.pythonhosted.org/packages/70/54/37630f6eb2c214cdee2ae56b7287394c8aa2f3bafb8b4eb8c3791aae7a14/cssselect-1.1.0.tar.gz"
-    sha256 "f95f8dedd925fd8f54edb3d2dfb44c190d9d18512377d3c1e2388d16126879bc"
+    url "https://files.pythonhosted.org/packages/d1/91/d51202cc41fbfca7fa332f43a5adac4b253962588c7cc5a54824b019081c/cssselect-1.2.0.tar.gz"
+    sha256 "666b19839cfaddb9ce9d36bfe4c969132c647b92fc9088c4e23f786b30f1b3dc"
   end
 
   resource "gtkme" do
@@ -93,28 +89,33 @@ class Inkscape < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/6c/ae/d26450834f0acc9e3d1f74508da6df1551ceab6c2ce0766a593362d6d57f/certifi-2021.10.8.tar.gz"
-    sha256 "78884e7c1d4b00ce3cea67b44566851c4343c120abd683433ce934a68ea58872"
+    url "https://files.pythonhosted.org/packages/37/f7/2b1b0ec44fdc30a3d31dfebe52226be9ddc40cd6c0f34ffc8923ba423b69/certifi-2022.12.7.tar.gz"
+    sha256 "35824b4c3a97115964b408844d64aa14db1cc518f6562e8d7261699d1350a9e3"
   end
 
   resource "idna" do
-    url "https://files.pythonhosted.org/packages/62/08/e3fc7c8161090f742f504f40b1bccbfc544d4a4e09eb774bf40aafce5436/idna-3.3.tar.gz"
-    sha256 "9d643ff0a55b762d5cdb124b8eaa99c66322e2157b69160bc32796e824360e6d"
+    url "https://files.pythonhosted.org/packages/8b/e1/43beb3d38dba6cb420cefa297822eac205a277ab43e5ba5d5c46faf96438/idna-3.4.tar.gz"
+    sha256 "814f528e8dead7d329833b91c5faa87d60bf71824cd12a7530b5526063d02cb4"
   end
 
   resource "charset_normalizer" do
-    url "https://files.pythonhosted.org/packages/e8/e8/b6cfd28fb430b2ec9923ad0147025bf8bbdf304b1eb3039b69f1ce44ed6e/charset-normalizer-2.0.11.tar.gz"
-    sha256 "98398a9d69ee80548c762ba991a4728bfc3836768ed226b3945908d1a688371c"
+    url "https://files.pythonhosted.org/packages/a1/34/44964211e5410b051e4b8d2869c470ae8a68ae274953b1c7de6d98bbcf94/charset-normalizer-2.1.1.tar.gz"
+    sha256 "5a3d016c7c547f69d6f81fb0db9449ce888b418b5b9952cc5e6e66843e9dd845"
+  end
+
+  resource "msgpack" do
+    url "https://files.pythonhosted.org/packages/22/44/0829b19ac243211d1d2bd759999aa92196c546518b0be91de9cacc98122a/msgpack-1.0.4.tar.gz"
+    sha256 "f5d869c18f030202eb412f08b28d2afeea553d6613aee89e200d7aca7ef01f5f"
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/b0/b1/7bbf5181f8e3258efae31702f5eab87d8a74a72a0aa78bc8c08c1466e243/urllib3-1.26.8.tar.gz"
-    sha256 "0e7c33d9a63e7ddfcb86780aac87befc2fbddf46c58dbb487e0855f7ceec283c"
+    url "https://files.pythonhosted.org/packages/c2/51/32da03cf19d17d46cce5c731967bf58de9bd71db3a379932f53b094deda4/urllib3-1.26.13.tar.gz"
+    sha256 "c083dd0dce68dbfbe1129d5271cb90f9447dea7d52097c6e0126120c521ddea8"
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/60/f3/26ff3767f099b73e0efa138a9998da67890793bfa475d8278f84a30fec77/requests-2.27.1.tar.gz"
-    sha256 "68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61"
+    url "https://files.pythonhosted.org/packages/a5/61/a867851fd5ab77277495a8709ddda0861b28163c4613b011bc00228cc724/requests-2.28.1.tar.gz"
+    sha256 "7c5599b102feddaa661c826c56ab4fee28bfd17f5abca1ebbe3e7f19d7c97983"
   end
 
   resource "pyserial" do
@@ -127,12 +128,20 @@ class Inkscape < Formula
     sha256 "6881ec26660c130c5ecd996ac6f6b03939dd574198f50773f2508b81a68e0daf"
   end
 
-  resource "inkscape-extension-manager" do
+  resource "six" do
+    url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
+    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+  end
+
+  resource "soupsieve" do
+    url "https://files.pythonhosted.org/packages/f3/03/bac179d539362319b4779a00764e95f7542f4920084163db6b0fd4742d38/soupsieve-2.3.2.post1.tar.gz"
+    sha256 "fc53893b3da2c33de295667a0e19f078c14bf86544af307354de5fcf12a3f30d"
+  end
+
+  resource "inkscape-extensions-manager" do
     url "https://files.pythonhosted.org/packages/ed/d1/c6048bc503bfd0e2df7881493eeeeb5eab340db4419a99923d8cb6d7866e/inkscape-extensions-manager-0.9.9.tar.gz"
     sha256 "1f42e66d8c245b4e6a6706e03ab541c7a6b72509dc37751a045da46dd1370fc8"
   end
-
-  patch :DATA
 
   def install
     ENV.cxx11
@@ -140,6 +149,7 @@ class Inkscape < Formula
 
     libomp = Formula["libomp"]
     args = []
+    args << "-DWITH_X11=OFF"
     if build.with?("openmp")
       args << "-DOpenMP_C_FLAGS=\"-Xpreprocessor -fopenmp -I#{libomp.opt_include}\""
       args << "-DOpenMP_C_LIB_NAMES=omp"
@@ -186,25 +196,3 @@ class Inkscape < Formula
     system "#{bin}/inkscape", "--debug-info"
   end
 end
-
-__END__
-diff --git a/CMakeScripts/DefineDependsandFlags.cmake b/CMakeScripts/DefineDependsandFlags.cmake
---- a/CMakeScripts/DefineDependsandFlags.cmake
-+++ b/CMakeScripts/DefineDependsandFlags.cmake
-@@ -369,11 +369,11 @@ list(APPEND INKSCAPE_LIBS ${SIGC++_LDFLAGS})
- list(APPEND INKSCAPE_CXX_FLAGS ${SIGC++_CFLAGS_OTHER})
- 
- # Some linkers, like gold, don't find symbols recursively. So we have to link against X11 explicitly
--find_package(X11)
--if(X11_FOUND)
--    list(APPEND INKSCAPE_INCS_SYS ${X11_INCLUDE_DIRS})
--    list(APPEND INKSCAPE_LIBS ${X11_LIBRARIES})
--endif(X11_FOUND)
-+#find_package(X11)
-+#if(X11_FOUND)
-+#    list(APPEND INKSCAPE_INCS_SYS ${X11_INCLUDE_DIRS})
-+#    list(APPEND INKSCAPE_LIBS ${X11_LIBRARIES})
-+#endif(X11_FOUND)
- 
- # end Dependencies
- 

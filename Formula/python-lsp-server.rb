@@ -6,13 +6,7 @@ class PythonLspServer < Formula
   url "https://files.pythonhosted.org/packages/86/ea/d838df070b8d18664070a5ed78f750256645959664b5755e605a186f6625/python-lsp-server-1.5.0.tar.gz"
   sha256 "e5c094c19925022a27c4068f414b2bb653243f8fb0d768e39735289d7a89380d"
   license "MIT"
-  revision 2
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.5.0_2"
-    sha256 cellar: :any_skip_relocation, big_sur:      "c1a324488dca20af7bd877805636c2f00c0724783c8ba10fe27b647f71a3179c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5b6869928edaf417a9255d773b60e5892f52a82041cc1e336840b64d04c8b80b"
-  end
+  revision 3
 
   depends_on "python@3.9"
 
@@ -27,8 +21,8 @@ class PythonLspServer < Formula
   end
 
   resource "ujson" do
-    url "https://files.pythonhosted.org/packages/92/4a/2676677f59709517560b2b7eeb027453e86643d54d04687602e76cca4380/ujson-5.1.0.tar.gz"
-    sha256 "a88944d2f99db71a3ca0c63d81f37e55b660edde0b07216fb65a3e46403ef004"
+    url "https://files.pythonhosted.org/packages/6e/4a/03ddad85a10dd52e209993a14afa0cb0dc5c348e4647329f1c53856ad9e6/ujson-5.5.0.tar.gz"
+    sha256 "b25077a971c7da47bd6846a912a747f6963776d90720c88603b1b55d81790780"
   end
 
   resource "python-lsp-jsonrpc" do
@@ -42,8 +36,8 @@ class PythonLspServer < Formula
   end
 
   resource "pycodestyle" do
-    url "https://files.pythonhosted.org/packages/08/dc/b29daf0a202b03f57c19e7295b60d1d5e1281c45a6f5f573e41830819918/pycodestyle-2.8.0.tar.gz"
-    sha256 "eddd5847ef438ea1c7870ca7eb78a9d47ce0cdb4851a5523949f2601d0cbbe7f"
+    url "https://files.pythonhosted.org/packages/b6/83/5bcaedba1f47200f0665ceb07bcb00e2be123192742ee0edfb66b600e5fd/pycodestyle-2.9.1.tar.gz"
+    sha256 "2c9607871d58c76354b697b42f5d57e1ada7d261c261efac224b664affdc5785"
   end
 
   resource "snowballstemmer" do
@@ -57,8 +51,8 @@ class PythonLspServer < Formula
   end
 
   resource "pyflakes" do
-    url "https://files.pythonhosted.org/packages/15/60/c577e54518086e98470e9088278247f4af1d39cb43bcbd731e2c307acd6a/pyflakes-2.4.0.tar.gz"
-    sha256 "05a85c2872edf37a4ed30b0cce2f6093e1d0581f8c19d7393122da7e25b2b24c"
+    url "https://files.pythonhosted.org/packages/07/92/f0cb5381f752e89a598dd2850941e7f570ac3cb8ea4a344854de486db152/pyflakes-2.5.0.tar.gz"
+    sha256 "491feb020dca48ccc562a8c0cbe8df07ee13078df59813b83959cbdada312ea3"
   end
 
   resource "tomli" do
@@ -72,13 +66,13 @@ class PythonLspServer < Formula
   end
 
   resource "pytoolconfig" do
-    url "https://files.pythonhosted.org/packages/6e/c1/6156c684e2879c4873ef470048710ec00b08e639c9142c9263cf443f6f2b/pytoolconfig-1.2.1.tar.gz"
-    sha256 "5ac82f78d731531f9f82e5cc7f5ebae9473b1404c0e75aa5ac0b8b41cd99b510"
+    url "https://files.pythonhosted.org/packages/9b/20/f6327067e79d7f36c89cb6b52b83befb6918672b3d8eb432d8793b08a967/pytoolconfig-1.2.2.tar.gz"
+    sha256 "2512a1f261a40e73cef2e58e786184261b60c802ae7ed01249342b1949ec3aa2"
   end
 
   resource "rope" do
-    url "https://files.pythonhosted.org/packages/7a/46/412e491b73bb5e906178677917395b6437b7914576a85468fad22d575e32/rope-1.2.0.tar.gz"
-    sha256 "f762542c9cfe52124aa55d33822a269fc4b0da70fe3170c6086de2733ed52f22"
+    url "https://files.pythonhosted.org/packages/a5/4b/6f2c61516e09ac34bd7c38fc3e73889b3ec04a4a6841ec2b67ce9f22699b/rope-1.3.0.tar.gz"
+    sha256 "4e8ede637d8f43eb83847ef9ea7edbf4ceb9d641deea592ed38a8875cde64265"
   end
 
   resource "yapf" do
@@ -112,8 +106,8 @@ class PythonLspServer < Formula
   end
 
   resource "astroid" do
-    url "https://files.pythonhosted.org/packages/47/fa/cedd4cf37634b2fcc3773cedd0a9ca05fed2fa014d3d03815b04b7738ade/astroid-2.11.7.tar.gz"
-    sha256 "bb24615c77f4837c707669d16907331374ae8a964650a66999da3f5ca68dc946"
+    url "https://files.pythonhosted.org/packages/ad/cb/b6c1645e359ed639350a7b68be68fc279ea0f60dfdd075b622614e168159/astroid-2.12.10.tar.gz"
+    sha256 "81f870105d892e73bf535da77a8261aa5bde838fa4ed12bb2f435291a098c581"
   end
 
   resource "dill" do
@@ -132,13 +126,13 @@ class PythonLspServer < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/1e/81/93889ea6641154b22f26036bc4ef800b06df84fc647a6ded5abdc2f06dcf/tomlkit-0.11.1.tar.gz"
-    sha256 "61901f81ff4017951119cd0d1ed9b7af31c821d6845c8c477587bbdcd5e5854e"
+    url "https://files.pythonhosted.org/packages/0c/2b/7823f215c6aec294f5ab5ff2f529aca1d85e8bec2208ae7ea89ca1413620/tomlkit-0.11.5.tar.gz"
+    sha256 "571854ebbb5eac89abcb4a2e47d7ea27b89bf29e09c35395da6f03dd4ae23d1c"
   end
 
   resource "pylint" do
-    url "https://files.pythonhosted.org/packages/82/e5/ae649803c4f3a4e47720337352af046089f8e9ff8a25958199df74268984/pylint-2.14.5.tar.gz"
-    sha256 "487ce2192eee48211269a0e976421f334cf94de1806ca9d0a99449adcdf0285e"
+    url "https://files.pythonhosted.org/packages/53/8e/ed0cc7e6a96b3367e31b57f5e7510b94c905378a8be3e5657afd9056df44/pylint-2.15.3.tar.gz"
+    sha256 "5fdfd44af182866999e6123139d265334267339f29961f00c89783155eacc60b"
   end
 
   def install

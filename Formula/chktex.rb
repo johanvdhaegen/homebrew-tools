@@ -1,11 +1,11 @@
 class Chktex < Formula
   desc "LaTeX semantic checker"
   homepage "https://www.nongnu.org/chktex/"
-  license "GPL-2.0"
+  license "GPL-2.0-or-later"
 
   stable do
-    url "https://download.savannah.gnu.org/releases/chktex/chktex-1.7.6.tar.gz"
-    sha256 "8ac0e5ca213b2012d44c28f9e4feb9783df44750eb0c30a237d81ff58ef34c8d"
+    url "https://download.savannah.gnu.org/releases/chktex/chktex-1.7.8.tar.gz"
+    sha256 "5286f7844f0771ac0711c7313cf5e0421ed509dc626f9b43b4f4257fb1591ea8"
     patch :p2, :DATA
   end
 
@@ -16,12 +16,20 @@ class Chktex < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on "pcre" => :recommended
 
   def install
     ENV.prepend_path "PATH", "/Library/TeX/texbin"
+    args = %W[
+      --prefix=#{prefix}
+    ]
+    args << "--#{build.with?("pcre")?"enable":"disable"}-pcre"
+
     cd "chktex" if build.head?
     system "./autogen.sh" if build.head?
-    system "./configure", "--prefix=#{prefix}"
+    system "./configure", *args
+    system "make"
+    system "make", "check"
     system "make", "install"
   end
 
@@ -47,3 +55,24 @@ __END__
  \usepackage{array, tabularx, verbatim, multicol}
  \usepackage[T1]{fontenc}
  \nonfrenchspacing
+--- a/chktex/Makefile.in  2022-10-17 17:17:58.000000000 -0700
++++ b/chktex/Makefile.in  2022-10-21 16:21:34.812499668 -0700
+@@ -161,7 +161,7 @@
+ chktex: $(OBJS)
+ 	$(CC) $(LDFLAGS) -o chktex $(OBJS) $(LIBS)
+ 
+-install: chktex ChkTeX.dvi
++install: chktex chktexrc
+ 	$(MKDIR_P) $(DESTDIR)$(bindir)
+ 	for program in chktex $(BUILT_SCRIPTS); do \
+ 		$(INSTALL_PROGRAM) $$program $(DESTDIR)$(bindir); \
+--- a/chktex/tests/run-tests.sh  2022-10-17 17:17:58.000000000 -0700
++++ b/chktex/tests/run-tests.sh  2022-10-21 18:57:28.113400011 -0700
+@@ -132,6 +132,6 @@
+ # Command line options
+ echo "Checking command line RC settings..."
+ (${builddir}/chktex -d 4 -STabSize=7 </dev/null 2>&1 \
+-     | grep -A1 TabSize | grep -E '\t7$' >/dev/null) \
++     | grep -A1 TabSize | grep -E '[[:space:]]7$' >/dev/null) \
+     || (echo Setting TabSize from command line failed; exit 1)
+ echo ">>> OK!"

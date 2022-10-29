@@ -2,15 +2,9 @@ class Copybara < Formula
   desc "Tool for transforming and moving code between repositories"
   homepage "https://github.com/google/copybara"
   url "https://github.com/google/copybara.git",
-      revision: "708a14e8c07a4ed5b295a8a65a5c2e2f3621cb62"
-  version "2022-10-09"
+      revision: "f51e2a9203eca1671992cdc8bf2adab64342121d"
+  version "2022-10-24"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/copybara-2022-10-09"
-    sha256 cellar: :any_skip_relocation, big_sur:      "68bbec0685b05fe32a58f75f3a5839fdf7dcc4a7782dfb1bef7e099ae524b26e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "058918030a05fe7dc24fed368375ab28dc9941a921a10da0f9bea745f278d848"
-  end
 
   head do
     url "https://github.com/google/copybara.git", branch: "master"

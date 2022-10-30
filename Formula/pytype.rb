@@ -3,18 +3,11 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/c0/ee/6a849ca837805044eed84b4cac7951b6562fdcb5ac39e7f4fb144b47b98c/pytype-2022.8.3.tar.gz"
-  sha256 "4746f39aa25063990d207a159e5143adffd3be112ee057116180b9dc4ad7f4fc"
+  url "https://files.pythonhosted.org/packages/87/ba/4d55e5126e139a4b8683ef0c24135e18c14c29990cdb9276fe1b5c96a6f5/pytype-2022.10.26.tar.gz"
+  sha256 "cb3d53319ada918a089c82c430ef34bcde22b5a473e23b593bb12179bd00104c"
   license "Apache-2.0"
-  revision 1
 
   head "https://github.com/google/pytype.git", branch: "main"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pytype-2022.8.3_1"
-    sha256 cellar: :any,                 big_sur:      "1ce623c824e9412ebfdd1f04857e85cbdc46216415841ca79be6bb5c1bb9bcc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5843615e26e294cd8620c29637e668c512f23ed24a7b2da2c794a07de8233824"
-  end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
@@ -25,13 +18,11 @@ class Pytype < Formula
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/1a/cb/c4ffeb41e7137b23755a45e1bfec9cbb76ecf51874c6f1d113984ecaa32c/attrs-22.1.0.tar.gz"
     sha256 "29adc2665447e5191d0e7c568fde78b21f9672d344281d0c6e1ab085429b22b6"
-    url "https://files.pythonhosted.org/packages/d7/77/ebb15fc26d0f815839ecd897b919ed6d85c050feeb83e100e020df9153d2/attrs-21.4.0.tar.gz"
-    sha256 "626ba8234211db98e869df76230a137c4c40a12d72445c45d5f5b716f076e2fd"
   end
 
   resource "importlab" do
-    url "https://files.pythonhosted.org/packages/4b/d1/06a615a1363f80301ac23091f321b7420acd870a10d5a8b2ff833a101f1c/importlab-0.7.tar.gz"
-    sha256 "744bd75d4410744962d203bd1eb71a950b19e8fb8eb5f0b805461dc0a2da329b"
+    url "https://files.pythonhosted.org/packages/74/2e/2b779bb26addcecbecf0e632324f79ec9b682b3338e9ee6951482fc6eae0/importlab-0.8.tar.gz"
+    sha256 "b24b3aac3b073966ae42fb2d3a7764f3377b30bb72c0d411fe29134cc9276e86"
   end
 
   resource "libcst" do
@@ -50,8 +41,8 @@ class Pytype < Formula
   end
 
   resource "ninja" do
-    url "https://files.pythonhosted.org/packages/00/99/5beedbf09e3ec6b617606df42d04c4251959caddbd98397cce21da4c52d1/ninja-1.10.2.3.tar.gz"
-    sha256 "e1b86ad50d4e681a7dbdff05fc23bb52cb773edb90bc428efba33fa027738408"
+    url "https://files.pythonhosted.org/packages/c6/3e/f14cc8da437224acea3bdb9a82bc9c128638211ca08ac029ed5c8716b7e9/ninja-1.10.2.4.tar.gz"
+    sha256 "da7a6d9b2ed2018165fbf90068e2c64da08f2568c700fdb8abea07a245dc4664"
   end
 
   resource "ninja-src" do
@@ -72,8 +63,8 @@ class Pytype < Formula
   end
 
   resource "tabulate" do
-    url "https://files.pythonhosted.org/packages/7a/53/afac341569b3fd558bf2b5428e925e2eb8753ad9627c1f9188104c6e0c4a/tabulate-0.8.10.tar.gz"
-    sha256 "6c57f3f3dd7ac2782770155f3adb2db0b1a269637e42f27599925e64b114f519"
+    url "https://files.pythonhosted.org/packages/ec/fe/802052aecb21e3797b8f7902564ab6ea0d60ff8ca23952079064155d1ae1/tabulate-0.9.0.tar.gz"
+    sha256 "0095b12bf5966de529c0feb1fa08671671b3368eec77d7ef7ab114be2c068b3c"
   end
 
   resource "toml" do
@@ -82,13 +73,13 @@ class Pytype < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/9e/1d/d128169ff58c501059330f1ad96ed62b79114a2eb30b8238af63a2e27f70/typing_extensions-4.3.0.tar.gz"
-    sha256 "e6d2677a32f47fc7eb2795db1dd15c1f34eff616bcaf2cfb5e997f854fa1c4a6"
+    url "https://files.pythonhosted.org/packages/e3/a7/8f4e456ef0adac43f452efc2d0e4b242ab831297f1bac60ac815d37eb9cf/typing_extensions-4.4.0.tar.gz"
+    sha256 "1511434bb92bf8dd198c12b1cc812e800d4181cfcb867674e0f8279cc93087aa"
   end
 
   resource "typing-inspect" do
-    url "https://files.pythonhosted.org/packages/c3/da/864ce66818e308b38209d4b1ef0585921d28eb07621ba7d905a0e96bcc80/typing_inspect-0.7.1.tar.gz"
-    sha256 "047d4097d9b17f46531bf6f014356111a1b6fb821a24fe7ac909853ca2a782aa"
+    url "https://files.pythonhosted.org/packages/72/23/bed3ea644bcd77ffe9a7f591eb058c00739747e33ab94d80cc4319ddee8e/typing_inspect-0.8.0.tar.gz"
+    sha256 "8b1ff0c400943b6145df8119c41c244ca8207f1f10c9c057aeed1560e4806e3d"
   end
 
   def install

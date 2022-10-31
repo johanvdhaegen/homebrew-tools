@@ -2,19 +2,14 @@ class Latexml < Formula
   desc "LaTeX to XML/HTML/MathML Converter"
   homepage "https://dlmf.nist.gov/LaTeXML/"
   url "https://dlmf.nist.gov/LaTeXML/releases/LaTeXML-0.8.6.tar.gz"
-  sha256 "803a6eaca7ea5811201cfedd5b1057543584c99984392d11d2eed132b74267f4"
+  sha256 "9529c651b67f5e8ddef1fd1852f974e756a17b711c46d4118f0677ad0e6e9bb1"
   license :public_domain
   head "https://github.com/brucemiller/LaTeXML.git", branch: "master"
+  revision 1
 
   livecheck do
     url "https://dlmf.nist.gov/LaTeXML/get.html"
     regex(/href=.*?LaTeXML[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/latexml-0.8.6"
-    sha256 cellar: :any_skip_relocation, big_sur:      "a5a81e7d36b548a7a4d6dc897ffa70277377f33ebfb4dae41fd73084bd23358c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "dda7491c4b59d08356923b21a1dc459674978c6f56a75797c21480e9f7d62606"
   end
 
   depends_on "pkg-config" => :build
@@ -34,8 +29,8 @@ class Latexml < Formula
   end
 
   resource "Path::Tiny" do
-    url "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Path-Tiny-0.118.tar.gz"
-    sha256 "32138d8d0f4c9c1a84d2a8f91bc5e913d37d8a7edefbb15a10961bfed560b0fd"
+    url "https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Path-Tiny-0.130.tar.gz"
+    sha256 "74109aec04ddd83d80ee14a5346e8bc3e3f4673238e1c7358693bff348196c13"
   end
 
   resource "IO::String" do
@@ -84,8 +79,8 @@ class Latexml < Formula
   end
 
   resource "XML::LibXML" do
-    url "https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/XML-LibXML-2.0207.tar.gz"
-    sha256 "903436c9859875bef5593243aae85ced329ad0fb4b57bbf45975e32547c50c15"
+    url "https://cpan.metacpan.org/authors/id/S/SH/SHLOMIF/XML-LibXML-2.0208.tar.gz"
+    sha256 "0c006b03bf8d0eb531fb56bda3ae15754ca56d888dd7b9e805ab9eb19d5fd653"
   end
 
   resource "XML::Sax" do
@@ -99,8 +94,8 @@ class Latexml < Formula
   end
 
   resource "URI" do
-    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.09.tar.gz"
-    sha256 "03e63ada499d2645c435a57551f041f3943970492baa3b3338246dab6f1fae0a"
+    url "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/URI-5.16.tar.gz"
+    sha256 "4cd2752adfaddd58f54e559155578696354834ee77a7760a04089de1f338fb11"
   end
 
   resource "HTTP::Request" do
@@ -119,8 +114,8 @@ class Latexml < Formula
   end
 
   resource "Pod::Find" do
-    url "https://cpan.metacpan.org/authors/id/M/MA/MAREKR/Pod-Parser-1.63.tar.gz"
-    sha256 "dbe0b56129975b2f83a02841e8e0ed47be80f060686c66ea37e529d97aa70ccd"
+    url "https://cpan.metacpan.org/authors/id/M/MA/MAREKR/Pod-Parser-1.65.tar.gz"
+    sha256 "3ba7bdec659416a51fe2a7e59f0883e9c6a3b21bc9d001042c1d6a32d401b28a"
   end
 
   resource "HTTP::Date" do
@@ -129,8 +124,8 @@ class Latexml < Formula
   end
 
   resource "Try::Tiny" do
-    url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.30.tar.gz"
-    sha256 "da5bd0d5c903519bbf10bb9ba0cb7bcac0563882bcfe4503aee3fb143eddef6b"
+    url "https://cpan.metacpan.org/authors/id/E/ET/ETHER/Try-Tiny-0.31.tar.gz"
+    sha256 "3300d31d8a4075b26d8f46ce864a1d913e0e8467ceeba6655d5d2b2e206c11be"
   end
 
   resource "Encode::Locale" do

@@ -9,6 +9,12 @@ class Pytype < Formula
 
   head "https://github.com/google/pytype.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pytype-2022.11.10"
+    sha256 cellar: :any,                 big_sur:      "a9ee016ef4641d5c6e58a8927adfd90d215fc881a8eb849d6873b8fc3eb4f5a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c0b1f5c79c13ba8fcfe8290977950ced5b26495d7c269a421d879abd6e1e5e8c"
+  end
+
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "rust" => :build

@@ -7,6 +7,12 @@ class PythonLspServer < Formula
   sha256 "d75cdff9027c4212e5b9e861e9a0219219c8e2c69508d9f24949951dabd0dc1b"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.6.0"
+    sha256 cellar: :any_skip_relocation, big_sur:      "568cca6b7f85d8490b94693468e61fd1607303598c563caaf78a261456c62ac1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "23e91e311e3ab7b4898f7fe0d19a443f25d20ba355b993b82222c5558ae5dfe1"
+  end
+
   depends_on "python@3.10"
 
   resource "docstring-to-markdown" do

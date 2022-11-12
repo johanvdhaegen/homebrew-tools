@@ -3,17 +3,11 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/87/ba/4d55e5126e139a4b8683ef0c24135e18c14c29990cdb9276fe1b5c96a6f5/pytype-2022.10.26.tar.gz"
-  sha256 "cb3d53319ada918a089c82c430ef34bcde22b5a473e23b593bb12179bd00104c"
+  url "https://files.pythonhosted.org/packages/f4/7b/242dfd8be6049e0287f8a8dabd4b0c2a9171cc1f3403ad80575207bcf236/pytype-2022.11.10.tar.gz"
+  sha256 "075664ec3b4bbc6d29e2f4b9bd217f2d02c2bd9397b07f63cab8a85bb7087683"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git", branch: "main"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pytype-2022.10.26"
-    sha256 cellar: :any,                 big_sur:      "e0905021760fb3575d522266d2b026a89169fde79efecdf74416cc1dab7de741"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "4cb26b9f1648fc6869920fb70a185e4f9148d39fed276cb38ca656ae07406324"
-  end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
@@ -32,8 +26,8 @@ class Pytype < Formula
   end
 
   resource "libcst" do
-    url "https://files.pythonhosted.org/packages/90/6b/ef2d7c86a61c6b6ae4eb48b832ba96897d4ba9743e9ece40f66625b11d60/libcst-0.4.7.tar.gz"
-    sha256 "95c52c2130531f6e726a3b077442cfd486975435fecf3db8224d43fba7b85099"
+    url "https://files.pythonhosted.org/packages/fa/4d/366f6fede5c5121fdda08db85a79f8b602a24378394cd9f87c917232d578/libcst-0.4.9.tar.gz"
+    sha256 "01786c403348f76f274dbaf3888ae237ffb73e6ed6973e65eba5c1fc389861dd"
   end
 
   resource "mypy-extensions" do
@@ -47,20 +41,20 @@ class Pytype < Formula
   end
 
   resource "ninja" do
-    url "https://files.pythonhosted.org/packages/c6/3e/f14cc8da437224acea3bdb9a82bc9c128638211ca08ac029ed5c8716b7e9/ninja-1.10.2.4.tar.gz"
-    sha256 "da7a6d9b2ed2018165fbf90068e2c64da08f2568c700fdb8abea07a245dc4664"
+    url "https://files.pythonhosted.org/packages/f7/69/938374c8ebfeda683863b22e936f5d465ac9f5bf42be238504c018123190/ninja-1.11.1.tar.gz"
+    sha256 "c833a47d39b2d1eee3f9ca886fa1581efd5be6068b82734ac229961ee8748f90"
   end
 
   resource "ninja-src" do
     # unix_source_url from NinjaUrls.cmake in ninja python archive
     # https://github.com/scikit-build/ninja-python-distributions/blob/master/NinjaUrls.cmake
-    url "https://github.com/Kitware/ninja/archive/v1.10.2.g51db2.kitware.jobserver-1.tar.gz"
-    sha256 "549c31ee596566b952c600e23eb9b8d39a4112cd5fdeb2e5a83370669176da40"
+    url "https://github.com/Kitware/ninja/archive/v1.11.1.g95dee.kitware.jobserver-1.tar.gz"
+    sha256 "7ba84551f5b315b4270dc7c51adef5dff83a2154a3665a6c9744245c122dd0db"
   end
 
   resource "pybind11" do
-    url "https://files.pythonhosted.org/packages/59/f6/aafe0b7e798f25632b199523cce98552fde53e8c552b9d96765426532d5f/pybind11-2.10.0.tar.gz"
-    sha256 "18977589c10f595f65ec1be90b0a0763b43e458d25d97be9db75b958eb1f43fe"
+    url "https://files.pythonhosted.org/packages/2f/23/aaf147a5bc31c8be286f07d862b3699d7b49e3411fb75087525b5c31ab3e/pybind11-2.10.1.tar.gz"
+    sha256 "c9571b8a6607c8e90ea156a2a455383b9911f89da414e9f5e251ab58dc3e3c71"
   end
 
   resource "pyyaml" do

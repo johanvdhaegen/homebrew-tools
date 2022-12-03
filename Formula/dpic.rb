@@ -1,19 +1,13 @@
 class Dpic < Formula
   desc "Implementation of the pic language"
   homepage "https://ece.uwaterloo.ca/~aplevich/dpic"
-  url "https://ece.uwaterloo.ca/~aplevich/dpic/dpic-2021.11.01.tar.gz"
-  sha256 "821bb4a31ac8729e56dd0597edd02c452f3fb17e3d6820d7bb934e09497ca751"
+  url "https://ece.uwaterloo.ca/~aplevich/dpic/dpic-2022.12.01.tar.gz"
+  sha256 "041b9e13bb5c61707c3d5cb77b2686fbf679c4de8a8d048897b0c6655058ee14"
   license "BSD-2-Clause"
 
   livecheck do
     url :homepage
     regex(/href=.*dpic[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/dpic-2021.11.01"
-    sha256 cellar: :any_skip_relocation, catalina:     "48f0e30e35d85d67893bc9a8144c99d3415841acac2dcea8f227c4ee930cbc55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e420c967d8070dbc816749f5bdb4d07d362e8ed03c82c656239eebef1410a48f"
   end
 
   def install

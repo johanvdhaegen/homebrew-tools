@@ -3,17 +3,11 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/f4/7b/242dfd8be6049e0287f8a8dabd4b0c2a9171cc1f3403ad80575207bcf236/pytype-2022.11.10.tar.gz"
-  sha256 "075664ec3b4bbc6d29e2f4b9bd217f2d02c2bd9397b07f63cab8a85bb7087683"
+  url "https://files.pythonhosted.org/packages/e3/f1/b4af2268113f25cd5d1c44b2eea5a512e8c872eacacb2148b2b1e33b41fb/pytype-2022.12.9.tar.gz"
+  sha256 "4998bd2c1b5c0ba464d4a60be29f1198f63ff569998ca6dd3425134b65caa9a0"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git", branch: "main"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pytype-2022.11.10"
-    sha256 cellar: :any,                 big_sur:      "a9ee016ef4641d5c6e58a8927adfd90d215fc881a8eb849d6873b8fc3eb4f5a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "c0b1f5c79c13ba8fcfe8290977950ced5b26495d7c269a421d879abd6e1e5e8c"
-  end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
@@ -29,6 +23,16 @@ class Pytype < Formula
   resource "importlab" do
     url "https://files.pythonhosted.org/packages/74/2e/2b779bb26addcecbecf0e632324f79ec9b682b3338e9ee6951482fc6eae0/importlab-0.8.tar.gz"
     sha256 "b24b3aac3b073966ae42fb2d3a7764f3377b30bb72c0d411fe29134cc9276e86"
+  end
+
+  resource "markupsafe" do
+    url "https://files.pythonhosted.org/packages/1d/97/2288fe498044284f39ab8950703e88abbac2abbdf65524d576157af70556/MarkupSafe-2.1.1.tar.gz"
+    sha256 "7f91197cc9e48f989d12e4e6fbc46495c446636dfc81b9ccf50bb0ec74b91d4b"
+  end
+
+  resource "jinja2" do
+    url "https://files.pythonhosted.org/packages/7a/ff/75c28576a1d900e87eb6335b063fab47a8ef3c8b4d88524c4bf78f670cce/Jinja2-3.1.2.tar.gz"
+    sha256 "31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852"
   end
 
   resource "libcst" do

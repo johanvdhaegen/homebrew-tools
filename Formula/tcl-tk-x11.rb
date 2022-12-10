@@ -1,20 +1,14 @@
 class TclTkX11 < Formula
   desc "Tool Command Language"
   homepage "https://www.tcl-lang.org"
-  url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.12/tcl8.6.12-src.tar.gz"
-  mirror "https://fossies.org/linux/misc/tcl8.6.12-src.tar.gz"
-  sha256 "26c995dd0f167e48b11961d891ee555f680c175f7173ff8cb829f4ebcde4c1a6"
+  url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.13/tcl8.6.13-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/tcl8.6.13-src.tar.gz"
+  sha256 "43a1fae7412f61ff11de2cfd05d28cfc3a73762f354a417c62370a54e2caf066"
   license "TCL"
 
   livecheck do
     url :stable
     regex(%r{url=.*?/(?:tcl|tk).?v?(\d+(?:\.\d+)+)[._-]src\.t}i)
-  end
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/tcl-tk-x11-8.6.12"
-    sha256 big_sur:      "1f4d6c0935c75b24e063b64f519a20b528bed1a20b398df28e27cd4a13354d29"
-    sha256 x86_64_linux: "4918aeb8564220dd85c51ce19f67bb9075fc8c8288de235464a2b320a64ea496"
   end
 
   keg_only "it conflicts with tcl-tk"
@@ -33,8 +27,8 @@ class TclTkX11 < Formula
   end
 
   resource "tcllib" do
-    url "https://downloads.sourceforge.net/project/tcllib/tcllib/1.20/tcllib-1.20.tar.xz"
-    sha256 "199e8ec7ee26220e8463bc84dd55c44965fc8ef4d4ac6e4684b2b1c03b1bd5b9"
+    url "https://downloads.sourceforge.net/project/tcllib/tcllib/1.21/tcllib-1.21.tar.xz"
+    sha256 "10c7749e30fdd6092251930e8a1aa289b193a3b7f1abf17fee1d4fa89814762f"
   end
 
   resource "tcltls" do
@@ -43,9 +37,9 @@ class TclTkX11 < Formula
   end
 
   resource "tk" do
-    url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.12/tk8.6.12-src.tar.gz"
-    mirror "https://fossies.org/linux/misc/tk8.6.12-src.tar.gz"
-    sha256 "12395c1f3fcb6bed2938689f797ea3cdf41ed5cb6c4766eec8ac949560310630"
+    url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.13/tk8.6.13-src.tar.gz"
+    mirror "https://fossies.org/linux/misc/tk8.6.13-src.tar.gz"
+    sha256 "2e65fa069a23365440a3c56c556b8673b5e32a283800d8d9b257e3f584ce0675"
   end
 
   def install
@@ -56,6 +50,7 @@ class TclTkX11 < Formula
       --enable-64bit
     ]
 
+    ENV["TCL_PACKAGE_PATH"] = "#{HOMEBREW_PREFIX}/lib"
     cd "unix" do
       system "./configure", *args
       system "make"
@@ -113,6 +108,7 @@ class TclTkX11 < Formula
   end
 
   test do
+    assert_match "#{HOMEBREW_PREFIX}/lib", pipe_output("#{bin}/tclsh", "puts $auto_path\n")
     assert_equal "honk", pipe_output("#{bin}/tclsh", "puts honk\n").chomp
   end
 end

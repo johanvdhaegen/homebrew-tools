@@ -11,6 +11,12 @@ class TclTkX11 < Formula
     regex(%r{url=.*?/(?:tcl|tk).?v?(\d+(?:\.\d+)+)[._-]src\.t}i)
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/tcl-tk-x11-8.6.13"
+    sha256 monterey:     "bfa4167dfa4fb0169a445f728e4aba7b5c69dbe5849a5451e7b2071e63bab0e3"
+    sha256 x86_64_linux: "6690d57a5acc4754c0c488a45ed97f7ba4c710029f63da1be485eda2514ed671"
+  end
+
   keg_only "it conflicts with tcl-tk"
 
   depends_on "freetype" => :build

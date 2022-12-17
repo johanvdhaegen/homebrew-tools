@@ -4,16 +4,11 @@ class Dpic < Formula
   url "https://ece.uwaterloo.ca/~aplevich/dpic/dpic-2022.12.01.tar.gz"
   sha256 "041b9e13bb5c61707c3d5cb77b2686fbf679c4de8a8d048897b0c6655058ee14"
   license "BSD-2-Clause"
+  revision 1
 
   livecheck do
     url :homepage
     regex(/href=.*dpic[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/dpic-2022.12.01"
-    sha256 cellar: :any_skip_relocation, big_sur:      "203b32ad31247195649b0f4989ffc67e03d4d7e9a1b15ebbc163de8ace15990c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f5572ce3d4d4ce9fb27241b18d7c77e7bf59a01dff801f8f264b870bb8120ecb"
   end
 
   def install
@@ -32,7 +27,7 @@ class Dpic < Formula
         arrow "$y$" above
         line down G.ht from last arrow then left last arrow.c.x-S.x
         arrow to S.s
-        "$-\;$" below rjust
+        "$-\\;$" below rjust
       .PE
     EOS
     output = shell_output("#{bin}/dpic test.pic")

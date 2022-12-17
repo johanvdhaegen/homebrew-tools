@@ -4,16 +4,10 @@ class Pyink < Formula
   desc "Python code formatter"
   homepage "https://github.com/google/pyink"
 
-  url "https://files.pythonhosted.org/packages/81/60/3b391a128f6939d8681cc22d60f7a7c5f23ffb0e516094cd9ae6bf9e067e/pyink-22.10.0.tar.gz"
-  sha256 "b3dd1ad9ae37c187e927b2f48df769af58c187c6589bbd7aba3e2567884cb831"
+  url "https://files.pythonhosted.org/packages/5b/ab/ab01717715f73f9b4c968b400e9f1c8dfc1e004af5a80d4c61d60500a7f8/pyink-22.12.0.tar.gz"
+  sha256 "1726788f4b0f2c5a56bc693c765d86207d1141261d0134c970b53da8dac126e0"
   license "MIT"
   head "https://github.com/google/pyink.git", branch: "pyink"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pyink-22.10.0"
-    sha256 cellar: :any_skip_relocation, big_sur:      "9233c966e09f08d113c3f37111c946eeea43e7a590bcd50aab2dd6240feb189d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "071116254d0cbb52dabd510361d8d11651614e94956f2776f7f84da921369634"
-  end
 
   depends_on "python@3.10"
 
@@ -28,13 +22,13 @@ class Pyink < Formula
   end
 
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/24/9f/a9ae1e6efa11992dba2c4727d94602bd2f6ee5f0dedc29ee2d5d572c20f7/pathspec-0.10.1.tar.gz"
-    sha256 "7ace6161b621d31e7902eb6b5ae148d12cfd23f4a249b9ffb6b9fee12084323d"
+    url "https://files.pythonhosted.org/packages/32/1a/6baf904503c3e943cae9605c9c88a43b964dea5b59785cf956091b341b08/pathspec-0.10.3.tar.gz"
+    sha256 "56200de4077d9d0791465aa9095a01d421861e405b5096955051deefd697d6f6"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/ff/7b/3613df51e6afbf2306fc2465671c03390229b55e3ef3ab9dd3f846a53be6/platformdirs-2.5.2.tar.gz"
-    sha256 "58c8abb07dcb441e6ee4b11d8df0ac856038f944ab98b7be6b27b2a3c7feef19"
+    url "https://files.pythonhosted.org/packages/ec/4c/9af851448e55c57b30a13a72580306e628c3b431d97fdae9e0b8d4fa3685/platformdirs-2.6.0.tar.gz"
+    sha256 "b46ffafa316e6b83b47489d240ce17173f123a9b9c83282141c3daf26ad9ac2e"
   end
 
   resource "tomli" do
@@ -43,8 +37,8 @@ class Pyink < Formula
   end
 
   resource "black" do
-    url "https://files.pythonhosted.org/packages/a3/89/629fca2eea0899c06befaa58dc0f49d56807d454202bb2e54bd0d98c77f3/black-22.10.0.tar.gz"
-    sha256 "f513588da599943e0cde4e32cc9879e825d58720d6557062d1098c5ad80080e1"
+    url "https://files.pythonhosted.org/packages/a6/59/e873cc6807fb62c11131e5258ca15577a3b7452abad08dc49286cf8245e8/black-22.12.0.tar.gz"
+    sha256 "229351e5a18ca30f447bf724d007f890f97e13af070bb6ad4c0a441cd7596a2f"
   end
 
   def install

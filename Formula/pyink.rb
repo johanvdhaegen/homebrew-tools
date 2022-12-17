@@ -9,6 +9,12 @@ class Pyink < Formula
   license "MIT"
   head "https://github.com/google/pyink.git", branch: "pyink"
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pyink-22.12.0"
+    sha256 cellar: :any_skip_relocation, monterey:     "65b48b6ab0be7a24c7cf11d29626379f75c05b75161d725181a04f4312c18faf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "b94911701c083219544000a003985d4bd0bd88a6234f1ef12017b181568810a8"
+  end
+
   depends_on "python@3.10"
 
   resource "click" do

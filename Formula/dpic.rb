@@ -11,6 +11,12 @@ class Dpic < Formula
     regex(/href=.*dpic[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/dpic-2022.12.01_1"
+    sha256 cellar: :any_skip_relocation, monterey:     "de9ef30da2fdb61cbff93fc6fcb40a190e9489ce7d47b4f45fa2dc9ccf2b5f35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "405d101c285e6ea3a29155375bef70294adf4156aca6e17d26d75bc2313cc6da"
+  end
+
   def install
     ENV.append_path "PATH", "/Library/TeX/texbin"
     system "make", "DESTDIR=/", "PREFIX=#{prefix}", "MANDIR=#{man1}", "DOCDIR=#{doc}", "install"

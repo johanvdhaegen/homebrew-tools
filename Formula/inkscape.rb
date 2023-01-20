@@ -6,6 +6,7 @@ class Inkscape < Formula
   url "https://gitlab.com/inkscape/inkscape.git",
       tag:      "INKSCAPE_1_2_2",
       revision: "b0a8486541ac36327488da641d58a86bee2f07ad"
+  revision 1
   head "https://gitlab.com/inkscape/inkscape.git", branch: "master"
 
   bottle do
@@ -148,6 +149,8 @@ class Inkscape < Formula
     sha256 "1f42e66d8c245b4e6a6706e03ab541c7a6b72509dc37751a045da46dd1370fc8"
   end
 
+  patch :DATA
+
   def install
     ENV.cxx11
     ENV.append "LDFLAGS", "-liconv"
@@ -201,3 +204,16 @@ class Inkscape < Formula
     system "#{bin}/inkscape", "--debug-info"
   end
 end
+
+__END__
+diff --git a/src/object/algorithms/graphlayout.cpp b/src/object/algorithms/graphlayout.cpp
+--- a/src/object/algorithms/graphlayout.cpp
++++ b/src/object/algorithms/graphlayout.cpp
+@@ -14,6 +14,7 @@
+  */
+ 
+ #include <algorithm>
++#include <array>
+ #include <cstring>
+ #include <iostream>
+ #include <list>

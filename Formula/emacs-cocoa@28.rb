@@ -6,11 +6,7 @@ class EmacsCocoaAT28 < Formula
       revision: "0636e1066bbafcd8219d9a8e09301c77f875d78b"
   version "28.2.20221116"
   license "GPL-3.0-or-later"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@28-28.2.20221116"
-    sha256 monterey: "f9d9a1ec338bfb26865c64246694243d67d29757c285d3d94c62a46b518a2d5a"
-  end
+  revision 1
 
   keg_only :versioned_formula
 
@@ -127,32 +123,11 @@ class EmacsCocoaAT28 < Formula
     EOS
   end
 
-  plist_options manual: "emacs"
-
-  def plist
-    <<~EOS
-      <?xml version="1.0" encoding="UTF-8"?>
-      <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-      <plist version="1.0">
-      <dict>
-        <key>KeepAlive</key>
-        <true/>
-        <key>Label</key>
-        <string>#{plist_name}</string>
-        <key>ProgramArguments</key>
-        <array>
-          <string>#{opt_bin}/emacs</string>
-          <string>--fg-daemon</string>
-        </array>
-        <key>RunAtLoad</key>
-        <true/>
-        <key>StandardOutPath</key>
-        <string>/tmp/emacs.stdout.log</string>
-        <key>StandardErrorPath</key>
-        <string>/tmp/emacs.stderr.log</string>
-      </dict>
-      </plist>
-    EOS
+  service do
+    run [opt_bin/"emacs", "--fg-daemon"]
+    keep_alive true
+    error_log_path var/"log/emacs.log"
+    log_path var/"log/emacs.log"
   end
 
   test do

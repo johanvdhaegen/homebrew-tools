@@ -8,6 +8,7 @@ class OcamlAT413 < Formula
   url "https://caml.inria.fr/pub/distrib/ocaml-4.13/ocaml-4.13.1.tar.xz"
   sha256 "931d78dfad5bf938800c7a00eb647a27bbfe465a96a8eaae858ecbdb22e6fde8"
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
+  revision 1
 
   bottle do
     root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/ocaml@4.13-4.13.1"

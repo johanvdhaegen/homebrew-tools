@@ -11,9 +11,9 @@ class OcamlAT411 < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/ocaml@4.11-4.11.2"
-    sha256 big_sur:      "7c45848c646d0e04132047d89cdd4b58b9e913cdc6a75dab447ea7b7b00c69fe"
-    sha256 x86_64_linux: "99bcb9ed9c5b9f75af05bf505f6cd499391163bbe7b98b3ee710cf9efcaf3cb2"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/ocaml@4.11-4.11.2_1"
+    sha256 monterey:     "e8c05cbc784f790adb2d78a3ad20ba7f5f856075b59f957d8ddc6376fc9360a9"
+    sha256 x86_64_linux: "59a197678a2e14997b81eeba8219b0abbb303901a9fc7cd92bc7aeacaabd0697"
   end
 
   # The ocaml compilers embed prefix information in weird ways that the default

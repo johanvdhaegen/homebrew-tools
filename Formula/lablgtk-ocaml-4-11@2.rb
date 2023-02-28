@@ -5,6 +5,11 @@ class LablgtkOcaml411AT2 < Formula
   sha256 "43b2640b6b6d6ba352fa0c4265695d6e0b5acb8eb1da17290493e99ae6879b18"
   license "LGPL-2.1-only"
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/lablgtk-ocaml-4-11@2-2.18.12"
+    sha256 cellar: :any, monterey: "765362129034aa2226930c52c3c92b3968e01a7f909dfc4844073841b95eb16a"
+  end
+
   keg_only "conflicts with lablgtk"
 
   depends_on "pkg-config" => :build

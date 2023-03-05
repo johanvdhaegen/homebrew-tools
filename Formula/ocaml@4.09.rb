@@ -10,6 +10,12 @@ class OcamlAT409 < Formula
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
   revision 1
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/ocaml@4.09-4.09.1_1"
+    sha256 monterey:     "7a5144a70a474506beaee4c9e97ac318a4a286f74851f545dc08cef5b8a5ca40"
+    sha256 x86_64_linux: "6b5a41531379c51ee033b2d61fa672abfccab2d310b3a6fa594e4b995b8b7b03"
+  end
+
   # The ocaml compilers embed prefix information in weird ways that the default
   # brew detection doesn't find, and so needs to be explicitly blocked.
   pour_bottle? only_if: :default_prefix

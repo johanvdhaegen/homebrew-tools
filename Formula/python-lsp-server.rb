@@ -6,6 +6,7 @@ class PythonLspServer < Formula
   url "https://files.pythonhosted.org/packages/59/c5/fdb678be01f90450cb3c785eba8fbdd80361156c31da96137eb5c31f9a66/python-lsp-server-1.7.1.tar.gz"
   sha256 "67473bb301f35434b5fa8b21fc5ed5fac27dc8a8446ccec8bae456af52a0aef6"
   license "MIT"
+  revision 1
 
   depends_on "python@3.10"
 

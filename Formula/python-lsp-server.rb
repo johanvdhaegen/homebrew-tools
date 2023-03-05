@@ -10,8 +10,9 @@ class PythonLspServer < Formula
 
   bottle do
     root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.7.1_1"
-    sha256 cellar: :any_skip_relocation, monterey:     "f3c47e2f4cf31bbd15f9dd454e04a624f15421309de590ee43666e8e194d962f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "88460f80f133598a3b7e12a0711709a4a27963a12d3e7ce340e23d59acde594a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, monterey:     "2f070e763130b8662140117c6e3b6a5c7cabc69f6bd2a8a2cbde7aebe6cb4853"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5f884b35686d554827e6e2286c5703241575d2c8acf839ffa31e740c308451df"
   end
 
   depends_on "python@3.11"

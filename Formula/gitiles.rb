@@ -3,8 +3,8 @@ class Gitiles < Formula
   homepage "https://gerrit.googlesource.com/gitiles"
   url "https://gerrit.googlesource.com/gitiles",
       using:    :git,
-      revision: "13d82a7e004af9b79f36fa561fc1fc1845fd2a27"
-  version "1.0.0.20220908"
+      revision: "f4cbf4b8940003ff875109c23e0662cd4e8155a4"
+  version "1.2.0.20230125"
   license "Apache-2.0"
 
   bottle do
@@ -19,7 +19,8 @@ class Gitiles < Formula
         branch: "master"
   end
 
-  depends_on "bazel" => :build
+  depends_on "bazel@5" => :build
+  depends_on :macos  # TODO: fix bazel build failure on linux
   depends_on "openjdk@11"
 
   def install
@@ -30,7 +31,7 @@ class Gitiles < Formula
     ENV["BAZEL_WRKDIR"] = buildpath/"work"
 
     # Allow Gitiles to use current version of bazel
-    (buildpath / ".bazelversion").atomic_write Formula["bazel"].version
+    (buildpath / ".bazelversion").atomic_write Formula["bazel@5"].version
     # Remove bazel cache options
     inreplace Dir["**/.bazelrc"] do |f|
       f.gsub! "build --repository_cache=~/.gerritcodereview/bazel-cache/repository", ""

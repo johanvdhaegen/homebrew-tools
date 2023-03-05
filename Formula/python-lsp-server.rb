@@ -14,7 +14,7 @@ class PythonLspServer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "88460f80f133598a3b7e12a0711709a4a27963a12d3e7ce340e23d59acde594a"
   end
 
-  depends_on "python@3.10"
+  depends_on "python@3.11"
 
   resource "docstring-to-markdown" do
     url "https://files.pythonhosted.org/packages/e9/68/cac92c4f3f837fbeba17e8dfcdb7658fac6a1d56c007ed0d407087f1127e/docstring-to-markdown-0.11.tar.gz"

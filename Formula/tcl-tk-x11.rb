@@ -5,7 +5,7 @@ class TclTkX11 < Formula
   mirror "https://fossies.org/linux/misc/tcl8.6.13-src.tar.gz"
   sha256 "43a1fae7412f61ff11de2cfd05d28cfc3a73762f354a417c62370a54e2caf066"
   license "TCL"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -52,7 +52,6 @@ class TclTkX11 < Formula
   def install
     args = %W[
       --prefix=#{prefix}
-      --includedir=#{include}/tcl-tk
       --mandir=#{man}
       --enable-threads
       --enable-64bit

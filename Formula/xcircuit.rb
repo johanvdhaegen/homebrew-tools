@@ -11,6 +11,12 @@ class Xcircuit < Formula
     regex(/href=.*xcircuit[._-]v?(\d+(?:\.\d+)+)\.tgz"/i)
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/xcircuit-3.10.30_1"
+    sha256 monterey:     "5f00df27031bf56443fc33ced5d9446bca058ccd8a50151c5e3f9a842df1a34a"
+    sha256 x86_64_linux: "dd3e75c4b7abeec81a22df916ddd42465c6bdd2b0809dd7d9c91b196955fa444"
+  end
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "pkg-config" => :build

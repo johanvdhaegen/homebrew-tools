@@ -11,8 +11,8 @@ class Magic < Formula
   end
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/magic-8.3.323"
-    sha256 big_sur: "5a83b5b77b85c712b729be35c2f02217bfff58991ce2b7a0c0c66c5f2a3f4ced"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/magic-8.3.373"
+    sha256 monterey: "80a35f4afa4ef09d7623a25fdf3d22d189ab12a0a03ad62fce3e2fee82ba706b"
   end
 
   depends_on "pkg-config" => :build

@@ -13,9 +13,9 @@ class TclTkX11 < Formula
   end
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/tcl-tk-x11-8.6.13"
-    sha256 monterey:     "bfa4167dfa4fb0169a445f728e4aba7b5c69dbe5849a5451e7b2071e63bab0e3"
-    sha256 x86_64_linux: "6690d57a5acc4754c0c488a45ed97f7ba4c710029f63da1be485eda2514ed671"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/tcl-tk-x11-8.6.13_1"
+    sha256 monterey:     "ff8d59c764456aeab1c38e47e409e7cf83443235f4858232eadbfea164524c68"
+    sha256 x86_64_linux: "d5324c20085a7146e5a674649a920913387ae995f7cc0a3e0e3db9daeee7af23"
   end
 
   keg_only "it conflicts with tcl-tk"

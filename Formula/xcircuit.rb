@@ -12,9 +12,9 @@ class Xcircuit < Formula
   end
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/xcircuit-3.10.30_1"
-    sha256 monterey:     "5f00df27031bf56443fc33ced5d9446bca058ccd8a50151c5e3f9a842df1a34a"
-    sha256 x86_64_linux: "dd3e75c4b7abeec81a22df916ddd42465c6bdd2b0809dd7d9c91b196955fa444"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/xcircuit-3.10.30_2"
+    sha256 monterey:     "bbe68cc1a81543488b52973c827d3c4b780ccd4f63f50484ce6f8f095a6334b7"
+    sha256 x86_64_linux: "82790a015bf629937f5677aa087438d77284a2f4f4522ac806aaf1e7f965ad89"
   end
 
   depends_on "autoconf" => :build

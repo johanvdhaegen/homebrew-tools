@@ -4,7 +4,7 @@ class Xcircuit < Formula
   url "http://opencircuitdesign.com/xcircuit/archive/xcircuit-3.10.30.tgz"
   sha256 "b2f63cba605e79cc2a08714bf3888f7be7174384ed724db3c70f8bf25c36f554"
   license "GPL-2.0-only"
-  revision 2
+  revision 3
 
   livecheck do
     url "http://opencircuitdesign.com/xcircuit/archive/"

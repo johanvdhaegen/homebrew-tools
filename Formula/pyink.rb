@@ -4,8 +4,8 @@ class Pyink < Formula
   desc "Python code formatter"
   homepage "https://github.com/google/pyink"
 
-  url "https://files.pythonhosted.org/packages/5b/ab/ab01717715f73f9b4c968b400e9f1c8dfc1e004af5a80d4c61d60500a7f8/pyink-22.12.0.tar.gz"
-  sha256 "1726788f4b0f2c5a56bc693c765d86207d1141261d0134c970b53da8dac126e0"
+  url "https://files.pythonhosted.org/packages/38/a8/6e050ca1d2ef15df358822fc1943f5bf350dbd822a88ef724f3d13e6a4b9/pyink-23.3.1.tar.gz"
+  sha256 "c252688d2c20cd00033a4b8aa74781f059a06481701d88453b99ca844e9d5d87"
   license "MIT"
   head "https://github.com/google/pyink.git", branch: "pyink"
 
@@ -27,14 +27,19 @@ class Pyink < Formula
     sha256 "2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"
   end
 
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/47/d5/aca8ff6f49aa5565df1c826e7bf5e85a6df852ee063600c1efa5b932968c/packaging-23.0.tar.gz"
+    sha256 "b6ad297f8907de0fa2fe1ccbd26fdaf387f5f47c7275fedf8cce89f99446cf97"
+  end
+
   resource "pathspec" do
-    url "https://files.pythonhosted.org/packages/32/1a/6baf904503c3e943cae9605c9c88a43b964dea5b59785cf956091b341b08/pathspec-0.10.3.tar.gz"
-    sha256 "56200de4077d9d0791465aa9095a01d421861e405b5096955051deefd697d6f6"
+    url "https://files.pythonhosted.org/packages/95/60/d93628975242cc515ab2b8f5b2fc831d8be2eff32f5a1be4776d49305d13/pathspec-0.11.1.tar.gz"
+    sha256 "2798de800fa92780e33acca925945e9a19a133b715067cf165b8866c15a31687"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/ec/4c/9af851448e55c57b30a13a72580306e628c3b431d97fdae9e0b8d4fa3685/platformdirs-2.6.0.tar.gz"
-    sha256 "b46ffafa316e6b83b47489d240ce17173f123a9b9c83282141c3daf26ad9ac2e"
+    url "https://files.pythonhosted.org/packages/15/04/3f882b46b454ab374ea75425c6f931e499150ec1385a73e55b3f45af615a/platformdirs-3.2.0.tar.gz"
+    sha256 "d5b638ca397f25f979350ff789db335903d7ea010ab28903f57b27e1b16c2b08"
   end
 
   resource "tomli" do
@@ -43,8 +48,8 @@ class Pyink < Formula
   end
 
   resource "black" do
-    url "https://files.pythonhosted.org/packages/a6/59/e873cc6807fb62c11131e5258ca15577a3b7452abad08dc49286cf8245e8/black-22.12.0.tar.gz"
-    sha256 "229351e5a18ca30f447bf724d007f890f97e13af070bb6ad4c0a441cd7596a2f"
+    url "https://files.pythonhosted.org/packages/d6/36/66370f5017b100225ec4950a60caeef60201a10080da57ddb24124453fba/black-23.3.0.tar.gz"
+    sha256 "1c7b8d606e728a41ea1ccbd7264677e494e87cf630e399262ced92d4a8dac940"
   end
 
   def install

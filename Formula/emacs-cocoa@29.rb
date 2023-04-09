@@ -8,8 +8,8 @@ class EmacsCocoaAT29 < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@29-29.0.20230328"
-    sha256 monterey: "aa1910555e5ba820cf213f5a3c6f879d24850b6a74df7f1e49cb5af7e150a459"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@29-29.0.20230409"
+    sha256 monterey: "122f07431c836f6362dca962d8ddd0db7e6bfa9b374b0c5cee6861580cfe5478"
   end
 
   keg_only :versioned_formula

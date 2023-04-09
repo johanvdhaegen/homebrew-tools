@@ -7,9 +7,9 @@ class Yamlfmt < Formula
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/yamlfmt-0.7.1"
-    sha256 cellar: :any_skip_relocation, monterey:     "0954005607b55a3a2caac276f6c7daa4c9104557012f3b02699a26d86195f0ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1cdb963bb8c71c78154ddfe3b1eefe4ac01b13e12fbfbc1493cb97999fb9ca39"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/yamlfmt-0.8.0"
+    sha256 cellar: :any_skip_relocation, monterey:     "d8603121a870344cd73141b9465b6331a34836f147bdb6b1aa74036ddbe07870"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1310f0109da46078a0cbbbbba27926fcf8ebe78e794a272220d4f867531328d6"
   end
 
   head do

@@ -2,8 +2,8 @@ class Yamlfmt < Formula
   desc "Extensible command-line tool or library to format yaml files"
   homepage "https://github.com/google/yamlfmt"
   url "https://github.com/google/yamlfmt.git",
-      tag:      "v0.7.1",
-      revision: "e1c97a1b3ffd0f3cfb37685b6a046d5f6963f2d8"
+      tag:      "v0.8.0",
+      revision: "1efe935ac3cf8a2c419f58d8623df68a4eb6e009"
   license "Apache-2.0"
 
   bottle do

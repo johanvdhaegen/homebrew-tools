@@ -9,8 +9,8 @@ class EmacsCocoaAT28 < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@28-28.3.20230224_1"
-    sha256 monterey: "64b779c1ebdb455216a46a2faff847c0a701a94f96c8e1d47ce430f049064260"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@28-28.3.20230224_2"
+    sha256 monterey: "aa414c55e0015657b35ca1d5d91c6db9af9e3ebc6edf05f6627a1c3bb89fdf29"
   end
 
   keg_only :versioned_formula

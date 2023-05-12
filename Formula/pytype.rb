@@ -3,8 +3,8 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/a1/fa/4c9e0e72e3fcfbda5f392bc7f5c787b2032e6f98a98a4a7133e77e0213de/pytype-2023.3.31.tar.gz"
-  sha256 "fcd844a8d26e8ace69393839fec89333840ce9f05c88b82e6e3f2395315107e8"
+  url "https://files.pythonhosted.org/packages/f0/23/72a159accab6acd88635b3a9ed1656e16ea5611fa17961ea0448b75b4f53/pytype-2023.5.8.tar.gz"
+  sha256 "69bd26d3b0599acb7ebf4867db3f22239f8a7e4c58c8f9839b75b99216360d40"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git", branch: "main"
@@ -47,13 +47,13 @@ class Pytype < Formula
   end
 
   resource "mypy-extensions" do
-    url "https://files.pythonhosted.org/packages/63/60/0582ce2eaced55f65a4406fc97beba256de4b7a95a0034c6576458c6519f/mypy_extensions-0.4.3.tar.gz"
-    sha256 "2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"
+    url "https://files.pythonhosted.org/packages/98/a4/1ab47638b92648243faf97a5aeb6ea83059cc3624972ab6b8d2316078d3f/mypy_extensions-1.0.0.tar.gz"
+    sha256 "75dbf8955dc00442a438fc4d0666508a9a97b6bd41aa2f0ffe9d2f2725af0782"
   end
 
   resource "networkx" do
-    url "https://files.pythonhosted.org/packages/9e/9e/3d67df5d543ffd743f4ccb12c9c90929e4f48136e3062e15a6d971d91202/networkx-2.7.1.tar.gz"
-    sha256 "d1194ba753e5eed07cdecd1d23c5cd7a3c772099bd8dbd2fea366788cf4de7ba"
+    url "https://files.pythonhosted.org/packages/cd/16/c44e8550012735b8f21b3df7f39e8ba5a987fb764ac017ad5f3589735889/networkx-2.8.8.tar.gz"
+    sha256 "230d388117af870fce5647a3c52401fcf753e94720e6ea6b4197a5355648885e"
   end
 
   resource "ninja" do
@@ -69,8 +69,8 @@ class Pytype < Formula
   end
 
   resource "pybind11" do
-    url "https://files.pythonhosted.org/packages/56/d3/ebc2ad811d192b91d97a45d30b4d5bcb148275db668eada4b6f55781fdc7/pybind11-2.10.3.tar.gz"
-    sha256 "08cfe6d4f73746447cc85a400c8169a91608b8a00c5feecd8ff251a70565d12f"
+    url "https://files.pythonhosted.org/packages/bb/f9/a526ea001ecadd48d90ed7a61038b5ba732136d76b60357d23dc37521c58/pybind11-2.10.4.tar.gz"
+    sha256 "0bb621d3c45a049aa5923debb87c5c0e2668227905c55ebe8af722608d8ed927"
   end
 
   resource "pyyaml" do

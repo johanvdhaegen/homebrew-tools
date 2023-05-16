@@ -10,8 +10,8 @@ class Inkscape < Formula
   head "https://gitlab.com/inkscape/inkscape.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/inkscape-1.2.2_2"
-    sha256 monterey: "084c353c29b51690afdac6989c0d05b28087b00843a5006cb72adcea486b79fb"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/inkscape-1.2.2_3"
+    sha256 monterey: "6f093af7a361c46f9715907666d7872f247bd90a60bdc86bd0d266d7d09cf4f7"
   end
 
   depends_on "automake" => :build

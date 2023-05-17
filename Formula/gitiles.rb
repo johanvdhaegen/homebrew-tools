@@ -8,9 +8,8 @@ class Gitiles < Formula
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/gitiles-1.0.0.20220908"
-    sha256 cellar: :any_skip_relocation, big_sur:      "985e7de477190ef2b9ad0c1c6ef51dc587b28913c3d42a4ed7a28930146373a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "82d4157c91836aa7c7fc23c5cee34715b105ca36ffae58576579db96b8a62fd3"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/gitiles-1.2.0.20230125"
+    sha256 cellar: :any_skip_relocation, monterey: "50d0a23c54f9ef39b900139d15fe366d8545cb0599f9f8fa512f192b2f5168dd"
   end
 
   head do

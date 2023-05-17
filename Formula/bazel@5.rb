@@ -10,6 +10,12 @@ class BazelAT5 < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/bazel@5-5.4.1"
+    sha256 cellar: :any_skip_relocation, ventura:  "fd95645df5336432ddd17e295ad50abd30eafb2fd2b3638a56f6c7130fcb0de0"
+    sha256 cellar: :any_skip_relocation, monterey: "6f407e186a9971bfdf21e483556782847d50f0735ada135533d7142936bc66c8"
+  end
+
   keg_only :versioned_formula
 
   depends_on "python@3.11" => :build

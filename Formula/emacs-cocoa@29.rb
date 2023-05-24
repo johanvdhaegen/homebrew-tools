@@ -3,8 +3,8 @@ class EmacsCocoaAT29 < Formula
   homepage "https://www.gnu.org/software/emacs/"
   url "https://github.com/emacs-mirror/emacs.git",
       branch:   "emacs-29",
-      revision: "f8d9e40d2c1d127a125adc097d985a0b6964a86c"
-  version "29.0.20230518"
+      revision: "212884f2bfed7f00e58aad183edd20ecc2a23e71"
+  version "29.0.20230523"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -81,7 +81,7 @@ class EmacsCocoaAT29 < Formula
 
     ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
     if build.with?("native-compilation")
-      ENV.append_path "CFLAGS", "-I#{Formula["libgccjit"].opt_include}"
+      ENV.append "CFLAGS", "-I#{Formula["libgccjit"].opt_include}"
       ENV.append "LIBS", "-L#{Formula["libgccjit"].opt_lib}/gcc/#{Formula["libgccjit"].version.major}"
     end
     system "./autogen.sh"

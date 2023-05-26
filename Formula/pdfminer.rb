@@ -6,6 +6,7 @@ class Pdfminer < Formula
   url "https://files.pythonhosted.org/packages/ac/6e/89c532d108e362cbaf76fdb972e7a5e85723c225f08e1646fb86878d4f7f/pdfminer.six-20221105.tar.gz"
   sha256 "8448ab7b939d18b64820478ecac5394f482d7a79f5f7eaa7703c6c959c175e1d"
   license "MIT"
+  revision 1
 
   head "https://github.com/pdfminer/pdfminer.six.git", branch: "develop"
 

@@ -7,7 +7,7 @@ class BazelAT5 < Formula
 
   livecheck do
     url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    regex(/^v?(5(?:\.\d+)+)$/i)
   end
 
   bottle do

@@ -11,9 +11,10 @@ class Pdfminer < Formula
   head "https://github.com/pdfminer/pdfminer.six.git", branch: "develop"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pdfminer-20221105"
-    sha256 cellar: :any,                 big_sur:      "97060342764a4d9f1e4871214ce485dab7a49a06c03536c7bad4cb52ebf5c5ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "3dd7d9778e42fdb55b8ac6d4c848432dc719396ae2950c64d11c37d9e8ff8890"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pdfminer-20221105_1"
+    sha256 cellar: :any,                 ventura:      "069f42133097424874a38db0fb67ebf88179868f88235cf3a2cf7fbe10726c82"
+    sha256 cellar: :any,                 monterey:     "16f1f8f7732c62b81434e0459f479aa9e863e83990a3ca4723f418304a69e1d5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "6b10a2503566d934d41a35bfe26a489511838057460c14805466b8d5ed7c2bfe"
   end
 
   depends_on "rust" => :build # for cryptography

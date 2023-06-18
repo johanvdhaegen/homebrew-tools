@@ -6,7 +6,7 @@ class Inkscape < Formula
   url "https://gitlab.com/inkscape/inkscape.git",
       tag:      "INKSCAPE_1_2_2",
       revision: "b0a8486541ac36327488da641d58a86bee2f07ad"
-  revision 3
+  revision 4
   head "https://gitlab.com/inkscape/inkscape.git", branch: "master"
 
   bottle do

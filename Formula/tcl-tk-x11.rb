@@ -5,7 +5,7 @@ class TclTkX11 < Formula
   mirror "https://fossies.org/linux/misc/tcl8.6.13-src.tar.gz"
   sha256 "43a1fae7412f61ff11de2cfd05d28cfc3a73762f354a417c62370a54e2caf066"
   license "TCL"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -24,13 +24,13 @@ class TclTkX11 < Formula
   depends_on "pkg-config" => :build
   depends_on "libx11"
   depends_on "libxext"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
   resource "critcl" do
-    url "https://github.com/andreas-kupries/critcl/archive/3.1.18.1.tar.gz"
-    sha256 "51bc4b099ecf59ba3bada874fc8e1611279dfd30ad4d4074257084763c49fd86"
+    url "https://github.com/andreas-kupries/critcl/archive/refs/tags/3.2.tar.gz"
+    sha256 "20061944e28dda4ab2098b8f77682cab77973f8961f6fa60b95bcc09a546789e"
   end
 
   resource "tcllib" do
@@ -47,11 +47,26 @@ class TclTkX11 < Formula
     url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.13/tk8.6.13-src.tar.gz"
     mirror "https://fossies.org/linux/misc/tk8.6.13-src.tar.gz"
     sha256 "2e65fa069a23365440a3c56c556b8673b5e32a283800d8d9b257e3f584ce0675"
+
+    # Bugfix for ttk::ThemeChanged errors; will be in Tk 8.6.14
+    # See https://core.tcl-lang.org/tk/info/310c74ecf4
+    patch :p0 do
+      url "https://raw.githubusercontent.com/macports/macports-ports/db4f8f774193/x11/tk/files/fix-themechanged-error.patch"
+      sha256 "2a75496dc597dec9d25401ab002f290be74d4acd5566793c5114e75a154c280a"
+    end
+
+    # Bugfix for KVO crash; will be in Tk 8.6.14
+    # See https://core.tcl-lang.org/tk/info/ef5d3e29a4
+    patch :p0 do
+      url "https://raw.githubusercontent.com/macports/macports-ports/6a93695d61d3/x11/tk/files/fix-kvo-crash.diff"
+      sha256 "ec9a9234b4a326e5621fe78e078c29aa4784b6dc88c59a43d828639ebae0af41"
+    end
   end
 
   def install
     args = %W[
       --prefix=#{prefix}
+      --includedir=#{include}/tcl-tk
       --mandir=#{man}
       --enable-threads
       --enable-64bit
@@ -100,14 +115,14 @@ class TclTkX11 < Formula
                 " -Wl,-undefined,dynamic_lookup "
       end
       system "./configure", "--with-ssl=openssl",
-                            "--with-openssl-dir=#{Formula["openssl@1.1"].opt_prefix}",
+                            "--with-openssl-dir=#{Formula["openssl@3"].opt_prefix}",
                             "--prefix=#{prefix}",
                             "--mandir=#{man}"
       system "make", "install"
     end
 
-    # Conflicts with perl
-    mv man/"man3/Thread.3", man/"man3/ThreadTclTk.3"
+    # Rename all section 3 man pages in the Debian/Ubuntu style, to avoid conflicts
+    man3.glob("*.3") { |file| file.rename("#{file}tcl") }
 
     # Use the sqlite-analyzer formula instead
     # https://github.com/Homebrew/homebrew-core/pull/82698

@@ -3,8 +3,8 @@ class PythonLspServer < Formula
 
   desc "Python Language Server for the Language Server Protocol"
   homepage "https://github.com/python-lsp/python-lsp-server/"
-  url "https://files.pythonhosted.org/packages/7f/38/9c7196124b2b36088b8c0b83fe4c117f02dd0bfae64473b51cd09628af08/python-lsp-server-1.8.0.tar.gz"
-  sha256 "807b0347cf83f02cbd9113a68624ac5dbf8b01854a3b11dd03c3bbbdff4e5d89"
+  url "https://files.pythonhosted.org/packages/23/1f/41be2a7fd29d29bad4f186e25fa28e1faa121688d18a9b84cd8eb9b6fd9a/python-lsp-server-1.8.2.tar.gz"
+  sha256 "fd85e1c6ad95c1d276c82a33c2c85898f110afc3c7bfeaced79c0df095076fd1"
   license "MIT"
 
   bottle do
@@ -17,8 +17,8 @@ class PythonLspServer < Formula
   depends_on "python@3.11"
 
   resource "astroid" do
-    url "https://files.pythonhosted.org/packages/d5/05/2c2ef3504e32a22b224614d45c590abb5be417cfed47ee63bf6089c3ae56/astroid-2.15.6.tar.gz"
-    sha256 "903f024859b7c7687d7a7f3a3f73b17301f8e42dfd9cc9df9d4418172d3e2dbd"
+    url "https://files.pythonhosted.org/packages/58/3d/c18b0854d0d2eb3aca20c149cff5c90e6b84a5366066768d98636f5045ed/astroid-2.15.8.tar.gz"
+    sha256 "6c107453dffee9055899705de3c9ead36e74119cee151e5a9aaf7f0b0e020a6a"
   end
 
   resource "dill" do
@@ -27,8 +27,8 @@ class PythonLspServer < Formula
   end
 
   resource "docstring-to-markdown" do
-    url "https://files.pythonhosted.org/packages/52/c2/6f73c08b97bacd1242835bdca1cfc123b059eb15af9350eb1eb5d58868fc/docstring-to-markdown-0.12.tar.gz"
-    sha256 "40004224b412bd6f64c0f3b85bb357a41341afd66c4b4896709efa56827fb2bb"
+    url "https://files.pythonhosted.org/packages/2b/11/4be3230b6ebaeb31b2406876367243780d10a28da3a881a45a960ed4469b/docstring-to-markdown-0.13.tar.gz"
+    sha256 "3025c428638ececae920d6d26054546a20335af3504a145327e657e7ad7ce1ce"
   end
 
   resource "importlib-metadata" do
@@ -42,8 +42,8 @@ class PythonLspServer < Formula
   end
 
   resource "jedi" do
-    url "https://files.pythonhosted.org/packages/57/38/4ac6f712c308de92af967142bd67e9d27e784ea5a3524c9e84f33507d82f/jedi-0.19.0.tar.gz"
-    sha256 "bcf9894f1753969cbac8022a8c2eaee06bfa3724e4192470aaffe7eb6272b0c4"
+    url "https://files.pythonhosted.org/packages/d6/99/99b493cec4bf43176b678de30f81ed003fd6a647a301b9c927280c600f0a/jedi-0.19.1.tar.gz"
+    sha256 "cf0496f3651bc65d7174ac1b7d043eff454892c708a87d1b683e57b569927ffd"
   end
 
   resource "lazy-object-proxy" do
@@ -62,8 +62,8 @@ class PythonLspServer < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/dc/99/c922839819f5d00d78b3a1057b5ceee3123c69b2216e776ddcb5a4c265ff/platformdirs-3.10.0.tar.gz"
-    sha256 "b45696dab2d7cc691a3226759c0d3b00c47c8b6e293d96f6436f733303f77f6d"
+    url "https://files.pythonhosted.org/packages/d3/e3/aa14d6b2c379fbb005993514988d956f1b9fdccd9cbe78ec0dbe5fb79bf5/platformdirs-3.11.0.tar.gz"
+    sha256 "cf8ee52a3afdb965072dcc652433e0c7e3e40cf5ea1477cd4b3b1d2eb75495b3"
   end
 
   resource "pluggy" do
@@ -72,8 +72,8 @@ class PythonLspServer < Formula
   end
 
   resource "pycodestyle" do
-    url "https://files.pythonhosted.org/packages/c1/2d/022c78a6b3f591205e52b4d25c93b7329280f752b36ba2fc1377cbf016cd/pycodestyle-2.11.0.tar.gz"
-    sha256 "259bcc17857d8a8b3b4a2327324b79e5f020a13c16074670f9c8c8f872ea76d0"
+    url "https://files.pythonhosted.org/packages/34/8f/fa09ae2acc737b9507b5734a9aec9a2b35fa73409982f57db1b42f8c3c65/pycodestyle-2.11.1.tar.gz"
+    sha256 "41ba0e7afc9752dfb53ced5489e89f8186be00e599e712660695b7a75ff2663f"
   end
 
   resource "pydocstyle" do
@@ -87,13 +87,13 @@ class PythonLspServer < Formula
   end
 
   resource "pylint" do
-    url "https://files.pythonhosted.org/packages/19/07/24a57a4b12b8ea09f61436db7b312676aa2e526a34dbd0f2866e3e563e1a/pylint-2.17.5.tar.gz"
-    sha256 "f7b601cbc06fef7e62a754e2b41294c2aa31f1cb659624b9a85bcba29eaf8252"
+    url "https://files.pythonhosted.org/packages/a3/e9/21f9ce3e4b81eef011be070a29f8a5c193e2488ed8713a898baa4e8b3362/pylint-2.17.7.tar.gz"
+    sha256 "f4fcac7ae74cfe36bc8451e931d8438e4a476c20314b1101c458ad0f05191fad"
   end
 
   resource "python-lsp-jsonrpc" do
-    url "https://files.pythonhosted.org/packages/ee/83/5a5ccfe879e7dfdc650168bb2fbe33d43afef735ea1ae62ee946ae1f86ee/python-lsp-jsonrpc-1.1.1.tar.gz"
-    sha256 "05cc914aa5ee2e7f52eb762014ba4996a8cc52459bfddb81fb96c56ace927908"
+    url "https://files.pythonhosted.org/packages/48/b6/fd92e2ea4635d88966bb42c20198df1a981340f07843b5e3c6694ba3557b/python-lsp-jsonrpc-1.1.2.tar.gz"
+    sha256 "4688e453eef55cd952bff762c705cedefa12055c0aec17a06f595bcc002cc912"
   end
 
   resource "snowballstemmer" do
@@ -122,13 +122,13 @@ class PythonLspServer < Formula
   end
 
   resource "yapf" do
-    url "https://files.pythonhosted.org/packages/e0/7a/9020bfa17d294b5d0d8bf26bb175ad4c90d1e3ad4039001f621ef046cb06/yapf-0.40.1.tar.gz"
-    sha256 "958587eb5c8ec6c860119a9c25d02addf30a44f75aa152a4220d30e56a98037c"
+    url "https://files.pythonhosted.org/packages/b9/14/c1f0ebd083fddd38a7c832d5ffde343150bd465689d12c549c303fbcd0f5/yapf-0.40.2.tar.gz"
+    sha256 "4dab8a5ed7134e26d57c1647c7483afb3f136878b579062b786c9ba16b94637b"
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/e2/45/f3b987ad5bf9e08095c1ebe6352238be36f25dd106fde424a160061dce6d/zipp-3.16.2.tar.gz"
-    sha256 "ebc15946aa78bd63458992fc81ec3b6f7b1e92d51c35e6de1c3804e73b799147"
+    url "https://files.pythonhosted.org/packages/58/03/dd5ccf4e06dec9537ecba8fcc67bbd4ea48a2791773e469e73f94c3ba9a6/zipp-3.17.0.tar.gz"
+    sha256 "84e64a1c28cf7e91ed2078bb8cc8c259cb19b76942096c8d7b84947690cabaf0"
   end
 
   def install

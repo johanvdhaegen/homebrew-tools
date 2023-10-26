@@ -64,7 +64,7 @@ class Pytype < Formula
   resource "ninja-src" do
     # unix_source_url from NinjaUrls.cmake in ninja python archive
     # https://github.com/scikit-build/ninja-python-distributions/blob/master/NinjaUrls.cmake
-    url "https://github.com/Kitware/ninja/archive/v1.11.1.g95dee.kitware.jobserver-1.tar.gz"
+    url "https://github.com/Kitware/ninja/archive/refs/tags/v1.11.1.g95dee.kitware.jobserver-1.tar.gz"
     sha256 "7ba84551f5b315b4270dc7c51adef5dff83a2154a3665a6c9744245c122dd0db"
   end
 
@@ -74,8 +74,8 @@ class Pytype < Formula
   end
 
   resource "pyyaml" do
-    url "https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/PyYAML-6.0.tar.gz"
-    sha256 "68fb519c14306fec9720a2a5b45bc9f0c8d1b9c72adf45c37baedfcd949c35a2"
+    url "https://files.pythonhosted.org/packages/cd/e5/af35f7ea75cf72f2cd079c95ee16797de7cd71f29ea7c68ae5ce7be1eda0/PyYAML-6.0.1.tar.gz"
+    sha256 "bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43"
   end
 
   resource "tabulate" do
@@ -135,14 +135,6 @@ class Pytype < Formula
     # (all requirements have been installed at this point)
     rm "pyproject.toml"
     venv.pip_install_and_link buildpath
-
-    # fix pytype permissions: not all pytype files are world readable
-    chmod_R "ugo+r", libexec/"lib/python#{pyver}/site-packages/pytype",
-            verbose: true
-    pytype_version = stable.url.slice(/\d+\.\d+\.\d+/)
-    chmod_R "ugo+r",
-            libexec/"lib/python#{pyver}/site-packages/pytype-#{pytype_version}-py#{pyver}.egg-info",
-            verbose: true
 
     bin.each_child do |f|
       next unless f.symlink?

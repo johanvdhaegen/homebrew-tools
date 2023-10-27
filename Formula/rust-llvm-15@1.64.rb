@@ -2,6 +2,7 @@ class RustLlvm15AT164 < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   stable do
     url "https://static.rust-lang.org/dist/rustc-1.64.0-src.tar.gz"

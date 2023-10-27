@@ -1,8 +1,8 @@
 class Xschem < Formula
   desc "Schematic editor for VLSI/Asic/Analog custom designs"
   homepage "https://github.com/StefanSchippers/xschem"
-  url "https://github.com/StefanSchippers/xschem/archive/refs/tags/3.4.3.tar.gz"
-  sha256 "f9a3e24efb821b0dc52b31a19010bca2462f4633cc94feca5efa993c7dd9b734"
+  url "https://github.com/StefanSchippers/xschem/archive/refs/tags/3.4.4.tar.gz"
+  sha256 "ce0e93a13ff5d77c0deb5234101573a85af622dad3fcb0e786de36943bbb3c79"
   license "GPL-2.0-or-later"
 
   bottle do

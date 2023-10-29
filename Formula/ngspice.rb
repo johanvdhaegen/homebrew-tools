@@ -10,6 +10,13 @@ class Ngspice < Formula
     regex(%r{url=.*?/ngspice[._-]v?(\d+(?:\.\d+)*)\.t}i)
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/ngspice-41"
+    sha256 ventura:      "dc8833efb67f34d46054a91326124207a4f9efccfbab51bfecf99f37e3e6fe15"
+    sha256 monterey:     "e91c2f71aaef1b2fdcebba323909d8885e012f469fd78165f9c359e4b99e403d"
+    sha256 x86_64_linux: "a22e3b3155ab6e51fabea1087f65ce2fc6d0833e8c00d47f68af15cdf381c6c1"
+  end
+
   head do
     url "https://git.code.sf.net/p/ngspice/ngspice.git", branch: "master"
   end

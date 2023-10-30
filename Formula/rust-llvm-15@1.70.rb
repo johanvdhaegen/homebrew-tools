@@ -14,6 +14,13 @@ class RustLlvm15AT170 < Formula
     end
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/rust-llvm-15@1.70-1.70.0"
+    sha256 cellar: :any,                 ventura:      "e56458d847743b922347592826f8aa601037cbc263e3a6c98206adc76d038b9d"
+    sha256 cellar: :any,                 monterey:     "67cf43bafe2be292f468c7dc034e2f840ce9ea12922c0a2538c229f326ffbded"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "3d290811952874e6f315722ce7d7d8acc57dcaf99a118d31c6540b46fe4f6b97"
+  end
+
   head do
     url "https://github.com/rust-lang/rust.git", branch: "master"
 

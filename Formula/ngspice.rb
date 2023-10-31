@@ -4,6 +4,7 @@ class Ngspice < Formula
   url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/41/ngspice-41.tar.gz"
   sha256 "1ce219395d2f50c33eb223a1403f8318b168f1e6d1015a7db9dbf439408de8c4"
   license :cannot_represent
+  revision 1
 
   livecheck do
     url :stable
@@ -25,11 +26,9 @@ class Ngspice < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "bison" => :build
   depends_on "libtool" => :build
   depends_on "fftw"
   depends_on "readline"
-  depends_on "tcl-tk"
 
   uses_from_macos "bison" => :build
 
@@ -37,14 +36,23 @@ class Ngspice < Formula
     system "./autogen.sh"
 
     args = %w[
-      --with-readline=yes
+      --disable-debug
       --enable-xspice
       --enable-cider
       --enable-pss
       --without-x
     ]
+    args_cmd_line = %w[
+      --with-readline=yes
+    ]
+    args_shared = %w[
+      --with-ngshared
+    ]
 
-    system "./configure", *std_configure_args, *args
+    system "./configure", *std_configure_args, *args, *args_shared
+    system "make", "install"
+    system "make", "clean"
+    system "./configure", *std_configure_args, *args, *args_cmd_line
     system "make", "install"
   end
 
@@ -62,5 +70,18 @@ class Ngspice < Formula
       .end
     EOS
     system "#{bin}/ngspice", "test.cir"
+
+    (testpath/"test.cpp").write <<~EOS
+      #include <cstdlib>
+      #include <ngspice/sharedspice.h>
+      int ng_exit(int status, bool immediate, bool quitexit, int ident, void *userdata) {
+        return status;
+      }
+      int main() {
+        return ngSpice_Init(NULL, NULL, ng_exit, NULL, NULL, NULL, NULL);
+      }
+    EOS
+    system ENV.cc, "test.cpp", "-I#{include}", "-L#{lib}", "-lngspice", "-o", "test"
+    system "./test"
   end
 end

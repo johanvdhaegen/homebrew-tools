@@ -12,10 +12,10 @@ class Ngspice < Formula
   end
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/ngspice-41"
-    sha256 ventura:      "dc8833efb67f34d46054a91326124207a4f9efccfbab51bfecf99f37e3e6fe15"
-    sha256 monterey:     "e91c2f71aaef1b2fdcebba323909d8885e012f469fd78165f9c359e4b99e403d"
-    sha256 x86_64_linux: "a22e3b3155ab6e51fabea1087f65ce2fc6d0833e8c00d47f68af15cdf381c6c1"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/ngspice-41_1"
+    sha256 ventura:      "6d25215854b6cd4f0b7688d961d86b2bddabb353fc8a55016cfda90321879b2f"
+    sha256 monterey:     "7ccad4809d12ffcddcbeae231493011981dd394a1101d72b68f703589498c70d"
+    sha256 x86_64_linux: "bb1e4d0c2180411be3e608bbdb56d4fb9ebbe6169c49de241ded3739431d31a9"
   end
 
   head do

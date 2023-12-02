@@ -10,10 +10,10 @@ class Pytype < Formula
   head "https://github.com/google/pytype.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pytype-2023.10.24"
-    sha256 cellar: :any,                 ventura:      "082b74b20b18d8efb2dfcd4335c8b5e130c11110a5a74e486a19d7b1eb7ac61a"
-    sha256 cellar: :any,                 monterey:     "25f9949df70fa6c17c0564126068a2d0189d71a10d6b73b49acaad543ca33581"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "13885de8fe18a818ba2f2617fcdd15a7cc5ab4311a51e3b763a5e952a21e8f4c"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pytype-2023.11.29"
+    sha256 cellar: :any,                 ventura:      "5c10a1dcc7f99a2a00eeec28d8ed50abfa8029b1f9ee1a9802fb4946014bddfc"
+    sha256 cellar: :any,                 monterey:     "61070c7f6dd685e5127b03cff70739698badd1e3c61805dd109b39e341ad1f35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "02168a906984a5ddb1a57bc2f44ffd07ae0712a79b099dfb4b2e219172bb3f9f"
   end
 
   depends_on "cmake" => :build

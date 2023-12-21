@@ -3,8 +3,8 @@ class Gitiles < Formula
   homepage "https://gerrit.googlesource.com/gitiles"
   url "https://gerrit.googlesource.com/gitiles",
       using:    :git,
-      revision: "f4cbf4b8940003ff875109c23e0662cd4e8155a4"
-  version "1.2.0.20230125"
+      revision: "6529af296fb15357fd4a153b5407ae2759d90eee"
+  version "1.3.0"
   license "Apache-2.0"
 
   bottle do
@@ -19,7 +19,7 @@ class Gitiles < Formula
   end
 
   depends_on "bazel@5" => :build
-  depends_on :macos  # TODO: fix bazel build failure on linux
+  depends_on :macos # TODO: fix bazel build failure on linux
   depends_on "openjdk@11"
 
   def install
@@ -60,7 +60,7 @@ class Gitiles < Formula
   end
 
   test do
-    port = "8080"  # fixed by gitiles
+    port = "8080" # fixed by gitiles
     pid = fork do
       exec "#{bin}/gitiles"
     end

@@ -3,14 +3,9 @@ class Gitiles < Formula
   homepage "https://gerrit.googlesource.com/gitiles"
   url "https://gerrit.googlesource.com/gitiles",
       using:    :git,
-      revision: "f4cbf4b8940003ff875109c23e0662cd4e8155a4"
-  version "1.2.0.20230125"
+      revision: "484ec1a0b4d64c13004452da37d02663640a3a8d"
+  version "1.3.0.20231011"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/gitiles-1.2.0.20230125"
-    sha256 cellar: :any_skip_relocation, monterey: "50d0a23c54f9ef39b900139d15fe366d8545cb0599f9f8fa512f192b2f5168dd"
-  end
 
   head do
     url "https://gerrit.googlesource.com/gitiles",
@@ -18,8 +13,8 @@ class Gitiles < Formula
         branch: "master"
   end
 
-  depends_on "bazel@5" => :build
-  depends_on :macos  # TODO: fix bazel build failure on linux
+  depends_on "bazel" => :build
+  depends_on :macos # TODO: fix bazel build failure on linux
   depends_on "openjdk@11"
 
   def install
@@ -30,7 +25,7 @@ class Gitiles < Formula
     ENV["BAZEL_WRKDIR"] = buildpath/"work"
 
     # Allow Gitiles to use current version of bazel
-    (buildpath / ".bazelversion").atomic_write Formula["bazel@5"].version
+    (buildpath / ".bazelversion").atomic_write Formula["bazel"].version.to_s
     # Remove bazel cache options
     inreplace Dir["**/.bazelrc"] do |f|
       f.gsub! "build --repository_cache=~/.gerritcodereview/bazel-cache/repository", ""
@@ -60,7 +55,7 @@ class Gitiles < Formula
   end
 
   test do
-    port = "8080"  # fixed by gitiles
+    port = "8080" # fixed by gitiles
     pid = fork do
       exec "#{bin}/gitiles"
     end

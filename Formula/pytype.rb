@@ -3,8 +3,8 @@ class Pytype < Formula
 
   desc "Static analyzer for Python code"
   homepage "https://github.com/google/pytype/"
-  url "https://files.pythonhosted.org/packages/a1/d6/d52eb331038730219ecc98e7bb52ec525713fd13f3fb895305d4ae1fea2f/pytype-2023.11.29.tar.gz"
-  sha256 "9df2a2f72c7d7ec8596c0238363512bc58210c6d455635c6bdc56f25f22505dd"
+  url "https://files.pythonhosted.org/packages/8f/0e/ca94f77cb8d3618e601a738afc98b722a7de183f5dc9d106b161b9cd3e5f/pytype-2023.12.18.tar.gz"
+  sha256 "a3ffb2dcee71ddf95b4321b8eff066826a02e99336baa4d47851091a6bcc3457"
   license "Apache-2.0"
 
   head "https://github.com/google/pytype.git", branch: "main"
@@ -105,8 +105,8 @@ class Pytype < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/1f/7a/8b94bb016069caa12fc9f587b28080ac33b4fbb8ca369b98bc0a4828543e/typing_extensions-4.8.0.tar.gz"
-    sha256 "df8e4339e9cb77357558cbdbceca33c303714cf861d1eef15e1070055ae8b7ef"
+    url "https://files.pythonhosted.org/packages/0c/1d/eb26f5e75100d531d7399ae800814b069bc2ed2a7410834d57374d010d96/typing_extensions-4.9.0.tar.gz"
+    sha256 "23478f88c37f27d76ac8aee6c905017a143b0b1b886c3c9f66bc2fd94f9f5783"
   end
 
   resource "typing-inspect" do

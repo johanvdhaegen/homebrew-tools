@@ -7,9 +7,8 @@ class Copybara < Formula
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/copybara-2023-07-06"
-    sha256 cellar: :any_skip_relocation, ventura:  "93542e2a1f1672efff00c2018517e05287a3b1989d110507aa146c626e15d75b"
-    sha256 cellar: :any_skip_relocation, monterey: "b1f2f4233be1d2d7baffcdaa099c85dcc5f0bc3286c9dfcd65fe44451f0cf759"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/copybara-2023-12-14"
+    sha256 cellar: :any_skip_relocation, ventura: "0dc881c006ed32d56587a44caa5a5caf6ea2cb32c9585ba7f7c5ecff46090ad2"
   end
 
   head do

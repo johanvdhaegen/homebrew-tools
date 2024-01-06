@@ -11,10 +11,9 @@ class Dpic < Formula
   end
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/dpic-2023.06.01"
-    sha256 cellar: :any_skip_relocation, ventura:      "9c7e9ebbf7455d0476fefb40117813b3040454ac3b92426e02bf578bd42c5814"
-    sha256 cellar: :any_skip_relocation, monterey:     "ed7b1d78637bac48f2715249d2034c181f609df763f79d466f03b8e710f6093f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ee89347898e45c0ac69026bc2d40a3ff90d8baeaafacadf286350c51bbf1f3d2"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/dpic-2024.01.01"
+    sha256 cellar: :any_skip_relocation, ventura:      "6e45ebbce7a600d9fc3fbed015eacde89ef76bce3dc09f151cdbbc43d6119bd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "52eca62dc474a478012f4772bc8ba56cc9d7d262f5fbe0da46d35b322f5b9211"
   end
 
   def install

@@ -7,11 +7,9 @@ class Gitiles < Formula
   version "1.3.0.20231011"
   license "Apache-2.0"
 
-  head do
-    url "https://gerrit.googlesource.com/gitiles",
-        using:  :git,
-        branch: "master"
-  end
+  head "https://gerrit.googlesource.com/gitiles",
+       using:  :git,
+       branch: "master"
 
   depends_on "bazel" => :build
   depends_on :macos # TODO: fix bazel build failure on linux

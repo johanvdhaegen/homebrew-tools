@@ -6,13 +6,11 @@ class Copybara < Formula
   version "2023-12-14"
   license "Apache-2.0"
 
+  head "https://github.com/google/copybara.git", branch: "master"
+
   bottle do
     root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/copybara-2023-12-14"
     sha256 cellar: :any_skip_relocation, ventura: "0dc881c006ed32d56587a44caa5a5caf6ea2cb32c9585ba7f7c5ecff46090ad2"
-  end
-
-  head do
-    url "https://github.com/google/copybara.git", branch: "master"
   end
 
   depends_on "bazel" => :build

@@ -8,10 +8,10 @@ class PythonLspServer < Formula
   license "MIT"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.9.0_1"
-    sha256 cellar: :any_skip_relocation, ventura:      "476313ab999f83e244b1b4c021cebef279e20831307df66bc4a8c5f9f563e128"
-    sha256 cellar: :any_skip_relocation, monterey:     "d104c8a3d08e7b8d6a00fd8e49650cf6c45e1b98497b061e17cf79ef8fc68787"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ff773970bc81f7332fb29dcf99f819000e6b6cd79c2461db038db769ba80cafc"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.10.0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "e27e990c9f5c9399493e33820817f26e59027aa383d780e78a31e0a7359d18e1"
+    sha256 cellar: :any_skip_relocation, ventura:      "ddb775d348c1ac138f3e15355fc24be7e9e230948dc7d0dcdf959d3f7cc117be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "c19b008a25ff15121b955a997f213cf4a224ca7f11abe13c749acf631770cb08"
   end
 
   depends_on "python@3.11"

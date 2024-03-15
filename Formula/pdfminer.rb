@@ -6,6 +6,7 @@ class Pdfminer < Formula
   url "https://files.pythonhosted.org/packages/31/b1/a43e3bd872ded4deea4f8efc7aff1703fca8c5455d0c06e20506a06a44ff/pdfminer.six-20231228.tar.gz"
   sha256 "6004da3ad1a7a4d45930cb950393df89b068e73be365a6ff64a838d37bcb08c4"
   license "MIT"
+  revision 1
 
   head "https://github.com/pdfminer/pdfminer.six.git", branch: "master"
 
@@ -17,7 +18,7 @@ class Pdfminer < Formula
 
   depends_on "rust" => :build # for cryptography
   depends_on "libffi"
-  depends_on "openssl@1.1"
+  depends_on "openssl@3"
   depends_on "python@3.11"
 
   resource "cffi" do
@@ -31,8 +32,8 @@ class Pdfminer < Formula
   end
 
   resource "cryptography" do
-    url "https://files.pythonhosted.org/packages/ce/b3/13a12ea7edb068de0f62bac88a8ffd92cc2901881b391839851846b84a81/cryptography-41.0.7.tar.gz"
-    sha256 "13f93ce9bea8016c253b34afc6bd6a75993e5c40672ed5405a9c832f0d4a00bc"
+    url "https://files.pythonhosted.org/packages/13/9e/a55763a32d340d7b06d045753c186b690e7d88780cafce5f88cb931536be/cryptography-42.0.5.tar.gz"
+    sha256 "6fe07eec95dfd477eb9530aef5bead34fec819b3aaf6c5bd6d20565da607bfe1"
   end
 
   resource "pycparser" do

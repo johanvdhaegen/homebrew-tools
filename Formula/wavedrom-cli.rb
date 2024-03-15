@@ -3,8 +3,8 @@ require "language/node"
 class WavedromCli < Formula
   desc "Digital timing diagram (waveform) rendering command-line interface"
   homepage "https://github.com/wavedrom/cli"
-  url "https://registry.npmjs.org/wavedrom-cli/-/wavedrom-cli-3.1.1.tgz"
-  sha256 "7f627331241cb5560164885fc48db4ae7d1ccb8cea8f12ca00e4eb3ae07e21fa"
+  url "https://registry.npmjs.org/wavedrom-cli/-/wavedrom-cli-3.2.0.tgz"
+  sha256 "38098ac16eb4a7cbf8db4535a0cc9911819a8b8cc9255604c58d912d29fcd2d6"
   license "MIT"
 
   bottle do
@@ -14,6 +14,7 @@ class WavedromCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "0ad5aedcc4878285612a274d505124c2928d067e836345b85161b2448e57e2f2"
   end
 
+  depends_on :macos # TODO: fix build failure on linux
   depends_on "node"
 
   def install

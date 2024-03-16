@@ -5,6 +5,13 @@ class KeepSorted < Formula
   sha256 "5f9ce09498ce8135749506a19f327332312d6aeb68cd4b30fe290a77b4ab1a4b"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/keep-sorted-0.4.0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "9b4aee1243bff64651800cee24581362d88f7d4d44a4e1f68ba96a7858a5a17f"
+    sha256 cellar: :any_skip_relocation, ventura:      "ac1e3961f5d5170fde55cf3ad2b8e15b08c143c10804337e3dd0d767fed464ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "372c363dcb9788c64cd6b1f601e2bdf1db9c6cf9e11e01dacfd3720182817df6"
+  end
+
   depends_on "go" => :build
 
   def install

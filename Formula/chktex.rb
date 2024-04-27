@@ -4,8 +4,8 @@ class Chktex < Formula
   license "GPL-2.0-or-later"
 
   stable do
-    url "https://download.savannah.gnu.org/releases/chktex/chktex-1.7.8.tar.gz"
-    sha256 "5286f7844f0771ac0711c7313cf5e0421ed509dc626f9b43b4f4257fb1591ea8"
+    url "https://download.savannah.gnu.org/releases/chktex/chktex-1.7.9.tar.gz"
+    sha256 "df6ee31632a4f4a8e18849b804657e27e3d96deb3f237edbd25656415eb31195"
     patch :p2, :DATA
   end
 
@@ -22,6 +22,7 @@ class Chktex < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
+  depends_on :macos # TODO: fix build failure on linux
   depends_on "pcre" => :recommended
 
   def install

@@ -10,9 +10,9 @@ class Chktex < Formula
   end
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/chktex-1.7.8"
-    sha256                               big_sur:      "eeb04516067bf5e2d7fecd7c7d8b5a7363cb33f91509b5cc7e836fda9bd6abc3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "2c91f0639ddd85fa232907b4117e0253d99914b73da8900eab8360638c596c2b"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/chktex-1.7.9"
+    sha256 arm64_sonoma: "a61466eab12726a3be5b40f8a892b27935300259b07156bfc979757104c2d147"
+    sha256 ventura:      "0fe5525448342749762a167d1955a0e35474d62fcbaae67b664c409f80dd1743"
   end
 
   head do

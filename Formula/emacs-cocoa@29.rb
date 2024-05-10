@@ -9,8 +9,7 @@ class EmacsCocoaAT29 < Formula
 
   bottle do
     root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@29-29.3.20240326"
-    sha256 arm64_sonoma: "bb3b15f6dfb5332568568e3e5eaf9e27cf1f831abea2b4f5982c633eb341d268"
-    sha256 ventura:      "d90583dc9c2b0f2958df768468dc0ca6a2a2c0b57aa12acccec4b6a0a0cf3171"
+    sha256 arm64_sonoma: "2e31783287340120f72c691da823b647ad8fb97b600e44c7ba5cf8e838c80265"
   end
 
   keg_only :versioned_formula

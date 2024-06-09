@@ -1,12 +1,10 @@
 name: brew test-bot
+
 on:
   push:
     branches:
       - main
   pull_request:
-
-env:
-  HOMEBREW_NO_INSTALL_FROM_API: 1
 
 jobs:
   test-bot:

@@ -6,7 +6,7 @@ class PythonLspServer < Formula
   url "https://files.pythonhosted.org/packages/5e/58/835ce6e458317324a6c8a1fdd273659bd508d4c7967adca520e3d0b587f6/python-lsp-server-1.11.0.tar.gz"
   sha256 "89edd6fb3f7852e4bf5a3d1d95ea41484d1a28fa94b6e3cbff12b9db123b8e86"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.11.0_1"
@@ -15,11 +15,32 @@ class PythonLspServer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "d04c9267fab1918b8c91f6d31cd9695b9e0bc379376dcbeffd6addc14fc2e70b"
   end
 
+  depends_on "rust" => :build
   depends_on "python@3.11"
 
   resource "astroid" do
     url "https://files.pythonhosted.org/packages/27/8f/79adb88627d194824decf7b9f4dde9e059b251a7b76809c99f4803be258e/astroid-3.2.2.tar.gz"
     sha256 "8ead48e31b92b2e217b6c9733a21afafe479d52d6e164dd25fb1a770c7c3cf94"
+  end
+
+  resource "attrs" do
+    url "https://files.pythonhosted.org/packages/e3/fc/f800d51204003fa8ae392c4e8278f256206e7a919b708eef054f5f4b650d/attrs-23.2.0.tar.gz"
+    sha256 "935dc3b529c262f6cf76e50877d35a4bd3c1de194fd41f47a2b7ae8f19971f30"
+  end
+
+  resource "black" do
+    url "https://files.pythonhosted.org/packages/8f/5f/bac24a952668c7482cfdb4ebf91ba57a796c9da8829363a772040c1a3312/black-24.3.0.tar.gz"
+    sha256 "a0c9c4a0771afc6919578cec71ce82a3e31e054904e7197deacbc9382671c41f"
+  end
+
+  resource "cattrs" do
+    url "https://files.pythonhosted.org/packages/1e/57/c6ccd22658c4bcb3beb3f1c262e1f170cf136e913b122763d0ddd328d284/cattrs-23.2.3.tar.gz"
+    sha256 "a934090d95abaa9e911dac357e3a8699e0b4b14f8529bcc7d2b1ad9d51672b9f"
+  end
+
+  resource "click" do
+    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "dill" do
@@ -47,9 +68,24 @@ class PythonLspServer < Formula
     sha256 "cf0496f3651bc65d7174ac1b7d043eff454892c708a87d1b683e57b569927ffd"
   end
 
+  resource "lsprotocol" do
+    url "https://files.pythonhosted.org/packages/9d/f6/6e80484ec078d0b50699ceb1833597b792a6c695f90c645fbaf54b947e6f/lsprotocol-2023.0.1.tar.gz"
+    sha256 "cc5c15130d2403c18b734304339e51242d3018a05c4f7d0f198ad6e0cd21861d"
+  end
+
   resource "mccabe" do
     url "https://files.pythonhosted.org/packages/e7/ff/0ffefdcac38932a54d2b5eed4e0ba8a408f215002cd178ad1df0f2806ff8/mccabe-0.7.0.tar.gz"
     sha256 "348e0240c33b60bbdf4e523192ef919f28cb2c3d7d5c7794f74009290f236325"
+  end
+
+  resource "mypy" do
+    url "https://files.pythonhosted.org/packages/c3/b6/297734bb9f20ddf5e831cf4a83f422ddef5a29a33463999f0959d9cdc2df/mypy-1.10.0.tar.gz"
+    sha256 "3d087fcbec056c4ee34974da493a826ce316947485cef3901f511848e687c131"
+  end
+
+  resource "mypy-extensions" do
+    url "https://files.pythonhosted.org/packages/98/a4/1ab47638b92648243faf97a5aeb6ea83059cc3624972ab6b8d2316078d3f/mypy_extensions-1.0.0.tar.gz"
+    sha256 "75dbf8955dc00442a438fc4d0666508a9a97b6bd41aa2f0ffe9d2f2725af0782"
   end
 
   resource "packaging" do
@@ -60,6 +96,11 @@ class PythonLspServer < Formula
   resource "parso" do
     url "https://files.pythonhosted.org/packages/66/94/68e2e17afaa9169cf6412ab0f28623903be73d1b32e208d9e8e541bb086d/parso-0.8.4.tar.gz"
     sha256 "eb3a7b58240fb99099a345571deecc0f9540ea5f4dd2fe14c2a99d6b281ab92d"
+  end
+
+  resource "pathspec" do
+    url "https://files.pythonhosted.org/packages/ca/bc/f35b8446f4531a7cb215605d100cd88b7ac6f44ab3fc94870c120ab3adbf/pathspec-0.12.1.tar.gz"
+    sha256 "a482d51503a1ab33b1c67a6c3813a26953dbdc71c31dacaef9a838c4e29f5712"
   end
 
   resource "platformdirs" do
@@ -92,14 +133,29 @@ class PythonLspServer < Formula
     sha256 "02f6c562b215582386068d52a30f520d84fdbcf2a95fc7e855b816060d048b60"
   end
 
+  resource "pylsp-mypy" do
+    url "https://files.pythonhosted.org/packages/76/98/41e7fe44f2e9773bbf711ecc73c34a29b645ea6e454b36e723595d4ad4a4/pylsp-mypy-0.6.8.tar.gz"
+    sha256 "3f8307ca07d7e253e50e38c5fe31c371ceace0bc33d31c3429fa035d6d41bd5f"
+  end
+
   resource "pylsp-rope" do
     url "https://files.pythonhosted.org/packages/5e/4b/2bbf498ebc1fa764f15c9155c0ed28900268ac22ddcb1d8cf219937bf151/pylsp-rope-0.1.16.tar.gz"
     sha256 "d680b688c60a40257a8842ec808a6e0de1596a47a5300f22aecfdc69555020a7"
   end
 
+  resource "python-lsp-black" do
+    url "https://files.pythonhosted.org/packages/c0/48/06edc947f711fb076b564ee97bbecb5ae877816ccc0edf4347f57cd9d6b9/python-lsp-black-2.0.0.tar.gz"
+    sha256 "8286d2d310c566844b3c116b824ada6fccfa6ba228b1a09a0526b74c04e0805f"
+  end
+
   resource "python-lsp-jsonrpc" do
     url "https://files.pythonhosted.org/packages/48/b6/fd92e2ea4635d88966bb42c20198df1a981340f07843b5e3c6694ba3557b/python-lsp-jsonrpc-1.1.2.tar.gz"
     sha256 "4688e453eef55cd952bff762c705cedefa12055c0aec17a06f595bcc002cc912"
+  end
+
+  resource "python-lsp-ruff" do
+    url "https://files.pythonhosted.org/packages/6b/d4/6836871410a0155f5ba05ab03b60efe75c194406fb7fc62e45d37cd13e9c/python_lsp_ruff-2.2.1.tar.gz"
+    sha256 "0bb3a227bc136e8ab8c66e91733f2673dc15df6f7fc9eb99d4267d0991b327a5"
   end
 
   resource "pytoolconfig" do
@@ -110,6 +166,11 @@ class PythonLspServer < Formula
   resource "rope" do
     url "https://files.pythonhosted.org/packages/1c/c1/875e0270ac39b764fcb16c2dfece14a42747dbd0f181ac3864bff3126af1/rope-1.13.0.tar.gz"
     sha256 "51437d2decc8806cd5e9dd1fd9c1306a6d9075ecaf78d191af85fc1dfface880"
+  end
+
+  resource "ruff" do
+    url "https://files.pythonhosted.org/packages/0f/6b/4545638200466af8b9407bd0d5bea1ce426328eaa9714f8d3ef1a43fc0e6/ruff-0.4.8.tar.gz"
+    sha256 "16d717b1d57b2e2fd68bd0bf80fb43931b79d05a7131aa477d66fc40fbd86268"
   end
 
   resource "snowballstemmer" do
@@ -127,9 +188,19 @@ class PythonLspServer < Formula
     sha256 "eef34fba39834d4d6b73c9ba7f3e4d1c417a4e56f89a7e96e090dd0d24b8fb3c"
   end
 
+  resource "typing-extensions" do
+    url "https://files.pythonhosted.org/packages/df/db/f35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557/typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
+  end
+
   resource "ujson" do
     url "https://files.pythonhosted.org/packages/f0/00/3110fd566786bfa542adb7932d62035e0c0ef662a8ff6544b6643b3d6fd7/ujson-5.10.0.tar.gz"
     sha256 "b3cd8f3c5d8c7738257f1018880444f7b7d9b66232c64649f562d7ba86ad4bc1"
+  end
+
+  resource "websockets" do
+    url "https://files.pythonhosted.org/packages/2e/62/7a7874b7285413c954a4cca3c11fd851f11b2fe5b4ae2d9bee4f6d9bdb10/websockets-12.0.tar.gz"
+    sha256 "81df9cbcbb6c260de1e007e58c011bfebe2dafc8435107b0537f393dd38c8b1b"
   end
 
   resource "yapf" do
@@ -166,11 +237,21 @@ class PythonLspServer < Formula
       }
     JSON
     input = "Content-Length: #{json.size}\n\n#{json}"
-    output = pipe_output("#{bin}/pylsp", input)
+    output = pipe_output("#{bin}/pylsp -v 2>&1", input)
     assert_match(/^Content-Length: \d+/i, output)
     assert_match(
       /"serverInfo":{"name":"pylsp","version":"#{version}"}/i,
       output,
     )
+
+    expected_plugins = %w[
+      black
+      pylsp_mypy
+      pylsp_rope
+      ruff
+    ]
+    expected_plugins.each do |plugin_name|
+      assert_match("Loaded pylsp plugin #{plugin_name}", output)
+    end
   end
 end

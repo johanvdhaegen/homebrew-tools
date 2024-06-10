@@ -6,6 +6,7 @@ class PythonLspServer < Formula
   url "https://files.pythonhosted.org/packages/5e/58/835ce6e458317324a6c8a1fdd273659bd508d4c7967adca520e3d0b587f6/python-lsp-server-1.11.0.tar.gz"
   sha256 "89edd6fb3f7852e4bf5a3d1d95ea41484d1a28fa94b6e3cbff12b9db123b8e86"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.11.0"
@@ -17,8 +18,8 @@ class PythonLspServer < Formula
   depends_on "python@3.11"
 
   resource "astroid" do
-    url "https://files.pythonhosted.org/packages/a9/b9/f11533eed9b65606fb02f1b0994d8ed0903358bc55a6b9759e42f1134725/astroid-3.1.0.tar.gz"
-    sha256 "ac248253bfa4bd924a0de213707e7ebeeb3138abeb48d798784ead1e56d419d4"
+    url "https://files.pythonhosted.org/packages/27/8f/79adb88627d194824decf7b9f4dde9e059b251a7b76809c99f4803be258e/astroid-3.2.2.tar.gz"
+    sha256 "8ead48e31b92b2e217b6c9733a21afafe479d52d6e164dd25fb1a770c7c3cf94"
   end
 
   resource "dill" do
@@ -52,23 +53,23 @@ class PythonLspServer < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/ee/b5/b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4d/packaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https://files.pythonhosted.org/packages/51/65/50db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4/packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "parso" do
-    url "https://files.pythonhosted.org/packages/a2/0e/41f0cca4b85a6ea74d66d2226a7cda8e41206a624f5b330b958ef48e2e52/parso-0.8.3.tar.gz"
-    sha256 "8c07be290bb59f03588915921e29e8a50002acaf2cdc5fa0e0114f91709fafa0"
+    url "https://files.pythonhosted.org/packages/66/94/68e2e17afaa9169cf6412ab0f28623903be73d1b32e208d9e8e541bb086d/parso-0.8.4.tar.gz"
+    sha256 "eb3a7b58240fb99099a345571deecc0f9540ea5f4dd2fe14c2a99d6b281ab92d"
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/96/dc/c1d911bf5bb0fdc58cc05010e9f3efe3b67970cef779ba7fbc3183b987a8/platformdirs-4.2.0.tar.gz"
-    sha256 "ef0cc731df711022c174543cb70a9b5bd22e5a9337c8624ef2c2ceb8ddad8768"
+    url "https://files.pythonhosted.org/packages/f5/52/0763d1d976d5c262df53ddda8d8d4719eedf9594d046f117c25a27261a19/platformdirs-4.2.2.tar.gz"
+    sha256 "38b7b51f512eed9e84a22788b4bce1de17c0adb134d6becb09836e37d8654cd3"
   end
 
   resource "pluggy" do
-    url "https://files.pythonhosted.org/packages/54/c6/43f9d44d92aed815e781ca25ba8c174257e27253a94630d21be8725a2b59/pluggy-1.4.0.tar.gz"
-    sha256 "8c85c2876142a764e5b7548e7d9a0e0ddb46f5185161049a79b7e974454223be"
+    url "https://files.pythonhosted.org/packages/96/2d/02d4312c973c6050a18b314a5ad0b3210edb65a906f868e31c111dede4a6/pluggy-1.5.0.tar.gz"
+    sha256 "2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1"
   end
 
   resource "pycodestyle" do
@@ -87,8 +88,8 @@ class PythonLspServer < Formula
   end
 
   resource "pylint" do
-    url "https://files.pythonhosted.org/packages/35/1c/4a8135f77a4ec8c0a6dc1d4543dd6fee55b36bb8bf629e2bcce8a94763a9/pylint-3.1.0.tar.gz"
-    sha256 "6a69beb4a6f63debebaab0a3477ecd0f559aa726af4954fc948c51f7a2549e23"
+    url "https://files.pythonhosted.org/packages/9a/e9/60280b14cc1012794120345ce378504cf17409e38cd88f455dc24e0ad6b5/pylint-3.2.3.tar.gz"
+    sha256 "02f6c562b215582386068d52a30f520d84fdbcf2a95fc7e855b816060d048b60"
   end
 
   resource "pylsp-rope" do
@@ -122,13 +123,13 @@ class PythonLspServer < Formula
   end
 
   resource "tomlkit" do
-    url "https://files.pythonhosted.org/packages/7d/49/4c0764898ee67618996148bdba4534a422c5e698b4dbf4001f7c6f930797/tomlkit-0.12.4.tar.gz"
-    sha256 "7ca1cfc12232806517a8515047ba66a19369e71edf2439d0f5824f91032b6cc3"
+    url "https://files.pythonhosted.org/packages/2b/ab/18f4c8f2bec75eb1a7aebcc52cdb02ab04fd39ff7025bb1b1c7846cc45b8/tomlkit-0.12.5.tar.gz"
+    sha256 "eef34fba39834d4d6b73c9ba7f3e4d1c417a4e56f89a7e96e090dd0d24b8fb3c"
   end
 
   resource "ujson" do
-    url "https://files.pythonhosted.org/packages/6e/54/6f2bdac7117e89a47de4511c9f01732a283457ab1bf856e1e51aa861619e/ujson-5.9.0.tar.gz"
-    sha256 "89cc92e73d5501b8a7f48575eeb14ad27156ad092c2e9fc7e3cf949f07e75532"
+    url "https://files.pythonhosted.org/packages/f0/00/3110fd566786bfa542adb7932d62035e0c0ef662a8ff6544b6643b3d6fd7/ujson-5.10.0.tar.gz"
+    sha256 "b3cd8f3c5d8c7738257f1018880444f7b7d9b66232c64649f562d7ba86ad4bc1"
   end
 
   resource "yapf" do
@@ -137,8 +138,8 @@ class PythonLspServer < Formula
   end
 
   resource "zipp" do
-    url "https://files.pythonhosted.org/packages/3e/ef/65da662da6f9991e87f058bc90b91a935ae655a16ae5514660d6460d1298/zipp-3.18.1.tar.gz"
-    sha256 "2884ed22e7d8961de1c9a05142eb69a247f120291bc0206a00a7642f09b5b715"
+    url "https://files.pythonhosted.org/packages/d3/20/b48f58857d98dcb78f9e30ed2cfe533025e2e9827bbd36ea0a64cc00cbc1/zipp-3.19.2.tar.gz"
+    sha256 "bf1dcf6450f873a13e952a29504887c89e6de7506209e5b1bcc3460135d4de19"
   end
 
   def install

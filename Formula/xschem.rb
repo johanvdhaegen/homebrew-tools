@@ -6,9 +6,9 @@ class Xschem < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/xschem-3.4.4"
-    sha256 ventura:  "177cf4fde8f13347f43e4d9f73acc4fe1eb149d8f912c07bfb2a6d7b19bdf60f"
-    sha256 monterey: "72a2511eea938f9520e43bb5910915941a299342498174557d53f538ab0e5d8f"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/xschem-3.4.5"
+    sha256 arm64_sonoma: "74a9a6038455f99c7503df50baf7b5278452e91c1cd0f8e6d04763a94a0c761d"
+    sha256 ventura:      "a7b178d12bd8fa17bfb9aaa7988eabbb051249e4f76286b15ceb312a8e725cb8"
   end
 
   depends_on "pkg-config" => :build

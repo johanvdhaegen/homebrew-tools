@@ -9,10 +9,10 @@ class PythonLspServer < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.11.0_1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "f681fa47277a13a6ee21d081baad620eaea2e8020d26819abf83408f9142c389"
-    sha256 cellar: :any_skip_relocation, ventura:      "e42f3a5dc4e0eb1ba671a60b49fb2f446043a5eae8e4164823ac7b7b301e1eb9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "d04c9267fab1918b8c91f6d31cd9695b9e0bc379376dcbeffd6addc14fc2e70b"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.11.0_2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "eab82bf0699759da0b0fdc7145bcf1d4c026b35c8da703a0897e3ae84a70f3ad"
+    sha256 cellar: :any_skip_relocation, ventura:      "db9143fe649cb87d44b87c0925225ba60cf394f12cb7f17ac57905e24c79d614"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "dd26d081383420ede1b662cf2bb4d7d49a70db09378c4ab5f7d55b0e3db7b37a"
   end
 
   depends_on "rust" => :build

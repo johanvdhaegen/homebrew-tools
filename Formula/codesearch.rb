@@ -7,6 +7,13 @@ class Codesearch < Formula
 
   head "https://github.com/google/codesearch.git", branch: "master"
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/codesearch-1.2.0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "079cfb2c2d379722a9aea4355bc5f1181f6d7c93b442e9e31dd041c60f6a5588"
+    sha256 cellar: :any_skip_relocation, ventura:      "0f599cb9fe778af83a46b90f53c9957ccb9f88b2339e95bf31967d66140f1139"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fadd090d19808062d80acbf9fda1c497e2e3401e8c5aa3e4c8f290bb34b13fb1"
+  end
+
   depends_on "go" => :build
 
   def install

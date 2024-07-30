@@ -4,6 +4,7 @@ class Dpic < Formula
   url "https://ece.uwaterloo.ca/~aplevich/dpic/dpic-2024.01.01.tar.gz"
   sha256 "161901ac9af86d7305512ba1b5649404fb4c803a0fab062627cc3c5895ad872f"
   license "BSD-2-Clause"
+  revision 1
 
   livecheck do
     url :homepage

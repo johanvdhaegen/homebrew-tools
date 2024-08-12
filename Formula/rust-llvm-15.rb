@@ -2,6 +2,7 @@ class RustLlvm15 < Formula
   desc "Safe, concurrent, practical language"
   homepage "https://www.rust-lang.org/"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   stable do
     url "https://static.rust-lang.org/dist/rustc-1.75.0-src.tar.gz"
@@ -30,7 +31,7 @@ class RustLlvm15 < Formula
 
   keg_only "conflicts with rust"
 
-  depends_on "libgit2"
+  depends_on "libgit2@1.7"
   depends_on "libssh2"
   depends_on "llvm@15"
   depends_on "openssl@3"
@@ -87,7 +88,7 @@ class RustLlvm15 < Formula
     ENV.prepend_path "PATH", buildpath/"cargobootstrap/bin"
 
     cargo_src_path = buildpath/"src/tools/cargo"
-    cargo_src_path.rmtree
+    rm_r(cargo_src_path)
     resource("cargo").stage cargo_src_path
     if OS.mac?
       inreplace cargo_src_path/"Cargo.toml",
@@ -111,9 +112,10 @@ class RustLlvm15 < Formula
       --tools=#{tools.join(",")}
       --llvm-root=#{Formula["llvm@15"].opt_prefix}
       --enable-llvm-link-shared
+      --enable-profiler
       --enable-vendor
       --disable-cargo-native-static
-      --enable-profiler
+      --disable-docs
       --set=rust.jemalloc
       --release-description=#{tap.user}
     ]
@@ -129,12 +131,12 @@ class RustLlvm15 < Formula
     system "make", "install"
 
     (lib/"rustlib/src/rust").install "library"
-    rm_f [
+    rm([
       bin.glob("*.old"),
       lib/"rustlib/install.log",
       lib/"rustlib/uninstall.sh",
       (lib/"rustlib").glob("manifest-*"),
-    ]
+    ])
   end
 
   def post_install
@@ -171,7 +173,7 @@ class RustLlvm15 < Formula
     # We only check the tools' linkage here. No need to check rustc.
     expected_linkage = {
       bin/"cargo" => [
-        Formula["libgit2"].opt_lib/shared_library("libgit2"),
+        Formula["libgit2@1.7"].opt_lib/shared_library("libgit2"),
         Formula["libssh2"].opt_lib/shared_library("libssh2"),
         Formula["openssl@3"].opt_lib/shared_library("libcrypto"),
         Formula["openssl@3"].opt_lib/shared_library("libssl"),

@@ -6,6 +6,7 @@ class WavedromCli < Formula
   url "https://registry.npmjs.org/wavedrom-cli/-/wavedrom-cli-3.2.0.tgz"
   sha256 "38098ac16eb4a7cbf8db4535a0cc9911819a8b8cc9255604c58d912d29fcd2d6"
   license "MIT"
+  revision 1
 
   bottle do
     root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/wavedrom-cli-3.2.0"
@@ -17,7 +18,7 @@ class WavedromCli < Formula
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
     # Remove incompatible pre-built binaries

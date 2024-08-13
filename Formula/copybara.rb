@@ -2,8 +2,8 @@ class Copybara < Formula
   desc "Tool for transforming and moving code between repositories"
   homepage "https://github.com/google/copybara"
   url "https://github.com/google/copybara.git",
-      revision: "f34ce65e7df00c8360120a52ab6769cb1b40058c"
-  version "2024-03-28"
+      revision: "ae19a16667b86484f359007c10de35a3b8b40617"
+  version "2024-08-12"
   license "Apache-2.0"
 
   head "https://github.com/google/copybara.git", branch: "master"
@@ -15,11 +15,11 @@ class Copybara < Formula
   end
 
   depends_on "bazel" => :build
-  depends_on "openjdk@17"
+  depends_on "openjdk@21"
 
   def install
-    # Force Copybara to use openjdk@11
-    ENV["JAVA_HOME"] = Language::Java.java_home("17")
+    # Force Copybara to use openjdk@21
+    ENV["JAVA_HOME"] = Language::Java.java_home("21")
     ENV["EXTRA_BAZEL_ARGS"] = "--host_javabase=@local_jdk//:jdk"
     # Force Bazel ./compile.sh to put its temporary files in the buildpath
     ENV["BAZEL_WRKDIR"] = buildpath/"work"

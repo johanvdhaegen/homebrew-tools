@@ -9,9 +9,10 @@ class WavedromCli < Formula
   revision 2
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/wavedrom-cli-3.2.0_1"
-    sha256 cellar: :any, arm64_sonoma: "0dfd86504977a81568d2e01d4c1b8d318a02902fc160230983ee111a09ada383"
-    sha256 cellar: :any, ventura:      "a1181137fb1448ce64a46bd2c0de5e752d41b453a8ff69a540dafcbf323ec73b"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/wavedrom-cli-3.2.0_2"
+    sha256 cellar: :any,                 arm64_sonoma: "7a41ddc091f1fa1bf05cb5119881fcb89e02378a7e17181feb265a2f43aaf600"
+    sha256 cellar: :any,                 ventura:      "3df423fe94efa9d9ddce3b150303eba70b0822605c91988410fc45e5c278a8db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "e10b0a684376115b849b35779726d9a4f1d47e7efea4e14beea5f014fe81554e"
   end
 
   depends_on "node"

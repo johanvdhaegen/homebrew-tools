@@ -9,9 +9,9 @@ class WavedromCli < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/wavedrom-cli-3.2.0"
-    sha256 cellar: :any, arm64_sonoma: "126be806a93f4f2b1c7a04e9a1dabcd492fce51b64adb8162fc6a40f5665bfc5"
-    sha256 cellar: :any, ventura:      "1784acc1c0a89f46764d8b22ee2a09774b3d9f1535464dbb0fa2c88616821c9e"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/wavedrom-cli-3.2.0_1"
+    sha256 cellar: :any, arm64_sonoma: "0dfd86504977a81568d2e01d4c1b8d318a02902fc160230983ee111a09ada383"
+    sha256 cellar: :any, ventura:      "a1181137fb1448ce64a46bd2c0de5e752d41b453a8ff69a540dafcbf323ec73b"
   end
 
   depends_on :macos # TODO: fix build failure on linux

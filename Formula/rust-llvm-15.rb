@@ -16,9 +16,10 @@ class RustLlvm15 < Formula
   end
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/rust-llvm-15-1.75.0"
-    sha256 cellar: :any,                 ventura:      "1f1197c7de7a1d68ae3bb83333e5166b4bc07a4efb247e15acda3fcd4ff2de5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "1efeaf93247e0f3407ae04d9681987c8062cf50f4c84a88c698c877a86d9a6d2"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/rust-llvm-15-1.75.0_1"
+    sha256 cellar: :any,                 arm64_sonoma: "ef1b4cafe01bcd3b0ca4fbf8ebcd7ecf24aba2b4e43debc5dce909b212ce71a2"
+    sha256 cellar: :any,                 ventura:      "e2cca12c75e504dd5e81df0772423a1bba0f24d94b2126e8c3d73a67ab062f3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9cb62fffd2d54017d50196f1aeb0ab20aa45860b764c8aba0adbf2cbe2409d25"
   end
 
   head do

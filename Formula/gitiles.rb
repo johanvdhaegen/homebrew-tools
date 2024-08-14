@@ -3,8 +3,8 @@ class Gitiles < Formula
   homepage "https://gerrit.googlesource.com/gitiles"
   url "https://gerrit.googlesource.com/gitiles",
       using:    :git,
-      revision: "484ec1a0b4d64c13004452da37d02663640a3a8d"
-  version "1.3.0.20231011"
+      revision: "84fb315541de4364c63a55bda7b96a1a44e0637a"
+  version "1.4.0.20240607"
   license "Apache-2.0"
 
   head "https://gerrit.googlesource.com/gitiles",

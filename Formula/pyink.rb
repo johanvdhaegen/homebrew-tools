@@ -4,8 +4,8 @@ class Pyink < Formula
   desc "Python code formatter"
   homepage "https://github.com/google/pyink"
 
-  url "https://files.pythonhosted.org/packages/e3/6e/f44c822f67725cad89e1e8c15fc620a695a9e34c7f3da44376d7a0407dc4/pyink-24.3.0.tar.gz"
-  sha256 "0ac418875461fca73b4ba85b49a6b4598accdbe003ef1f31c5c5d72c2a354dda"
+  url "https://files.pythonhosted.org/packages/b6/c6/71645f7d17601bcc2cf33d6ad3ca5e1849b2f4576c1202aa48e77deaf6e5/pyink-24.8.0.tar.gz"
+  sha256 "90468db7148bcef7d4ceb3513f75346331f4f61cc13db940d996728602925603"
   license "MIT"
   head "https://github.com/google/pyink.git", branch: "pyink"
 
@@ -16,11 +16,11 @@ class Pyink < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ec9d108bc412b2739ac89577bc2e3cf92bbe0514283f4b0819a11cb6975da499"
   end
 
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "black" do
-    url "https://files.pythonhosted.org/packages/8f/5f/bac24a952668c7482cfdb4ebf91ba57a796c9da8829363a772040c1a3312/black-24.3.0.tar.gz"
-    sha256 "a0c9c4a0771afc6919578cec71ce82a3e31e054904e7197deacbc9382671c41f"
+    url "https://files.pythonhosted.org/packages/04/b0/46fb0d4e00372f4a86a6f8efa3cb193c9f64863615e39010b1477e010578/black-24.8.0.tar.gz"
+    sha256 "2500945420b6784c38b9ee885af039f5e7471ef284ab03fa35ecdde4688cd83f"
   end
 
   resource "click" do
@@ -34,8 +34,8 @@ class Pyink < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/ee/b5/b43a27ac7472e1818c4bafd44430e69605baefe1f34440593e0332ec8b4d/packaging-24.0.tar.gz"
-    sha256 "eb82c5e3e56209074766e6885bb04b8c38a0c015d0a30036ebe7ece34c9989e9"
+    url "https://files.pythonhosted.org/packages/51/65/50db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4/packaging-24.1.tar.gz"
+    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
   end
 
   resource "pathspec" do
@@ -44,8 +44,8 @@ class Pyink < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/96/dc/c1d911bf5bb0fdc58cc05010e9f3efe3b67970cef779ba7fbc3183b987a8/platformdirs-4.2.0.tar.gz"
-    sha256 "ef0cc731df711022c174543cb70a9b5bd22e5a9337c8624ef2c2ceb8ddad8768"
+    url "https://files.pythonhosted.org/packages/75/a0/d7cab8409cdc7d39b037c85ac46d92434fb6595432e069251b38e5c8dd0e/platformdirs-4.3.2.tar.gz"
+    sha256 "9e5e27a08aa095dd127b9f2e764d74254f482fef22b0970773bfba79d091ab8c"
   end
 
   def install

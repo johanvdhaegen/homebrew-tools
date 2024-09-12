@@ -10,10 +10,10 @@ class Pyink < Formula
   head "https://github.com/google/pyink.git", branch: "pyink"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pyink-24.3.0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "9990c9ba04a15cd6c51a8b95002cc1ac5be198533ff14d97403b8f26aa220c98"
-    sha256 cellar: :any_skip_relocation, ventura:      "5d4c02ecd54f2fab904895b1c33fae18241a73fad92a9a7f7ff836442010d576"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ec9d108bc412b2739ac89577bc2e3cf92bbe0514283f4b0819a11cb6975da499"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/pyink-24.8.0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "01eb550935b47a2a370e62a8d7f1aec2e1de119f2f4390253367ed6574e30689"
+    sha256 cellar: :any_skip_relocation, ventura:      "4bbd918bba8ea35b06cc95790392234b71153ceccd3a7d946672345bc782f060"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "17ea8582cbe19be0e9779f3200a5ab501dba6e7474b0effe7276c3dd287df9a7"
   end
 
   depends_on "python@3.12"

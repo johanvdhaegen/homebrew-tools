@@ -6,6 +6,7 @@ class Pytype < Formula
   url "https://files.pythonhosted.org/packages/ca/a5/4a80981dd69095a48cee43f62696aa614641978ab3f16a475b188a54813a/pytype-2024.9.13.tar.gz"
   sha256 "941046ca0f1c43b79162bb51836fef0ba6608012d99f6833148c249f22216f26"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/google/pytype.git", branch: "main"
 
@@ -17,10 +18,10 @@ class Pytype < Formula
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
+  depends_on "pybind11" => :build
   depends_on "rust" => :build
   depends_on "libyaml"
-  depends_on :macos
-  depends_on "python@3.11"
+  depends_on "python@3.12"
 
   resource "attrs" do
     url "https://files.pythonhosted.org/packages/fc/0f/aafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fb/attrs-24.2.0.tar.gz"
@@ -77,11 +78,6 @@ class Pytype < Formula
     # https://github.com/scikit-build/ninja-python-distributions/blob/master/NinjaUrls.cmake
     url "https://github.com/Kitware/ninja/archive/refs/tags/v1.11.1.g95dee.kitware.jobserver-1.tar.gz"
     sha256 "7ba84551f5b315b4270dc7c51adef5dff83a2154a3665a6c9744245c122dd0db"
-  end
-
-  resource "pybind11" do
-    url "https://files.pythonhosted.org/packages/d2/c1/72b9622fcb32ff98b054f724e213c7f70d6898baa714f4516288456ceaba/pybind11-2.13.6.tar.gz"
-    sha256 "ba6af10348c12b24e92fa086b39cfba0eff619b61ac77c406167d813b096d39a"
   end
 
   resource "pycnite" do
@@ -143,10 +139,11 @@ class Pytype < Formula
     # install ninja python bindings
     [resource("ninja")].each do |r|
       r.stage do
-        ninja_deployment_target = MacOS.version.to_s
+        ninja_target = (OS.mac? ? "macosx-#{MacOS.version}" : "linux") +
+                       "-#{Hardware::CPU.arch}"
         dl = resource("ninja-src")
         dl.verify_download_integrity(dl.fetch)
-        dl_dir = "_skbuild/macosx-#{ninja_deployment_target}-x86_64-#{pyver}/cmake-build"
+        dl_dir = "_skbuild/#{ninja_target}-#{pyver}/cmake-build"
         mkdir_p dl_dir
         cp dl.cached_download,
            File.join(dl_dir, File.basename(URI.parse(dl.url).path)),

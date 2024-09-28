@@ -9,9 +9,9 @@ class Copybara < Formula
   head "https://github.com/google/copybara.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/copybara-2024-08-12"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "43c65ada2b8df9a85f0f040e64ace15d0f05e19e1b50cc61beb3cffd4134f33c"
-    sha256 cellar: :any_skip_relocation, ventura:      "cd3ce52596a1e7a6987818ba52a42109e855482df448961ce653745fadce2ef2"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/copybara-2024-09-25"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "b4687fb275ddc924346d922b081ef9bd5bb5db6df1a5339005649f444e48db88"
+    sha256 cellar: :any_skip_relocation, ventura:      "a67d138ca6a5f251044346848742448d982e9e5be7c1849b242c9a76d2a876a9"
   end
 
   depends_on "bazel" => :build

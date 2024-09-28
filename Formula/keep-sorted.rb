@@ -1,8 +1,8 @@
 class KeepSorted < Formula
   desc "Language-agnostic formatter that sorts lines between two markers"
   homepage "https://github.com/google/keep-sorted"
-  url "https://github.com/google/keep-sorted/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "5f9ce09498ce8135749506a19f327332312d6aeb68cd4b30fe290a77b4ab1a4b"
+  url "https://github.com/google/keep-sorted/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "8eee061af908fd971911118975e4a2870afff385b3aea9948cc9b221849a9436"
   license "Apache-2.0"
 
   bottle do

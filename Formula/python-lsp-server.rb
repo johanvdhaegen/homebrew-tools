@@ -6,7 +6,7 @@ class PythonLspServer < Formula
   url "https://files.pythonhosted.org/packages/2b/15/b7e1577b9ca358e008b06910bf23cfa0a8be130ee9f319a262a3c610ee8d/python_lsp_server-1.12.0.tar.gz"
   sha256 "b6a336f128da03bd9bac1e61c3acca6e84242b8b31055a1ccf49d83df9dc053b"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
     root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.12.0_2"
@@ -209,12 +209,7 @@ class PythonLspServer < Formula
   end
 
   def install
-    pyver = Language::Python.major_minor_version("python3")
     virtualenv_install_with_resources
-
-    Pathname.glob(libexec/"lib/python#{pyver}/site-packages/yapf*.egg-info").each do |p|
-      chmod_R("ugo+r", p)
-    end
   end
 
   test do

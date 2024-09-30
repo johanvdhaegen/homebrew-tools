@@ -6,6 +6,7 @@ class Pdfminer < Formula
   url "https://files.pythonhosted.org/packages/e3/37/63cb918ffa21412dd5d54e32e190e69bfc340f3d6aa072ad740bec9386bb/pdfminer.six-20240706.tar.gz"
   sha256 "c631a46d5da957a9ffe4460c5dce21e8431dabb615fee5f9f4400603a58d95a6"
   license "MIT"
+  revision 1
 
   head "https://github.com/pdfminer/pdfminer.six.git", branch: "master"
 
@@ -42,11 +43,10 @@ class Pdfminer < Formula
   end
 
   def install
-    # virtualenv_install_with_resources
-    pyver = Language::Python.major_minor_version "python3"
+    python3 = "python3"
+    venv = virtualenv_create(libexec, python3)
     ENV.prepend_create_path "PYTHONPATH",
-                            libexec/"lib/python#{pyver}/site-packages"
-    venv = virtualenv_create(libexec, "python3")
+                            libexec/Language::Python.site_packages(python3)
 
     resources.each do |r|
       r.stage do

@@ -6,7 +6,7 @@ class EmacsCocoaAT29 < Formula
       revision: "0f01cb0ebd12c361b3f7bd7a44159911f52301bf"
   version "29.4.20240622"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
     root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@29-29.4.20240622_1"
@@ -23,6 +23,8 @@ class EmacsCocoaAT29 < Formula
 
   depends_on "autoconf" => :build
   depends_on "gnu-sed" => :build
+  depends_on "m4" => :build
+  depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on "texinfo" => :build
   depends_on "giflib"
@@ -45,8 +47,8 @@ class EmacsCocoaAT29 < Formula
   depends_on "mailutils" => :optional
 
   if build.with? "native-compilation"
+    depends_on "gcc"
     depends_on "libgccjit"
-    depends_on "gcc" => :build
   end
 
   uses_from_macos "libxml2"
@@ -81,6 +83,7 @@ class EmacsCocoaAT29 < Formula
             "#{build.with?("native-compilation")?"=aot":"=no"}"
 
     ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
+    ENV.prepend_path "PATH", Formula["make"].opt_libexec/"gnubin"
     if build.with?("native-compilation")
       ENV.append "CFLAGS", "-I#{Formula["libgccjit"].opt_include}"
       ENV.append "LIBS", "-L#{Formula["libgccjit"].opt_lib}/gcc/#{Formula["libgccjit"].version.major}"
@@ -108,6 +111,24 @@ class EmacsCocoaAT29 < Formula
         ln_s "../../lib/emacs/#{emacs_version}/native-lisp", "native-lisp"
       end
     end
+
+    # Add PATH to plist environment to enable native compilation out of the box;
+    # explicitly add homebrew paths, in case brew is called directly;
+    # but remove any homebrew shims paths
+    path = PATH.new(ORIGINAL_PATHS)
+    path.prepend(HOMEBREW_PREFIX/"bin", HOMEBREW_PREFIX/"sbin")
+    path = path.reject { |p| p.start_with?(HOMEBREW_SHIMS_PATH) }
+    plist = "#{prefix}/Emacs.app/contents/Info.plist"
+    plist_buddy = "/usr/libexec/PlistBuddy"
+
+    puts "Adding the following PATH value to #{plist}:"
+    path.each_entry { |p| puts "  " + p }
+
+    system "#{plist_buddy} -c 'Add :LSEnvironment dict' '#{plist}'"
+    system "#{plist_buddy} -c 'Add :LSEnvironment:PATH string' '#{plist}'"
+    system "#{plist_buddy} -c 'Set :LSEnvironment:PATH #{path}' '#{plist}'"
+    system "#{plist_buddy} -c 'Print :LSEnvironment' '#{plist}'"
+    system "touch '#{prefix}/Emacs.app'"
 
     # Replace the symlink with one that avoids starting Cocoa.
     (bin/"emacs").unlink # Kill the existing symlink

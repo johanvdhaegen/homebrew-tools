@@ -6,10 +6,10 @@ class KeepSorted < Formula
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/keep-sorted-0.5.0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "303c8233b5c24bfccc9cc7d13b283ce68ec8dbe6b041adebfb72e04d2242c9fa"
-    sha256 cellar: :any_skip_relocation, ventura:      "590b2fbc7d66c65e205612e4a249e4e0437b353cd951132556c4f5906518a658"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "68fb6a9be4ff91704b76bd7b8ddc183411d40d0f0b6aed689fd7a52bde12e274"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/keep-sorted-0.5.1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma: "f2eb9f84ba0462d344ddb4bf526688999b8b489d253eb50b22bc1521357b8974"
+    sha256 cellar: :any_skip_relocation, ventura:      "2f5e63c54fdd09d6cfc5560742a255a5e4cb3088923c8658be0b2cecc6a06f21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "1235ae1b2dde9c3fe31dd0ef42b9195e1087c271aecdcea8ff9d17be01a9e262"
   end
 
   depends_on "go" => :build

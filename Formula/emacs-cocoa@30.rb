@@ -3,8 +3,8 @@ class EmacsCocoaAT30 < Formula
   homepage "https://www.gnu.org/software/emacs/"
   url "https://github.com/emacs-mirror/emacs.git",
       branch:   "emacs-30",
-      revision: "ae75ea62324598654b32ed28bf644ec2bc4c04b2"
-  version "30.0.20241013"
+      revision: "9e1abf11fc1c3285cfa631ec71f3836d54e2c8d8"
+  version "30.0.20241027"
   license "GPL-3.0-or-later"
 
   bottle do

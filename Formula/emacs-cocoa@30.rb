@@ -3,8 +3,8 @@ class EmacsCocoaAT30 < Formula
   homepage "https://www.gnu.org/software/emacs/"
   url "https://github.com/emacs-mirror/emacs.git",
       branch:   "emacs-30",
-      revision: "775970a7831de930cd25ee592fb40004b1c2bc24"
-  version "30.0.20241108"
+      revision: "3e396b2c5bb8abdc16218ca8c9d617b9dcf9f01e"
+  version "30.0.20241125"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -81,6 +81,8 @@ class EmacsCocoaAT30 < Formula
 
     ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
     ENV.prepend_path "PATH", Formula["make"].opt_libexec/"gnubin"
+    ENV.append "CFLAGS", "-I#{Formula["sqlite"].opt_include}"
+    ENV.append "LDFLAGS", "-L#{Formula["sqlite"].opt_lib}"
     if build.with?("native-compilation")
       ENV.append "CFLAGS", "-I#{Formula["libgccjit"].opt_include}"
       ENV.append "LIBS", "-L#{Formula["libgccjit"].opt_lib}/gcc/#{Formula["libgccjit"].version.major}"

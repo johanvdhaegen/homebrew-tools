@@ -2,8 +2,8 @@ class Copybara < Formula
   desc "Tool for transforming and moving code between repositories"
   homepage "https://github.com/google/copybara"
   url "https://github.com/google/copybara.git",
-      revision: "0a2600c9a6a3da100e84668f5ca7c27f24e9f152"
-  version "2024-09-25"
+      revision: "c55abbe6a7b49861c113c6b73f0d28e090f15777"
+  version "2024-12-12"
   license "Apache-2.0"
 
   head "https://github.com/google/copybara.git", branch: "master"

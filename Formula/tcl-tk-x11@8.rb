@@ -1,8 +1,8 @@
 class TclTkX11AT8 < Formula
   desc "Tool Command Language"
   homepage "https://www.tcl-lang.org"
-  url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.15/tcl8.6.15-src.tar.gz"
-  sha256 "861e159753f2e2fbd6ec1484103715b0be56be3357522b858d3cbb5f893ffef1"
+  url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.16/tcl8.6.16-src.tar.gz"
+  sha256 "91cb8fa61771c63c262efb553059b7c7ad6757afa5857af6265e4b0bdc2a14a5"
   license "TCL"
 
   livecheck do
@@ -29,13 +29,13 @@ class TclTkX11AT8 < Formula
   uses_from_macos "zlib"
 
   resource "critcl" do
-    url "https://github.com/andreas-kupries/critcl/archive/refs/tags/3.2.tar.gz"
-    sha256 "20061944e28dda4ab2098b8f77682cab77973f8961f6fa60b95bcc09a546789e"
+    url "https://github.com/andreas-kupries/critcl/archive/refs/tags/3.3.1.tar.gz"
+    sha256 "d970a06ae1cdee7854ca1bc571e8b5fe7189788dc5a806bce67e24bbadbe7ae2"
   end
 
   resource "tcllib" do
-    url "https://downloads.sourceforge.net/project/tcllib/tcllib/1.21/tcllib-1.21.tar.xz"
-    sha256 "10c7749e30fdd6092251930e8a1aa289b193a3b7f1abf17fee1d4fa89814762f"
+    url "https://downloads.sourceforge.net/project/tcllib/tcllib/2.0/tcllib-2.0.tar.xz"
+    sha256 "642c2c679c9017ab6fded03324e4ce9b5f4292473b62520e82aacebb63c0ce20"
   end
 
   resource "tcltls" do
@@ -44,13 +44,15 @@ class TclTkX11AT8 < Formula
   end
 
   resource "tk" do
-    url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.15/tk8.6.15-src.tar.gz"
-    mirror "https://fossies.org/linux/misc/tk8.6.15-src.tar.gz"
-    sha256 "550969f35379f952b3020f3ab7b9dd5bfd11c1ef7c9b7c6a75f5c49aca793fec"
+    url "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.16/tk8.6.16-src.tar.gz"
+    sha256 "be9f94d3575d4b3099d84bc3c10de8994df2d7aa405208173c709cc404a7e5fe"
   end
 
   def install
     odie "tk resource needs to be updated" if version != resource("tk").version
+
+    # Remove bundled zlib
+    rm_r("compat/zlib")
 
     args = %W[
       --prefix=#{prefix}

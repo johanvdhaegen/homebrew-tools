@@ -4,6 +4,7 @@ class Xschem < Formula
   url "https://github.com/StefanSchippers/xschem/archive/refs/tags/3.4.5.tar.gz"
   sha256 "f164e3532b008e9f78ce3ad2617a31ee9590c55c359ae6683cbec1569973cd2d"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/xschem-3.4.5"
@@ -16,7 +17,7 @@ class Xschem < Formula
   depends_on "libx11"
   depends_on "libxpm"
   depends_on :macos
-  depends_on "tcl-tk-x11"
+  depends_on "tcl-tk-x11@8"
 
   def install
     args = [

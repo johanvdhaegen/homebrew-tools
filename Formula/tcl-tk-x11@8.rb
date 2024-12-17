@@ -11,11 +11,11 @@ class TclTkX11AT8 < Formula
   end
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/tcl-tk-x11@8-8.6.15"
-    sha256 arm64_sequoia: "8b76df7dc9ad3bd67b06d5b08493f9b052862b0c31333006a68e3103729643cb"
-    sha256 arm64_sonoma:  "f87a9b0b85a1c436294a3ccf4bce2608e69977a54ec30a20faa884af623d4979"
-    sha256 ventura:       "5d28e3687b8e14a36a3dbd8aed69fa76a85ebc667b4bfd70dcd41843c0c62362"
-    sha256 x86_64_linux:  "98b2476d7f7da290ff38ef50fc2b0efe344b87a2ae1dc171b6ad4b7377f2cc7f"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/tcl-tk-x11@8-8.6.16"
+    sha256 arm64_sequoia: "5e692335f09fda984b9ca6ca0ce61ec633711db3b07b52632112be9277291b14"
+    sha256 arm64_sonoma:  "30072fbfc1bed86a60c3c0635d209749700196d45f8944e45d44c4fcb042a8ca"
+    sha256 ventura:       "e7a62f11c45f09c55d7b606351cb0bb12518a48e1a0f3738e965f1d7f90a1137"
+    sha256 x86_64_linux:  "077c698aba2b38883c06a1ce5eeecf8ec23a1643ecc441a0368c04ea6f1e4dd4"
   end
 
   keg_only :versioned_formula

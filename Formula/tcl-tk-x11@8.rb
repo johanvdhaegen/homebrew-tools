@@ -10,6 +10,14 @@ class TclTkX11AT8 < Formula
     regex(%r{url=.*?/(?:tcl|tk).?v?(8(?:\.\d+)+)[._-]src\.t}i)
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/tcl-tk-x11@8-8.6.15"
+    sha256 arm64_sequoia: "8b76df7dc9ad3bd67b06d5b08493f9b052862b0c31333006a68e3103729643cb"
+    sha256 arm64_sonoma:  "f87a9b0b85a1c436294a3ccf4bce2608e69977a54ec30a20faa884af623d4979"
+    sha256 ventura:       "5d28e3687b8e14a36a3dbd8aed69fa76a85ebc667b4bfd70dcd41843c0c62362"
+    sha256 x86_64_linux:  "98b2476d7f7da290ff38ef50fc2b0efe344b87a2ae1dc171b6ad4b7377f2cc7f"
+  end
+
   keg_only :versioned_formula
 
   depends_on "freetype" => :build

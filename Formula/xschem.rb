@@ -1,10 +1,10 @@
 class Xschem < Formula
   desc "Schematic editor for VLSI/Asic/Analog custom designs"
   homepage "https://github.com/StefanSchippers/xschem"
-  url "https://github.com/StefanSchippers/xschem/archive/refs/tags/3.4.5.tar.gz"
-  sha256 "f164e3532b008e9f78ce3ad2617a31ee9590c55c359ae6683cbec1569973cd2d"
+  url "https://github.com/StefanSchippers/xschem/archive/refs/tags/3.4.6.tar.gz"
+  sha256 "25bd15ebc39798a513c1a788f656838463a8efbe2cbfe733a5f59608b3857195"
   license "GPL-2.0-or-later"
-  revision 1
+  head "https://github.com/StefanSchippers/xschem.git", branch: "master"
 
   bottle do
     root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/xschem-3.4.5_1"

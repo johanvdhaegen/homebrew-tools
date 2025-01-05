@@ -1,8 +1,8 @@
 class Ngspice < Formula
   desc "Spice circuit simulator"
   homepage "https://ngspice.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/43/ngspice-43.tar.gz"
-  sha256 "14dd6a6f08531f2051c13ae63790a45708bd43f3e77886a6a84898c297b13699"
+  url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/44/ngspice-44.tar.gz"
+  sha256 "3865d13ab44f1f01f68c7ac0e0716984e45dce5a86d126603c26d8df30161e9b"
   license :cannot_represent
 
   head "https://git.code.sf.net/p/ngspice/ngspice.git", branch: "master"
@@ -34,10 +34,10 @@ class Ngspice < Formula
 
     args = %w[
       --disable-debug
-      --disable-openmp
-      --enable-xspice
       --enable-osdi
       --enable-cider
+      --enable-xspice
+      --disable-openmp
       --enable-pss
       --without-x
     ]

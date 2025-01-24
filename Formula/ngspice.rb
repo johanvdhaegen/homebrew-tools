@@ -13,11 +13,11 @@ class Ngspice < Formula
   end
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/ngspice-44"
-    sha256 arm64_sequoia: "a82f1c5ccd7b700d5bffec89db0723e6473722e6c8a3131b21e7ae22f9aaedb3"
-    sha256 arm64_sonoma:  "47ca112e430e47a626da390124c10049b61d998c6ade86dec1424647a6c385eb"
-    sha256 ventura:       "0509fef3070ecc0a0ca4c80e49fc80e7339aa623012805a7bd139c3a905b9a77"
-    sha256 x86_64_linux:  "6384233ac16af84d09ca89b00ce4b5769690ed5e159728730f81b86fb57e323b"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/ngspice-44.2"
+    sha256 arm64_sequoia: "f5def3c14998855b0eca61f2cbc5e16bc3c1fb3a52d4e59952db9d6da0f75145"
+    sha256 arm64_sonoma:  "f99003aadeb66fc927eb2b3d3a428ed62af3e064a78c92a55f3b715200963a21"
+    sha256 ventura:       "0710eee0b8f14c4c8a5b7e8bb1c7538ccc8510ce430b2029cd047549683832a9"
+    sha256 x86_64_linux:  "2c147d924de63bc19f05dcc8fdf92f0f50476a621775f6edf0dcc6479b2b186d"
   end
 
   keg_only "conflicts with ngspice"

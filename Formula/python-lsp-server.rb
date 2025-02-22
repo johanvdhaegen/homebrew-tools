@@ -8,10 +8,11 @@ class PythonLspServer < Formula
   license "MIT"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.12.0_3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "a6bc6a2a5b79fc339d410c5a1f9e3afbf14771a57e043803a14ee22c651dfe15"
-    sha256 cellar: :any_skip_relocation, ventura:      "c807b97b686f62ccd4b2c29713fea149068a1bf2079828ef175c3444e545fc4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "21e231732ce5fdf10b67809a10b01f059916387f0596654f2d03d6b88113e196"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.12.2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ddebdec63d6fee72b6060671f93c7313b035a1236c848199a3b9756a4f3acf81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5508f6a4d75d829f7f4306c3e6c33f360d99b2cac4bb0431b17718a9c0f9ceb9"
+    sha256 cellar: :any_skip_relocation, ventura:       "1d58444e7651592707f986aa4f044391a97ec00010b42848748633fee90232fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08d5b82c56f6f9a6d8c991e24df0591cd6421daa3e46a593d958d285e1bfb9da"
   end
 
   depends_on "rust" => :build

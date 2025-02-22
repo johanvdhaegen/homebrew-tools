@@ -9,10 +9,11 @@ class Codesearch < Formula
   head "https://github.com/google/codesearch.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/codesearch-1.2.0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma: "079cfb2c2d379722a9aea4355bc5f1181f6d7c93b442e9e31dd041c60f6a5588"
-    sha256 cellar: :any_skip_relocation, ventura:      "0f599cb9fe778af83a46b90f53c9957ccb9f88b2339e95bf31967d66140f1139"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "fadd090d19808062d80acbf9fda1c497e2e3401e8c5aa3e4c8f290bb34b13fb1"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/codesearch-1.2.0_1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3aa563d7a1ee14c8c3146fbe4d0ef9e0bb9e4c6adf35bd489a00e83f8e7b85df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba2d1cd895b8ea469fc93a96dd66d28fcb73f4851bc01f72ee3739db6d426f85"
+    sha256 cellar: :any_skip_relocation, ventura:       "e35e6fab7892b9491a1c5dcb2fe21f726362833764ef2c61be794119a78dc74d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1667a621d8b9b2bf3e6e1fcc69bead406dcbfece4b5b48f1cd894e156c18fad"
   end
 
   depends_on "go" => :build

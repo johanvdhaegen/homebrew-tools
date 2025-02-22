@@ -4,6 +4,7 @@ class Codesearch < Formula
   url "https://github.com/google/codesearch.git",
       tag: "v1.2.0"
   license "BSD-3-Clause"
+  revision 1
 
   head "https://github.com/google/codesearch.git", branch: "master"
 
@@ -30,8 +31,8 @@ class Codesearch < Formula
     EOS
     ENV["CSEARCHINDEX"]= testpath/".csearchindex"
     system "#{bin}/cindex", "."
-    assert_predicate testpath/".csearchindex", :exist?,
-                     "Failed to create codesearch index"
+    assert_path_exists testpath/".csearchindex",
+                       "Failed to create codesearch index"
     assert_match(/test\.py:def foo/, shell_output("#{bin}/csearch foo"))
   end
 end

@@ -8,10 +8,10 @@ class EmacsCocoaAT30 < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@30-30.1.20250223"
-    sha256 arm64_sequoia: "1a550c2db3b645cd57fd588836c66f46ad0d11a4a9b121da3dcaba57d0ede907"
-    sha256 arm64_sonoma:  "ef1bc855f525e025a2f0361723607ce20a6c39aa9290c8b4b847c2754901c23a"
-    sha256 ventura:       "94d397958489a15fba5ffa4c9c32ed1dec32d2044786409d812ea7d243fe14be"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@30-30.1.20250302"
+    sha256 arm64_sequoia: "07720b186502a656fc7c26e95e2957310a6b84d7c80938f405d2c46b43bd9eb8"
+    sha256 arm64_sonoma:  "a01be930458401a6920009b37de52b8b2159886c43e68663f87f8a7894e105a8"
+    sha256 ventura:       "af2d29a8fd46b4bff5fbf87ec4e33d7990c0e0f0cc0362448ad28f774b907c2b"
   end
 
   keg_only :versioned_formula

@@ -2,8 +2,8 @@ class Copybara < Formula
   desc "Tool for transforming and moving code between repositories"
   homepage "https://github.com/google/copybara"
   url "https://github.com/google/copybara.git",
-      revision: "c55abbe6a7b49861c113c6b73f0d28e090f15777"
-  version "2024-12-12"
+      revision: "2f8f7e5293689c18fa00b91b4d2390f3a4392308"
+  version "2025-03-21"
   license "Apache-2.0"
 
   head "https://github.com/google/copybara.git", branch: "master"
@@ -36,7 +36,7 @@ class Copybara < Formula
   end
 
   test do
-    assert_match(/Unknown version$/,
+    assert_match(/Version: Unknown version/,
                  pipe_output(
                    "#{bin}/copybara --work-dir=#{testpath} version 2>&1",
                  ))

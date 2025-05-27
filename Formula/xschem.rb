@@ -7,10 +7,10 @@ class Xschem < Formula
   head "https://github.com/StefanSchippers/xschem.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/xschem-3.4.6"
-    sha256 arm64_sequoia: "c40cb058bf71e8d399f6b54f8bef4bf075d50cb5df700b9f2b1b1eb4487cfca1"
-    sha256 arm64_sonoma:  "4588254aeb088e4dc4063f6243060f70564cc4da85d7a15eee336dc99bf9b27a"
-    sha256 ventura:       "c051b150e63ee1826d9fe556e5a98797f9514556c577a3cb5b0f820802e3ecd4"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/xschem-3.4.7"
+    sha256 arm64_sequoia: "65a5464ac0252c12f4591a572882310da4d89107ff9a6637a2ca19f71881f6c6"
+    sha256 arm64_sonoma:  "2c8a60ff7a93e2b6e167a04aabf74e6e5e08a71e9b967110c4430ed86daab9f4"
+    sha256 ventura:       "77dad864d5b42f51e53dd784b86c52edc34318eee4459ec6f743f22beea0a6ce"
   end
 
   depends_on "pkg-config" => :build

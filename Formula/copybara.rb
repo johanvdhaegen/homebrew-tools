@@ -26,7 +26,7 @@ class Copybara < Formula
     # Force Bazel ./compile.sh to put its temporary files in the buildpath
     ENV["BAZEL_WRKDIR"] = buildpath/"work"
 
-    system "bazel", "build",
+    system "bazel", "build", "--repo_contents_cache=",
            "//java/com/google/copybara:copybara_deploy.jar"
     libexec.install "bazel-bin/java/com/google/copybara/copybara_deploy.jar"
     (bin/"copybara").write <<~EOS

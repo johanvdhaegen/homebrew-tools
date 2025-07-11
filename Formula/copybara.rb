@@ -5,6 +5,7 @@ class Copybara < Formula
       revision: "494fa7ea08aa58c0ae322887a923e57b1cc2ee83"
   version "2025-05-29"
   license "Apache-2.0"
+  revision 1
 
   head "https://github.com/google/copybara.git", branch: "master"
 
@@ -20,9 +21,20 @@ class Copybara < Formula
 
   def install
     # Force Bazel to use brew OpenJDK
-    java_home_env = Language::Java.java_home_env("21")
+    java_version = "21"
+    java_home_env = Language::Java.java_home_env(java_version)
     ENV.merge! java_home_env.transform_keys(&:to_s)
-    ENV["EXTRA_BAZEL_ARGS"] = "--tool_java_runtime_version=local_jdk"
+    extra_bazel_args = ["--tool_java_runtime_version=local_jdk"]
+    # Bazel clears environment variables which breaks superenv shims
+    ENV.remove "PATH", Superenv.shims_path
+
+    # Fix linking on Linux
+    if OS.linux? && build.bottle? && ENV["HOMEBREW_DYNAMIC_LINKER"]
+      # set dynamic linker similar to cc shim so that bottle works on older Linux
+      extra_bazel_args << "--linkopt=-Wl,--dynamic-linker=#{ENV["HOMEBREW_DYNAMIC_LINKER"]}"
+    end
+    ENV["EXTRA_BAZEL_ARGS"] = extra_bazel_args.join(" ")
+
     # Force Bazel ./compile.sh to put its temporary files in the buildpath
     ENV["BAZEL_WRKDIR"] = buildpath/"work"
 
@@ -32,7 +44,8 @@ class Copybara < Formula
     (bin/"copybara").write <<~EOS
       #!/bin/bash
       export JAVA_HOME="#{ENV["JAVA_HOME"]}"
-      CLASSPATH="#{libexec}/copybara_deploy.jar:." exec java -jar #{libexec}/copybara_deploy.jar "$@"
+      export CLASSPATH="#{libexec}/copybara_deploy.jar:."
+      exec "#{Formula["openjdk@#{java_version}"].opt_bin}/java" -jar #{libexec}/copybara_deploy.jar "$@"
     EOS
   end
 

@@ -19,9 +19,10 @@ class Copybara < Formula
   depends_on "openjdk@21"
 
   def install
-    # Force Copybara to use openjdk@21
-    ENV["JAVA_HOME"] = Language::Java.java_home("21")
-    ENV["EXTRA_BAZEL_ARGS"] = "--host_javabase=@local_jdk//:jdk"
+    # Force Bazel to use brew OpenJDK
+    java_home_env = Language::Java.java_home_env("21")
+    ENV.merge! java_home_env.transform_keys(&:to_s)
+    ENV["EXTRA_BAZEL_ARGS"] = "--tool_java_runtime_version=local_jdk"
     # Force Bazel ./compile.sh to put its temporary files in the buildpath
     ENV["BAZEL_WRKDIR"] = buildpath/"work"
 

@@ -3,8 +3,8 @@ class EmacsCocoaAT30 < Formula
   homepage "https://www.gnu.org/software/emacs/"
   url "https://github.com/emacs-mirror/emacs.git",
       branch:   "emacs-30",
-      revision: "723cb4da47a5a82b4c64fdd6f9004d739ca6c12d"
-  version "30.1.20250710"
+      revision: "f8a206937c9f548bd810153bf29f4f4a32d84c95"
+  version "30.2.20250814"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -68,15 +68,15 @@ class EmacsCocoaAT30 < Formula
       --with-png
     ]
 
-    args << "--with-rsvg#{build.with?("librsvg") ? "" : "=no"}"
-    args << "--with-webp#{build.with?("webp") ? "" : "=no"}"
-    args << "--with-lcms2#{build.with?("little-cms2") ? "" : "=no"}"
+    args << "--with-rsvg#{"=no" if build.without?("librsvg")}"
+    args << "--with-webp#{"=no" if build.without?("webp")}"
+    args << "--with-lcms2#{"=no" if build.without?("little-cms2")}"
     args << "--without-pop" if build.with? "mailutils"
-    args << "--with-imagemagick#{build.with?("imagemagick") ? "" : "=no"}"
-    args << "--with-tree-sitter#{build.with?("tree-sitter") ? "" : "=no"}"
-    args << "--with-dbus#{build.with?("dbus") ? "" : "=no"}"
-    args << "--with-modules#{build.with?("modules") ? "" : "=no"}"
-    args << "--with-xwidgets#{build.with?("xwidgets") ? "" : "=no"}"
+    args << "--with-imagemagick#{"=no" if build.without?("imagemagick")}"
+    args << "--with-tree-sitter#{"=no" if build.without?("tree-sitter")}"
+    args << "--with-dbus#{"=no" if build.without?("dbus")}"
+    args << "--with-modules#{"=no" if build.without?("modules")}"
+    args << "--with-xwidgets#{"=no" if build.without?("xwidgets")}"
     args << "--with-native-compilation" \
             "#{build.with?("native-compilation")?"=aot":"=no"}"
 
@@ -154,6 +154,8 @@ class EmacsCocoaAT30 < Formula
         #{prefix}
       To link the application to the default App location:
         ln -s #{prefix}/Emacs.app /Applications
+      or:
+        osascript -e 'tell application "Finder" to make alias file to posix file "#{prefix}/Emacs.app" at POSIX file "/Applications" with properties {name:"Emacs.app"}'
     EOS
   end
 

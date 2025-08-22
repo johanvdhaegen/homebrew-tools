@@ -4,6 +4,7 @@ class Xschem < Formula
   url "https://github.com/StefanSchippers/xschem/archive/refs/tags/3.4.7.tar.gz"
   sha256 "8f6c7165c38f528b6cbae8f9fae72cde3b765652df90597011a5f7b5e7fdb273"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://github.com/StefanSchippers/xschem.git", branch: "master"
 
   bottle do
@@ -15,14 +16,25 @@ class Xschem < Formula
 
   depends_on "pkg-config" => :build
   depends_on "cairo"
+  depends_on "jpeg-turbo"
   depends_on "libx11"
   depends_on "libxpm"
-  depends_on :macos
   depends_on "tcl-tk-x11@8"
+  uses_from_macos "bison" => :build
+  uses_from_macos "flex" => :build
+
+  on_macos do
+    depends_on "libxcb"
+  end
 
   def install
     args = [
       "--prefix=#{prefix}",
+      "/arg/tcl-version=8.6",
+      "/arg/tk-version=8.6",
+      "--prefix/libs/script/tcl=#{Formula["tcl-tk-x11@8"].opt_prefix}",
+      "--prefix/libs/script/tk=#{Formula["tcl-tk-x11@8"].opt_prefix}",
+      "--CFLAGS=-I#{Formula["tcl-tk-x11@8"].opt_include}/tcl-tk",
     ]
 
     system "./configure", *args

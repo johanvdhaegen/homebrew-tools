@@ -8,10 +8,12 @@ class Xschem < Formula
   head "https://github.com/StefanSchippers/xschem.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/xschem-3.4.7"
-    sha256 arm64_sequoia: "65a5464ac0252c12f4591a572882310da4d89107ff9a6637a2ca19f71881f6c6"
-    sha256 arm64_sonoma:  "2c8a60ff7a93e2b6e167a04aabf74e6e5e08a71e9b967110c4430ed86daab9f4"
-    sha256 ventura:       "77dad864d5b42f51e53dd784b86c52edc34318eee4459ec6f743f22beea0a6ce"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/xschem-3.4.7_1"
+    sha256 arm64_sequoia: "2093dddd59e7f35114dccc4b81d252874dae87b72f7af1cbdd0308ce546d2ffd"
+    sha256 arm64_sonoma:  "41a75d5a09f0fc626ac948dade4bda2b3f764ca2d5ad77d3519b6ebec245a309"
+    sha256 ventura:       "943c91d5cfadba76dc1987480aa778ae21dc7cf57c08a31c3b94ab6be3588059"
+    sha256 arm64_linux:   "d38d035d5d38cd303e7b4a7860e38ddb33518af19992a147e7737e926e25a6a7"
+    sha256 x86_64_linux:  "7c79ff168d74688d735d99f1e9e15271a4f68cec3c79e8a700dc8cfd451c16b4"
   end
 
   depends_on "pkg-config" => :build

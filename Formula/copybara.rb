@@ -5,7 +5,7 @@ class Copybara < Formula
       revision: "494fa7ea08aa58c0ae322887a923e57b1cc2ee83"
   version "2025-05-29"
   license "Apache-2.0"
-  revision 1
+  revision 2
 
   head "https://github.com/google/copybara.git", branch: "master"
 
@@ -35,20 +35,18 @@ class Copybara < Formula
       # set dynamic linker similar to cc shim so that bottle works on older Linux
       extra_bazel_args << "--linkopt=-Wl,--dynamic-linker=#{ENV["HOMEBREW_DYNAMIC_LINKER"]}"
     end
-    ENV["EXTRA_BAZEL_ARGS"] = extra_bazel_args.join(" ")
 
+    # Construct Bazel arguments
+    ENV["EXTRA_BAZEL_ARGS"] = extra_bazel_args.join(" ")
     # Force Bazel ./compile.sh to put its temporary files in the buildpath
     ENV["BAZEL_WRKDIR"] = buildpath/"work"
 
+    # Build Copybara
     system "bazel", "build", "--repo_contents_cache=",
            "//java/com/google/copybara:copybara_deploy.jar"
     libexec.install "bazel-bin/java/com/google/copybara/copybara_deploy.jar"
-    (bin/"copybara").write <<~EOS
-      #!/bin/bash
-      export JAVA_HOME="#{ENV["JAVA_HOME"]}"
-      export CLASSPATH="#{libexec}/copybara_deploy.jar:."
-      exec "#{Formula["openjdk@#{java_version}"].opt_bin}/java" -jar #{libexec}/copybara_deploy.jar "$@"
-    EOS
+    bin.write_jar_script libexec/"copybara_deploy.jar", "copybara",
+                         java_version: java_version
   end
 
   test do

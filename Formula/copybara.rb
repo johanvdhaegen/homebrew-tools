@@ -9,12 +9,11 @@ class Copybara < Formula
   head "https://github.com/google/copybara.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/copybara-2025-05-29_2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77f368467016677f4fded29fdcde84d66f4f9944c7509895786b9a1bdc2378f1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "109beb64427958a449aaca366eb9b606417e0b5c0c049f5b7cdeae9373105441"
-    sha256 cellar: :any_skip_relocation, ventura:       "69306cd9977ab260c434fe278360db92d191a70e29a36158715843686b250425"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4bb63d8456abf4c092bbae3bf26180bde420e8f7b78aa318e6f0b56a3e7af50f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a19d76cb1481322b9a21bd76a0babdc978672d043225d6d874a10b58389a2cb0"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/copybara-20250901"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91d649558b3990a80509d3e1bde47bdfb01e46b6f1198444b681d1fa103ea671"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "210cbaff0542861154887daf172711f33bede54351fe98928161f9dde79d439b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26a60d7265ef88043462723237fcdc232027a0cef7a2c19bc3afdc7818dadd42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbd084f7acdef8840790c585d5dd999c3b4622c782551d2a80aee2c9d89798b9"
   end
 
   depends_on "bazel" => :build

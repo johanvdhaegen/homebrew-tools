@@ -9,11 +9,12 @@ class PythonLspServer < Formula
   head "https://github.com/python-lsp/python-lsp-server.git", branch: "develop"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.13.0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b9b61af68f90c9861c06192d904b426352c659e68a5faaa4ccbf0ff5eef4677"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3ad1d3e9a2703388b80c8af7191d95712494a9e9551f455ec2b2cd66d1bf9e7"
-    sha256 cellar: :any_skip_relocation, ventura:       "05f4d983700f6706c5e54a4f0040e56edd97353e18890cb5c1c86ae3d5a7f1c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afe98643bade4ede09f1c72796350b222de3b4f06a26aa9b0af2ed84f776dd48"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/python-lsp-server-1.13.1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9488d353380c3ce2849a5d4227665272aa92de336b315e03d4ad383617bdb125"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8b37f2ecfd39f9bd042bfd7fadf3e4c2057eb85af89f25473fbe1fcc1ce46ef"
+    sha256 cellar: :any_skip_relocation, ventura:       "4e7876cfd2a9fcf0075d781d2c1b4cee147502eae8ec3737dfcaa14f437f22ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4afa8075c5363e301f795948309ca7687085663dc5211c6e642b8ab0907754e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46be6c318b85ccbf34657210110433579dc7ce0b174fcc7fad1108a2c8f1ce1c"
   end
 
   depends_on "rust" => :build

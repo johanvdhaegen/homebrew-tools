@@ -2,10 +2,9 @@ class Copybara < Formula
   desc "Tool for transforming and moving code between repositories"
   homepage "https://github.com/google/copybara"
   url "https://github.com/google/copybara.git",
-      revision: "494fa7ea08aa58c0ae322887a923e57b1cc2ee83"
-  version "2025-05-29"
+      revision: "be1636256bb8fbca07d3b5dba6071cad83cd14e8"
+  version "20250901"
   license "Apache-2.0"
-  revision 2
 
   head "https://github.com/google/copybara.git", branch: "master"
 
@@ -19,6 +18,7 @@ class Copybara < Formula
   end
 
   depends_on "bazel" => :build
+  depends_on macos: :sonoma # zstd issues on ventura
   depends_on "openjdk@21"
 
   def install
@@ -43,6 +43,7 @@ class Copybara < Formula
 
     # Build Copybara
     system "bazel", "build", "--repo_contents_cache=",
+           "--verbose_failures",
            "//java/com/google/copybara:copybara_deploy.jar"
     libexec.install "bazel-bin/java/com/google/copybara/copybara_deploy.jar"
     bin.write_jar_script libexec/"copybara_deploy.jar", "copybara",

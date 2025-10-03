@@ -1,11 +1,16 @@
 class Rpiboot < Formula
   desc "Raspberry Pi USB device boot"
   homepage "https://github.com/raspberrypi/usbboot"
-  url "https://github.com/raspberrypi/usbboot/archive/refs/tags/20250227-132106.tar.gz"
-  version "20250227-132106"
-  sha256 "e57c6e8183c3b9e6fa94758840985b595d58ec80079a37d6492250c1ccbcb004"
+  url "https://github.com/raspberrypi/usbboot/archive/refs/tags/20250908-162618.tar.gz"
+  version "20250908-162618"
+  sha256 "956cd4e09050263e1f5ba126ecdb832b53fd0fdea06d1a85397d577bd8bc6ba0"
   head "https://github.com/raspberrypi/usbboot.git",
        branch: "master"
+
+  livecheck do
+    url :stable
+    regex(/^([\d-]+)$/i)
+  end
 
   bottle do
     root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/rpiboot-20250227-132106"

@@ -2,6 +2,7 @@ class Chktex < Formula
   desc "LaTeX semantic checker"
   homepage "https://www.nongnu.org/chktex/"
   license "GPL-2.0-or-later"
+  revision 1
 
   stable do
     url "https://download.savannah.gnu.org/releases/chktex/chktex-1.7.9.tar.gz"
@@ -23,14 +24,14 @@ class Chktex < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on :macos # TODO: fix build failure on linux
-  depends_on "pcre" => :recommended
+  depends_on "pcre"
 
   def install
     ENV.prepend_path "PATH", "/Library/TeX/texbin"
     args = %W[
       --prefix=#{prefix}
+      --enable-pcre
     ]
-    args << "--#{build.with?("pcre")?"enable":"disable"}-pcre"
 
     cd "chktex" if build.head?
     system "./autogen.sh" if build.head?

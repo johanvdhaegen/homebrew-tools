@@ -2,6 +2,7 @@ class Chktex < Formula
   desc "LaTeX semantic checker"
   homepage "https://www.nongnu.org/chktex/"
   license "GPL-2.0-or-later"
+  revision 1
 
   stable do
     url "https://download.savannah.gnu.org/releases/chktex/chktex-1.7.9.tar.gz"

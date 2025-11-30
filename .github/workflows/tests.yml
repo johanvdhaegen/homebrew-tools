@@ -16,6 +16,7 @@ jobs:
           - macos-14
           - macos-15
           - macos-15-intel
+          - macos-26
         include:
           - os: ubuntu-22.04-arm
             tier2: true

@@ -13,12 +13,12 @@ class Rpiboot < Formula
   end
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/rpiboot-20250227-132106"
-    sha256 arm64_sequoia: "97c30256199dbe3bb3229cffa4420e0662049957d31d91323615ee037db46193"
-    sha256 arm64_sonoma:  "0d478a1e3398f8037552ff69b4713101e6a0fc37cf1e4af299c5bebcce8b0789"
-    sha256 ventura:       "3d4ac1b1b93c0779608fe772ddc80300a3d6b3940de6515e61c0b60c38b8054c"
-    sha256 arm64_linux:   "2565566d605f6cfa0c0f35aed41b3e9657e53f0b11caf4986c7d03fcd9159034"
-    sha256 x86_64_linux:  "4b51e598c4c54ad6883ed44a7df183392c1fd55a14c8fc41aa3651c1b8ed0d5b"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/rpiboot-20250908-162618"
+    sha256 arm64_tahoe:   "20b81570ea3897f6528e2949cf6e0f55db1c9d9efe25778a007a5630365ec3aa"
+    sha256 arm64_sequoia: "ad6d24cd338daa1e1e180d7009e38ae35419c1cfb64ecbcd077b30446bb4ce99"
+    sha256 arm64_sonoma:  "3d9d096043b5aea867865263516d052d684ca22572beb3f27712864489bf04d7"
+    sha256 arm64_linux:   "98bdf105a5120a7b636590167cbf17c64b6cfb21311548ba37ed8c9d635fa27c"
+    sha256 x86_64_linux:  "fa6f3c1ddd2fe2c44cafa0eabeea58cd80f0feea902b35b6b09c5de967618841"
   end
 
   depends_on "pkg-config" => :build

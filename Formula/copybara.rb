@@ -2,8 +2,8 @@ class Copybara < Formula
   desc "Tool for transforming and moving code between repositories"
   homepage "https://github.com/google/copybara"
   url "https://github.com/google/copybara.git",
-      revision: "be1636256bb8fbca07d3b5dba6071cad83cd14e8"
-  version "20250901"
+      revision: "b252194ea7213a8abf25270fb8c0756ee4150332"
+  version "20251205"
   license "Apache-2.0"
 
   head "https://github.com/google/copybara.git", branch: "master"
@@ -17,8 +17,8 @@ class Copybara < Formula
   end
 
   depends_on "bazel" => :build
-  depends_on macos: :sonoma # zstd issues on ventura
   depends_on "openjdk@21"
+  depends_on "zstd"
 
   def install
     # Force Bazel to use brew OpenJDK
@@ -29,6 +29,9 @@ class Copybara < Formula
     # Bazel clears environment variables which breaks superenv shims
     ENV.remove "PATH", Superenv.shims_path
 
+    # Add zstd include and lib directories
+    extra_bazel_args << "--copt=\"-isystem#{Formula["zstd"].opt_include}\""
+    extra_bazel_args << "--linkopt=\"-L#{Formula["zstd"].opt_lib}\""
     # Fix linking on Linux
     if OS.linux? && build.bottle? && ENV["HOMEBREW_DYNAMIC_LINKER"]
       # set dynamic linker similar to cc shim so that bottle works on older Linux

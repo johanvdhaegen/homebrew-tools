@@ -3,8 +3,8 @@ class EmacsCocoaAT30 < Formula
   homepage "https://www.gnu.org/software/emacs/"
   url "https://github.com/emacs-mirror/emacs.git",
       branch:   "emacs-30",
-      revision: "53aac6aecd24ad95a8224f05784687dd1de13ccb"
-  version "30.2.20251018"
+      revision: "998d45d5d108dda8cb18a5dde159bb5960ab96c3"
+  version "30.2.20251210"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -38,7 +38,7 @@ class EmacsCocoaAT30 < Formula
   depends_on "librsvg" => :recommended
   depends_on "libpthread-stubs" => :build if build.with? "librsvg"
   depends_on "little-cms2" => :recommended
-  depends_on "tree-sitter" => :recommended
+  depends_on "tree-sitter@0.25" => :recommended
   depends_on "webp" => :recommended
   depends_on "dbus" => :optional
   depends_on "imagemagick" => :optional

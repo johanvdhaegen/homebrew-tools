@@ -3,8 +3,8 @@ class EmacsCarbonAT30 < Formula
   homepage "https://www.gnu.org/software/emacs/"
   url "https://github.com/jdtsmith/emacs-mac.git",
       branch:   "emacs-mac-30_1_exp",
-      revision: "ef4f2f150b435b4b391b7560d95161f679a5ee50"
-  version "30.2.20250826"
+      revision: "a9f6592fe275774e6c14e3058a4f3488f9914e5e"
+  version "30.2.20251206"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -39,7 +39,7 @@ class EmacsCarbonAT30 < Formula
   depends_on "librsvg" => :recommended
   depends_on "libpthread-stubs" => :build if build.with? "librsvg"
   depends_on "little-cms2" => :recommended
-  depends_on "tree-sitter" => :recommended
+  depends_on "tree-sitter@0.25" => :recommended
   depends_on "webp" => :recommended
   depends_on "dbus" => :optional
   depends_on "imagemagick" => :optional

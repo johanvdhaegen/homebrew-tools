@@ -3,8 +3,8 @@ class EmacsCocoaAT30 < Formula
   homepage "https://www.gnu.org/software/emacs/"
   url "https://github.com/emacs-mirror/emacs.git",
       branch:   "emacs-30",
-      revision: "998d45d5d108dda8cb18a5dde159bb5960ab96c3"
-  version "30.2.20251210"
+      revision: "948c4f7f64fb9e662dfcccc609b2e02269c7ebe8"
+  version "30.2.20251212"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -73,7 +73,7 @@ class EmacsCocoaAT30 < Formula
     args << "--with-lcms2#{"=no" if build.without?("little-cms2")}"
     args << "--without-pop" if build.with? "mailutils"
     args << "--with-imagemagick#{"=no" if build.without?("imagemagick")}"
-    args << "--with-tree-sitter#{"=no" if build.without?("tree-sitter")}"
+    args << "--with-tree-sitter#{"=no" if build.without?("tree-sitter@0.25")}"
     args << "--with-dbus#{"=no" if build.without?("dbus")}"
     args << "--with-modules#{"=no" if build.without?("modules")}"
     args << "--with-xwidgets#{"=no" if build.without?("xwidgets")}"
@@ -146,6 +146,11 @@ class EmacsCocoaAT30 < Formula
 
     (bin/"ctags").unlink
     (man1/"ctags.1.gz").unlink
+  end
+
+  def post_install
+    # Sign to ensure proper execution of the app bundle
+    system "/usr/bin/codesign --force --deep --sign - '#{prefix}/Emacs.app'" if OS.mac? && Hardware::CPU.arm?
   end
 
   def caveats

@@ -8,10 +8,10 @@ class EmacsCarbonAT30 < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-carbon@30-30.2.20250826"
-    sha256 arm64_sequoia: "845bf9849bd024e0f86abbbf3627a159da54d596455c6d3281e81dc9fc06f18f"
-    sha256 arm64_sonoma:  "385cab321f5f2a355d1ae2fe41f51b5c1e04506c12a9ca27fa7d32ffbb4f50d4"
-    sha256 ventura:       "7f0e8f3ba147761af7381deb821a00ac3d1f26d63221681d8c9e13314bdd63ed"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-carbon@30-30.2.20251206"
+    sha256 arm64_tahoe:   "6bfd2f0b03ee0ac72974b416944a49381e3fb7b4fcd6b4791dab7bf45d519da9"
+    sha256 arm64_sequoia: "ed18058f601ee560c6a8751461e75d01cc34d055e6b0846f16abae6e22b75dbc"
+    sha256 arm64_sonoma:  "d7902d9a9a4661cfdc66ac3e54007adcdd377ba86ee84850f9828dcabd2953f4"
   end
 
   keg_only :versioned_formula

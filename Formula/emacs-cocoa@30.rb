@@ -6,6 +6,7 @@ class EmacsCocoaAT30 < Formula
       revision: "948c4f7f64fb9e662dfcccc609b2e02269c7ebe8"
   version "30.2.20251212"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@30-30.2.20251212"
@@ -16,39 +17,32 @@ class EmacsCocoaAT30 < Formula
 
   keg_only :versioned_formula
 
-  option "with-ctags", "Don't remove the ctags executable that emacs provides"
-  option "without-modules", "Build without dynamic modules support"
-  option "without-xwidgets", "Build without Xwidgets support"
-  option "without-native-compilation", "Build without native compilation"
-
   depends_on "autoconf" => :build
   depends_on "gnu-sed" => :build
   depends_on "m4" => :build
   depends_on "make" => :build
   depends_on "pkg-config" => :build
   depends_on "texinfo" => :build
+  depends_on "cairo" # indirect linkage
+  depends_on "gcc"
+  depends_on "gdk-pixbuf" # indirect linkage
+  depends_on "gettext" # indirect linkage
   depends_on "giflib"
+  depends_on "glib" # indirect linkage
   depends_on "gmp"
   depends_on "gnutls"
   depends_on "jpeg-turbo"
+  depends_on "libgccjit"
   depends_on "libpng"
+  depends_on "libpthread-stubs"
+  depends_on "librsvg"
   depends_on "libtiff"
+  depends_on "little-cms2"
   depends_on :macos
   depends_on "sqlite"
+  depends_on "tree-sitter@0.25"
+  depends_on "webp"
   depends_on "zlib"
-  depends_on "librsvg" => :recommended
-  depends_on "libpthread-stubs" => :build if build.with? "librsvg"
-  depends_on "little-cms2" => :recommended
-  depends_on "tree-sitter@0.25" => :recommended
-  depends_on "webp" => :recommended
-  depends_on "dbus" => :optional
-  depends_on "imagemagick" => :optional
-  depends_on "mailutils" => :optional
-
-  if build.with? "native-compilation"
-    depends_on "gcc"
-    depends_on "libgccjit"
-  end
 
   uses_from_macos "libxml2"
 
@@ -66,28 +60,21 @@ class EmacsCocoaAT30 < Formula
       --with-xml2
       --with-jpeg
       --with-png
+      --with-rsvg
+      --with-webp
+      --with-lcms2
+      --with-tree-sitter
+      --with-modules
+      --with-xwidgets
+      --with-native-compilation=aot
     ]
-
-    args << "--with-rsvg#{"=no" if build.without?("librsvg")}"
-    args << "--with-webp#{"=no" if build.without?("webp")}"
-    args << "--with-lcms2#{"=no" if build.without?("little-cms2")}"
-    args << "--without-pop" if build.with? "mailutils"
-    args << "--with-imagemagick#{"=no" if build.without?("imagemagick")}"
-    args << "--with-tree-sitter#{"=no" if build.without?("tree-sitter@0.25")}"
-    args << "--with-dbus#{"=no" if build.without?("dbus")}"
-    args << "--with-modules#{"=no" if build.without?("modules")}"
-    args << "--with-xwidgets#{"=no" if build.without?("xwidgets")}"
-    args << "--with-native-compilation" \
-            "#{build.with?("native-compilation")?"=aot":"=no"}"
 
     ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
     ENV.prepend_path "PATH", Formula["make"].opt_libexec/"gnubin"
     ENV.append "CFLAGS", "-I#{Formula["sqlite"].opt_include}"
     ENV.append "LDFLAGS", "-L#{Formula["sqlite"].opt_lib}"
-    if build.with?("native-compilation")
-      ENV.append "CFLAGS", "-I#{Formula["libgccjit"].opt_include}"
-      ENV.append "LIBS", "-L#{Formula["libgccjit"].opt_lib}/gcc/#{Formula["libgccjit"].version.major}"
-    end
+    ENV.append "CFLAGS", "-I#{Formula["libgccjit"].opt_include}"
+    ENV.append "LIBS", "-L#{Formula["libgccjit"].opt_lib}/gcc/#{Formula["libgccjit"].version.major}"
     system "./autogen.sh"
 
     File.write "lisp/site-load.el", <<~EOS
@@ -103,13 +90,11 @@ class EmacsCocoaAT30 < Formula
     system "make", "install"
 
     prefix.install "nextstep/Emacs.app"
-    if build.with?("native-compilation")
-      # add link to `native-lisp` directory Emacs.app seems to expect
-      emacs_config = File.read("src/config.h")
-      emacs_version = emacs_config.match(/#define PACKAGE_VERSION "(.*)"/)[1]
-      Dir.chdir("#{prefix}/Emacs.app/Contents") do
-        ln_s "../../lib/emacs/#{emacs_version}/native-lisp", "native-lisp"
-      end
+    # add link to `native-lisp` directory Emacs.app seems to expect
+    emacs_config = File.read("src/config.h")
+    emacs_version = emacs_config.match(/#define PACKAGE_VERSION "(.*)"/)[1]
+    Dir.chdir("#{prefix}/Emacs.app/Contents") do
+      ln_s "../../lib/emacs/#{emacs_version}/native-lisp", "native-lisp"
     end
 
     # Add PATH to plist environment to enable native compilation out of the box;

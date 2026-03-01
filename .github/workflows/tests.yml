@@ -15,8 +15,8 @@ jobs:
           - ubuntu-22.04-arm
           - macos-14
           - macos-15
-          - macos-15-intel
           - macos-26
+          - macos-26-intel
     runs-on: ${{ matrix.os }}
     steps:
       - name: Set up Homebrew

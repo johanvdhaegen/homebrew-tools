@@ -2,11 +2,10 @@ class Chktex < Formula
   desc "LaTeX semantic checker"
   homepage "https://www.nongnu.org/chktex/"
   license "GPL-2.0-or-later"
-  revision 1
 
   stable do
-    url "https://download.savannah.gnu.org/releases/chktex/chktex-1.7.9.tar.gz"
-    sha256 "df6ee31632a4f4a8e18849b804657e27e3d96deb3f237edbd25656415eb31195"
+    url "https://download.savannah.gnu.org/releases/chktex/chktex-1.7.10.tar.gz"
+    sha256 "cea81a1cde2f151db2b5d2adf2271becfd3c0c1f40eca5cf45b52beeb4a636f9"
     patch :p2, :DATA
   end
 
@@ -24,7 +23,6 @@ class Chktex < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on :macos # TODO: fix build failure on linux
   depends_on "pcre"
 
   def install

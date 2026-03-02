@@ -9,10 +9,9 @@ class EmacsCocoaAT30 < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@30-30.2.20251212"
-    sha256 arm64_tahoe:   "03ecbae79cd189be5f32195975dc2da6256bdd3f152880c9d939103c7bc8ed90"
-    sha256 arm64_sequoia: "4dccc92c49dadcfc218fe0e6db62d684d04fbe3aa5373b5deaa1fafcf622d7f3"
-    sha256 arm64_sonoma:  "189f82a0ee8a2159ce1ccfcf661d849e17a42f330dea2ed7aced1f253a809f0d"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@30-30.2.20251212_1"
+    sha256 arm64_tahoe:   "ce058c8291f5cffb537fa97ce969264759dda3886fa8c86de9829f99be253b0a"
+    sha256 arm64_sequoia: "df11c1c301928b8df7f0acc4d98a2eddb86903d36f169d5a6cbd0cf3fb605167"
   end
 
   keg_only :versioned_formula

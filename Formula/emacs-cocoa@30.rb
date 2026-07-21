@@ -3,10 +3,9 @@ class EmacsCocoaAT30 < Formula
   homepage "https://www.gnu.org/software/emacs/"
   url "https://github.com/emacs-mirror/emacs.git",
       branch:   "emacs-30",
-      revision: "948c4f7f64fb9e662dfcccc609b2e02269c7ebe8"
-  version "30.2.20251212"
+      revision: "8f535370b9efbc91673b20c6987a5cae4f6dc562"
+  version "30.2.20260418"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
     root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@30-30.2.20251212_1"
@@ -102,7 +101,7 @@ class EmacsCocoaAT30 < Formula
     path = PATH.new(ORIGINAL_PATHS)
     path.prepend(HOMEBREW_PREFIX/"bin", HOMEBREW_PREFIX/"sbin")
     path = path.reject { |p| p.start_with?(HOMEBREW_SHIMS_PATH) }
-    plist = "#{prefix}/Emacs.app/contents/Info.plist"
+    plist = "#{prefix}/Emacs.app/Contents/Info.plist"
     plist_buddy = "/usr/libexec/PlistBuddy"
 
     puts "Adding the following PATH value to #{plist}:"

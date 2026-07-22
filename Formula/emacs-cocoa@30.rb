@@ -55,7 +55,7 @@ class EmacsCocoaAT30 < Formula
       --with-ns
       --disable-ns-self-contained
       --with-gnutls
-      --with-sqlite3="#{Formula["sqlite"].opt_prefix}"
+      --with-sqlite3="#{formula_opt_prefix("sqlite")}"
       --with-xml2
       --with-jpeg
       --with-png
@@ -68,12 +68,12 @@ class EmacsCocoaAT30 < Formula
       --with-native-compilation=aot
     ]
 
-    ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
-    ENV.prepend_path "PATH", Formula["make"].opt_libexec/"gnubin"
-    ENV.append "CFLAGS", "-I#{Formula["sqlite"].opt_include}"
-    ENV.append "LDFLAGS", "-L#{Formula["sqlite"].opt_lib}"
-    ENV.append "CFLAGS", "-I#{Formula["libgccjit"].opt_include}"
-    ENV.append "LIBS", "-L#{Formula["libgccjit"].opt_lib}/gcc/#{Formula["libgccjit"].version.major}"
+    ENV.prepend_path "PATH", formula_opt_libexec("gnu-sed")/"gnubin"
+    ENV.prepend_path "PATH", formula_opt_libexec("make")/"gnubin"
+    ENV.append "CFLAGS", "-I#{formula_opt_include("sqlite")}"
+    ENV.append "LDFLAGS", "-L#{formula_opt_lib("sqlite")}"
+    ENV.append "CFLAGS", "-I#{formula_opt_include("libgccjit")}"
+    ENV.append "LIBS", "-L#{formula_opt_lib("libgccjit")}/gcc/#{Formula["libgccjit"].version.major}"
     system "./autogen.sh"
 
     File.write "lisp/site-load.el", <<~EOS

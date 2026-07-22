@@ -31,8 +31,8 @@ class Copybara < Formula
     ENV.remove "PATH", Superenv.shims_path
 
     # Add zstd include and lib directories
-    extra_bazel_args << "--copt=\"-isystem#{Formula["zstd"].opt_include}\""
-    extra_bazel_args << "--linkopt=\"-L#{Formula["zstd"].opt_lib}\""
+    extra_bazel_args << "--copt=\"-isystem#{formula_opt_include("zstd")}\""
+    extra_bazel_args << "--linkopt=\"-L#{formula_opt_lib("zstd")}\""
     # Fix linking on Linux
     if OS.linux? && build.bottle? && ENV["HOMEBREW_DYNAMIC_LINKER"]
       # set dynamic linker similar to cc shim so that bottle works on older Linux

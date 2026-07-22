@@ -103,7 +103,7 @@ class TclTkX11 < Formula
                 " -Wl,-undefined,dynamic_lookup "
       end
       system "./configure", "--with-ssl=openssl",
-                            "--with-openssl-dir=#{Formula["openssl@3"].opt_prefix}",
+                            "--with-openssl-dir=#{formula_opt_prefix("openssl@3")}",
                             "--prefix=#{prefix}",
                             "--mandir=#{man}"
       system "make", "install"

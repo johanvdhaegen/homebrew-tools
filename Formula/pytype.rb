@@ -143,7 +143,7 @@ class Pytype < Formula
       f.write_env_script(
         symlink,
         {
-          PATH:       "#{Formula["python@#{pyver}"].opt_bin}:$PATH",
+          PATH:       "#{formula_opt_bin("python@#{pyver}")}:$PATH",
           PYTHONPATH: ENV["PYTHONPATH"],
         },
       )

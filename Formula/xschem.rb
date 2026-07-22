@@ -34,9 +34,9 @@ class Xschem < Formula
       "--prefix=#{prefix}",
       "/arg/tcl-version=8.6",
       "/arg/tk-version=8.6",
-      "--prefix/libs/script/tcl=#{Formula["tcl-tk-x11@8"].opt_prefix}",
-      "--prefix/libs/script/tk=#{Formula["tcl-tk-x11@8"].opt_prefix}",
-      "--CFLAGS=-I#{Formula["tcl-tk-x11@8"].opt_include}/tcl-tk",
+      "--prefix/libs/script/tcl=#{formula_opt_prefix("tcl-tk-x11@8")}",
+      "--prefix/libs/script/tk=#{formula_opt_prefix("tcl-tk-x11@8")}",
+      "--CFLAGS=-I#{formula_opt_include("tcl-tk-x11@8")}/tcl-tk",
     ]
 
     system "./configure", *args

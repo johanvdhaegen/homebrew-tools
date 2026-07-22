@@ -60,7 +60,7 @@ class EmacsCarbonAT30 < Formula
       --prefix=#{prefix}
       --with-mac
       --with-gnutls
-      --with-sqlite3="#{Formula["sqlite"].opt_prefix}"
+      --with-sqlite3="#{formula_opt_prefix("sqlite")}"
       --with-xml2
       --with-jpeg
       --with-png
@@ -78,13 +78,13 @@ class EmacsCarbonAT30 < Formula
     args << "--with-native-compilation" \
             "#{build.with?("native-compilation")?"=aot":"=no"}"
 
-    ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin"
-    ENV.prepend_path "PATH", Formula["make"].opt_libexec/"gnubin"
-    ENV.append "CFLAGS", "-I#{Formula["sqlite"].opt_include}"
-    ENV.append "LDFLAGS", "-L#{Formula["sqlite"].opt_lib}"
+    ENV.prepend_path "PATH", formula_opt_libexec("gnu-sed")/"gnubin"
+    ENV.prepend_path "PATH", formula_opt_libexec("make")/"gnubin"
+    ENV.append "CFLAGS", "-I#{formula_opt_include("sqlite")}"
+    ENV.append "LDFLAGS", "-L#{formula_opt_lib("sqlite")}"
     if build.with?("native-compilation")
-      ENV.append "CFLAGS", "-I#{Formula["libgccjit"].opt_include}"
-      ENV.append "LIBS", "-L#{Formula["libgccjit"].opt_lib}/gcc/#{Formula["libgccjit"].version.major}"
+      ENV.append "CFLAGS", "-I#{formula_opt_include("libgccjit")}"
+      ENV.append "LIBS", "-L#{formula_opt_lib("libgccjit")}/gcc/#{Formula["libgccjit"].version.major}"
     end
     system "./autogen.sh"
 

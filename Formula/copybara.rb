@@ -2,8 +2,8 @@ class Copybara < Formula
   desc "Tool for transforming and moving code between repositories"
   homepage "https://github.com/google/copybara"
   url "https://github.com/google/copybara.git",
-      revision: "b252194ea7213a8abf25270fb8c0756ee4150332"
-  version "20251205"
+      revision: "bcf8c9164d5372d77546d64dbe47615a34ed8417"
+  version "20260821"
   license "Apache-2.0"
 
   head "https://github.com/google/copybara.git", branch: "master"
@@ -18,12 +18,12 @@ class Copybara < Formula
   end
 
   depends_on "bazel" => :build
-  depends_on "openjdk@21"
+  depends_on "openjdk@25"
   depends_on "zstd"
 
   def install
     # Force Bazel to use brew OpenJDK
-    java_version = "21"
+    java_version = "25"
     java_home_env = Language::Java.java_home_env(java_version)
     ENV.merge! java_home_env.transform_keys(&:to_s)
     extra_bazel_args = ["--tool_java_runtime_version=local_jdk"]

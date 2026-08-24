@@ -14,6 +14,14 @@ class GoogleColabCli < Formula
     strategy :pypi
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/google-colab-cli-0.6.0"
+    sha256 cellar: :any, arm64_tahoe:   "19d9d774313929feb71d62c906ee58572931ff08f578bb378552402d1f93a083"
+    sha256 cellar: :any, arm64_sequoia: "c6103c93e55dfbe4918f090261cbb6e13332e9d5d95cdbb45546e14e2c29431b"
+    sha256 cellar: :any, arm64_linux:   "6b23d1e11bc07551a766842f0240101f5578ea8f15eecccfedb86d883d4d77b3"
+    sha256 cellar: :any, x86_64_linux:  "c6df0aff3ffb0ac64c0c86aec197c86d2906d5ef59657e57c3583689285244ba"
+  end
+
   depends_on "cmake" => :build # to build pyzmq and prevent pulling from PyPI
   depends_on "ninja" => :build # to build pyzmq and prevent pulling from PyPI
   depends_on "rust" => :build # to build cryptography, pydantic-core and rpds-py

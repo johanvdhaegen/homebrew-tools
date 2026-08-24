@@ -110,7 +110,9 @@ class TrilinosXyce < Formula
     shimmed = (lib.glob("cmake/**/*.cmake") + bin.glob("*")).select do |f|
       f.file? && !f.symlink? && f.binread.include?(Superenv.shims_path.to_s)
     end
-    inreplace shimmed, "#{Superenv.shims_path}/", ""
+    # `inreplace` treats an empty file list as an error, and the MPI builds
+    # record the compiler wrappers rather than a shim, so nothing matches.
+    inreplace shimmed, "#{Superenv.shims_path}/", "" if shimmed.present?
 
     # Trilinos also records each external package it found as an imported
     # target holding an absolute path. On macOS BLAS, LAPACK and DLlib resolve

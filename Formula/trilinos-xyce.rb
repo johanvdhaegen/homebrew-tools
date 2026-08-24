@@ -15,11 +15,11 @@ class TrilinosXyce < Formula
   end
 
   bottle do
-    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/trilinos-xyce-14.4.0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "1a2c0f9027aef82008cadd8cce3d7100a05a7f955c8fca250b27325f3ee7c87e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77f920f86ba2a50764b5ac1f59c4e0da235bc0ac784a229a4400e27eee4b7ffb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3cc08f853d884a6695301f457aec8fd844c2caf592eceb85009f5b7eb101e57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b849ff1b6afa4ceb2aa342c15dff7ddcee3103772f8e18ec017f8b93bb76407"
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/trilinos-xyce-14.4.0_1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "69949bdf81e2ee6e29904f2077d6c49ea0b1c4c5ea78de61d2490d919105cda6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23cb6e368a2c0a9a51b0f4e251243322cef15b83c6cb2aedbb238533b279e477"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6d3506c7bd0973d5b87d297fe1d94b2d77577f6f3a6d1417431b2e2216ded25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37730d4910032d76a8719e79860b8f805ea5d0f846f1ae3bd88b54475f5a258b"
   end
 
   keg_only "it is built with only the subset of Trilinos that Xyce uses"

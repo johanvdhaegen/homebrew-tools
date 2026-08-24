@@ -12,6 +12,14 @@ class Xyce < Formula
     regex(/Release[._-]v?(\d+(?:\.\d+)+)/i)
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/xyce-7.10.0"
+    sha256 cellar: :any, arm64_tahoe:   "272fe1ca0622f574240c1666d506a9d5600404567467db38dfe65527cfb822eb"
+    sha256 cellar: :any, arm64_sequoia: "40835a5bb518906ee24330e57c987adf4023686443ff69a78c4c00cf15b241fd"
+    sha256 cellar: :any, arm64_linux:   "5b3534f33311281bf180371f1ceb8c0c34a95bf34a1068dacf194081e30ea747"
+    sha256 cellar: :any, x86_64_linux:  "04d3f1154499cd945fbd0721bab52ea7ee93d3e036ac55a0defba4eac0416034"
+  end
+
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "flex" => :build # Xyce needs flex 2.6+; macOS ships 2.5.35

@@ -6,6 +6,7 @@ class TrilinosXyce < Formula
   sha256 "8e7d881cf6677aa062f7bfea8baa1e52e8956aa575d6a4f90f2b6f032632d4c6"
   # Trilinos is a collection of packages, each licensed individually.
   license :cannot_represent
+  revision 1
 
   livecheck do
     url :stable
@@ -25,7 +26,7 @@ class TrilinosXyce < Formula
 
   depends_on "cmake" => :build
   # Trilinos has Fortran sources; Xyce's build notes report AztecOO failures
-  # when Apple Clang is used without a Fortran compiler.  libgfortran is needed
+  # when Apple Clang is used without a Fortran compiler. libgfortran is needed
   # at link time by anything using these libraries, so this is not a build-only
   # dependency.
   depends_on "gcc"
@@ -37,8 +38,8 @@ class TrilinosXyce < Formula
   end
 
   # The bundled KokkosKernels calls `sort_option`, a member that is never
-  # declared.  Trilinos explicitly instantiates SPADDHandle, which forces those
-  # bodies to be compiled, and Clang rejects them.  Upstream KokkosKernels has
+  # declared. Trilinos explicitly instantiates SPADDHandle, which forces those
+  # bodies to be compiled, and Clang rejects them. Upstream KokkosKernels has
   # since removed both accessors; do the same here.
   patch :DATA
 
@@ -75,7 +76,7 @@ class TrilinosXyce < Formula
       -DCMAKE_POSITION_INDEPENDENT_CODE=TRUE
     ]
 
-    # Serial build.  A parallel Xyce needs a second, MPI-enabled Trilinos
+    # Serial build. A parallel Xyce needs a second, MPI-enabled Trilinos
     # installation in a separate prefix.
     args << "-DTPL_ENABLE_MPI=OFF"
     # Static libraries with PIC, so that they can be linked into the shared
@@ -89,7 +90,7 @@ class TrilinosXyce < Formula
     args << "-DCMAKE_Fortran_COMPILER=#{formula_opt_bin("gcc")}/gfortran"
     # On Linux the C and C++ compilers are the system GCC while gfortran comes
     # from the brewed one, and CMake's Fortran/C interface probe compiles its
-    # helper libraries with `-flto` there.  That mixes LTO bytecode from two GCC
+    # helper libraries with `-flto` there. That mixes LTO bytecode from two GCC
     # major versions in one link, which neither can read, so the probe fails.
     # The mangling itself is detected by a separate check that does succeed, so
     # skip only the verification.
@@ -103,13 +104,28 @@ class TrilinosXyce < Formula
 
     # Trilinos records the compiler and linker it was configured with in its
     # installed CMake package files, and Kokkos bakes them into
-    # `kokkos_launch_compiler`.  Under Homebrew those are the shims, which are
+    # `kokkos_launch_compiler`. Under Homebrew those are the shims, which are
     # only usable inside a Homebrew build, so reduce them to bare program names
     # that resolve through PATH -- Xyce reads these files.
     shimmed = (lib.glob("cmake/**/*.cmake") + bin.glob("*")).select do |f|
       f.file? && !f.symlink? && f.binread.include?(Superenv.shims_path.to_s)
     end
     inreplace shimmed, "#{Superenv.shims_path}/", ""
+
+    # Trilinos also records each external package it found as an imported
+    # target holding an absolute path. On macOS BLAS, LAPACK and DLlib resolve
+    # to link stubs inside the SDK, and that path is specific to the machine
+    # that built the bottle, so let the linker find them by name instead.
+    stubbed = lib.glob("external_packages/*/*Config.cmake").select do |f|
+      f.file? && f.binread.include?(".tbd\"")
+    end
+    stubbed.each do |f|
+      inreplace f do |s|
+        s.gsub! "IMPORTED UNKNOWN)", "INTERFACE IMPORTED)"
+        s.gsub!(%r{IMPORTED_LOCATION "[^"]*/usr/lib/lib(\w+)\.tbd"},
+                'INTERFACE_LINK_LIBRARIES "\1"')
+      end
+    end
   end
 
   test do

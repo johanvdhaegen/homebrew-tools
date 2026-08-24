@@ -14,6 +14,14 @@ class Adms < Formula
     regex(/release[._-]v?(\d+(?:\.\d+)+)/i)
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/adms-2.3.7"
+    sha256 cellar: :any, arm64_tahoe:   "8027e75c7d982194369d61f1f75dbb9d655785f96560d09d7b1cce7ff0bd4c84"
+    sha256 cellar: :any, arm64_sequoia: "823f8d023fd402fa18044bf0039c2f50f17ec3d1c19280038219ecd4776e1256"
+    sha256 cellar: :any, arm64_linux:   "a103b6833eb90ebbad6e01dc866594a4ecbcdab262d930ead424ee32216ee179"
+    sha256 cellar: :any, x86_64_linux:  "7499fd775e9a7a6345902bdcc8c376ef89abc0e3c2b874a9753098d7312460e5"
+  end
+
   # Both are configure-time gates only -- the shipped parsers are pre-generated
   # and neither program is invoked during the build.  Bison is required to be
   # 2.5 or newer, and macOS provides 2.3.

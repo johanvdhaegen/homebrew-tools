@@ -14,10 +14,11 @@ class Xyce < Formula
 
   bottle do
     root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/xyce-7.10.0"
-    sha256 cellar: :any, arm64_tahoe:   "272fe1ca0622f574240c1666d506a9d5600404567467db38dfe65527cfb822eb"
-    sha256 cellar: :any, arm64_sequoia: "40835a5bb518906ee24330e57c987adf4023686443ff69a78c4c00cf15b241fd"
-    sha256 cellar: :any, arm64_linux:   "5b3534f33311281bf180371f1ceb8c0c34a95bf34a1068dacf194081e30ea747"
-    sha256 cellar: :any, x86_64_linux:  "04d3f1154499cd945fbd0721bab52ea7ee93d3e036ac55a0defba4eac0416034"
+    rebuild 1
+    sha256 cellar: :any, arm64_tahoe:   "0c3a33796c0d49a7851b76e22cfd7312efee6200a6072a92077909d0aa400ad4"
+    sha256 cellar: :any, arm64_sequoia: "0d8d70f8fd7262a1c63ac54f68dcd58826f4a423306d2b7e5027eb64392f16dd"
+    sha256 cellar: :any, arm64_linux:   "ce50ef72f681fd7f1264c6acd106eafdeddd44a2c6fff5902ccca0d1c6fb9745"
+    sha256 cellar: :any, x86_64_linux:  "e4af6088a968dc288b13a148de4e63804ff62e3916a8c9ca85561cdade5b56ea"
   end
 
   depends_on "bison" => :build

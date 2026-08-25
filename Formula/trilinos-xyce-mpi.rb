@@ -13,6 +13,14 @@ class TrilinosXyceMpi < Formula
     regex(/trilinos[._-]release[._-]v?(\d+)[._-](\d+)[._-](\d+)/i)
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/trilinos-xyce-mpi-14.4.0"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:   "38ddf7b5fde6a8f498582c224696a4b51d26da4f9745e9858bf7434704646128"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1b800f546b4807836b7cbfdd53e1a52b2161eef58370cdfa9c2ab00d986bcb2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf6750160e7ec656a08503c274bf5425f69d285ee3483f4428f358ef184903ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c62a26b03487e814c38d429129385d0f1791bc61a4da1fee7ee316f59daef316"
+  end
+
   keg_only "it is a second Trilinos, built with MPI for xyce-mpi"
 
   depends_on "cmake" => :build

@@ -12,6 +12,14 @@ class XyceMpi < Formula
     regex(/Release[._-]v?(\d+(?:\.\d+)+)/i)
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/xyce-mpi-7.10.0"
+    sha256 cellar: :any, arm64_tahoe:   "db5243dd720142f95f221fac4c746fb5a882a43fbb5777cacca44de7df6cdd62"
+    sha256 cellar: :any, arm64_sequoia: "66d767200e3c7b2c8780ac80164a7cfa01edbde970a4b98ed3a6e4f7a3a6e10a"
+    sha256 cellar: :any, arm64_linux:   "560fc2551325da00a9edb34f7765279a145e20fcce8c203a4dfcb5ecb0153729"
+    sha256 cellar: :any, x86_64_linux:  "8bd8750c115b0bc61564b62dc352fa06caf3ad63bd1d97e5d2282c5e5e784b2b"
+  end
+
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "flex" => :build # Xyce needs flex 2.6+; macOS ships 2.5.35

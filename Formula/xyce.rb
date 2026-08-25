@@ -33,6 +33,8 @@ class Xyce < Formula
     depends_on "openblas" # indirect dependency through trilinos-xyce
   end
 
+  conflicts_with "xyce-mpi", because: "xyce-mpi is a variant of xyce"
+
   # `std::abs<double>(val)` is ambiguous under libc++: the floating-point
   # overloads are not templates, so the explicit template argument only matches
   # the integral ones.  Upstream Xyce has since dropped the template argument.
@@ -73,7 +75,9 @@ class Xyce < Formula
     shimmed = (bin.glob("*") + lib.glob("cmake/**/*.cmake") + share.glob("**/*.cmake")).select do |f|
       f.file? && !f.symlink? && f.binread.include?(Superenv.shims_path.to_s)
     end
-    inreplace shimmed, "#{Superenv.shims_path}/", ""
+    # `inreplace` treats an empty file list as an error, and the MPI builds
+    # record the compiler wrappers rather than a shim, so nothing matches.
+    inreplace shimmed, "#{Superenv.shims_path}/", "" if shimmed.present?
   end
 
   test do

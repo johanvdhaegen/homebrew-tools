@@ -1,8 +1,8 @@
 class Ngspice < Formula
   desc "Spice circuit simulator"
   homepage "https://ngspice.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/45.2/ngspice-45.2.tar.gz"
-  sha256 "ba8345f4c3774714c10f33d7da850d361cec7d14b3a295d0dc9fd96f7423812d"
+  url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/47/ngspice-47.tar.gz"
+  sha256 "894e649651f1838a14095e5a5439e7d3aa63e87ede14d283173fda4fcdef675f"
   license :cannot_represent
 
   head "https://git.code.sf.net/p/ngspice/ngspice.git", branch: "master"
@@ -30,6 +30,9 @@ class Ngspice < Formula
   depends_on "readline"
 
   uses_from_macos "bison" => :build
+
+  # Disable the broken macOS memory check. upstream commit ref, https://sourceforge.net/p/ngspice/ngspice/ci/96404e993984065f9104d724672bcdcafd7f356f/
+  patch :DATA
 
   def install
     system "./autogen.sh"
@@ -86,3 +89,24 @@ class Ngspice < Formula
     system "./test"
   end
 end
+
+__END__
+diff --git a/src/frontend/outitf.c b/src/frontend/outitf.c
+index a9e47df..56883b0 100644
+--- a/src/frontend/outitf.c
++++ b/src/frontend/outitf.c
+@@ -556,6 +556,7 @@ OUTpD_memory(runDesc *run, IFvalue *refValue, IFvalue *valuePtr)
+ {
+     int i, n = run->numData;
+ 
++#ifndef __APPLE__
+     if (!cp_getvar("no_mem_check", CP_BOOL, NULL, 0)) {
+         /* Estimate the required memory */
+         size_t memrequ = (size_t)n * vlength2delta(0) * sizeof(double);
+@@ -569,6 +570,7 @@ OUTpD_memory(runDesc *run, IFvalue *refValue, IFvalue *valuePtr)
+             controlled_exit(1);
+         }
+     }
++#endif
+ 
+     for (i = 0; i < n; i++) {

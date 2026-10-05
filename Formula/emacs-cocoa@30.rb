@@ -6,6 +6,7 @@ class EmacsCocoaAT30 < Formula
       revision: "8f535370b9efbc91673b20c6987a5cae4f6dc562"
   version "30.2.20260418"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
     root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/emacs-cocoa@30-30.2.20260418"

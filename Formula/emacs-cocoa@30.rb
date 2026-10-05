@@ -131,9 +131,11 @@ class EmacsCocoaAT30 < Formula
     (man1/"ctags.1.gz").unlink
   end
 
-  def post_install
+  post_install_steps do
     # Sign to ensure proper execution of the app bundle
-    system "/usr/bin/codesign --force --deep --sign - '#{prefix}/Emacs.app'" if OS.mac? && Hardware::CPU.arm?
+    on_macos do
+      run "/usr/bin/codesign", args: ["--force", "--deep", "--sign", "-", "{{prefix}}/Emacs.app"]
+    end
   end
 
   def caveats

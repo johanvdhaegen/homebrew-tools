@@ -11,6 +11,14 @@ class Openvaf < Formula
     skip "Pinned to an upstream commit snapshot"
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/openvaf-23.5.0.20260820"
+    sha256 cellar: :any, arm64_tahoe:   "3edea6371406ee2560bd3656aa76a318799e704f1d43d52442b820b79eda04cb"
+    sha256 cellar: :any, arm64_sequoia: "144bf03600f77f827566b8b4155512daddcc82cde34d18fb7fdc26a99069ec21"
+    sha256 cellar: :any, arm64_linux:   "5c4e2f2a8cefc4ae38b227f3df8934ae7fe7fda53437dc013e4a1d96617ffd96"
+    sha256 cellar: :any, x86_64_linux:  "cba22915b78bd1f25b970e4a5f12ee3a7ae6c2d029d4df4dd99356c5ea2096c7"
+  end
+
   depends_on "rust" => :build
   depends_on "llvm@21"
 

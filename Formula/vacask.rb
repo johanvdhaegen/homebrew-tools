@@ -11,6 +11,14 @@ class Vacask < Formula
     strategy :git
   end
 
+  bottle do
+    root_url "https://github.com/johanvdhaegen/homebrew-tools/releases/download/vacask-0.3.4"
+    sha256               arm64_tahoe:   "d0fa2492ca62c523d712bda8f178beb3fcda63baf764756b83c40f6d2aa11a7b"
+    sha256               arm64_sequoia: "9301deed31a69e843a776a93332f6d7d8e9adfd0bcf605b7e0ca2dfb5abaaeda"
+    sha256               arm64_linux:   "f063bd66bdb8e0c2d1d2daa103a197b27d1703a0fa61bec8242ff080d6c14793"
+    sha256 cellar: :any, x86_64_linux:  "bc33c92b3e514b85f02829243ecd2fb0b0c0409b4c3e422c3cbbf0bd8b03e1ef"
+  end
+
   head do
     url "https://codeberg.org/arpadbuermen/VACASK.git", branch: "main"
     depends_on "fftw"
